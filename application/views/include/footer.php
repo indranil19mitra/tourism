@@ -1,5 +1,5 @@
 <!-- <a id="to-top"><span class="icon-chevron-thin-up"></span></a> -->
-<a id="whatsapp-widget" href="https://wa.me/9119199987" target="_blank">
+<a id="whatsapp-widget" href="https://wa.me/phno" target="_blank">
     <i class="fab fa-whatsapp"></i>
 </a>
 <footer itemtype="https://schema.org/WPFooter" itemscope="itemscope" id="colophon" role="contentinfo">
@@ -16,7 +16,9 @@
                                         <div class="elementor-widget-wrap elementor-element-populated">
                                             <div class="elementor-element elementor-element-25b18f5 elementor-widget elementor-widget-image" data-id="25b18f5" data-element_type="widget" data-widget_type="image.default">
                                                 <div class="elementor-widget-container">
-                                                    <img width="1285" height="385" src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/logo.png" class="attachment-full size-full wp-image-340" alt="" decoding="async" loading="lazy" srcset="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/logo.png 1285w, <?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/logo-300x90.png 300w, <?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/logo-1024x307.png 1024w, <?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/logo-768x230.png 768w, <?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/logo-800x240.png 800w" sizes="(max-width: 1285px) 100vw, 1285px">
+                                                    <a href="<?= base_url() ?>">
+                                                        <img width="1285" height="385" src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/logo.png" class="attachment-full size-full wp-image-340" alt="" decoding="async" loading="lazy" srcset="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/logo.png 1285w, <?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/logo-300x90.png 300w, <?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/logo-1024x307.png 1024w, <?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/logo-768x230.png 768w, <?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/logo-800x240.png 800w" sizes="(max-width: 1285px) 100vw, 1285px">
+                                                    </a>
                                                 </div>
                                             </div>
                                             <div class="elementor-element elementor-element-0cfbf6c elementor-widget elementor-widget-text-editor" data-id="0cfbf6c" data-element_type="widget" data-widget_type="text-editor.default">
@@ -57,10 +59,9 @@
                                                         <li class="elementor-icon-list-item">
                                                             <span class="elementor-icon-list-icon">
                                                                 <i aria-hidden="true" class="fas fa-angle-right"></i> </span>
-                                                            <span class="elementor-icon-list-text">About
-                                                                Us</span>
+                                                            <a href="<?= base_url() ?>about-us"><span class="elementor-icon-list-text">About</span></a>
                                                         </li>
-                                                        <li class="elementor-icon-list-item">
+                                                        <!-- <li class="elementor-icon-list-item">
                                                             <span class="elementor-icon-list-icon">
                                                                 <i aria-hidden="true" class="fas fa-angle-right"></i> </span>
                                                             <span class="elementor-icon-list-text">Trekking</span>
@@ -75,7 +76,7 @@
                                                                 <i aria-hidden="true" class="fas fa-angle-right"></i> </span>
                                                             <span class="elementor-icon-list-text">Our
                                                                 Team</span>
-                                                        </li>
+                                                        </li> -->
                                                         <li class="elementor-icon-list-item">
                                                             <span class="elementor-icon-list-icon">
                                                                 <i aria-hidden="true" class="fas fa-angle-right"></i> </span>
@@ -97,19 +98,19 @@
                                             <div class="elementor-element elementor-element-2431bc7 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="2431bc7" data-element_type="widget" data-widget_type="icon-list.default">
                                                 <div class="elementor-widget-container">
                                                     <ul class="elementor-icon-list-items">
-                                                        <li class="elementor-icon-list-item">
+                                                        <!-- <li class="elementor-icon-list-item">
                                                             <span class="elementor-icon-list-icon">
                                                                 <i aria-hidden="true" class="fas fa-angle-right"></i> </span>
                                                             <span class="elementor-icon-list-text">Privacy
                                                                 Policy</span>
-                                                        </li>
+                                                        </li> -->
                                                         <li class="elementor-icon-list-item">
                                                             <span class="elementor-icon-list-icon">
                                                                 <i aria-hidden="true" class="fas fa-angle-right"></i> </span>
                                                             <span class="elementor-icon-list-text">Terms and
                                                                 Conditions</span>
                                                         </li>
-                                                        <li class="elementor-icon-list-item">
+                                                        <!-- <li class="elementor-icon-list-item">
                                                             <span class="elementor-icon-list-icon">
                                                                 <i aria-hidden="true" class="fas fa-angle-right"></i> </span>
                                                             <span class="elementor-icon-list-text">Disclaimer</span>
@@ -118,7 +119,7 @@
                                                             <span class="elementor-icon-list-icon">
                                                                 <i aria-hidden="true" class="fas fa-angle-right"></i> </span>
                                                             <span class="elementor-icon-list-text">Elemets</span>
-                                                        </li>
+                                                        </li> -->
                                                         <li class="elementor-icon-list-item">
                                                             <span class="elementor-icon-list-icon">
                                                                 <i aria-hidden="true" class="fas fa-angle-right"></i> </span>
@@ -165,7 +166,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="elementor-element elementor-element-07900c8 elementor-icon-list--layout-inline elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="07900c8" data-element_type="widget" data-widget_type="icon-list.default">
+                                            <!-- <div class="elementor-element elementor-element-07900c8 elementor-icon-list--layout-inline elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="07900c8" data-element_type="widget" data-widget_type="icon-list.default">
                                                 <div class="elementor-widget-container">
                                                     <ul class="elementor-icon-list-items elementor-inline-items">
                                                         <li class="elementor-icon-list-item elementor-inline-item">
@@ -207,7 +208,7 @@
                                                         </li>
                                                     </ul>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
@@ -217,9 +218,9 @@
                                     <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-f42a144" data-id="f42a144" data-element_type="column">
                                         <div class="elementor-widget-wrap elementor-element-populated">
                                             <div class="elementor-element elementor-element-9a9b077 elementor-widget elementor-widget-text-editor" data-id="9a9b077" data-element_type="widget" data-widget_type="text-editor.default">
-                                                <div class="elementor-widget-container">
+                                                <!-- <div class="elementor-widget-container">
                                                     Hiking &#038; Trekking Mountain Template Kit
-                                                    by Jegtheme </div>
+                                                    by Jegtheme </div> -->
                                             </div>
                                         </div>
                                     </div>
@@ -227,7 +228,7 @@
                                         <div class="elementor-widget-wrap elementor-element-populated">
                                             <div class="elementor-element elementor-element-a988d33 elementor-widget elementor-widget-text-editor" data-id="a988d33" data-element_type="widget" data-widget_type="text-editor.default">
                                                 <div class="elementor-widget-container">
-                                                    Copyright © 2021. All Right Reserved. </div>
+                                                    Copyright © 2023. All Right Reserved. </div>
                                             </div>
                                         </div>
                                     </div>
@@ -370,75 +371,15 @@
 </script>
 
 <script>
-    // $(document).ready(function() {
-    //     var section = $('#section_1'); // Replace with the actual data-id of your section
-    //     var images = ['<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/in-hike-1-e1628420179864.jpg', '<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/in-hike-5-e1628420215612.jpg', '<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/in-hike-3-e1628420193825.jpg', '<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/hiker-3-e1628420252326.jpg', '<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/in-hike-4-e1628420203493.jpg']; // Add your image URLs
-    //     var currentIndex = 0;
-    //     var slideshowInterval = 5000; // Set the interval in milliseconds (5 seconds in this example)
-
-    //     function updateBackground() {
-    //         section.css('background-image', 'url(' + images[currentIndex] + ')');
-    //         currentIndex = (currentIndex + 1) % images.length;
-    //     }
-
-    //     updateBackground(); // Initial background
-
-    //     setInterval(updateBackground, slideshowInterval);
-    // });
-
-    // $(document).ready(function() {
-    //     var section = $('#section_1');
-    //     var images = [
-    //         '<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/in-hike-1-e1628420179864.jpg',
-    //         '<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/in-hike-5-e1628420215612.jpg',
-    //         '<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/in-hike-3-e1628420193825.jpg',
-    //         '<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/hiker-3-e1628420252326.jpg',
-    //         '<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/in-hike-4-e1628420203493.jpg'
-    //     ];
-    //     var currentIndex = 0;
-
-    //     var isMobile = window.innerWidth <= 767;
-    //     if (isMobile != true) {
-    //         var slideshowInterval = 8000; // Increased interval to 8 seconds
-    //         var zoomDuration = 5000; // Duration for the zoom effect in milliseconds
-    //     } else {
-    //         var slideshowInterval = 8000; // Increased interval to 8 seconds
-    //         // var zoomDuration = 5000; // Duration for the zoom effect in milliseconds
-    //     }
-
-    //     function updateBackground() {
-    //         section.animate({
-    //                 'background-size': (isMobile != true) ? '100%' : '100vh', // Adjust the zoom level
-    //                 // 'opacity': 0.7
-    //             },
-    //             zoomDuration, 'linear',
-    //             function() {
-    //                 section.css('background-image', 'url(' + images[currentIndex] + ')');
-    //                 section.animate({
-    //                     'background-size': (isMobile != true) ? '110%' : '100vh', // Reset to normal size
-    //                 }, zoomDuration, 'linear');
-    //                 currentIndex = (currentIndex + 1) % images.length;
-    //             });
-    //     }
-
-    //     // Initial background without animation
-    //     section.css({
-    //         'background-image': 'url(' + images[currentIndex] + ')',
-    //         // 'opacity': 0.7,
-    //         'background-size': (isMobile != true) ? '100%' : '100vh'
-    //     });
-
-    //     // Start animation after a delay (adjust as needed)
-    //     setTimeout(function() {
-    //         updateBackground();
-    //         setInterval(updateBackground, slideshowInterval);
-    //     }); // 2000 milliseconds (2 seconds) delay
-    // });
-
     $(document).ready(function() {
         var url_para = '<?= (!empty($this->uri->segment('1'))) ? $this->uri->segment('1') : '' ?>';
         console.log(url_para);
         var section = (url_para != "") ? $('#section_2') : $('#section_1');
+        var currentIndex = 0;
+        var isMobile = window.innerWidth <= 767;
+        var slideshowInterval = 8000; // Default interval
+        var zoomDuration = 5000; // Default zoom duration
+
         if (url_para == "") {
             var images = [
                 '<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/in-hike-1-e1628420179864.jpg',
@@ -448,32 +389,30 @@
                 '<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/in-hike-4-e1628420203493.jpg'
             ];
         }
-        if (url_para == "about-us") {
-            console.log(url_para);
+        if (url_para != "") {
+            // console.log(url_para);
             var images = [
                 '<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/in-hike-1-e1628420179864.jpg',
                 '<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/in-hike-4-e1628420203493.jpg'
             ];
-            $("#section_2").css('height', '50vh');
+            $("#section_2").css('height', (url_para != "") ? '50vh' : '100vh');
         }
-        var currentIndex = 0;
-        var isMobile = window.innerWidth <= 767;
-        var slideshowInterval = 8000; // Default interval
-        var zoomDuration = 5000; // Default zoom duration
-
         // Set the initial height immediately on page load for mobile
-        if (isMobile) {
-            section.css('height', '100vh');
-        }
+        // if (isMobile) {
+        //     section.css('height', (url_para != "") ? '50vh' : '100vh');
+        // }
 
         function updateBackground() {
             // Ensure the height is at least 100vh for mobile
             if (isMobile && section.height() < window.innerHeight) {
-                section.css('height', '100vh');
+                section.css('height', (url_para != "") ? '50vh' : '100vh');
+                $(".set_ht_1_html").html('Beyond The Mountains');
+                // $('.set_ht_1_html').css
+                $('.set_ht_1_html_sz').css('font-size', '25px');
             }
 
             section.animate({
-                    'background-size': '100%', // Adjust the zoom level
+                    'background-size': (isMobile) ? ((url_para != "") ? '50vh' : '100vh') : '100%', // Adjust the zoom level
                 },
                 zoomDuration, 'linear',
                 function() {
@@ -488,7 +427,7 @@
         // Initial background without animation
         section.css({
             'background-image': 'url(' + images[currentIndex] + ')',
-            'background-size': (isMobile) ? '100vh' : '100%',
+            'background-size': (isMobile) ? ((url_para != "") ? '50vh' : '100vh') : '100%',
         });
 
         // Start animation after a delay (adjust as needed)
@@ -496,6 +435,40 @@
             updateBackground();
             setInterval(updateBackground, slideshowInterval);
         });
+
+
+        // Initial position and appearance
+        $('#whatsapp-widget').css({
+            'right': '-65px',
+            'background': '#38de75',
+            'font-size': '50px'
+        });
+
+        // Flag to determine if the animation has started
+        var animationStarted = false;
+
+        // Show the WhatsApp button with a smooth animation on scroll
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 100) {
+                $('#whatsapp-widget').css('right', (isMobile) ? '10px' : '30px');
+
+                // Start the animation if it hasn't started yet
+                if (!animationStarted) {
+                    startAnimation();
+                    animationStarted = true;
+                }
+            } else {
+                $('#whatsapp-widget').css('right', '-65px');
+            }
+        });
+
+        // Function to start the animation with a 10-second frequency
+        function startAnimation() {
+            setInterval(function() {
+                // Toggle between the two sets of styles
+                $('#whatsapp-widget').toggleClass('alternate-styles');
+            }, 1000);
+        }
     });
 
 
@@ -534,7 +507,18 @@
                 }
             );
     });
+
+
+
+
+
+    function getDetails(dtl_nm, ids) {
+        // console.log($dtl_nm);
+        // console.log($ids);
+        window.location.href = '<?= base_url() ?>get-Details?dtl_nm=' + dtl_nm + '&ids=' + ids;
+    }
 </script>
+
 </section>
 <script src='<?= base_url() ?>external/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.16.4' id='elementor-frontend-js'></script>
 <script id='elementor-frontend-js-after'>

@@ -17,4 +17,12 @@ class Mycontroller extends CI_Controller
         $this->load->view('about_us');
         $this->load->view('include/footer');
     }
+
+
+    public function details()
+    {
+        $this->load->view('include/header');
+        $this->load->view('details');
+        $this->load->view('include/footer');
+    }
 }
