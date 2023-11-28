@@ -112,7 +112,7 @@
 				<div class="card px-3 pt-3">
 					<img src="<?= base_url() ?>external/wp-content/uploads/sites/139/elementor/thumbs/hiking-e1628433270197-pbbg3ef2oqiw9nuw7w5zwsqs4psg798cw71s0844ps.jpg" class="card-img-top rounded crd_img" alt="...">
 					<div class="card-body px-0">
-						<h4 class="card-title">Experience The Best Of Vietnam: 8 Days Tour Package</h4>
+						<h4 class="card-title">Experience The Best Of Vietnam: 8 Days Tour</h4>
 						<!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
 						<div class="d-flex justify-content-between">
 							<div><i class="fa-solid fa-clock"></i> 4N/5D</div>
