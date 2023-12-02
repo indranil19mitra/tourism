@@ -13,6 +13,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
+        .mb_div_bg {
+            background-color: #362752 !important;
+            border-radius: 100% !important;
+        }
+
         #section_2,
         #section_1 {
             position: relative;
@@ -731,10 +736,10 @@
                 <section class="elementor-section elementor-top-section elementor-element elementor-element-7f240d7 elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="7f240d7" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
                     <div class="elementor-container elementor-column-gap-no">
                         <div class="elementor-column elementor-col-20 elementor-top-column elementor-element elementor-element-660c39b" data-id="660c39b" data-element_type="column">
-                            <div class="elementor-widget-wrap elementor-element-populated">
-                                <div class="elementor-element elementor-element-c01d95b elementor-widget elementor-widget-image" data-id="c01d95b" data-element_type="widget" data-widget_type="image.default">
+                            <div class="elementor-widget-wrap elementor-element-populated p-0">
+                                <div class="elementor-element elementor-element-c01d95b elementor-widget elementor-widget-image" data-id="c01d95b" data-element_type="widget" data-widget_type="image.default" style="height: 100px;width:150px;">
                                     <div class="elementor-widget-container">
-                                        <a href="<?= base_url() ?>"><img width="1285" height="385" src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/logo.png" class="attachment-full size-full wp-image-340" alt="" decoding="async" loading="lazy" srcset="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/logo.png 1285w, <?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/logo-300x90.png 300w, <?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/logo-1024x307.png 1024w, <?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/logo-768x230.png 768w, <?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/logo-800x240.png 800w" sizes="(max-width: 1285px) 100vw, 1285px">
+                                        <a href="<?= base_url() ?>"><img src="<?= base_url() ?>admin/assets/images/durbeen_final.png" style="height: 100px;width:150px;">
                                         </a>
                                     </div>
                                 </div>
@@ -802,7 +807,7 @@
                                                     </ul>
                                                 </div>
                                                 <div class="jkit-nav-identity-panel">
-                                                    <div class="jkit-nav-site-title"><a href="index.htm" class="jkit-nav-logo"><img src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/logo-CZSKN7.png"></a>
+                                                    <div class="jkit-nav-site-title"><a href="index.htm" class="jkit-nav-logo"><img src="<?= base_url() ?>admin/assets/images/durbeen_final.png" class="mb_div_bg"></a>
                                                     </div>
                                                     <button class="jkit-close-menu"><i aria-hidden="true" class="fas fa-times"></i></button>
                                                 </div>

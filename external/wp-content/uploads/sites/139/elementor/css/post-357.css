@@ -15,7 +15,7 @@
     transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
     margin-top: 0px;
     /* margin-bottom: -86px; */
-    margin-bottom: -110px;
+    margin-bottom: -130px;
     z-index: 2;
 }
 
@@ -236,7 +236,7 @@
 @media(max-width:1024px) {
     .elementor-357 .elementor-element.elementor-element-7f240d7 {
         margin-top: 0px;
-        margin-bottom: -102px;
+        margin-bottom: -130px;
         /* padding: 10px 10px 10px 10px; */
     }
 
