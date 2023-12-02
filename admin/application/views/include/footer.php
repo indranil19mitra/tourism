@@ -13,6 +13,7 @@
 </div>
 <!-- container-scroller -->
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <!-- plugins:js -->
 <script src="<?= base_url() ?>assets/vendors/js/vendor.bundle.base.js"></script>
 <!-- endinject -->
@@ -34,6 +35,7 @@
 <script src="<?= base_url() ?>assets/js/jquery.cookie.js" type="text/javascript"></script>
 <script src="<?= base_url() ?>assets/js/dashboard.js"></script>
 <script src="<?= base_url() ?>assets/js/Chart.roundedBarCharts.js"></script>
+<script src="<?= base_url() ?>assets/js/myjs.js"></script>
 <!-- End custom js for this page-->
 </body>
 

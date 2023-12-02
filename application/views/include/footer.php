@@ -14,10 +14,10 @@
                                 <div class="elementor-container elementor-column-gap-no">
                                     <div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-4ebbc83" data-id="4ebbc83" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
                                         <div class="elementor-widget-wrap elementor-element-populated">
-                                            <div class="elementor-element elementor-element-25b18f5 elementor-widget elementor-widget-image" data-id="25b18f5" data-element_type="widget" data-widget_type="image.default">
+                                            <div class="elementor-element elementor-element-25b18f5 elementor-widget elementor-widget-image mb-0" data-id="25b18f5" data-element_type="widget" data-widget_type="image.default">
                                                 <div class="elementor-widget-container">
                                                     <a href="<?= base_url() ?>">
-                                                        <img width="1285" height="385" src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/logo.png" class="attachment-full size-full wp-image-340" alt="" decoding="async" loading="lazy" srcset="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/logo.png 1285w, <?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/logo-300x90.png 300w, <?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/logo-1024x307.png 1024w, <?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/logo-768x230.png 768w, <?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/logo-800x240.png 800w" sizes="(max-width: 1285px) 100vw, 1285px">
+                                                        <img width="1285" height="385" src="<?= base_url() ?>admin/assets/images/durbeen_final.png" class="attachment-full size-full wp-image-340" alt="" decoding="async" loading="lazy" srcset="<?= base_url() ?>admin/assets/images/durbeen_final.png 1285w, <?= base_url() ?>admin/assets/images/durbeen_final.png 300w, <?= base_url() ?>admin/assets/images/durbeen_final.png 1024w, <?= base_url() ?>admin/assets/images/durbeen_final.png 768w, <?= base_url() ?>admin/assets/images/durbeen_final.png 800w" sizes="(max-width: 1285px) 100vw, 1285px">
                                                     </a>
                                                 </div>
                                             </div>
