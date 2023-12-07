@@ -20,12 +20,14 @@
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/vertical-layout-light/style.css">
     <!-- endinject -->
     <link rel="shortcut icon" href="<?= base_url() ?>assets/images/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/my_admin.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" id="theme-styles">
 </head>
 
 <body>
     <div class="container-scroller">
-        <div class="row p-0 m-0 proBanner" id="proBanner">
+        <!-- <div class="row p-0 m-0 proBanner" id="proBanner">
             <div class="col-md-12 p-0 m-0">
                 <div class="card-body card-body-padding px-3 d-flex align-items-center justify-content-between">
                     <div>
@@ -42,12 +44,12 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- partial:partials/_navbar.html -->
         <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
             <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
-                <a class="navbar-brand brand-logo me-5" href="index.html"><img src="<?= base_url() ?>assets/images/logo.svg" class="me-2" alt="logo" /></a>
-                <a class="navbar-brand brand-logo-mini" href="index.html"><img src="<?= base_url() ?>assets/images/logo-mini.svg" alt="logo" /></a>
+                <a class="navbar-brand brand-logo text-center " href="index.html"><img src="<?= base_url() ?>assets/images/durbeen_final.png" class="me-2 lg_div_bg" alt="logo" /></a>
+                <a class="navbar-brand brand-logo-mini" href="index.html"><img src="<?= base_url() ?>assets/images/durbeen_final.png" class="lg_div_bg" alt="logo" /></a>
             </div>
             <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
                 <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -328,32 +330,33 @@
                     <li class="nav-item">
                         <a class="nav-link" href="pages/widgets/widgets.html">
                             <i class="icon-cog menu-icon"></i>
-                            <span class="menu-title">Widgets</span>
+                            <span class="menu-title">Tour</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
                             <i class="icon-layout menu-icon"></i>
-                            <span class="menu-title">UI Elements</span>
+                            <span class="menu-title">Tour Master</span>
                             <i class="menu-arrow"></i>
                         </a>
                         <div class="collapse" id="ui-basic">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/accordions.html">Accordions</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/badges.html">Badges</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/breadcrumbs.html">Breadcrumbs</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>state">State</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>place">Place</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Tour Category</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/badges.html">Destination</a></li>
+                                <!-- <li class="nav-item"> <a class="nav-link" href="pages/ui-features/breadcrumbs.html">Breadcrumbs</a></li>
                                 <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Dropdowns</a></li>
                                 <li class="nav-item"> <a class="nav-link" href="pages/ui-features/modals.html">Modals</a></li>
                                 <li class="nav-item"> <a class="nav-link" href="pages/ui-features/progress.html">Progress bar</a></li>
                                 <li class="nav-item"> <a class="nav-link" href="pages/ui-features/pagination.html">Pagination</a></li>
                                 <li class="nav-item"> <a class="nav-link" href="pages/ui-features/tabs.html">Tabs</a></li>
                                 <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/tooltips.html">Tooltips</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/tooltips.html">Tooltips</a></li> -->
                             </ul>
                         </div>
                     </li>
-                    <li class="nav-item">
+                    <!--  <li class="nav-item">
                         <a class="nav-link" data-bs-toggle="collapse" href="#ui-advanced" aria-expanded="false" aria-controls="ui-advanced">
                             <i class="icon-image menu-icon"></i>
                             <span class="menu-title">Advanced UI</span>
@@ -566,7 +569,7 @@
                             <i class="icon-paper menu-icon"></i>
                             <span class="menu-title">Documentation</span>
                         </a>
-                    </li>
+                    </li> -->
                 </ul>
             </nav>
             <!-- partial -->
