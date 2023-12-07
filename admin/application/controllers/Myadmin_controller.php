@@ -28,27 +28,146 @@ class Myadmin_controller extends CI_Controller
 
     public function auth_login()
     {
-        echo "<pre>";
+        // echo "<pre>";
         if (!empty($this->input->post('username')) && !empty($this->input->post('password'))) {
             $cond = array(
-                'user_name' => $this->input->post('username'),
-                'pswd' => md5($this->input->post('password'))
+                'user_auth.user_name' => $this->input->post('username'),
+                'user_auth.pswd' => md5($this->input->post('password')),
+                'user_auth.status' => '1'
             );
 
             $join = array('table' => 'users', 'condition' => 'users.id = user_auth.user_id');
 
-            $result = $this->myadmin_model->get_data('', 'user_auth', $cond, $join, "single");
+            $result = $this->myadmin_model->get_data('users.id as user_id,users.name,users.user_role', 'user_auth', $cond, $join, "single");
 
             $rslt = array('status' => '101', 'msg' => '', 'result' => $result);
             // print_r($result);
+            // exit;
             $session_array = array(
-                'user_id' => $result->user_id()
+                'user_id' => $result->user_id,
+                'name' => $result->name,
+                'user_role' => $result->user_role,
             );
 
-            
+            $this->session->set_userdata($session_array);
         } else {
             $rslt = array('status' => '103', 'msg' => 'Please fill all details correctly!!', 'result' => '');
         }
+        echo json_encode($rslt);
+    }
+
+
+    public function state()
+    {
+        if (empty($this->session->userdata('user_id'))) {
+            redirect(base_url('login'));
+        }
+
+        $cond = array('is_delete!=' => '0');
+        $data['state_details'] = $this->myadmin_model->get_data("", "states", $cond, "", "", "desc", "id");
+        $this->load->view('include/header');
+        $this->load->view('state/index', $data);
+        $this->load->view('include/footer');
+    }
+
+    public function state_details()
+    {
+        // echo "<pre>";
+        // print_r($this->input->post());
+        // exit;
+        $edit_id = (!empty($this->input->post('eid'))) ? $this->input->post('eid') : '';
+        $state_details = array(
+            'name' => $this->input->post('state'),
+            'status' => $this->input->post('status')
+        );
+
+        if (empty($edit_id)) {
+            $state_details['created_by'] = $this->session->userdata('user_id');
+            $state_details['created_by'] = date('Y-m-d H:i:s');
+            $last_inst_id = $this->myadmin_model->insert_data("states", $state_details);
+            $msg = 'You have successfully added';
+        } else {
+            $cond = array(
+                'id' => $edit_id
+            );
+            $state_details['updated_by'] = $this->session->userdata('user_id');
+            $state_details['updated_at'] = date('Y-m-d H:i:s');
+            $last_inst_id = $this->myadmin_model->update_data("states", $state_details, $cond);
+            $msg = 'You have successfully edited';
+        }
+
+        if (!empty($last_inst_id)) {
+            $rslt = array('status' => '101', 'msg' => $msg, 'data' => $last_inst_id);
+        } else {
+            $rslt = array('status' => '103', 'msg' => 'Something went wrong!', 'data' => '');
+        }
+
+        echo json_encode($rslt);
+    }
+
+    public function edit_data()
+    {
+        $edit_id = (!empty($this->input->post('eid'))) ? $this->input->post('eid') : '';
+        if (!empty($edit_id)) {
+            $data = $this->myadmin_model->get_data('id,name,status', "states", "", "", "single");
+            $rslt = array('status' => '101', 'msg' => '', 'data' => $data);
+        } else {
+            $rslt = array('status' => '103', 'msg' => '', 'data' => '');
+        }
+
+        echo json_encode($rslt);
+    }
+
+    public function checkisExist()
+    {
+        // echo "<pre>";
+        $val = $this->input->post('val');
+        $checked_table = $this->input->post('checked_table');
+        $eid = (!empty($this->input->post('eid'))) ? $this->input->post('eid') : '';
+
+        if ($checked_table == 'states') {
+            $cond = array('name' => $val, 'is_delete!=' => '0');
+        }
+
+        $data = $this->myadmin_model->get_data("", $checked_table, $cond);
+        if (!empty($data)) {
+            if (!empty($eid)) {
+                // $cond1 = array('id' => $eid);
+                // $edata = $this->myadmin_model->get_data("", $checked_table, $cond1);
+
+                if ($data->id == $eid) {
+                    $rslt = array('status' => '101', 'msg' => '', 'data' => '');
+                } else {
+                    $rslt = array('status' => '103', 'msg' => '', 'data' => $data);
+                }
+            } else {
+                $rslt = array('status' => '103', 'msg' => '', 'data' => $data);
+            }
+        } else {
+            $rslt = array('status' => '101', 'msg' => '', 'data' => '');
+        }
+
+        echo json_encode($rslt);
+    }
+
+    public function delete_data()
+    {
+        $eid = $this->input->post('eid');
+        $dlt_tables = $this->input->post('tables');
+
+        $cond = array('id' => $eid);
+        $updt_data = array(
+            'is_delete' => '0'
+        );
+
+        $data = $this->myadmin_model->update_data($dlt_tables, $updt_data, $cond);
+
+        if (!empty($data)) {
+            $rslt = array('status' => '101', 'msg' => 'Successfully Deleted!', 'data' => $data);
+        } else {
+            $rslt = array('status' => '103', 'msg' => 'Delete Not Be Done!', 'data' => '');
+        }
+
         echo json_encode($rslt);
     }
 }
