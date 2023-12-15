@@ -343,7 +343,7 @@
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>state">State</a></li>
                                 <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>place">Place</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Tour Category</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>tour_category">Tour Category</a></li>
                                 <li class="nav-item"> <a class="nav-link" href="pages/ui-features/badges.html">Destination</a></li>
                                 <!-- <li class="nav-item"> <a class="nav-link" href="pages/ui-features/breadcrumbs.html">Breadcrumbs</a></li>
                                 <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Dropdowns</a></li>

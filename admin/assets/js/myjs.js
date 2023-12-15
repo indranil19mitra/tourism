@@ -1,5 +1,6 @@
 $(document).ready(function () {
 	$("#state_details_sbmt").hide();
+	// $(".slct_cls").select2();
 	$("#submitForm").click(function () {
 		var formData = new FormData($("#login_form")[0]);
 
@@ -42,6 +43,48 @@ $(document).ready(function () {
 			},
 		});
 	});
+
+	$("#place_details_sbmt").click(function () {
+		var formData = new FormData($("#place_details")[0]);
+		$.ajax({
+			type: "POST",
+			url: baseurl + "place_details",
+			data: formData,
+			dataType: "json",
+			contentType: false,
+			processData: false,
+			success: function (res) {
+				console.log(res);
+				if (res.status != 103) {
+					window.location.href = baseurl + "place";
+					successToster(res.msg);
+				} else {
+					errorToster(res.msg);
+				}
+			},
+		});
+	});
+
+	$("#tour_category_details_sbmt").click(function () {
+		var formData = new FormData($("#tour_category_details")[0]);
+
+		$.ajax({
+			type: "POST",
+			url: baseurl + "tour_category_details",
+			data: formData,
+			dataType: "json",
+			contentType: false,
+			processData: false,
+			success: function (res) {
+				if (res.status != 103) {
+					window.location.href = baseurl + "tour_category";
+					successToster(res.msg);
+				} else {
+					errorToster(res.msg);
+				}
+			},
+		});
+	});
 });
 
 function stateFunctionalities(ids = "", types = "", tables = "") {
@@ -49,11 +92,11 @@ function stateFunctionalities(ids = "", types = "", tables = "") {
 		// alert(types);
 		$.ajax({
 			type: "post",
-			url: baseurl + (types == "edit" ? "edit_data" : "delete_data"),
+			url: baseurl + (types == "edit" ? "edit_state_data" : "delete_data"),
 			data: { eid: ids, tables: tables },
 			dataType: "json",
 			success: function (res) {
-				// console.log(res);
+				console.log(res);
 				if (res.status == 101) {
 					if (types != "delete") {
 						$("#eid").val(res.data.id);
@@ -73,6 +116,65 @@ function stateFunctionalities(ids = "", types = "", tables = "") {
 	}
 }
 
+function placeFunctionalities(ids = "", types = "", tables = "") {
+	if (types == "edit" || types == "delete") {
+		// alert(types);
+		$.ajax({
+			type: "post",
+			url: baseurl + (types == "edit" ? "edit_place_data" : "delete_data"),
+			data: { eid: ids, tables: tables },
+			dataType: "json",
+			success: function (res) {
+				// console.log(res);
+				if (res.status == 101) {
+					if (types != "delete") {
+						$("#eid").val(res.data.id);
+						$("#place").val(res.data.name);
+						$("#state").val(res.data.state).trigger("change");
+						$("#status").val(res.data.status).trigger("change");
+						$("#place_details_sbmt").show();
+						successToster(res.msg);
+					} else {
+						window.location.href = baseurl + "place";
+						successToster(res.msg);
+					}
+				} else {
+					errorToster(res.msg);
+				}
+			},
+		});
+	}
+}
+
+function tour_categoryFunctionalities(ids = "", types = "", tables = "") {
+	if (types == "edit" || types == "delete") {
+		// alert(types);
+		$.ajax({
+			type: "post",
+			url:
+				baseurl + (types == "edit" ? "edit_tour_category_data" : "delete_data"),
+			data: { eid: ids, tables: tables },
+			dataType: "json",
+			success: function (res) {
+				// console.log(res);
+				if (res.status == 101) {
+					if (types != "delete") {
+						$("#eid").val(res.data.id);
+						$("#category_name").val(res.data.name);
+						$("#status").val(res.data.status).trigger("change");
+						$("#place_details_sbmt").show();
+						successToster(res.msg);
+					} else {
+						window.location.href = baseurl + "place";
+						successToster(res.msg);
+					}
+				} else {
+					errorToster(res.msg);
+				}
+			},
+		});
+	}
+}
 function resetFun() {
 	$(".clr").val("");
 	$("#status").val("").trigger("change");
