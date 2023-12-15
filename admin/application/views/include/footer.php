@@ -39,7 +39,10 @@
 <script src="<?= base_url() ?>assets/js/dashboard.js"></script>
 <script src="<?= base_url() ?>assets/js/Chart.roundedBarCharts.js"></script>
 <script src="<?= base_url() ?>assets/js/myjs.js"></script>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js" defer></script>
+
+
 <!-- End custom js for this page-->
 </body>
 
