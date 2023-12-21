@@ -85,6 +85,48 @@ $(document).ready(function () {
 			},
 		});
 	});
+
+	$("#tour_details_sbmt").click(function () {
+		var formData = new FormData($("#tour_details")[0]);
+
+		$.ajax({
+			type: "POST",
+			url: baseurl + "tour_details",
+			data: formData,
+			dataType: "json",
+			contentType: false,
+			processData: false,
+			success: function (res) {
+				if (res.status != 103) {
+					window.location.href = baseurl + "tours";
+					successToster(res.msg);
+				} else {
+					errorToster(res.msg);
+				}
+			},
+		});
+	});
+
+	$("#destination_details_sbmt").click(function () {
+		var formData = new FormData($("#destination_details")[0]);
+
+		$.ajax({
+			type: "POST",
+			url: baseurl + "destination_details",
+			data: formData,
+			dataType: "json",
+			contentType: false,
+			processData: false,
+			success: function (res) {
+				if (res.status != 103) {
+					window.location.href = baseurl + "tour_destination";
+					successToster(res.msg);
+				} else {
+					errorToster(res.msg);
+				}
+			},
+		});
+	});
 });
 
 function stateFunctionalities(ids = "", types = "", tables = "") {
@@ -175,9 +217,110 @@ function tour_categoryFunctionalities(ids = "", types = "", tables = "") {
 		});
 	}
 }
+
+function tourFunctionalities(ids = "", types = "", tables = "") {
+	if (types == "edit" || types == "delete") {
+		// alert(types);
+		$.ajax({
+			type: "post",
+			url: baseurl + (types == "edit" ? "edit_tour_data" : "delete_data"),
+			data: { eid: ids, tables: tables },
+			dataType: "json",
+			success: function (res) {
+				console.log(res);
+				if (res.status == 101) {
+					if (types != "delete") {
+						$("#eid").val(res.data.id);
+						$("#tour_name").val(res.data.name);
+						$("#place").val(res.data.place_id).trigger("change");
+						$("#tour_category")
+							.val(res.data.tour_category_id)
+							.trigger("change");
+						$("#status").val(res.data.status).trigger("change");
+
+						displayExistingImage(baseurl_data + res.data.main_image);
+
+						$("#tour_details_sbmt").show();
+						successToster(res.msg);
+					} else {
+						window.location.href = baseurl + "tours";
+						successToster(res.msg);
+					}
+				} else {
+					errorToster(res.msg);
+				}
+			},
+		});
+	}
+}
+
+function tourDestFunctionalities(ids = "", types = "", tables = "") {
+	if (types == "edit" || types == "delete") {
+		// alert(types);
+		$.ajax({
+			type: "post",
+			url: baseurl + (types == "edit" ? "edit_tour_dest_data" : "delete_data"),
+			data: { eid: ids, tables: tables },
+			dataType: "json",
+			success: function (res) {
+				console.log(res);
+				if (res.status == 101) {
+					if (types != "delete") {
+						$("#eid").val(res.data.id);
+						$("#tours_id").val(res.data.tours_id).trigger("change");
+						$("#created_at").val(res.data.created_at);
+						$("#disc_percent").val(
+							res.data.is_discount != "" && res.data.is_discount == "1"
+								? res.data.disc_percent
+								: 0
+						);
+						$("#drop_location").val(res.data.drop_location);
+						$("#pikup_location").val(res.data.pikup_location);
+						$("#duration").val(res.data.duration);
+						$("#price").val(res.data.price);
+						$("#start_date").val(res.data.start_date);
+						$("#end_date").val(res.data.end_date);
+						$("#tourabout").text(res.data.tour_about);
+
+						if (res.data.is_discount != "" && res.data.is_discount == "1") {
+							$("#is_discount").prop("checked", true);
+							$("#is_discount").attr("value", "1");
+							$("#disc_percent").show();
+						} else {
+							$("#is_discount").removeAttr("checked");
+							$("#is_discount").attr("value", "0");
+							$("#disc_percent").hide();
+						}
+						$("#status").val(res.data.status).trigger("change");
+
+						$("#destination_details_sbmt").show();
+						successToster(res.msg);
+					} else {
+						window.location.href = baseurl + "tours";
+						successToster(res.msg);
+					}
+				} else {
+					errorToster(res.msg);
+				}
+			},
+		});
+	}
+}
+
+function displayExistingImage(imageUrl) {
+	$("#preview_tour_image").attr("src", imageUrl);
+}
+
 function resetFun() {
 	$(".clr").val("");
 	$("#status").val("").trigger("change");
+}
+
+function tourResetFun() {
+	$("#place").val("").trigger("change");
+	$("#tour_category").val("").trigger("change");
+	$("#disc_percent").hide();
+	resetFun();
 }
 
 function isExist(val = "", table = "") {
@@ -242,4 +385,33 @@ function successToster(text_data = "") {
 		// title: 'Sorry!',
 		text: text_data,
 	});
+}
+
+document
+	.getElementById("tour_image")
+	.addEventListener("change", function (event) {
+		const file = event.target.files[0];
+
+		if (file) {
+			const reader = new FileReader();
+
+			reader.onload = function (e) {
+				document.getElementById("preview_tour_image").src = e.target.result;
+				document.getElementById("preview_tour_image").style.display = "block";
+			};
+
+			reader.readAsDataURL(file);
+		}
+	});
+
+function getCheck(obj) {
+	var id = $(obj).attr("id");
+	if ($("#" + id).is(":checked")) {
+		$("#" + id).attr("value", "1");
+		$("#disc_percent").show();
+	} else {
+		$("#" + id).attr("value", "0");
+		$("#disc_percent").hide();
+	}
+	$("#disc_percent").val("");
 }

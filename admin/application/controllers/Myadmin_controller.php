@@ -38,7 +38,7 @@ class Myadmin_controller extends CI_Controller
 
             $join = array('table' => 'users', 'condition' => 'users.id = user_auth.user_id');
 
-            $result = $this->myadmin_model->get_data('users.id as user_id,users.name,users.user_role', 'user_auth', $cond, $join, "single");
+            $result = $this->myadmin_model->get_data('users.id as user_id,users.name,users.user_role', 'user_auth', $cond, [$join], "1");
 
             $rslt = array('status' => '101', 'msg' => '', 'result' => $result);
             // print_r($result);
@@ -115,7 +115,7 @@ class Myadmin_controller extends CI_Controller
             $cond = array(
                 'id' => $edit_id
             );
-            $data = $this->myadmin_model->get_data('id,name,status', "states", $cond, "", "single");
+            $data = $this->myadmin_model->get_data('id,name,status', "states", $cond, "", "1");
             $rslt = array('status' => '101', 'msg' => '', 'data' => $data);
         } else {
             $rslt = array('status' => '103', 'msg' => '', 'data' => '');
@@ -187,7 +187,7 @@ class Myadmin_controller extends CI_Controller
         $cond = array('place.is_delete!=' => '0');
 
         $join = array('table' => 'states', 'condition' => 'states.id=place.state');
-        $data['place_details'] = $this->myadmin_model->get_data("place.*,states.name as state_name", "place", $cond, $join, "", "desc", "place.id");
+        $data['place_details'] = $this->myadmin_model->get_data("place.*,states.name as state_name", "place", $cond, [$join], "", "desc", "place.id");
 
 
         $cond1 = array('is_delete!=' => '0', 'status' => '1');
@@ -245,7 +245,7 @@ class Myadmin_controller extends CI_Controller
             $cond = array(
                 'id' => $edit_id
             );
-            $data = $this->myadmin_model->get_data('id,name,state,status', "place", $cond, "", "single");
+            $data = $this->myadmin_model->get_data('id,name,state,status', "place", $cond, "", "1");
             $rslt = array('status' => '101', 'msg' => '', 'data' => $data);
         } else {
             $rslt = array('status' => '103', 'msg' => '', 'data' => '');
@@ -314,7 +314,221 @@ class Myadmin_controller extends CI_Controller
             $cond = array(
                 'id' => $edit_id
             );
-            $data = $this->myadmin_model->get_data('id,name,status', "tour_category", $cond, "", "single");
+            $data = $this->myadmin_model->get_data('id,name,status', "tour_category", $cond, "", "1");
+            $rslt = array('status' => '101', 'msg' => '', 'data' => $data);
+        } else {
+            $rslt = array('status' => '103', 'msg' => '', 'data' => '');
+        }
+
+        echo json_encode($rslt);
+    }
+
+    public function tours()
+    {
+        if (empty($this->session->userdata('user_id'))) {
+            redirect(base_url('login'));
+        }
+
+        $cond = array('tours.is_delete!=' => '0');
+        $join1 = array('table' => 'place', 'condition' => 'place.id=tours.place_id');
+        $join2 = array('table' => 'tour_category', 'condition' => 'tour_category.id=tours.tour_category_id');
+        $join = [$join1, $join2];
+
+        $data['tour_details'] = $this->myadmin_model->get_data("tours.id,tours.name,tours.main_image,place.name as place_name,tour_category.name as tour_category_name,tours.status", "tours", $cond, $join, "", "desc", "id");
+
+
+        $cond1 = array('place.is_delete!=' => '0');
+        $cond2 = array('tour_category.is_delete!=' => '0');
+
+        $data['place_details'] = $this->myadmin_model->get_data("id,name", "place", $cond1, "", "", "", "");
+        $data['tour_category_details'] = $this->myadmin_model->get_data("id,name", "tour_category", $cond2, "", "", "", "");
+
+        $this->load->view('include/header');
+        $this->load->view('tours/index', $data);
+        $this->load->view('include/footer');
+    }
+
+    public function tour_details()
+    {
+        $edit_id = $this->input->post('eid');
+        $tours_details = array(
+            'name' => $this->input->post('tour_name'),
+            'place_id' => $this->input->post('place'),
+            'tour_category_id' => $this->input->post('tour_category'),
+            'status' => $this->input->post('status')
+        );
+
+        // Existing file path for the record being edited
+        $existing_file_path = ''; // Provide the correct path based on your implementation
+
+        if (!empty($edit_id)) {
+            $f_cond = array(
+                'id' => $edit_id
+            );
+            $e_rslt = $this->myadmin_model->get_data("main_image", "tours", $f_cond, "", "", "", "1");
+            if (!empty($e_rslt)) {
+                $existing_file_path = $e_rslt[0]->main_image;
+            }
+        }
+        if (!empty($_FILES) && !empty($_FILES['tour_image']['name'])) {
+            $f_name = $_FILES['tour_image']['name'];
+            $f_path = $_FILES['tour_image']['tmp_name'];
+
+            $i = uniqid();
+            $f_arry = explode('.', $f_name);
+            $f_new_name = $i . "_" . date('Y-m-d_H-i-s') . "." . end($f_arry);
+            $img_path = 'assets/images/self_upload/' . $f_new_name;
+
+            // Check if the file already exists
+            if (file_exists($img_path)) {
+                $rslt = array('status' => '103', 'msg' => 'File with the same name already exists.', 'data' => '');
+                echo json_encode($rslt);
+                return;
+            }
+
+            $tours_details['main_image'] = $img_path;
+
+            if (!move_uploaded_file($f_path, $img_path)) {
+                $rslt = array('status' => '103', 'msg' => 'Failed to move the uploaded file.', 'data' => '');
+                echo json_encode($rslt);
+                return;
+            }
+
+            // Remove the previous file associated with the record being edited
+            if (!empty($existing_file_path) && file_exists($existing_file_path)) {
+                unlink($existing_file_path);
+            }
+        }
+
+        $now = date('Y-m-d H:i:s');
+
+        if (empty($edit_id)) {
+            $tours_details['created_by'] = $this->session->userdata('user_id');
+            $tours_details['created_at'] = $now;
+            $tours_details['is_delete'] = '1';
+
+            $last_inst_id = $this->myadmin_model->insert_data("tours", $tours_details);
+            $msg = 'You have successfully added';
+        } else {
+            $cond = array('id' => $edit_id);
+            $tours_details['updated_by'] = $this->session->userdata('user_id');
+            $tours_details['updated_at'] = $now;
+            $last_inst_id = $this->myadmin_model->update_data("tours", $tours_details, $cond);
+            $msg = 'You have successfully edited';
+        }
+
+        if (!empty($last_inst_id)) {
+            $rslt = array('status' => '101', 'msg' => $msg, 'data' => $last_inst_id);
+        } else {
+            $rslt = array('status' => '103', 'msg' => 'Something went wrong!', 'data' => '');
+        }
+
+        echo json_encode($rslt);
+    }
+
+
+
+    public function edit_tour_data()
+    {
+        $edit_id = (!empty($this->input->post('eid'))) ? $this->input->post('eid') : '';
+        // echo "edit_id=> ".$edit_id;
+        // exit;
+        if (!empty($edit_id)) {
+            $cond = array(
+                'id' => $edit_id
+            );
+            $data = $this->myadmin_model->get_data('id,name,place_id,tour_category_id,status,main_image', "tours", $cond, "", "1");
+            $rslt = array('status' => '101', 'msg' => '', 'data' => $data);
+        } else {
+            $rslt = array('status' => '103', 'msg' => '', 'data' => '');
+        }
+
+        echo json_encode($rslt);
+    }
+
+
+    public function tour_destination()
+    {
+        if (empty($this->session->userdata('user_id'))) {
+            redirect(base_url('login'));
+        }
+
+        $cond = array('tours.is_delete!=' => '0');
+        $join1 = array('table' => 'tours', 'condition' => 'tours.id=tour_details.tours_id');
+
+        $data['tour_destination_details'] = $this->myadmin_model->get_data("tours.name,tour_details.*", "tour_details", $cond, [$join1], "", "desc", "id");
+
+
+        $cond1 = array('tours.is_delete!=' => '0');
+        $data['tours_data'] = $this->myadmin_model->get_data("id,name", "tours", $cond1, "", "", "", "");
+
+        $this->load->view('include/header');
+        $this->load->view('destination_details/index', $data);
+        $this->load->view('include/footer');
+    }
+
+    public function destination_details()
+    {
+        // echo "<pre>";
+        // print_r($_POST);
+        // exit;
+
+        $edit_id = (!empty($this->input->post('eid'))) ? $this->input->post('eid') : '';
+
+        $tour_details = array(
+            'tours_id' => $this->input->post('tours_id'),
+            'start_date' => $this->input->post('start_date'),
+            'end_date' => $this->input->post('end_date'),
+            'pikup_location' => $this->input->post('pikup_location'),
+            'drop_location' => $this->input->post('drop_location'),
+            'duration' => $this->input->post('duration'),
+            'price' => $this->input->post('price'),
+            'is_discount' => (!empty($this->input->post('is_discount'))) ? $this->input->post('is_discount') : '0',
+            'disc_percent' => (!empty($this->input->post('is_discount'))) ? (($this->input->post('is_discount') != 0) ? ($this->input->post('disc_percent')) : 0) : 0,
+            'tour_about' => $this->input->post('tour_about'),
+            'status' => $this->input->post('status'),
+        );
+
+        // print_r($tour_details);
+        // exit;
+        if (empty($edit_id)) {
+            $tour_details['created_by'] = $this->session->userdata('user_id');
+            $tour_details['created_at'] = date('Y-m-d H:i:s');
+            $tour_details['is_delete'] = '1';
+            $last_inst_id = $this->myadmin_model->insert_data("tour_details", $tour_details);
+            $msg = 'You have successfully added';
+        } else {
+            $cond = array(
+                'id' => $edit_id
+            );
+            $tour_details['updated_by'] = $this->session->userdata('user_id');
+            $tour_details['updated_at'] = date('Y-m-d H:i:s');
+            $last_inst_id = $this->myadmin_model->update_data("tour_details", $tour_details, $cond);
+            $msg = 'You have successfully edited';
+        }
+
+        if (!empty($last_inst_id)) {
+            $rslt = array('status' => '101', 'msg' => $msg, 'data' => $last_inst_id);
+        } else {
+            $rslt = array('status' => '103', 'msg' => 'Something went wrong!', 'data' => '');
+        }
+
+        echo json_encode($rslt);
+    }
+
+    public function edit_tour_dest_data()
+    {
+        // echo "<pre>";
+        // print_r($_POST);
+        // exit;
+        $edit_id = (!empty($this->input->post('eid'))) ? $this->input->post('eid') : '';
+        // echo "edit_id=> ".$edit_id;
+        // exit;
+        if (!empty($edit_id)) {
+            $cond = array(
+                'id' => $edit_id
+            );
+            $data = $this->myadmin_model->get_data('', "tour_details", $cond, "", "1");
             $rslt = array('status' => '101', 'msg' => '', 'data' => $data);
         } else {
             $rslt = array('status' => '103', 'msg' => '', 'data' => '');

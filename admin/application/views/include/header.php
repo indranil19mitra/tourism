@@ -5,13 +5,15 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Skydash Admin</title>
+    <title>Durbeen Admin</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="<?= base_url() ?>assets/vendors/feather/feather.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/vendors/ti-icons/css/themify-icons.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/vendors/css/vendor.bundle.base.css">
     <!-- endinject -->
     <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="<?= base_url() ?>assets/vendors/quill/quill.snow.css">
+    <link rel="stylesheet" href="<?= base_url() ?>assets/vendors/simplemde/simplemde.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/vendors/ti-icons/css/themify-icons.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/js/select.dataTables.min.css">
@@ -23,6 +25,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/my_admin.css">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" id="theme-styles">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
+
 </head>
 
 <body>
@@ -48,8 +52,8 @@
         <!-- partial:partials/_navbar.html -->
         <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
             <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
-                <a class="navbar-brand brand-logo text-center " href="index.html"><img src="<?= base_url() ?>assets/images/durbeen_final.png" class="me-2 lg_div_bg" alt="logo" /></a>
-                <a class="navbar-brand brand-logo-mini" href="index.html"><img src="<?= base_url() ?>assets/images/durbeen_final.png" class="lg_div_bg" alt="logo" /></a>
+                <a class="navbar-brand brand-logo text-center " href="<?= base_url() ?>"><img src="<?= base_url() ?>assets/images/durbeen_final.png" class="me-2 lg_div_bg" alt="logo" /></a>
+                <a class="navbar-brand brand-logo-mini" href="<?= base_url() ?>"><img src="<?= base_url() ?>assets/images/durbeen_final.png" class="lg_div_bg" alt="logo" /></a>
             </div>
             <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
                 <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -322,17 +326,17 @@
             <nav class="sidebar sidebar-offcanvas" id="sidebar">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">
+                        <a class="nav-link" href="<?= base_url() ?>">
                             <i class="icon-grid menu-icon"></i>
                             <span class="menu-title">Dashboard</span>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="pages/widgets/widgets.html">
                             <i class="icon-cog menu-icon"></i>
                             <span class="menu-title">Tour</span>
                         </a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
                             <i class="icon-layout menu-icon"></i>
@@ -344,7 +348,8 @@
                                 <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>state">State</a></li>
                                 <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>place">Place</a></li>
                                 <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>tour_category">Tour Category</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/badges.html">Destination</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>tours">Tour</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>destination">Destination</a></li>
                                 <!-- <li class="nav-item"> <a class="nav-link" href="pages/ui-features/breadcrumbs.html">Breadcrumbs</a></li>
                                 <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Dropdowns</a></li>
                                 <li class="nav-item"> <a class="nav-link" href="pages/ui-features/modals.html">Modals</a></li>

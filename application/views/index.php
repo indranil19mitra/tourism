@@ -105,6 +105,19 @@
 			</div>
 		</div>
 	</section>
+	<div class="row mb-5">
+		<div class="d-flex justify-content-center">
+			<?php
+			if (!empty($get_tours_dates)) {
+				foreach ($get_tours_dates as $val) {
+			?>
+					<button type="button" onclick="tourGetOnDates(<?= $val->start_date ?>)" style="padding: 10px 20px 10px 20px" class="btn btn-outline-info rounded-pill btn-sm mx-2"><?= date("M 'd", strtotime($val->start_date)); ?></button>
+			<?php
+				}
+			}
+			?>
+		</div>
+	</div>
 	<div class="container-fluid crd_mn mb-5">
 		<div class="row">
 			<div class="col-lg-4 col-md-4 col-sm-12">
