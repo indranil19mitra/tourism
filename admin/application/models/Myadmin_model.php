@@ -24,7 +24,11 @@ class Myadmin_model extends CI_Model
         }
 
         if (!empty($join)) {
-            $this->db->join($join['table'], $join['condition']);
+            if (is_array($join)) {
+                foreach ($join as $join_arr_name) {
+                    $this->db->join($join_arr_name['table'], $join_arr_name['condition']);
+                }
+            }
         }
 
         if (!empty($orderBy_type) && !empty($orderBy_col)) {
@@ -34,7 +38,7 @@ class Myadmin_model extends CI_Model
         $query = $this->db->get($table);
         // echo $this->db->last_query();
         // exit;
-        if (!empty($fetching_type) && $fetching_type == "single") {
+        if (!empty($fetching_type) && $fetching_type == "1") {
             return $query->row();
         } else {
             return $query->result();

@@ -102,6 +102,11 @@
             .set_ht_2 {
                 top: -28px !important;
             }
+
+            .logo_size {
+                height: 80px !important;
+                width: 80px !important;
+            }
         }
 
         @media (min-width: 768px) {
@@ -132,6 +137,11 @@
 
             .set_ht_2 {
                 top: -100px !important;
+            }
+
+            .logo_size {
+                height: 100px !important;
+                width: 100px !important;
             }
         }
 
@@ -737,9 +747,9 @@
                     <div class="elementor-container elementor-column-gap-no">
                         <div class="elementor-column elementor-col-20 elementor-top-column elementor-element elementor-element-660c39b" data-id="660c39b" data-element_type="column">
                             <div class="elementor-widget-wrap elementor-element-populated p-0">
-                                <div class="elementor-element elementor-element-c01d95b elementor-widget elementor-widget-image" data-id="c01d95b" data-element_type="widget" data-widget_type="image.default" style="height: 100px;width:150px;">
+                                <div class="elementor-element elementor-element-c01d95b elementor-widget elementor-widget-image" data-id="c01d95b" data-element_type="widget" data-widget_type="image.default" class="logo_size">
                                     <div class="elementor-widget-container">
-                                        <a href="<?= base_url() ?>"><img src="<?= base_url() ?>admin/assets/images/durbeen_final.png" style="height: 100px;width:150px;">
+                                        <a href="<?= base_url() ?>"><img src="<?= base_url() ?>admin/assets/images/durbeen_final.png" class="logo_size">
                                         </a>
                                     </div>
                                 </div>
@@ -763,21 +773,41 @@
                                                         <li id="menu-item-9" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-9">
                                                             <a href="#">Weekend Trip</a>
                                                             <ul class="sub-menu">
-                                                                <li id="menu-item-476" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-476">
-                                                                    <a href="#">Trip 1</a>
-                                                                </li>
-                                                                <li id="menu-item-536" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-536">
+                                                                <?php
+                                                                if (!empty($weekend_trip)) {
+                                                                    foreach ($weekend_trip as $val) {
+                                                                ?>
+                                                                        <li id="menu-item-476" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-476">
+                                                                            <a href="#"><?= $val->name ?></a>
+                                                                        </li>
+                                                                <?php
+                                                                    }
+                                                                } else {
+                                                                    echo "Trip Will Available Soon..!";
+                                                                }
+                                                                ?>
+                                                                <!-- <li id="menu-item-536" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-536">
                                                                     <a href="#">Trip 2</a>
-                                                                </li>
+                                                                </li> -->
                                                             </ul>
                                                         </li>
                                                         <li id="menu-item-11" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-11">
                                                             <a href="#">Popular Trip</a>
                                                             <ul class="sub-menu">
-                                                                <li id="menu-item-535" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-535">
-                                                                    <a href="#">Trip 1</a>
-                                                                </li>
-                                                                <li id="menu-item-538" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-538">
+                                                                <?php
+                                                                if (!empty($popular_trip)) {
+                                                                    foreach ($popular_trip as $val) {
+                                                                ?>
+                                                                        <li id="menu-item-535" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-535">
+                                                                            <a href="#"><?= $val->name; ?></a>
+                                                                        </li>
+                                                                <?php
+                                                                    }
+                                                                } else {
+                                                                    echo "Trip Will Available Soon..!";
+                                                                }
+                                                                ?>
+                                                                <!-- <li id="menu-item-538" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-538">
                                                                     <a href="#">Trip 2</a>
                                                                 </li>
                                                                 <li id="menu-item-475" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-475">
@@ -785,20 +815,28 @@
                                                                 </li>
                                                                 <li id="menu-item-474" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-474">
                                                                     <a href="#">Trip 2</a>
-                                                                </li>
+                                                                </li> -->
                                                             </ul>
                                                         </li>
                                                         <li id="menu-item-13" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-13">
                                                             <a href="#">Adv & Thrill Trip</a>
                                                             <ul class="sub-menu">
-                                                                <li id="menu-item-534" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-534">
-                                                                    <a href="#">Trip 1</a>
-                                                                </li>
-                                                                <li id="menu-item-577" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-577">
-                                                                    <!-- <a href="2021/08/06/top-5-destination-hiking-trekking-in-indonesia-2021/index.htm">Trip</a> -->
+                                                                <?php
+                                                                if (!empty($adv_thrill_trip)) {
+                                                                    foreach ($adv_thrill_trip as $val) {
+                                                                ?>
+                                                                        <li id="menu-item-534" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-534">
+                                                                            <a href="#"><?= $val->name; ?></a>
+                                                                        </li>
+                                                                <?php
+                                                                    }
+                                                                } else {
+                                                                    echo "Trip Will Available Soon..!";
+                                                                }
+                                                                ?>
+                                                                <!-- <li id="menu-item-577" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-577">
                                                                     <a href="#">Trip</a>
-
-                                                                </li>
+                                                                </li> -->
                                                             </ul>
                                                         </li>
                                                         <li id="menu-item-473" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-473 disabled" aria-disabled="true">
@@ -807,7 +845,7 @@
                                                     </ul>
                                                 </div>
                                                 <div class="jkit-nav-identity-panel">
-                                                    <div class="jkit-nav-site-title"><a href="index.htm" class="jkit-nav-logo"><img src="<?= base_url() ?>admin/assets/images/durbeen_final.png" class="mb_div_bg"></a>
+                                                    <div class="jkit-nav-site-title"><a href="index.htm" class="jkit-nav-logo"><img src="<?= base_url() ?>admin/assets/images/durbeen_final.png" class="mb_div_bg logo_size"></a>
                                                     </div>
                                                     <button class="jkit-close-menu"><i aria-hidden="true" class="fas fa-times"></i></button>
                                                 </div>

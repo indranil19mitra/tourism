@@ -1,8 +1,8 @@
 (function($) {
   'use strict';
   /*Quill editor*/
-  if ($("#quillExample1").length) {
-    var quill = new Quill('#quillExample1', {
+  if ($("#tourabout").length) {
+    var quill = new Quill('#tourabout', {
       modules: {
         toolbar: [
           [{

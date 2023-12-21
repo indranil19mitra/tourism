@@ -2,3 +2,31 @@
     background-color: #362752 !important;
     border-radius: 100%;
 }
+
+.form-group {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#tour_image {
+    display: none;
+}
+
+#uploadButton {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+}
+
+#uploadButton:hover {
+    background-color: #45a049;
+}
+
+#preview_tour_image {
+    /* max-width: 300px; */
+    max-height: 300px;
+    margin-top: 20px;
+    display: none;
+}

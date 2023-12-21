@@ -36,7 +36,7 @@
             </div>
         </div>
         <div class="d-flex justify-content-end">
-            <button type="button" class="btn btn-info" data-bs-toggle="modal" onclick="resetFun()" data-bs-target="#state_modal" data-whatever="@mdo">Add New State</button>
+            <button type="button" class="btn btn-info" data-bs-toggle="modal" onclick="resetFun()" data-bs-target="#state_modal" data-whatever="@mdo">Add State</button>
         </div>
 
         <div class="col-lg-6 grid-margin stretch-card">

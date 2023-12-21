@@ -54,6 +54,8 @@ $route['login'] = 'myadmin_controller/login';
 $route['state'] = 'myadmin_controller/state';
 $route['place'] = 'myadmin_controller/place';
 $route['tour_category'] = 'myadmin_controller/tour_category';
+$route['tours'] = 'myadmin_controller/tours';
+$route['destination'] = 'myadmin_controller/tour_destination';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
