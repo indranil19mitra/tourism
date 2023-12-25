@@ -84,21 +84,6 @@
 									</div>
 								</div>
 							</div>
-							<!-- <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-8bcf620" data-id="8bcf620" data-element_type="column">
-								<div class="elementor-widget-wrap elementor-element-populated">
-									<div class="elementor-element elementor-element-67a5079 elementor-align-right elementor-mobile-align-left elementor-widget elementor-widget-button" data-id="67a5079" data-element_type="widget" data-widget_type="button.default">
-										<div class="elementor-widget-container">
-											<div class="elementor-button-wrapper">
-												<a class="elementor-button elementor-button-link elementor-size-sm" href="#">
-													<span class="elementor-button-content-wrapper">
-														<span class="elementor-button-text">View All</span>
-													</span>
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div> -->
 						</div>
 					</section>
 				</div>
@@ -106,86 +91,67 @@
 		</div>
 	</section>
 	<div class="row mb-5">
-		<div class="d-flex justify-content-center">
+		<div class="d-flex justify-content-center flex-wrap">
 			<?php
 			if (!empty($get_tours_dates)) {
-				foreach ($get_tours_dates as $val) {
+				foreach ($get_tours_dates as $key => $val) {
+					if ($key <= 1) :
 			?>
-					<button type="button" onclick="tourGetOnDates(<?= $val->start_date ?>)" style="padding: 10px 20px 10px 20px" class="btn btn-outline-info rounded-pill btn-sm mx-2"><?= date("M 'd", strtotime($val->start_date)); ?></button>
+						<button type="button" onclick="tourGetOnDates('<?= $val->start_date ?>')" style="padding: 10px 20px 10px 20px" class="btn btn-outline-info rounded-pill btn-sm mx-2"><?= date("M 'y", strtotime($val->start_date)); ?></button>
+					<?php
+					else :
+						// Introduce a line break after the third button
+						if ($key == 2) {
+							echo '</div><div class="mt-2 d-flex justify-content-center flex-wrap">';
+						}
+					?>
+						<button type="button" onclick="tourGetOnDates('<?= $val->start_date ?>')" style="padding: 10px 20px 10px 20px" class="btn btn-outline-info rounded-pill btn-sm mx-2"><?= date("M 'y", strtotime($val->start_date)); ?></button>
 			<?php
+					endif;
 				}
 			}
 			?>
 		</div>
 	</div>
+
 	<div class="container-fluid crd_mn mb-5">
 		<div class="row">
-			<div class="col-lg-4 col-md-4 col-sm-12">
-				<!-- <div class="card" style="width: 18rem;"> -->
-				<div class="card px-3 pt-3">
-					<img src="<?= base_url() ?>external/wp-content/uploads/sites/139/elementor/thumbs/hiking-e1628433270197-pbbg3ef2oqiw9nuw7w5zwsqs4psg798cw71s0844ps.jpg" class="card-img-top rounded crd_img" alt="...">
-					<div class="card-body px-0">
-						<h4 class="card-title">Experience The Best Of Vietnam: 8 Days Tour</h4>
-						<!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-						<div class="d-flex justify-content-between">
-							<div><i class="fa-solid fa-clock"></i> 4N/5D</div>
-							<div><i class="fa-solid fa-stamp"></i> Seat Availability</div>
-						</div>
+			<?php
+			// echo "<pre>";
+			// print_r($get_tours_date_wise);
+			// exit;
 
-						<div class="d-flex justify-content-between">
-							<div><i class="fa-solid fa-calendar-days"></i> </div>
-							<div><i class="fa-solid fa-indian-rupee-sign"></i> 62,999/-<span>Onwards</span></div>
-						</div>
-						<div class="d-grid gap-2 mt-2">
-							<button class="btn btn-primary rounded" onclick="getDetails('Experience-The-Best-Of-Vietnam:-8-Days-Tour-Package',1)" type="button">View Details</button>
+			foreach ($get_tours_date_wise as $val) {
+				$names = implode("-", explode(" ", $val->name));
+			?>
+				<div class="col-lg-4 col-md-6 col-sm-12">
+					<!-- <div class="card" style="width: 18rem;"> -->
+					<div class="card px-3 pt-3">
+						<img src="<?= base_url() . "admin/" . $val->main_image ?>" class="card-img-top rounded crd_img" alt="...">
+						<div class="card-body px-0">
+							<h4 class="card-title"><?= $val->name; ?></h4>
+							<!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+							<div class="d-flex justify-content-between">
+								<div><i class="fa-solid fa-clock"></i><span class="ps-1"><?= $val->duration; ?></span></div>
+								<div><i class="fa-solid fa-stamp"></i><span class="ps-1 text-danger">6</span> Seat Availability</div>
+							</div>
+
+							<div class="d-flex justify-content-between">
+								<div><i class="fa-solid fa-calendar-days"></i><span class="ps-1"><?= date("d M",strtotime($val->start_date)); ?></span></div>
+								<div><i class="fa-solid fa-indian-rupee-sign"></i><span class="ps-1"><?= $val->price; ?>/- Onwards</span></div>
+							</div>
+							<div class="d-grid gap-2 mt-2">
+								<button class="btn btn-primary rounded" onclick="getDetails('<?= $names; ?>','<?= $val->tour_details_id; ?>')" type="button">View Details</button>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-12">
-				<div class="card px-3 pt-3">
-					<img src="<?= base_url() ?>external/wp-content/uploads/sites/139/elementor/thumbs/hike-in-peru-PN2JCDP-pbd7zyepp7t7vu68lbk9j9eooqn9eg9z6vxuqh23ts.jpg" class="card-img-top rounded crd_img" alt="...">
-					<div class="card-body px-0">
-						<h4 class="card-title">Bir Billing Winter</h4>
-						<!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-						<div class="d-flex justify-content-between">
-							<div><i class="fa-solid fa-clock"></i> 4N/5D</div>
-							<div><i class="fa-solid fa-stamp"></i> Seat Availability</div>
-						</div>
-
-						<div class="d-flex justify-content-between">
-							<div><i class="fa-solid fa-calendar-days"></i> </div>
-							<div><i class="fa-solid fa-indian-rupee-sign"></i> 62,999/-<span>Onwards</span></div>
-						</div>
-						<div class="d-grid gap-2 mt-2">
-							<button class="btn btn-primary rounded" onclick="getDetails('Bir-Billing-Winter',2)" type="button">View Details</button>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-12">
-				<div class="card px-3 pt-3">
-					<img src="<?= base_url() ?>external/wp-content/uploads/sites/139/elementor/thumbs/hike-in-mountains-D7T74KX-pbd7zuncxvo2lebp79xr9acub75sjnv1udbwtd7oio.jpg" class="card-img-top rounded crd_img" alt="...">
-					<div class="card-body px-0">
-						<h4 class="card-title">Frozen Spiti Expeditions</h4>
-						<!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-						<div class="d-flex justify-content-between">
-							<div><i class="fa-solid fa-clock"></i> 4N/5D</div>
-							<div><i class="fa-solid fa-stamp"></i> Seat Availability</div>
-						</div>
-
-						<div class="d-flex justify-content-between">
-							<div><i class="fa-solid fa-calendar-days"></i> </div>
-							<div><i class="fa-solid fa-indian-rupee-sign"></i> 62,999/-<span>Onwards</span></div>
-						</div>
-						<div class="d-grid gap-2 mt-2">
-							<button class="btn btn-primary rounded" onclick="getDetails('Frozen-Spiti-Expeditions',3)" type="button">View Details</button>
-						</div>
-					</div>
-				</div>
-			</div>
+			<?php
+			}
+			?>
 		</div>
 	</div>
+
 	<section class="elementor-section elementor-top-section elementor-element elementor-element-5bbb119 animated-slow elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-invisible" data-id="5bbb119" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;video&quot;,&quot;animation&quot;:&quot;fadeInUp&quot;,&quot;background_video_link&quot;:&quot;https:\/\/www.youtube.com\/watch?v=2hROkNFa2Io&quot;,&quot;background_video_start&quot;:548,&quot;background_video_end&quot;:559}">
 		<div class="elementor-background-video-container elementor-hidden-phone">
 			<div class="elementor-background-video-embed"></div>
@@ -196,7 +162,7 @@
 				<div class="elementor-widget-wrap elementor-element-populated">
 					<div class="elementor-element elementor-element-cb076d4 animated-slow elementor-invisible elementor-widget elementor-widget-jkit_video_button" data-id="cb076d4" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;_animation_delay&quot;:10}" data-widget_type="jkit_video_button.default">
 						<div class="elementor-widget-container">
-							<div class="jeg-elementor-kit jkit-video-button jeg_module_17_35_654c63d6210df" data-autoplay="0" data-loop="0" data-controls="0" data-type="youtube" data-mute="0" data-start="0" data-end="0"><a href="https://www.youtube.com/watch?v=MLpWrANjFbI" class="jkit-video-popup-btn glow-enable"><span class="icon-position-before"><i aria-hidden="true" class="jki jki-play1-light"></i></span></a></div>
+							<div class="jeg-elementor-kit jkit-video-button jeg_module_17_35_654c63d6210df" data-autoplay="0" data-loop="0" data-controls="0" data-type="youtube" data-mute="0" data-start="0" data-end="0"><a href="https://www.youtube.com/watch?v=MLpWrANjFbI" class="jkit-video-popup-btn glow-enable pe-none"><span class="icon-position-before"><i aria-hidden="true" class="jki jki-play1-light"></i></span></a></div>
 						</div>
 					</div>
 					<div class="elementor-element elementor-element-7097f91 elementor-widget elementor-widget-heading" data-id="7097f91" data-element_type="widget" data-widget_type="heading.default">
@@ -210,17 +176,6 @@
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 							incididunt ut labore et dolore magna aliqua </div>
 					</div>
-					<!-- <div class="elementor-element elementor-element-3ce1792 elementor-align-center elementor-mobile-align-center elementor-widget elementor-widget-button" data-id="3ce1792" data-element_type="widget" data-widget_type="button.default">
-						<div class="elementor-widget-container">
-							<div class="elementor-button-wrapper">
-								<a class="elementor-button elementor-button-link elementor-size-sm" href="#">
-									<span class="elementor-button-content-wrapper">
-										<span class="elementor-button-text">Start Journey</span>
-									</span>
-								</a>
-							</div>
-						</div>
-					</div> -->
 				</div>
 			</div>
 		</div>
