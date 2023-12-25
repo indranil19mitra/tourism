@@ -1,5 +1,5 @@
 <!-- <a id="to-top"><span class="icon-chevron-thin-up"></span></a> -->
-<a id="whatsapp-widget" href="https://wa.me/phno" target="_blank">
+<a id="whatsapp-widget" href="https://wa.me/8910271365" target="_blank">
     <i class="fab fa-whatsapp"></i>
 </a>
 <footer itemtype="https://schema.org/WPFooter" itemscope="itemscope" id="colophon" role="contentinfo">
@@ -508,15 +508,7 @@
             );
     });
 
-
-
-
-
-    function getDetails(dtl_nm, ids) {
-        // console.log($dtl_nm);
-        // console.log($ids);
-        window.location.href = '<?= base_url() ?>get-Details?dtl_nm=' + dtl_nm + '&ids=' + ids;
-    }
+    var baseurl = '<?= base_url() ?>';
 </script>
 
 </section>
@@ -540,6 +532,7 @@
 </script>
 <script src='<?= base_url() ?>external/wp-content/plugins/jeg-elementor-kit/assets/js/elements/post-pagination.js?ver=2.6.2' id='jkit-element-pagination-js'></script>
 <script src='<?= base_url() ?>external/wp-content/plugins/jeg-elementor-kit/assets/js/elements/mailchimp.js?ver=2.6.2' id='jkit-element-mailchimp-js'></script>
+<script src='<?= base_url() ?>external/own/js/self_js.js'></script>
 </body>
 
 </html>

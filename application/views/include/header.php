@@ -50,27 +50,6 @@
             height: 250px !important;
         }
 
-        .dtl_icon {
-            border: 1px solid !important;
-            border-radius: 50% !important;
-            font-size: 30px;
-        }
-
-        .dtl_icon_1 {
-            padding: 50% !important;
-        }
-
-        /* .dtl_icon_2 {
-            padding: 50% !important;
-        } */
-
-        /* .dtl_icon_2nd {
-            padding-left: 20%;
-        } */
-
-        /* .carousel-inner {
-            border-radius: 10% !important;
-        } */
 
         @media (max-width: 767px) {
 
@@ -143,6 +122,15 @@
                 height: 100px !important;
                 width: 100px !important;
             }
+
+            .dtl_icon {
+                font-size: 30px;
+            }
+
+            .dtl_icon1 {
+                font-size: 20px;
+            }
+
         }
 
         #to-top {
@@ -776,9 +764,10 @@
                                                                 <?php
                                                                 if (!empty($weekend_trip)) {
                                                                     foreach ($weekend_trip as $val) {
+                                                                        $names = implode("-", explode(" ", $val->name));
                                                                 ?>
                                                                         <li id="menu-item-476" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-476">
-                                                                            <a href="#"><?= $val->name ?></a>
+                                                                            <a href="#" onclick="getDetails('<?= $names; ?>','<?= $val->tour_details_id; ?>')"><?= $val->name ?></a>
                                                                         </li>
                                                                 <?php
                                                                     }
@@ -786,9 +775,6 @@
                                                                     echo "Trip Will Available Soon..!";
                                                                 }
                                                                 ?>
-                                                                <!-- <li id="menu-item-536" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-536">
-                                                                    <a href="#">Trip 2</a>
-                                                                </li> -->
                                                             </ul>
                                                         </li>
                                                         <li id="menu-item-11" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-11">
@@ -797,9 +783,10 @@
                                                                 <?php
                                                                 if (!empty($popular_trip)) {
                                                                     foreach ($popular_trip as $val) {
+                                                                        $names = implode("-", explode(" ", $val->name));
                                                                 ?>
                                                                         <li id="menu-item-535" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-535">
-                                                                            <a href="#"><?= $val->name; ?></a>
+                                                                            <a href="#" onclick="getDetails('<?= $names; ?>','<?= $val->tour_details_id; ?>')"><?= $val->name; ?></a>
                                                                         </li>
                                                                 <?php
                                                                     }
@@ -807,15 +794,6 @@
                                                                     echo "Trip Will Available Soon..!";
                                                                 }
                                                                 ?>
-                                                                <!-- <li id="menu-item-538" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-538">
-                                                                    <a href="#">Trip 2</a>
-                                                                </li>
-                                                                <li id="menu-item-475" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-475">
-                                                                    <a href="#">Trip 3</a>
-                                                                </li>
-                                                                <li id="menu-item-474" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-474">
-                                                                    <a href="#">Trip 2</a>
-                                                                </li> -->
                                                             </ul>
                                                         </li>
                                                         <li id="menu-item-13" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-13">
@@ -824,9 +802,10 @@
                                                                 <?php
                                                                 if (!empty($adv_thrill_trip)) {
                                                                     foreach ($adv_thrill_trip as $val) {
+                                                                        $names = implode("-", explode(" ", $val->name));
                                                                 ?>
                                                                         <li id="menu-item-534" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-534">
-                                                                            <a href="#"><?= $val->name; ?></a>
+                                                                            <a href="#" onclick="getDetails('<?= $names; ?>','<?= $val->tour_details_id; ?>')"><?= $val->name; ?></a>
                                                                         </li>
                                                                 <?php
                                                                     }
@@ -834,13 +813,10 @@
                                                                     echo "Trip Will Available Soon..!";
                                                                 }
                                                                 ?>
-                                                                <!-- <li id="menu-item-577" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-577">
-                                                                    <a href="#">Trip</a>
-                                                                </li> -->
                                                             </ul>
                                                         </li>
                                                         <li id="menu-item-473" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-473 disabled" aria-disabled="true">
-                                                            <a href="#">9119199987</a>
+                                                            <a href="#">7003072006/8910271365</a>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -876,11 +852,6 @@
                                                     <span class="elementor-screen-only">Youtube</span>
                                                     <i class="fab fa-youtube"></i> </a>
                                             </span>
-                                            <!-- <span class="elementor-grid-item">
-                                                <a class="elementor-icon elementor-social-icon elementor-social-icon-tripadvisor elementor-animation-shrink elementor-repeater-item-cf4747c" target="_blank">
-                                                    <span class="elementor-screen-only">Tripadvisor</span>
-                                                    <i class="fab fa-tripadvisor"></i> </a>
-                                            </span> -->
                                         </div>
                                     </div>
                                 </div>

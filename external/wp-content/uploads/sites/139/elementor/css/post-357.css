@@ -74,7 +74,7 @@
     line-height: var(--e-global-typography-6b1f488-line-height);
     letter-spacing: var(--e-global-typography-6b1f488-letter-spacing);
     word-spacing: var(--e-global-typography-6b1f488-word-spacing);
-    padding: 0px 18px 0px 18px;
+    padding: 0px 18px 0px 8px;
     color: #FFFFFF;
 }
 

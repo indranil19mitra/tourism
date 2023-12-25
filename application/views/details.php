@@ -1,3 +1,16 @@
+<?php
+$duration = $price = $pl = $dl = $difficult = "";
+if (!empty($get_tours_details)) {
+    // echo "<pre>";
+    // print_r($get_tours_details);
+    $duration = $get_tours_details->duration;
+    $price = $get_tours_details->price;
+    $pl = $get_tours_details->pikup_location;
+    $dl = $get_tours_details->drop_location;
+    $difficult = $get_tours_details->difficulty;
+    // exit;
+}
+?>
 <div data-elementor-type="wp-page" data-elementor-id="17" class="elementor elementor-17 mb-5">
     <?php $this->load->view('slider'); ?>
 
@@ -37,59 +50,43 @@
                         </div>
                     </div>
                 </section>
-                <div class="col-12">
-                    <div class="d-flex justify-content-between mb-5 col-12">
-                        <div class="d-flex justify-content-between col-2">
-                            <div><i class="fa-solid fa-clock dtl_icon dtl_icon_1"></i></div>
-                            <div class="">
-                                <div>Duration</div>
-                                <div>1N - 2D</div>
-                            </div>
+                <div class="col-12 mb-5">
+                    <div class="d-flex justify-content-between">
+                        <div class="col-6">
+                            <div><i class="fa-solid fa-clock dtl_icon"></i><span class="ps-1 dtl_icon1 word-wrap">Duration <?= $duration; ?></span></div>
                         </div>
 
-                        <div class="d-flex justify-content-between col-3">
-                            <div><i class="fa-solid fa-indian-rupee-sign dtl_icon dtl_icon_1"></i></div>
-                            <div class="">
-                                <div>Starting Price</div>
-                                <div>62,999/-</div>
-                            </div>
+                        <div class="col-6">
+                            <div><i class="fa-solid fa-indian-rupee-sign dtl_icon"></i><span class="ps-1 dtl_icon1 ">Starting Price <?= $price; ?>/-</span></div>
                         </div>
                     </div>
 
 
-                    <div class="d-flex justify-content-between mb-5 col-12">
-                        <div class="d-flex justify-content-between col-3">
-                            <div><i class="fa-solid fa-location-dot dtl_icon dtl_icon_1"></i></div>
-                            <div class="">
-                                <div>Pick-up Location</div>
-                                <div>Delhi</div>
-                            </div>
+                    <div class="mt-5 d-flex justify-content-between">
+                        <div class="col-6">
+                            <div><i class="fa-solid fa-location-dot dtl_icon"></i><span class="ps-1 dtl_icon1 word-wrap">P.L - <?= $pl; ?> /D.L - <?= $dl; ?></span></div>
                         </div>
 
-                        <div class="d-flex justify-content-between col-3">
-                            <div><i class="fa-solid fa-location-dot dtl_icon dtl_icon_1"></i></div>
-                            <div class="">
-                                <div>Drop-off Location</div>
-                                <div>Delhi</div>
-                            </div>
+                        <div class="col-6">
+                            <div><i class="fa-solid fa-location-dot dtl_icon"></i><span class="ps-1 dtl_icon1 word-wrap">Difficulty Level - <?= $difficult; ?></span></div>
                         </div>
                     </div>
                 </div>
                 <!-- <div class="col-12"> -->
-                    <div class="d-flex flex-wrap justify-content-between mx-auto col-12">
-                        <div class="mb-2">
-                            <button class="btn btn-primary rounded mx-auto" onclick="" type="button">Itinerary</button>
-                        </div>
-                        <div class="mb-2">
-                            <button class="btn btn-primary rounded mx-auto" onclick="" type="button">Dates & Costing</button>
-                        </div>
-                        <div class="mb-2">
-                            <button class="btn btn-primary rounded mx-auto" onclick="" type="button">Other Info</button>
-                        </div>
-                        <div class="mb-2">
-                            <button class="btn btn-primary rounded mx-auto" onclick="" type="button">Book Now</button>
-                        </div>
+                <div class="d-flex flex-wrap justify-content-between mx-auto col-12">
+                    <div class="mb-2">
+                        <button class="btn btn-primary rounded mx-auto" onclick="" type="button">Itinerary</button>
                     </div>
+                    <div class="mb-2">
+                        <button class="btn btn-primary rounded mx-auto" onclick="" type="button">Dates & Costing</button>
+                    </div>
+                    <div class="mb-2">
+                        <button class="btn btn-primary rounded mx-auto" onclick="" type="button">Other Info</button>
+                    </div>
+                    <div class="mb-2">
+                        <button class="btn btn-primary rounded mx-auto" onclick="" type="button">Book Now</button>
+                    </div>
+                </div>
                 <!-- </div> -->
 
                 <section class="elementor-section elementor-top-section elementor-element elementor-element-6521b521 elementor-section-boxed elementor-section-height-default elementor-section-height-default pt-5" data-id="6521b521" data-element_type="section">
