@@ -350,6 +350,7 @@
                                 <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>tour_category">Tour Category</a></li>
                                 <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>tours">Tour</a></li>
                                 <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>destination">Destination</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>tour-about">Tour About</a></li>
                                 <!-- <li class="nav-item"> <a class="nav-link" href="pages/ui-features/breadcrumbs.html">Breadcrumbs</a></li>
                                 <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Dropdowns</a></li>
                                 <li class="nav-item"> <a class="nav-link" href="pages/ui-features/modals.html">Modals</a></li>

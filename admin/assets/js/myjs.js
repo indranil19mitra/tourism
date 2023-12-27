@@ -127,6 +127,34 @@ $(document).ready(function () {
 			},
 		});
 	});
+
+	$("#tour_about_details_sbmt").click(function () {
+		// Trigger TinyMCE to update the original textarea
+		// tinymce.triggerSave();
+		tinymce.triggerSave("tour_about_details");
+
+		// Create a FormData object from the form with the id "tour_about_details"
+		var formData = new FormData($("#tour_about_details")[0]);
+
+		// Perform an AJAX request
+		$.ajax({
+			type: "POST",
+			url: baseurl + "tour_about_details",
+			data: formData,
+			dataType: "json",
+			contentType: false,
+			processData: false,
+			success: function (res) {
+				// Handle the server response
+				if (res.status != 103) {
+					window.location.href = baseurl + "tour_about";
+					successToster(res.msg);
+				} else {
+					errorToster(res.msg);
+				}
+			},
+		});
+	});
 });
 
 function stateFunctionalities(ids = "", types = "", tables = "") {
@@ -236,6 +264,10 @@ function tourFunctionalities(ids = "", types = "", tables = "") {
 						$("#tour_category")
 							.val(res.data.tour_category_id)
 							.trigger("change");
+						$("#difficulty").val(res.data.difficulty);
+						if (res.data.seat_availability != 0) {
+							$("#seat_availability").val(res.data.seat_availability);
+						}
 						$("#status").val(res.data.status).trigger("change");
 
 						displayExistingImage(baseurl_data + res.data.main_image);
@@ -280,7 +312,6 @@ function tourDestFunctionalities(ids = "", types = "", tables = "") {
 						$("#price").val(res.data.price);
 						$("#start_date").val(res.data.start_date);
 						$("#end_date").val(res.data.end_date);
-						$("#tourabout").text(res.data.tour_about);
 
 						if (res.data.is_discount != "" && res.data.is_discount == "1") {
 							$("#is_discount").prop("checked", true);
@@ -297,6 +328,37 @@ function tourDestFunctionalities(ids = "", types = "", tables = "") {
 						successToster(res.msg);
 					} else {
 						window.location.href = baseurl + "tours";
+						successToster(res.msg);
+					}
+				} else {
+					errorToster(res.msg);
+				}
+			},
+		});
+	}
+}
+
+function tour_aboutFunctionalities(ids = "", types = "", tables = "") {
+	if (types == "edit" || types == "delete") {
+		// alert(types);
+		$.ajax({
+			type: "post",
+			url: baseurl + (types == "edit" ? "edit_tour_about_data" : "delete_data"),
+			data: { eid: ids, tables: tables },
+			dataType: "json",
+			success: function (res) {
+				console.log(res);
+				if (res.status == 101) {
+					if (types != "delete") {
+						$("#eid").val(res.data.id);
+						$("#tours_id").val(res.data.id).trigger("change");
+						$("#tour_about_details_text").val(res.data.tour_about_details);
+						$("#status").val(res.data.status).trigger("change");
+
+						$("#destination_details_sbmt").show();
+						successToster(res.msg);
+					} else {
+						window.location.href = baseurl + "tour_about";
 						successToster(res.msg);
 					}
 				} else {
@@ -387,22 +449,39 @@ function successToster(text_data = "") {
 	});
 }
 
-document
-	.getElementById("tour_image")
-	.addEventListener("change", function (event) {
-		const file = event.target.files[0];
+// document.getElementById("tour_image").addEventListener("change", function (event) {
+// 		const file = event.target.files[0];
 
-		if (file) {
-			const reader = new FileReader();
+// 		if (file) {
+// 			const reader = new FileReader();
 
-			reader.onload = function (e) {
-				document.getElementById("preview_tour_image").src = e.target.result;
-				document.getElementById("preview_tour_image").style.display = "block";
-			};
+// 			reader.onload = function (e) {
+// 				document.getElementById("preview_tour_image").src = e.target.result;
+// 				document.getElementById("preview_tour_image").style.display = "block";
+// 			};
 
-			reader.readAsDataURL(file);
-		}
-	});
+// 			reader.readAsDataURL(file);
+// 		}
+// 	});
+
+document.addEventListener("DOMContentLoaded", function () {
+	document
+		.getElementById("tour_image")
+		.addEventListener("change", function (event) {
+			const file = event.target.files[0];
+
+			if (file) {
+				const reader = new FileReader();
+
+				reader.onload = function (e) {
+					document.getElementById("preview_tour_image").src = e.target.result;
+					document.getElementById("preview_tour_image").style.display = "block";
+				};
+
+				reader.readAsDataURL(file);
+			}
+		});
+});
 
 function getCheck(obj) {
 	var id = $(obj).attr("id");
@@ -415,3 +494,51 @@ function getCheck(obj) {
 	}
 	$("#disc_percent").val("");
 }
+
+tinymce.init({
+	selector: "textarea#tour_about_details",
+	width: "auto",
+	height: 300,
+	plugins: [
+		"advlist",
+		"autolink",
+		"link",
+		"image",
+		"lists",
+		"charmap",
+		"prewiew",
+		"anchor",
+		"pagebreak",
+		"searchreplace",
+		"wordcount",
+		"visualblocks",
+		"code",
+		"fullscreen",
+		"insertdatetime",
+		"media",
+		"table",
+		"emoticons",
+		"template",
+		"codesample",
+	],
+	toolbar:
+		"undo redo | styles | bold italic underline | alignleft aligncenter alignright alignjustify |" +
+		"bullist numlist outdent indent | link image | print preview media fullscreen | " +
+		"forecolor backcolor emoticons",
+	menu: {
+		favs: {
+			title: "menu",
+			items: "code visualaid | searchreplace | emoticons",
+		},
+	},
+	menubar: "favs file edit view insert format tools table",
+	content_style: "body{font-family:Helvetica,Arial,sans-serif; font-size:16px}",
+	setup: function (editor) {
+		// This event is triggered when TinyMCE is initialized
+		editor.on("init", function () {
+			// Hide the promotion element after initialization
+			$(".tox-promotion").hide();
+			$(".tox-statusbar__branding").hide();
+		});
+	},
+});

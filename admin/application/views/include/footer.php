@@ -39,7 +39,6 @@
 <script src="<?= base_url() ?>assets/js/jquery.cookie.js" type="text/javascript"></script>
 <script src="<?= base_url() ?>assets/js/dashboard.js"></script>
 <script src="<?= base_url() ?>assets/js/Chart.roundedBarCharts.js"></script>
-<script src="<?= base_url() ?>assets/js/myjs.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js" defer></script>
@@ -47,20 +46,23 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 <script src="tinymce/tinymce.min.js"></script> -->
 
+<!-- <script src="<?php echo base_url('assets/js/tinymce/tinymce.min.js'); ?>"></script> -->
 
 
-  <!-- endinject -->
-  <!-- plugin js for this page -->
-  <script src="<?= base_url() ?>assets/vendors/tinymce/tinymce.min.js"></script>
-  <script src="<?= base_url() ?>assets/vendors/quill/quill.min.js"></script>
-  <script src="<?= base_url() ?>assets/vendors/simplemde/simplemde.min.js"></script>
-  <!-- End plugin js for this page -->
-  <!-- endinject -->
-  <!-- Custom js for this page-->
-  <script src="<?= base_url() ?>assets/js/editorDemo.js"></script>
-  <!-- End custom js for this page-->
+<!-- endinject -->
+<!-- plugin js for this page -->
+<script src="<?= base_url() ?>assets/vendors/quill/quill.min.js"></script>
+<script src="<?= base_url() ?>assets/vendors/simplemde/simplemde.min.js"></script>
+<!-- End plugin js for this page -->
+<!-- endinject -->
+<!-- Custom js for this page-->
+<script src="<?= base_url() ?>assets/js/editorDemo.js"></script>
+<!-- End custom js for this page-->
 <!-- End custom js for this page-->
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="<?= base_url() ?>assets/vendors/tinymce/tinymce.min.js"></script>
+<script defer src="<?= base_url() ?>assets/js/myjs.js"></script>
 </body>
 
 </html>
