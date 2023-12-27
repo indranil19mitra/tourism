@@ -42,6 +42,13 @@
                                 ?>
                             </select>
 
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="difficulty" name="difficulty" placeholder="Difficulty Level">
+                            </div>
+                            <div class="form-group">
+                                <input type="number" class="form-control" id="seat_availability" name="seat_availability" placeholder="Seat Availability">
+                            </div>
+
                             <select class="form-group form-select slct_cls" id="status" name="status" aria-label="select example">
                                 <option value="" disabled selected>--Please Select--</option>
                                 <option value="1">Active</option>
@@ -66,7 +73,7 @@
             <button type="button" class="btn btn-info" data-bs-toggle="modal" onclick="tourResetFun()" data-bs-target="#tour_modal" data-whatever="@mdo">Add Tour</button>
         </div>
 
-        <div class="col-8 grid-margin stretch-card">
+        <div class="col-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">Tour List</h4>
@@ -78,6 +85,8 @@
                                     <th>Name</th>
                                     <th>Place</th>
                                     <th>Tour Category</th>
+                                    <th>Difficulty</th>
+                                    <th>Seat Availability</th>
                                     <th>Image</th>
                                     <th>Status</th>
                                     <th>Action</th>
@@ -97,7 +106,9 @@
                                             <td><?= $rslt->name; ?></td>
                                             <td><?= $rslt->place_name; ?></td>
                                             <td><?= $rslt->tour_category_name; ?></td>
-                                            <td><img src="<?=base_url().$rslt->main_image;?>" alt=""></td>
+                                            <td><?= $rslt->difficulty; ?></td>
+                                            <td><?= $rslt->seat_availability; ?></td>
+                                            <td><img src="<?= base_url() . $rslt->main_image; ?>" alt=""></td>
                                             <td><label class="<?= $status_desc_class; ?>"><?= $status_desc; ?></label></td>
                                             <td>
                                                 <div class="d-flex">

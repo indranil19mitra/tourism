@@ -59,17 +59,6 @@
                                 <option value="1">Active</option>
                                 <option value="0">In-Active</option>
                             </select>
-                            <div class="row grid-margin">
-                                <div class="col-12">
-                                    <!-- <div class="card">
-                                        <div class="card-body"> -->
-                                            <!-- <h4 class="card-title">Quill Editor</h4> -->
-                                            <div id="tourabout" class="quill-container" placeholder="tour_about">
-                                            </div>
-                                        <!-- </div>
-                                    </div> -->
-                                </div>
-                            </div>
                         </form>
                     </div>
                     <div class="modal-footer">
