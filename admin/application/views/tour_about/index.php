@@ -79,7 +79,7 @@
                                     <tr>
                                         <td><?= ($key + 1) ?></td>
                                         <td><?= $rslt->name; ?></td>
-                                        <td><?= $rslt->tour_about_details; ?></td>
+                                        <td class="text-wrap"><?= $rslt->tour_about_details; ?></td>
                                         <td><label class="<?= $status_desc_class; ?>"><?= $status_desc; ?></label></td>
                                         <td>
                                             <div class="d-flex">

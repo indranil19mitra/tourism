@@ -309,6 +309,7 @@ function tourDestFunctionalities(ids = "", types = "", tables = "") {
 						$("#drop_location").val(res.data.drop_location);
 						$("#pikup_location").val(res.data.pikup_location);
 						$("#duration").val(res.data.duration);
+						$("#duration").prop("readonly", true);
 						$("#price").val(res.data.price);
 						$("#start_date").val(res.data.start_date);
 						$("#end_date").val(res.data.end_date);

@@ -53,11 +53,15 @@ class Myadmin_model extends CI_Model
         } else {
             $this->db->select('*');
         }
-
+        
         if (!empty($join)) {
             if (is_array($join)) {
                 foreach ($join as $join_arr_name) {
-                    $this->db->join($join_arr_name['table'], $join_arr_name['condition']);
+                    if (!empty($join_arr_name['type'])) {
+                        $this->db->join($join_arr_name['table'], $join_arr_name['condition'], $join_arr_name['type']);
+                    } else {
+                        $this->db->join($join_arr_name['table'], $join_arr_name['condition']);
+                    }
                 }
             }
         }
