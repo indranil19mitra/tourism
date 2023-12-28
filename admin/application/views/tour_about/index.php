@@ -12,7 +12,7 @@
                         <form class="forms-sample" id="tour_about_details">
                             <div class="row">
                                 <input type="hidden" class="clr" id="eid" name="eid">
-                                <div class="col-lg-6 mb-3">
+                                <div class="col-lg-6 col-md-12 col-sm-12 mb-3">
                                     <label for="tours_id" class="col-form-label">Tour</label>
                                     <select class="form-select slct_cls" id="tours_id" name="tours_id" aria-label="select example">
                                         <option value="" disabled selected>--Please Select Tour--</option>
@@ -25,7 +25,7 @@
                                         ?>
                                     </select>
                                 </div>
-                                <div class="col-lg-6 mb-3">
+                                <div class="col-lg-6 col-md-12 col-sm-12 mb-3">
                                     <label for="status" class="col-form-label">Status</label>
                                     <select class="form-select slct_cls" id="status" name="status" aria-label="select example">
                                         <option value="" disabled selected>--Please Select--</option>

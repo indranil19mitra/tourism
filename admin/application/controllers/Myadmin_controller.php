@@ -56,7 +56,6 @@ class Myadmin_controller extends CI_Controller
         echo json_encode($rslt);
     }
 
-
     public function state()
     {
         if (empty($this->session->userdata('user_id'))) {
@@ -177,7 +176,6 @@ class Myadmin_controller extends CI_Controller
         echo json_encode($rslt);
     }
 
-
     public function place()
     {
         if (empty($this->session->userdata('user_id'))) {
@@ -267,7 +265,6 @@ class Myadmin_controller extends CI_Controller
         $this->load->view('include/footer');
     }
 
-
     public function tour_category_details()
     {
         // echo "<pre>";
@@ -303,7 +300,6 @@ class Myadmin_controller extends CI_Controller
 
         echo json_encode($rslt);
     }
-
 
     public function edit_tour_category_data()
     {
@@ -428,8 +424,6 @@ class Myadmin_controller extends CI_Controller
         echo json_encode($rslt);
     }
 
-
-
     public function edit_tour_data()
     {
         $edit_id = (!empty($this->input->post('eid'))) ? $this->input->post('eid') : '';
@@ -457,7 +451,7 @@ class Myadmin_controller extends CI_Controller
 
         $cond = array(
             'tours.is_delete!=' => '0',
-            'tour_destination_details.is_delete!=' => '0'
+            'tour_details.is_delete!=' => '0'
         );
         $join1 = array('table' => 'tours', 'condition' => 'tours.id=tour_details.tours_id');
 
@@ -539,8 +533,6 @@ class Myadmin_controller extends CI_Controller
         echo json_encode($rslt);
     }
 
-
-
     public function tour_about()
     {
         // echo "<pre>";
@@ -550,11 +542,11 @@ class Myadmin_controller extends CI_Controller
 
         $cond2 = array(
             'tour_about.is_delete!=' => '0',
-            'tour_about.status!=' => '0'
+            // 'tour_about.status!=' => '0'
         );
         $join1 = array('table' => 'tours', 'condition' => 'tours.id=tour_about.tours_id');
         $data['tour_about_details'] = $this->myadmin_model->get_data("tour_about.id,tour_about.tours_id,tour_about.tour_about_details,tour_about.status,tours.name", "tour_about", $cond2, [$join1], "", "", "");
-        // print_r($data['tour_about_details']);
+
         $cond1 = array(
             'is_delete!=' => '0',
             'status!=' => '0',
@@ -564,7 +556,8 @@ class Myadmin_controller extends CI_Controller
             $ids_arry[] = $val->tours_id;
         }
         // print_r($ids_arry);
-        $data['tours_data'] = $this->myadmin_model->get_data("id,name", "tours", $cond1, "", "", "", "", "", "", "id", $ids_arry);
+        // $data['tours_data'] = $this->myadmin_model->get_data("id,name", "tours", $cond1, "", "", "", "", "", "", "id", $ids_arry);
+        $data['tours_data'] = $this->myadmin_model->get_data("id,name", "tours", $cond1);
 
         // exit;
         $this->load->view('include/header');

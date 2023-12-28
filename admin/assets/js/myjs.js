@@ -352,7 +352,9 @@ function tour_aboutFunctionalities(ids = "", types = "", tables = "") {
 					if (types != "delete") {
 						$("#eid").val(res.data.id);
 						$("#tours_id").val(res.data.id).trigger("change");
-						$("#tour_about_details_text").val(res.data.tour_about_details);
+						tinymce
+							.get("tour_about_details_text")
+							.setContent(res.data.tour_about_details);
 						$("#status").val(res.data.status).trigger("change");
 
 						$("#destination_details_sbmt").show();
@@ -383,6 +385,19 @@ function tourResetFun() {
 	$("#tour_category").val("").trigger("change");
 	$("#disc_percent").hide();
 	resetFun();
+}
+
+function tourDetailsResetFun() {
+	var today = new Date();
+	var dd = String(today.getDate()).padStart(2, "0");
+	var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+	var yyyy = today.getFullYear();
+
+	today = yyyy + "-" + mm + "-" + dd;
+	// console.log(today);
+
+	$("#end_date").attr("min", today);
+	$("#start_date").attr("min", today);
 }
 
 function isExist(val = "", table = "") {
@@ -495,15 +510,55 @@ function getCheck(obj) {
 	$("#disc_percent").val("");
 }
 
+function set_date(date = "", type = "") {
+	if (type == "start_date") {
+		if ($("#end_date").val() < date) {
+			$("#end_date").val("");
+		}
+		$("#end_date").attr("min", date);
+	}
+	if (type == "end_date") {
+		if ($("#start_date").val() > date) {
+			$("#start_date").val("");
+		}
+		$("#start_date").attr("max", date);
+	}
+
+	if ($("#start_date").val() != "" && $("#end_date").val() != "") {
+		var ttl_days = getNumberOfDays(
+			$("#start_date").val(),
+			$("#end_date").val()
+		);
+		$("#duration").val(ttl_days + " days");
+		$("#duration").prop("readonly", true);
+	}
+}
+
+function getNumberOfDays(start, end) {
+	const date1 = new Date(start);
+	const date2 = new Date(end);
+
+	// One day in milliseconds
+	const oneDay = 1000 * 60 * 60 * 24;
+
+	// Calculating the time difference between two dates
+	const diffInTime = date2.getTime() - date1.getTime();
+
+	// Calculating the no. of days between two dates
+	const diffInDays = Math.round(diffInTime / oneDay);
+
+	return diffInDays + 1;
+}
+
 tinymce.init({
-	selector: "textarea#tour_about_details",
+	selector: "textarea#tour_about_details_text",
 	width: "auto",
 	height: 300,
 	plugins: [
 		"advlist",
 		"autolink",
 		"link",
-		"image",
+		// "image",
 		"lists",
 		"charmap",
 		"prewiew",
@@ -515,7 +570,7 @@ tinymce.init({
 		"code",
 		"fullscreen",
 		"insertdatetime",
-		"media",
+		// "media",
 		"table",
 		"emoticons",
 		"template",
@@ -523,7 +578,7 @@ tinymce.init({
 	],
 	toolbar:
 		"undo redo | styles | bold italic underline | alignleft aligncenter alignright alignjustify |" +
-		"bullist numlist outdent indent | link image | print preview media fullscreen | " +
+		"bullist numlist outdent indent | print preview media fullscreen | " +
 		"forecolor backcolor emoticons",
 	menu: {
 		favs: {
