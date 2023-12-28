@@ -43,8 +43,18 @@ class Mycontroller extends CI_Controller
                 'tours.status!=' => '0',
             );
         }
-        $join3 = array('table' => 'tours', 'condition' => 'tours.id=tour_details.tours_id');
-        $data['get_tours_date_wise'] = $this->myfront_model->get_data("tours.name,tours.main_image,tour_details.id as tour_details_id,tour_details.duration,tour_details.start_date,tour_details.price", "tour_details", $cond5, [$join3], "", "asc", "tour_details.start_date", "", "");
+        $join = array('table' => 'tours', 'condition' => 'tours.id=tour_details.tours_id');
+        $join1 = array('table' => 'tours', 'condition' => 'tours.id=tour_details.tours_id AND tours.tour_category_id=1');
+        $join2 = array('table' => 'tours', 'condition' => 'tours.id=tour_details.tours_id AND tours.tour_category_id=2');
+        $join3 = array('table' => 'tours', 'condition' => 'tours.id=tour_details.tours_id AND tours.tour_category_id=3');
+
+        $data['get_tours_date_wise'] = $this->myfront_model->get_data("tours.name,tours.main_image,tours.seat_availability,tour_details.id as tour_details_id,tour_details.duration,tour_details.start_date,tour_details.price", "tour_details", $cond5, [$join], "", "asc", "tour_details.start_date", "", "");
+
+        $data['get_tours_weekend_trip'] = $this->myfront_model->get_data("tours.name,tours.main_image,tours.seat_availability,tour_details.id as tour_details_id,tour_details.duration,tour_details.start_date,tour_details.price", "tour_details", $cond5, [$join1], "", "asc", "tour_details.start_date", "", "");
+
+        $data['get_tours_popular_trip'] = $this->myfront_model->get_data("tours.name,tours.main_image,tours.seat_availability,tour_details.id as tour_details_id,tour_details.duration,tour_details.start_date,tour_details.price", "tour_details", $cond5, [$join2], "", "asc", "tour_details.start_date", "", "");
+
+        $data['get_tours_adv_trip'] = $this->myfront_model->get_data("tours.name,tours.main_image,tours.seat_availability,tour_details.id as tour_details_id,tour_details.duration,tour_details.start_date,tour_details.price", "tour_details", $cond5, [$join3], "", "asc", "tour_details.start_date", "", "");
         // print_r($data);
         // exit;
         $this->load->view('include/header', $data);
@@ -74,9 +84,12 @@ class Mycontroller extends CI_Controller
         $cond = array(
             'tour_details.id' => $ids
         );
-        // $join = array('table' => 'tours', 'condition' => 'tours.id=tour_details.tours_id');
+        $join1 = array('table' => 'tours', 'condition' => 'tours.id=tour_details.tours_id', 'type' => 'left');
+        $join2 = array('table' => 'tour_about', 'condition' => 'tour_about.tours_id=tour_details.tours_id', 'type' => 'left');
 
-        $data['get_tours_details'] = $this->myfront_model->get_data("tour_details.id as tour_details_id,tour_details.duration,tour_details.start_date,tour_details.price,tour_details.pikup_location,tour_details.drop_location", "tour_details", $cond, "", "1");
+        $join = [$join1, $join2];
+
+        $data['get_tours_details'] = $this->myfront_model->get_data("tour_details.id as tour_details_id,tour_details.duration,tour_details.start_date,tour_details.price,tour_details.pikup_location,tour_details.drop_location,tours.difficulty,tour_about.tour_about_details", "tour_details", $cond, $join, "1");
 
         $this->load->view('include/header', $data);
         $this->load->view('details', $data);

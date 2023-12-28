@@ -10,8 +10,7 @@ class Myfront_model extends CI_Model
         // $this->load->database();
     }
 
-
-    public function get_data($specific_col = "", $table = "", $cond = "", $join = "", $fetching_type = "", $orderBy_type = "", $orderBy_col = "", $group_by = "", $limit_cnt = "")
+    public function get_data($specific_col = "", $table = "", $cond = "", $join = "", $fetching_type = "", $orderBy_type = "", $orderBy_col = "", $group_by = "", $limit_cnt = "", $where_not_in_field = "", $where_not_in_array = "")
     {
         if (!empty($specific_col)) {
             $this->db->select($specific_col);
@@ -19,18 +18,25 @@ class Myfront_model extends CI_Model
             $this->db->select('*');
         }
 
-        if (!empty($cond)) {
-            $this->db->where($cond);
-        }
-
         if (!empty($join)) {
             if (is_array($join)) {
                 foreach ($join as $join_arr_name) {
-                    $this->db->join($join_arr_name['table'], $join_arr_name['condition']);
+                    if (!empty($join_arr_name['type'])) {
+                        $this->db->join($join_arr_name['table'], $join_arr_name['condition'], $join_arr_name['type']);
+                    } else {
+                        $this->db->join($join_arr_name['table'], $join_arr_name['condition']);
+                    }
                 }
             }
         }
 
+        if (!empty($cond)) {
+            $this->db->where($cond);
+        }
+
+        if (!empty($where_not_in_field) && !empty($where_not_in_array)) {
+            $this->db->where_not_in($where_not_in_field, $where_not_in_array);
+        }
         if (!empty($orderBy_type) && !empty($orderBy_col)) {
             $this->db->order_by($orderBy_col, $orderBy_type);
         }
