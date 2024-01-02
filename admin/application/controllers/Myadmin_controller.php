@@ -623,4 +623,138 @@ class Myadmin_controller extends CI_Controller
 
         echo json_encode($rslt);
     }
+
+    public function tour_itinerary()
+    {
+        // echo "<pre>";
+        if (empty($this->session->userdata('user_id'))) {
+            redirect(base_url('login'));
+        }
+
+        $cond1 = array(
+            'is_delete!=' => '0',
+            'status!=' => '0',
+        );
+        $data['tours_data'] = $this->myadmin_model->get_data("id,name", "tours", $cond1);
+
+
+        $cond2 = array(
+            'tour_itinerary_main.is_delete!=' => '0'
+        );
+        $join1 = array('table' => 'tours', 'condition' => 'tours.id=tour_itinerary_main.tours_id');
+        $join2 = array('table' => 'tour_itinerary_sub', 'condition' => 'tour_itinerary_sub.itinery_main_id=tour_itinerary_main.id');
+        $join = [$join1, $join2];
+        $data['tour_itinerary_details'] = $this->myadmin_model->get_data("tour_itinerary_main.id,tour_itinerary_main.itinerary,tour_itinerary_main.status,tours.name,tour_itinerary_sub.itinerary_sub", "tour_itinerary_main", $cond2, $join, "", "desc", "tour_itinerary_main.id");
+
+        // exit;
+        $this->load->view('include/header');
+        $this->load->view('tour_itinerary/index', $data);
+        $this->load->view('include/footer');
+    }
+
+
+    public function tour_itinerary_details()
+    {
+        // echo "<per>";
+        // print_r($_POST);
+        // exit;
+
+        $edit_id = (!empty($this->input->post('eid'))) ? $this->input->post('eid') : '';
+        $itinerary_question = $this->input->post('itinerary_question');
+        $itinerary_answer = $this->input->post('itinerary_answer');
+
+        $tour_itenary = array(
+            'tours_id' => $this->input->post('tours_id'),
+            'status' => $this->input->post('status'),
+        );
+
+
+
+        // print_r($tour_itenary);
+        // print_r($itinerary_question);
+        // print_r($itinerary_answer);
+        // exit;
+        if (empty($edit_id)) {
+            $tour_itenary['created_by'] = $this->session->userdata('user_id');
+            $tour_itenary['created_at'] = date('Y-m-d H:i:s');
+            $tour_itenary['is_delete'] = '1';
+            foreach ($itinerary_question as $key => $val) {
+                if (!empty($itinerary_question[$key]) && !empty($itinerary_answer[$key])) {
+                    $tour_itenary['itinerary'] = $itinerary_question[$key];
+                    $last_inst_id = $this->myadmin_model->insert_data("tour_itinerary_main", $tour_itenary);
+
+                    $tour_itenary_sub = array(
+                        'itinery_main_id' => $last_inst_id,
+                        'itinerary_sub' => $itinerary_answer[$key],
+                        'status' => $this->input->post('status'),
+                        'created_by' => $this->session->userdata('user_id'),
+                        'created_at' => date('Y-m-d H:i:s'),
+                        'is_delete' => '1'
+                    );
+                    $last_inst_id = $this->myadmin_model->insert_data("tour_itinerary_sub", $tour_itenary_sub);
+                }
+            }
+            // $last_inst_id = $this->myadmin_model->insert_data("tour_about", $tour_itenary);
+            $msg = 'You have successfully added';
+        } else {
+            $cond = array(
+                'tour_itinerary_main.id' => $edit_id
+            );
+            $tour_itenary['updated_by'] = $this->session->userdata('user_id');
+            $tour_itenary['updated_at'] = date('Y-m-d H:i:s');
+
+            foreach ($itinerary_question as $key => $val) {
+                if (!empty($itinerary_question[$key]) && !empty($itinerary_answer[$key])) {
+                    $tour_itenary['itinerary'] = $itinerary_question[$key];
+                    // $last_inst_id = $this->myadmin_model->insert_data("tour_itinerary_main", $tour_itenary);
+                    $last_inst_id = $this->myadmin_model->update_data("tour_itinerary_main", $tour_itenary, $cond);
+
+
+                    $cond1 = array(
+                        'tour_itinerary_sub.itinery_main_id' => $edit_id,
+                        'tour_itinerary_sub.status' => '1',
+                        'tour_itinerary_sub.is_delete' => '1',
+                    );
+                    $tour_itenary_sub = array(
+                        'itinerary_sub' => $itinerary_answer[$key],
+                        'updated_by' => $this->session->userdata('user_id'),
+                        'updated_at' => date('Y-m-d H:i:s'),
+                    );
+                    // $last_inst_id = $this->myadmin_model->insert_data("tour_itinerary_sub", $tour_itenary_sub);
+
+                    $last_inst_id = $this->myadmin_model->update_data("tour_itinerary_sub", $tour_itenary_sub, $cond1);
+                }
+            }
+            // $last_inst_id = $this->myadmin_model->update_data("tour_itinerary_main", $tour_itenary, $cond);
+            $msg = 'You have successfully edited';
+        }
+
+        if (!empty($last_inst_id)) {
+            $rslt = array('status' => '101', 'msg' => $msg, 'data' => $last_inst_id);
+        } else {
+            $rslt = array('status' => '103', 'msg' => 'Something went wrong!', 'data' => '');
+        }
+
+        echo json_encode($rslt);
+    }
+
+
+    public function edit_tour_itinerary_data()
+    {
+        $edit_id = (!empty($this->input->post('eid'))) ? $this->input->post('eid') : '';
+
+        if (!empty($edit_id)) {
+            $cond = array(
+                'tour_itinerary_main.id' => $edit_id
+            );
+
+            $join = array('table' => 'tour_itinerary_sub', 'condition' => 'tour_itinerary_sub.itinery_main_id=tour_itinerary_main.id');
+            $data = $this->myadmin_model->get_data('tour_itinerary_main.id,tour_itinerary_main.itinerary,tour_itinerary_main.status,tour_itinerary_sub.itinerary_sub', "tour_itinerary_main", $cond, [$join], "1");
+            $rslt = array('status' => '101', 'msg' => '', 'data' => $data);
+        } else {
+            $rslt = array('status' => '103', 'msg' => '', 'data' => '');
+        }
+
+        echo json_encode($rslt);
+    }
 }
