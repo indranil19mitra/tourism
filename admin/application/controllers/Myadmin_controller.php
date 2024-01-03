@@ -660,8 +660,8 @@ class Myadmin_controller extends CI_Controller
         // exit;
 
         $edit_id = (!empty($this->input->post('eid'))) ? $this->input->post('eid') : '';
-        $itinerary_question = $this->input->post('itinerary_question');
-        $itinerary_answer = $this->input->post('itinerary_answer');
+        $itinerary = $this->input->post('itinerary');
+        $itinerary_descriptions = $this->input->post('itinerary_descriptions');
 
         $tour_itenary = array(
             'tours_id' => $this->input->post('tours_id'),
@@ -671,21 +671,21 @@ class Myadmin_controller extends CI_Controller
 
 
         // print_r($tour_itenary);
-        // print_r($itinerary_question);
-        // print_r($itinerary_answer);
+        // print_r($itinerary);
+        // print_r($itinerary_descriptions);
         // exit;
         if (empty($edit_id)) {
             $tour_itenary['created_by'] = $this->session->userdata('user_id');
             $tour_itenary['created_at'] = date('Y-m-d H:i:s');
             $tour_itenary['is_delete'] = '1';
-            foreach ($itinerary_question as $key => $val) {
-                if (!empty($itinerary_question[$key]) && !empty($itinerary_answer[$key])) {
-                    $tour_itenary['itinerary'] = $itinerary_question[$key];
+            foreach ($itinerary as $key => $val) {
+                if (!empty($itinerary[$key]) && !empty($itinerary_descriptions[$key])) {
+                    $tour_itenary['itinerary'] = $itinerary[$key];
                     $last_inst_id = $this->myadmin_model->insert_data("tour_itinerary_main", $tour_itenary);
 
                     $tour_itenary_sub = array(
                         'itinery_main_id' => $last_inst_id,
-                        'itinerary_sub' => $itinerary_answer[$key],
+                        'itinerary_sub' => $itinerary_descriptions[$key],
                         'status' => $this->input->post('status'),
                         'created_by' => $this->session->userdata('user_id'),
                         'created_at' => date('Y-m-d H:i:s'),
@@ -703,9 +703,9 @@ class Myadmin_controller extends CI_Controller
             $tour_itenary['updated_by'] = $this->session->userdata('user_id');
             $tour_itenary['updated_at'] = date('Y-m-d H:i:s');
 
-            foreach ($itinerary_question as $key => $val) {
-                if (!empty($itinerary_question[$key]) && !empty($itinerary_answer[$key])) {
-                    $tour_itenary['itinerary'] = $itinerary_question[$key];
+            foreach ($itinerary as $key => $val) {
+                if (!empty($itinerary[$key]) && !empty($itinerary_descriptions[$key])) {
+                    $tour_itenary['itinerary'] = $itinerary[$key];
                     // $last_inst_id = $this->myadmin_model->insert_data("tour_itinerary_main", $tour_itenary);
                     $last_inst_id = $this->myadmin_model->update_data("tour_itinerary_main", $tour_itenary, $cond);
 
@@ -716,7 +716,7 @@ class Myadmin_controller extends CI_Controller
                         'tour_itinerary_sub.is_delete' => '1',
                     );
                     $tour_itenary_sub = array(
-                        'itinerary_sub' => $itinerary_answer[$key],
+                        'itinerary_sub' => $itinerary_descriptions[$key],
                         'updated_by' => $this->session->userdata('user_id'),
                         'updated_at' => date('Y-m-d H:i:s'),
                     );

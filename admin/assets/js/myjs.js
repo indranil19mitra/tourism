@@ -412,8 +412,8 @@ function tour_itineraryFunctionalities(ids = "", types = "", tables = "") {
 						$("#eid").val(res.data.id);
 						$("#tours_id").val(res.data.id).trigger("change");
 						$("#status").val(res.data.status).trigger("change");
-						$("#itinerary_question_0").val(res.data.itinerary);
-						$("#itinerary_answer_0").val(res.data.itinerary_sub);
+						$("#itinerary_0").val(res.data.itinerary);
+						$("#itinerary_descriptions_0").val(res.data.itinerary_sub);
 						$("#add_itinerary").hide();
 						$("#destination_details_sbmt").show();
 						successToster(res.msg);
@@ -664,17 +664,17 @@ function get_itinerary_form() {
 		'<div class="border rounded border-2 p-3 mb-3 col-lg-12 col-md-12 col-sm-12">';
 	html += '<div class="mb-3 form-floating">';
 	html +=
-		'<textarea class="form-control" placeholder="Leave a question here" id="itinerary_question_' +
+		'<textarea class="form-control" placeholder="Leave a question here" id="itinerary_' +
 		lngt +
-		'" name="itinerary_question[]"></textarea><label for="floatingTextarea2">Itinerary Question ' +
+		'" name="itinerary[]"></textarea><label for="floatingTextarea2">Itinerary ' +
 		lngt +
 		"</label>";
 	html += "</div>";
 	html += '<div class="form-floating">';
 	html +=
-		'<textarea class="form-control" placeholder="Leave a question here" id="itinerary_answer_' +
+		'<textarea class="form-control" placeholder="Leave a question here" id="itinerary_descriptions_' +
 		lngt +
-		'" name="itinerary_answer[]"></textarea><label for="floatingTextarea2">Itinerary Answer ' +
+		'" name="itinerary_descriptions[]"></textarea><label for="floatingTextarea2">Itinerary Descriptions ' +
 		lngt +
 		"</label>";
 	html += "</div></div>";

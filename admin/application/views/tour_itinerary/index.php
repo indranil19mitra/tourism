@@ -35,10 +35,10 @@
                                 </div>
                                 <div class="col-12 mb-3">
                                     <div class="border rounded border-2 p-3 mb-3 col-lg-12 col-md-12 col-sm-12">
-                                        <div class="mb-3 form-floating"><textarea class="form-control" placeholder="Leave a question here" id="itinerary_question_0" name="itinerary_question[]"></textarea><label for="floatingTextarea2">Itinerary Question 1</label>
+                                        <div class="mb-3 form-floating"><textarea class="form-control" placeholder="Leave a question here" id="itinerary_0" name="itinerary[]"></textarea><label for="floatingTextarea2">Itinerary 1</label>
                                         </div>
                                         <div class="form-floating">
-                                            <textarea class="form-control" placeholder="Leave a question here" id="itinerary_answer_0" name="itinerary_answer[]"></textarea><label for="floatingTextarea2">Itinerary Answer 1</label>
+                                            <textarea class="form-control" placeholder="Leave a question here" id="itinerary_descriptions_0" name="itinerary_descriptions[]"></textarea><label for="floatingTextarea2">Itinerary Descriptions 1</label>
                                         </div>
                                     </div>
                                     <div id="itinerary_data"></div>
