@@ -1,5 +1,5 @@
 <?php
-$duration = $price = $pl = $dl = $difficult = $tour_about_details = $itinerary = $itinerary_sub = $tours_id = "";
+$duration = $price = $pl = $dl = $difficult = $tour_about_details = $itinerary = $itinerary_sub = $tours_id = $tour_inclusions = $tour_exclusions = $tour_other_info = "";
 if (!empty($get_tours_details)) {
     // echo "<pre>";
     // print_r($get_tours_details);
@@ -9,6 +9,9 @@ if (!empty($get_tours_details)) {
     $dl = $get_tours_details->drop_location;
     $difficult = (!empty($get_tours_details->difficulty)) ? $get_tours_details->difficulty : 'NA';
     $tour_about_details = $get_tours_details->tour_about_details;
+    $tour_inclusions = $get_tours_details->inclusions;
+    $tour_exclusions = $get_tours_details->exclusions;
+    $tour_other_info = $get_tours_details->other_info;
     $itinerary = (!empty($get_tours_details->itinerary)) ? (array_filter(explode("##,", rtrim($get_tours_details->itinerary, "##")))) : '';
     $itinerary_sub = (!empty($get_tours_details->itinerary_sub)) ? array_filter(explode("##,", rtrim($get_tours_details->itinerary_sub, "##"))) : '';
     $tour_details_id = (!empty($get_tours_details->tour_details_id)) ? $get_tours_details->tour_details_id : '';
@@ -87,7 +90,7 @@ if (!empty($get_tours_details)) {
                         <button class="btn btn-primary rounded mx-auto" onclick="get_dates_costing('<?= $tour_details_id; ?>','<?= $tours_id; ?>')" type="button">Dates & Costing</button>
                     </div>
                     <div class="mb-2">
-                        <button class="btn btn-primary rounded mx-auto" onclick="get_info()" type="button">Other Info</button>
+                        <button class="btn btn-primary rounded mx-auto" onclick="get_other_info()" type="button">Other Info</button>
                     </div>
                     <div class="mb-2 px-2">
                         <button class="btn btn-primary rounded mx-auto" onclick="get_book()" type="button">Book Now</button>
@@ -145,7 +148,8 @@ if (!empty($get_tours_details)) {
                     </section>
                 <?php
                 endif;
-
+                ?>
+                <?php
                 if (!empty($itinerary)) :
                 ?>
                     <section id="itinerary_details" class="elementor-section elementor-top-section elementor-element elementor-element-6521b521 elementor-section-boxed elementor-section-height-default elementor-section-height-default pt-5" data-id="6521b521" data-element_type="section">
@@ -288,91 +292,153 @@ if (!empty($get_tours_details)) {
                             </tbody>
                         </table>
                     </div>
-
-                    <section id="dates_and_costing1" class="elementor-section elementor-top-section elementor-element elementor-element-6521b521 elementor-section-boxed elementor-section-height-default elementor-section-height-default pt-5" data-id="6521b521" data-element_type="section">
-                        <div class="elementor-background-overlay"></div>
-                        <div class="container d-flex flex-wrap elementor-column-gap-default  p-0 g-0">
-                            <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3198fc93" data-id="3198fc93" data-element_type="column">
-                                <div class="elementor-widget-wrap elementor-element-populated">
-                                    <section class="elementor-section elementor-inner-section elementor-element elementor-element-73351ef elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="73351ef" data-element_type="section">
-                                        <div class="elementor-container elementor-column-gap-no">
-                                            <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-fbfb681" data-id="fbfb681" data-element_type="column">
-                                                <div class="elementor-widget-wrap elementor-element-populated">
-                                                    <div class="elementor-element elementor-element-446a8ec animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="446a8ec" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;}" data-widget_type="heading.default">
-                                                        <div class="elementor-widget-container">
-                                                            <h2 class="elementor-heading-title elementor-size-default mt-2">inclusions</h2>
+                    <?php
+                    if (!empty($tour_inclusions)) :
+                    ?>
+                        <section id="dates_and_costing1" class="elementor-section elementor-top-section elementor-element elementor-element-6521b521 elementor-section-boxed elementor-section-height-default elementor-section-height-default pt-5" data-id="6521b521" data-element_type="section">
+                            <div class="elementor-background-overlay"></div>
+                            <div class="container d-flex flex-wrap elementor-column-gap-default  p-0 g-0">
+                                <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3198fc93" data-id="3198fc93" data-element_type="column">
+                                    <div class="elementor-widget-wrap elementor-element-populated">
+                                        <section class="elementor-section elementor-inner-section elementor-element elementor-element-73351ef elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="73351ef" data-element_type="section">
+                                            <div class="elementor-container elementor-column-gap-no">
+                                                <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-fbfb681" data-id="fbfb681" data-element_type="column">
+                                                    <div class="elementor-widget-wrap elementor-element-populated">
+                                                        <div class="elementor-element elementor-element-446a8ec animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="446a8ec" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;}" data-widget_type="heading.default">
+                                                            <div class="elementor-widget-container">
+                                                                <h2 class="elementor-heading-title elementor-size-default mt-2">inclusions</h2>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="elementor-element elementor-element-79e4907 elementor-absolute animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="79e4907" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;,&quot;_animation&quot;:&quot;fadeInLeft&quot;}" data-widget_type="heading.default">
-                                                        <div class="elementor-widget-container">
-                                                            <span class="elementor-heading-title elementor-size-default">Durbeen</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </section>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="container mt-5">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="fs-5 fw-bold text-left">
-                                        <!-- <p>The village of Bir (elevation: 1400m), located in the Kangra district of Himachal Pradesh India, is internationally famous as the base for some of the best paragliding in the world. The take-off point at Billing, 14km up a winding road from Bir and 1000m higher, hosts major competitive flying events most years in October or November (including a round of the Paragliding World Cup in 2015). Experienced paragliders fly as far as Dharamshala, Mandi, and Manali from here.<br>
-                                        </p>
-                                        <p>
-                                            Bir is also an important center of the Tibetan exile community: the lower half of the village is known as Tibetan Colony and there are several Buddhist monasteries and institutes in and around Bir, some of which attract numbers of foreigners for courses and retreats.<br>
-                                        </p> -->
-                                        <?= $tour_about_details; ?>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section id="dates_and_costing1" class="elementor-section elementor-top-section elementor-element elementor-element-6521b521 elementor-section-boxed elementor-section-height-default elementor-section-height-default pt-5" data-id="6521b521" data-element_type="section">
-                        <div class="elementor-background-overlay"></div>
-                        <div class="container d-flex flex-wrap elementor-column-gap-default  p-0 g-0">
-                            <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3198fc93" data-id="3198fc93" data-element_type="column">
-                                <div class="elementor-widget-wrap elementor-element-populated">
-                                    <section class="elementor-section elementor-inner-section elementor-element elementor-element-73351ef elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="73351ef" data-element_type="section">
-                                        <div class="elementor-container elementor-column-gap-no">
-                                            <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-fbfb681" data-id="fbfb681" data-element_type="column">
-                                                <div class="elementor-widget-wrap elementor-element-populated">
-                                                    <div class="elementor-element elementor-element-446a8ec animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="446a8ec" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;}" data-widget_type="heading.default">
-                                                        <div class="elementor-widget-container">
-                                                            <h2 class="elementor-heading-title elementor-size-default mt-2">exclusions</h2>
-                                                        </div>
-                                                    </div>
-                                                    <div class="elementor-element elementor-element-79e4907 elementor-absolute animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="79e4907" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;,&quot;_animation&quot;:&quot;fadeInLeft&quot;}" data-widget_type="heading.default">
-                                                        <div class="elementor-widget-container">
-                                                            <span class="elementor-heading-title elementor-size-default">Durbeen</span>
+                                                        <div class="elementor-element elementor-element-79e4907 elementor-absolute animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="79e4907" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;,&quot;_animation&quot;:&quot;fadeInLeft&quot;}" data-widget_type="heading.default">
+                                                            <div class="elementor-widget-container">
+                                                                <span class="elementor-heading-title elementor-size-default">Durbeen</span>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </section>
+                                        </section>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="container mt-5">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="fs-5 fw-bold text-left">
-                                        <!-- <p>The village of Bir (elevation: 1400m), located in the Kangra district of Himachal Pradesh India, is internationally famous as the base for some of the best paragliding in the world. The take-off point at Billing, 14km up a winding road from Bir and 1000m higher, hosts major competitive flying events most years in October or November (including a round of the Paragliding World Cup in 2015). Experienced paragliders fly as far as Dharamshala, Mandi, and Manali from here.<br>
+                            <div class="container mt-5">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="fs-5 text-left">
+                                            <!-- <p>The village of Bir (elevation: 1400m), located in the Kangra district of Himachal Pradesh India, is internationally famous as the base for some of the best paragliding in the world. The take-off point at Billing, 14km up a winding road from Bir and 1000m higher, hosts major competitive flying events most years in October or November (including a round of the Paragliding World Cup in 2015). Experienced paragliders fly as far as Dharamshala, Mandi, and Manali from here.<br>
                                         </p>
                                         <p>
                                             Bir is also an important center of the Tibetan exile community: the lower half of the village is known as Tibetan Colony and there are several Buddhist monasteries and institutes in and around Bir, some of which attract numbers of foreigners for courses and retreats.<br>
                                         </p> -->
-                                        <?= $tour_about_details; ?>
+                                            <?= $tour_inclusions; ?>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </section>
+                        </section>
+                    <?php
+                    endif;
+                    if (!empty($tour_exclusions)) :
+                    ?>
+                        <section id="dates_and_costing1" class="elementor-section elementor-top-section elementor-element elementor-element-6521b521 elementor-section-boxed elementor-section-height-default elementor-section-height-default pt-5" data-id="6521b521" data-element_type="section">
+                            <div class="elementor-background-overlay"></div>
+                            <div class="container d-flex flex-wrap elementor-column-gap-default  p-0 g-0">
+                                <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3198fc93" data-id="3198fc93" data-element_type="column">
+                                    <div class="elementor-widget-wrap elementor-element-populated">
+                                        <section class="elementor-section elementor-inner-section elementor-element elementor-element-73351ef elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="73351ef" data-element_type="section">
+                                            <div class="elementor-container elementor-column-gap-no">
+                                                <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-fbfb681" data-id="fbfb681" data-element_type="column">
+                                                    <div class="elementor-widget-wrap elementor-element-populated">
+                                                        <div class="elementor-element elementor-element-446a8ec animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="446a8ec" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;}" data-widget_type="heading.default">
+                                                            <div class="elementor-widget-container">
+                                                                <h2 class="elementor-heading-title elementor-size-default mt-2">exclusions</h2>
+                                                            </div>
+                                                        </div>
+                                                        <div class="elementor-element elementor-element-79e4907 elementor-absolute animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="79e4907" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;,&quot;_animation&quot;:&quot;fadeInLeft&quot;}" data-widget_type="heading.default">
+                                                            <div class="elementor-widget-container">
+                                                                <span class="elementor-heading-title elementor-size-default">Durbeen</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container mt-5">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="fs-5 text-left">
+                                            <!-- <p>The village of Bir (elevation: 1400m), located in the Kangra district of Himachal Pradesh India, is internationally famous as the base for some of the best paragliding in the world. The take-off point at Billing, 14km up a winding road from Bir and 1000m higher, hosts major competitive flying events most years in October or November (including a round of the Paragliding World Cup in 2015). Experienced paragliders fly as far as Dharamshala, Mandi, and Manali from here.<br>
+                                        </p>
+                                        <p>
+                                            Bir is also an important center of the Tibetan exile community: the lower half of the village is known as Tibetan Colony and there are several Buddhist monasteries and institutes in and around Bir, some of which attract numbers of foreigners for courses and retreats.<br>
+                                        </p> -->
+                                            <?= $tour_exclusions; ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    <?php
+                    endif;
+                    ?>
                 </div>
+
+                <?php
+                if (!empty($tour_other_info)) :
+                ?>
+                    <section id="other_info" class="elementor-section elementor-top-section elementor-element elementor-element-6521b521 elementor-section-boxed elementor-section-height-default elementor-section-height-default pt-5" data-id="6521b521" data-element_type="section">
+                        <div class="elementor-background-overlay"></div>
+                        <div class="container d-flex flex-wrap elementor-column-gap-default  p-0 g-0">
+                            <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3198fc93" data-id="3198fc93" data-element_type="column">
+                                <div class="elementor-widget-wrap elementor-element-populated">
+                                    <section class="elementor-section elementor-inner-section elementor-element elementor-element-73351ef elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="73351ef" data-element_type="section">
+                                        <div class="elementor-container elementor-column-gap-no">
+                                            <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-fbfb681" data-id="fbfb681" data-element_type="column">
+                                                <div class="elementor-widget-wrap elementor-element-populated">
+                                                    <div class="elementor-element elementor-element-446a8ec animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="446a8ec" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;}" data-widget_type="heading.default">
+                                                        <div class="elementor-widget-container">
+                                                            <h2 class="elementor-heading-title elementor-size-default mt-2">other info</h2>
+                                                        </div>
+                                                    </div>
+                                                    <div class="elementor-element elementor-element-79e4907 elementor-absolute animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="79e4907" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;,&quot;_animation&quot;:&quot;fadeInLeft&quot;}" data-widget_type="heading.default">
+                                                        <div class="elementor-widget-container">
+                                                            <span class="elementor-heading-title elementor-size-default">Durbeen</span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- <div class="elementor-element elementor-element-cf1757d elementor-widget elementor-widget-text-editor" data-id="cf1757d" data-element_type="widget" data-widget_type="text-editor.default">
+                                                        <div class="elementor-widget-container">
+                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                                            eiusmod tempor incididunt ut labore et dolore magna aliqua
+                                                        </div>
+                                                    </div> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container mt-5">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="fs-5 text-left">
+                                        <!-- <p>The village of Bir (elevation: 1400m), located in the Kangra district of Himachal Pradesh India, is internationally famous as the base for some of the best paragliding in the world. The take-off point at Billing, 14km up a winding road from Bir and 1000m higher, hosts major competitive flying events most years in October or November (including a round of the Paragliding World Cup in 2015). Experienced paragliders fly as far as Dharamshala, Mandi, and Manali from here.<br>
+                                        </p>
+                                        <p>
+                                            Bir is also an important center of the Tibetan exile community: the lower half of the village is known as Tibetan Colony and there are several Buddhist monasteries and institutes in and around Bir, some of which attract numbers of foreigners for courses and retreats.<br>
+                                        </p> -->
+                                        <?= $tour_other_info; ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                <?php
+                endif;
+                ?>
 
             </div>
             <div class="col-lg-4 col-md-12 col-sm-12">
