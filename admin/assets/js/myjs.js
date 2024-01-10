@@ -157,6 +157,7 @@ $(document).ready(function () {
 	});
 
 	$("#tour_itinerary_details_sbmt").click(function () {
+		tinymce.triggerSave("tour_itinerary_details");
 		var formData = new FormData($("#tour_itinerary_details")[0]);
 
 		// Perform an AJAX request
@@ -412,8 +413,12 @@ function tour_itineraryFunctionalities(ids = "", types = "", tables = "") {
 						$("#eid").val(res.data.id);
 						$("#tours_id").val(res.data.id).trigger("change");
 						$("#status").val(res.data.status).trigger("change");
-						$("#itinerary_question_0").val(res.data.itinerary);
-						$("#itinerary_answer_0").val(res.data.itinerary_sub);
+						$("#itinerary_0").val(res.data.itinerary);
+
+						tinymce
+							.get("itinerary_descriptions")
+							.setContent(res.data.itinerary_sub);
+						// $("#itinerary_descriptions_0").val(res.data.itinerary_sub);
 						$("#add_itinerary").hide();
 						$("#destination_details_sbmt").show();
 						successToster(res.msg);
@@ -588,7 +593,7 @@ function set_date(date = "", type = "") {
 			$("#start_date").val(),
 			$("#end_date").val()
 		);
-		$("#duration").val(ttl_days + " days");
+		$("#duration").val(ttl_days - 1 + "N/" + ttl_days + "D");
 		$("#duration").prop("readonly", true);
 	}
 }
@@ -657,27 +662,75 @@ tinymce.init({
 	},
 });
 
-function get_itinerary_form() {
-	var lngt = $("#itinerary_data").children().length + 2;
-	console.log(lngt);
-	var html =
-		'<div class="border rounded border-2 p-3 mb-3 col-lg-12 col-md-12 col-sm-12">';
-	html += '<div class="mb-3 form-floating">';
-	html +=
-		'<textarea class="form-control" placeholder="Leave a question here" id="itinerary_question_' +
-		lngt +
-		'" name="itinerary_question[]"></textarea><label for="floatingTextarea2">Itinerary Question ' +
-		lngt +
-		"</label>";
-	html += "</div>";
-	html += '<div class="form-floating">';
-	html +=
-		'<textarea class="form-control" placeholder="Leave a question here" id="itinerary_answer_' +
-		lngt +
-		'" name="itinerary_answer[]"></textarea><label for="floatingTextarea2">Itinerary Answer ' +
-		lngt +
-		"</label>";
-	html += "</div></div>";
+tinymce.init({
+	selector: "textarea#itinerary_descriptions",
+	width: "auto",
+	height: 300,
+	plugins: [
+		"advlist",
+		"autolink",
+		"link",
+		// "image",
+		"lists",
+		"charmap",
+		"prewiew",
+		"anchor",
+		"pagebreak",
+		"searchreplace",
+		"wordcount",
+		"visualblocks",
+		"code",
+		"fullscreen",
+		"insertdatetime",
+		// "media",
+		"table",
+		"emoticons",
+		"template",
+		"codesample",
+	],
+	toolbar:
+		"undo redo | styles | bold italic underline | alignleft aligncenter alignright alignjustify |" +
+		"bullist numlist outdent indent | print preview media fullscreen | " +
+		"forecolor backcolor emoticons",
+	menu: {
+		favs: {
+			title: "menu",
+			items: "code visualaid | searchreplace | emoticons",
+		},
+	},
+	menubar: "favs file edit view insert format tools table",
+	content_style: "body{font-family:Helvetica,Arial,sans-serif; font-size:16px}",
+	setup: function (editor) {
+		// This event is triggered when TinyMCE is initialized
+		editor.on("init", function () {
+			// Hide the promotion element after initialization
+			$(".tox-promotion").hide();
+			$(".tox-statusbar__branding").hide();
+		});
+	},
+});
 
-	$("#itinerary_data").append(html);
-}
+// function get_itinerary_form() {
+// 	var lngt = $("#itinerary_data").children().length + 2;
+// 	console.log(lngt);
+// 	var html =
+// 		'<div class="border rounded border-2 p-3 mb-3 col-lg-12 col-md-12 col-sm-12">';
+// 	html += '<div class="mb-3 form-floating">';
+// 	html +=
+// 		'<textarea class="form-control" placeholder="Leave a question here" id="itinerary_' +
+// 		lngt +
+// 		'" name="itinerary[]"></textarea><label for="floatingTextarea2">Itinerary ' +
+// 		lngt +
+// 		"</label>";
+// 	html += "</div>";
+// 	html += '<div class="form-floating">';
+// 	html +=
+// 		'<textarea class="form-control" placeholder="Leave a question here" id="itinerary_descriptions_' +
+// 		lngt +
+// 		'" name="itinerary_descriptions[]"></textarea><label for="floatingTextarea2">Itinerary Descriptions ' +
+// 		lngt +
+// 		"</label>";
+// 	html += "</div></div>";
+
+// 	$("#itinerary_data").append(html);
+// }
