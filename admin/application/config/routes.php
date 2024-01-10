@@ -58,6 +58,8 @@ $route['tours'] = 'myadmin_controller/tours';
 $route['destination'] = 'myadmin_controller/tour_destination';
 $route['tour-about'] = 'myadmin_controller/tour_about';
 $route['tour-itinerary'] = 'myadmin_controller/tour_itinerary';
+$route['tour-inclu-exclus'] = 'myadmin_controller/tour_inclusions_exclusions';
+$route['tour-other-info'] = 'myadmin_controller/tour_other_info';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

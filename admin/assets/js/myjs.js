@@ -179,6 +179,54 @@ $(document).ready(function () {
 			},
 		});
 	});
+
+	$("#tour_inclusions_exclusions_details_sbmt").click(function () {
+		tinymce.triggerSave("tour_inclusions_exclusions_details");
+		var formData = new FormData($("#tour_inclusions_exclusions_details")[0]);
+
+		// Perform an AJAX request
+		$.ajax({
+			type: "POST",
+			url: baseurl + "tour_inclusions_exclusions_details",
+			data: formData,
+			dataType: "json",
+			contentType: false,
+			processData: false,
+			success: function (res) {
+				// Handle the server response
+				if (res.status != 103) {
+					window.location.href = baseurl + "tour_inclusions_exclusions";
+					successToster(res.msg);
+				} else {
+					errorToster(res.msg);
+				}
+			},
+		});
+	});
+
+	$("#tour_other_info_details_sbmt").click(function () {
+		tinymce.triggerSave("tour_other_info_details");
+		var formData = new FormData($("#tour_other_info_details")[0]);
+
+		// Perform an AJAX request
+		$.ajax({
+			type: "POST",
+			url: baseurl + "tour_other_info_details",
+			data: formData,
+			dataType: "json",
+			contentType: false,
+			processData: false,
+			success: function (res) {
+				// Handle the server response
+				if (res.status != 103) {
+					window.location.href = baseurl + "tour_other_info";
+					successToster(res.msg);
+				} else {
+					errorToster(res.msg);
+				}
+			},
+		});
+	});
 });
 
 function stateFunctionalities(ids = "", types = "", tables = "") {
@@ -434,6 +482,85 @@ function tour_itineraryFunctionalities(ids = "", types = "", tables = "") {
 	}
 }
 
+function tour_inclusions_exclusionsFunctionalities(
+	ids = "",
+	types = "",
+	tables = ""
+) {
+	if (types == "edit" || types == "delete") {
+		// alert(types);
+		$.ajax({
+			type: "post",
+			url:
+				baseurl +
+				(types == "edit"
+					? "edit_tour_inclusions_exclusions_data"
+					: "delete_data"),
+			data: { eid: ids, tables: tables },
+			dataType: "json",
+			success: function (res) {
+				console.log(res);
+				if (res.status == 101) {
+					if (types != "delete") {
+						$("#eid").val(res.data.id);
+						$("#tours_id").val(res.data.id).trigger("change");
+						tinymce
+							.get("tour_inclusions_details_text")
+							.setContent(res.data.inclusions);
+						tinymce
+							.get("tour_exclusions_details_text")
+							.setContent(res.data.exclusions);
+						$("#status").val(res.data.status).trigger("change");
+
+						$("#tour_inclusions_exclusions_details_sbmt").show();
+						successToster(res.msg);
+					} else {
+						window.location.href = baseurl + "tour_inclusions_exclusions";
+						successToster(res.msg);
+					}
+				} else {
+					errorToster(res.msg);
+				}
+			},
+		});
+	}
+}
+
+function tour_other_infoFunctionalities(ids = "", types = "", tables = "") {
+	if (types == "edit" || types == "delete") {
+		// alert(types);
+		$.ajax({
+			type: "post",
+			url:
+				baseurl +
+				(types == "edit" ? "edit_tour_other_info_data" : "delete_data"),
+			data: { eid: ids, tables: tables },
+			dataType: "json",
+			success: function (res) {
+				console.log(res);
+				if (res.status == 101) {
+					if (types != "delete") {
+						$("#eid").val(res.data.id);
+						$("#tours_id").val(res.data.id).trigger("change");
+						tinymce
+							.get("tour_other_info_details_text")
+							.setContent(res.data.other_info);
+						$("#status").val(res.data.status).trigger("change");
+
+						$("#tour_other_info_details_sbmt").show();
+						successToster(res.msg);
+					} else {
+						window.location.href = baseurl + "tour_other_info";
+						successToster(res.msg);
+					}
+				} else {
+					errorToster(res.msg);
+				}
+			},
+		});
+	}
+}
+
 function displayExistingImage(imageUrl) {
 	$("#preview_tour_image").attr("src", imageUrl);
 }
@@ -664,6 +791,150 @@ tinymce.init({
 
 tinymce.init({
 	selector: "textarea#itinerary_descriptions",
+	width: "auto",
+	height: 300,
+	plugins: [
+		"advlist",
+		"autolink",
+		"link",
+		// "image",
+		"lists",
+		"charmap",
+		"prewiew",
+		"anchor",
+		"pagebreak",
+		"searchreplace",
+		"wordcount",
+		"visualblocks",
+		"code",
+		"fullscreen",
+		"insertdatetime",
+		// "media",
+		"table",
+		"emoticons",
+		"template",
+		"codesample",
+	],
+	toolbar:
+		"undo redo | styles | bold italic underline | alignleft aligncenter alignright alignjustify |" +
+		"bullist numlist outdent indent | print preview media fullscreen | " +
+		"forecolor backcolor emoticons",
+	menu: {
+		favs: {
+			title: "menu",
+			items: "code visualaid | searchreplace | emoticons",
+		},
+	},
+	menubar: "favs file edit view insert format tools table",
+	content_style: "body{font-family:Helvetica,Arial,sans-serif; font-size:16px}",
+	setup: function (editor) {
+		// This event is triggered when TinyMCE is initialized
+		editor.on("init", function () {
+			// Hide the promotion element after initialization
+			$(".tox-promotion").hide();
+			$(".tox-statusbar__branding").hide();
+		});
+	},
+});
+
+tinymce.init({
+	selector: "textarea#tour_inclusions_details_text",
+	width: "auto",
+	height: 300,
+	plugins: [
+		"advlist",
+		"autolink",
+		"link",
+		// "image",
+		"lists",
+		"charmap",
+		"prewiew",
+		"anchor",
+		"pagebreak",
+		"searchreplace",
+		"wordcount",
+		"visualblocks",
+		"code",
+		"fullscreen",
+		"insertdatetime",
+		// "media",
+		"table",
+		"emoticons",
+		"template",
+		"codesample",
+	],
+	toolbar:
+		"undo redo | styles | bold italic underline | alignleft aligncenter alignright alignjustify |" +
+		"bullist numlist outdent indent | print preview media fullscreen | " +
+		"forecolor backcolor emoticons",
+	menu: {
+		favs: {
+			title: "menu",
+			items: "code visualaid | searchreplace | emoticons",
+		},
+	},
+	menubar: "favs file edit view insert format tools table",
+	content_style: "body{font-family:Helvetica,Arial,sans-serif; font-size:16px}",
+	setup: function (editor) {
+		// This event is triggered when TinyMCE is initialized
+		editor.on("init", function () {
+			// Hide the promotion element after initialization
+			$(".tox-promotion").hide();
+			$(".tox-statusbar__branding").hide();
+		});
+	},
+});
+
+tinymce.init({
+	selector: "textarea#tour_exclusions_details_text",
+	width: "auto",
+	height: 300,
+	plugins: [
+		"advlist",
+		"autolink",
+		"link",
+		// "image",
+		"lists",
+		"charmap",
+		"prewiew",
+		"anchor",
+		"pagebreak",
+		"searchreplace",
+		"wordcount",
+		"visualblocks",
+		"code",
+		"fullscreen",
+		"insertdatetime",
+		// "media",
+		"table",
+		"emoticons",
+		"template",
+		"codesample",
+	],
+	toolbar:
+		"undo redo | styles | bold italic underline | alignleft aligncenter alignright alignjustify |" +
+		"bullist numlist outdent indent | print preview media fullscreen | " +
+		"forecolor backcolor emoticons",
+	menu: {
+		favs: {
+			title: "menu",
+			items: "code visualaid | searchreplace | emoticons",
+		},
+	},
+	menubar: "favs file edit view insert format tools table",
+	content_style: "body{font-family:Helvetica,Arial,sans-serif; font-size:16px}",
+	setup: function (editor) {
+		// This event is triggered when TinyMCE is initialized
+		editor.on("init", function () {
+			// Hide the promotion element after initialization
+			$(".tox-promotion").hide();
+			$(".tox-statusbar__branding").hide();
+		});
+	},
+});
+
+tinymce.init({
+	selector: "textarea#tour_other_info_details_text",
 	width: "auto",
 	height: 300,
 	plugins: [

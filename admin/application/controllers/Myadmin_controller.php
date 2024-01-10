@@ -656,10 +656,6 @@ class Myadmin_controller extends CI_Controller
 
     public function tour_itinerary_details()
     {
-        // echo "<per>";
-        // print_r($_POST);
-        // exit;
-
         $edit_id = (!empty($this->input->post('eid'))) ? $this->input->post('eid') : '';
         $itinerary = $this->input->post('itinerary');
         $itinerary_descriptions = $this->input->post('itinerary_descriptions');
@@ -669,12 +665,6 @@ class Myadmin_controller extends CI_Controller
             'status' => $this->input->post('status'),
         );
 
-
-
-        // print_r($tour_itenary);
-        // print_r($itinerary);
-        // print_r($itinerary_descriptions);
-        // exit;
         if (empty($edit_id)) {
             $tour_itenary['created_by'] = $this->session->userdata('user_id');
             $tour_itenary['created_at'] = date('Y-m-d H:i:s');
@@ -746,6 +736,178 @@ class Myadmin_controller extends CI_Controller
 
             $join = array('table' => 'tour_itinerary_sub', 'condition' => 'tour_itinerary_sub.itinery_main_id=tour_itinerary_main.id');
             $data = $this->myadmin_model->get_data('tour_itinerary_main.id,tour_itinerary_main.itinerary,tour_itinerary_main.status,tour_itinerary_sub.itinerary_sub', "tour_itinerary_main", $cond, [$join], "1");
+            $rslt = array('status' => '101', 'msg' => '', 'data' => $data);
+        } else {
+            $rslt = array('status' => '103', 'msg' => '', 'data' => '');
+        }
+
+        echo json_encode($rslt);
+    }
+
+
+    public function tour_inclusions_exclusions()
+    {
+        // echo "<pre>";
+        if (empty($this->session->userdata('user_id'))) {
+            redirect(base_url('login'));
+        }
+
+        $cond2 = array(
+            'tour_inclusions_exclusions.is_delete!=' => '0'
+        );
+        $join1 = array('table' => 'tours', 'condition' => 'tours.id=tour_inclusions_exclusions.tours_id');
+        $data['tour_inclusions_exclusions_details'] = $this->myadmin_model->get_data("tour_inclusions_exclusions.id,tour_inclusions_exclusions.tours_id,tour_inclusions_exclusions.inclusions,tour_inclusions_exclusions.exclusions,tour_inclusions_exclusions.status,tours.name", "tour_inclusions_exclusions", $cond2, [$join1], "", "", "");
+
+        $cond1 = array(
+            'is_delete!=' => '0',
+            'status!=' => '0',
+        );
+        $data['tours_data'] = $this->myadmin_model->get_data("id,name", "tours", $cond1);
+
+        // exit;
+        $this->load->view('include/header');
+        $this->load->view('tour_inclusions_exclusions/index', $data);
+        $this->load->view('include/footer');
+    }
+
+
+    public function tour_inclusions_exclusions_details()
+    {
+        // echo "<per>";
+        // print_r($_POST);
+        // exit;
+
+        $edit_id = (!empty($this->input->post('eid'))) ? $this->input->post('eid') : '';
+
+        $tour_inclusions_exclusions = array(
+            'tours_id' => $this->input->post('tours_id'),
+            'status' => $this->input->post('status'),
+            'inclusions' => $this->input->post('tour_inclusions_details_text'),
+            'exclusions' => $this->input->post('tour_exclusions_details_text'),
+        );
+
+        // print_r($tour_inclusions_exclusions);
+        // exit;
+        if (empty($edit_id)) {
+            $tour_inclusions_exclusions['created_by'] = $this->session->userdata('user_id');
+            $tour_inclusions_exclusions['created_at'] = date('Y-m-d H:i:s');
+            $tour_inclusions_exclusions['is_delete'] = '1';
+            $last_inst_id = $this->myadmin_model->insert_data("tour_inclusions_exclusions", $tour_inclusions_exclusions);
+            $msg = 'You have successfully added';
+        } else {
+            $cond = array(
+                'id' => $edit_id
+            );
+            $tour_inclusions_exclusions['updated_by'] = $this->session->userdata('user_id');
+            $tour_inclusions_exclusions['updated_at'] = date('Y-m-d H:i:s');
+            $last_inst_id = $this->myadmin_model->update_data("tour_inclusions_exclusions", $tour_inclusions_exclusions, $cond);
+            $msg = 'You have successfully edited';
+        }
+
+        if (!empty($last_inst_id)) {
+            $rslt = array('status' => '101', 'msg' => $msg, 'data' => $last_inst_id);
+        } else {
+            $rslt = array('status' => '103', 'msg' => 'Something went wrong!', 'data' => '');
+        }
+
+        echo json_encode($rslt);
+    }
+
+
+    public function edit_tour_inclusions_exclusions_data()
+    {
+        $edit_id = (!empty($this->input->post('eid'))) ? $this->input->post('eid') : '';
+
+        if (!empty($edit_id)) {
+            $cond = array(
+                'id' => $edit_id
+            );
+            $data = $this->myadmin_model->get_data('', "tour_inclusions_exclusions", $cond, "", "1");
+            $rslt = array('status' => '101', 'msg' => '', 'data' => $data);
+        } else {
+            $rslt = array('status' => '103', 'msg' => '', 'data' => '');
+        }
+
+        echo json_encode($rslt);
+    }
+
+
+    public function tour_other_info()
+    {
+        // echo "<pre>";
+        if (empty($this->session->userdata('user_id'))) {
+            redirect(base_url('login'));
+        }
+
+        $cond2 = array(
+            'tour_other_info.is_delete!=' => '0'
+        );
+        $join1 = array('table' => 'tours', 'condition' => 'tours.id=tour_other_info.tours_id');
+        $data['tour_tour_other_info_details'] = $this->myadmin_model->get_data("tour_other_info.id,tour_other_info.tours_id,tour_other_info.other_info,tour_other_info.status,tours.name", "tour_other_info", $cond2, [$join1], "", "", "");
+
+        $cond1 = array(
+            'is_delete!=' => '0',
+            'status!=' => '0',
+        );
+        $data['tours_data'] = $this->myadmin_model->get_data("id,name", "tours", $cond1);
+
+        // exit;
+        $this->load->view('include/header');
+        $this->load->view('tour_other_info/index', $data);
+        $this->load->view('include/footer');
+    }
+
+
+    public function tour_other_info_details()
+    {
+        // echo "<per>";
+        // print_r($_POST);
+        // exit;
+
+        $edit_id = (!empty($this->input->post('eid'))) ? $this->input->post('eid') : '';
+
+        $tour_other_info = array(
+            'tours_id' => $this->input->post('tours_id'),
+            'status' => $this->input->post('status'),
+            'other_info' => $this->input->post('tour_other_info_details_text'),
+        );
+
+        // print_r($tour_inclusions_exclusions);
+        // exit;
+        if (empty($edit_id)) {
+            $tour_other_info['created_by'] = $this->session->userdata('user_id');
+            $tour_other_info['created_at'] = date('Y-m-d H:i:s');
+            $tour_other_info['is_delete'] = '1';
+            $last_inst_id = $this->myadmin_model->insert_data("tour_other_info", $tour_other_info);
+            $msg = 'You have successfully added';
+        } else {
+            $cond = array(
+                'id' => $edit_id
+            );
+            $tour_other_info['updated_by'] = $this->session->userdata('user_id');
+            $tour_other_info['updated_at'] = date('Y-m-d H:i:s');
+            $last_inst_id = $this->myadmin_model->update_data("tour_other_info", $tour_other_info, $cond);
+            $msg = 'You have successfully edited';
+        }
+
+        if (!empty($last_inst_id)) {
+            $rslt = array('status' => '101', 'msg' => $msg, 'data' => $last_inst_id);
+        } else {
+            $rslt = array('status' => '103', 'msg' => 'Something went wrong!', 'data' => '');
+        }
+
+        echo json_encode($rslt);
+    }
+
+    public function edit_tour_other_info_data()
+    {
+        $edit_id = (!empty($this->input->post('eid'))) ? $this->input->post('eid') : '';
+
+        if (!empty($edit_id)) {
+            $cond = array(
+                'id' => $edit_id
+            );
+            $data = $this->myadmin_model->get_data('', "tour_other_info", $cond, "", "1");
             $rslt = array('status' => '101', 'msg' => '', 'data' => $data);
         } else {
             $rslt = array('status' => '103', 'msg' => '', 'data' => '');

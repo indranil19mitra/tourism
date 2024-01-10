@@ -1,15 +1,15 @@
 <div class="content-wrapper">
     <div class="row">
         <!-- Modal -->
-        <div class="modal fade" id="tour_itinerary_details_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="tour_other_info_details_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Tour Itenary</h1>
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Tour Other Info</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form class="forms-sample" id="tour_itinerary_details">
+                        <form class="forms-sample" id="tour_other_info_details">
                             <div class="row">
                                 <input type="hidden" class="clr" id="eid" name="eid">
                                 <div class="col-lg-6 col-md-12 col-sm-12 mb-3">
@@ -33,27 +33,15 @@
                                         <option value="0">In-Active</option>
                                     </select>
                                 </div>
-                                <div class="col-12 mb-3">
-                                    <div class="border rounded border-2 p-3 mb-3 col-lg-12 col-md-12 col-sm-12">
-                                        <div class="mb-3 form-floating"><textarea class="form-control" placeholder="Leave a question here" id="itinerary_0" name="itinerary"></textarea><label for="floatingTextarea2">Days</label>
-                                        </div>
-
-                                        <div class="col-12 mt-5">
-                                            <label for="tour_about_details_text" class="col-form-label">Days Description</label>
-                                            <textarea id="itinerary_descriptions" name="itinerary_descriptions"></textarea>
-                                        </div>
-                                        <!-- <div class="form-floating">
-                                            <textarea class="form-control" placeholder="Leave a question here" id="itinerary_descriptions_0" name="itinerary_descriptions[]"></textarea><label for="floatingTextarea2">Itinerary Descriptions 1</label>
-                                        </div> -->
-                                    </div>
-                                    <!-- <div id="itinerary_data"></div> -->
-                                    <!-- <button type="button" id="add_itinerary" onclick="get_itinerary_form()" class="btn btn-primary float-end">Add Itinerary</button> -->
+                                <div class="col-12 mt-5">
+                                    <label for="tour_other_info_details_text" class="col-form-label">Other Info Section:</label>
+                                    <textarea id="tour_other_info_details_text" name="tour_other_info_details_text"></textarea>
                                 </div>
                             </div>
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" id="tour_itinerary_details_sbmt">Submit</button>
+                        <button type="button" class="btn btn-primary" id="tour_other_info_details_sbmt">Submit</button>
                     </div>
                 </div>
             </div>
@@ -61,45 +49,43 @@
     </div>
 
     <div class="d-flex justify-content-end">
-        <button type="button" class="btn btn-info" data-bs-toggle="modal" onclick="tourResetFun()" data-bs-target="#tour_itinerary_details_modal" data-whatever="@mdo">Add Itenary</button>
+        <button type="button" class="btn btn-info" data-bs-toggle="modal" onclick="tourResetFun()" data-bs-target="#tour_other_info_details_modal" data-whatever="@mdo">Add Other Info</button>
     </div>
 
     <div class="col-12 grid-margin stretch-card mt-5">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Tour Itenary List</h4>
+                <h4 class="card-title">Tour Other Info List</h4>
                 <div class="table-responsive">
                     <table class="table table-hover">
                         <thead>
                             <tr>
                                 <th>Sl No</th>
                                 <th>Tour</th>
-                                <th>Itenary Question</th>
-                                <th>Itenary Answer</th>
+                                <th>Other Info</th>
                                 <th>Status</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
-                            if (!empty($tour_itinerary_details)) :
+                            if (!empty($tour_tour_other_info_details)) :
                                 // echo "<pre>";
-                                // print_r($tour_itinerary_details);
+                                // print_r($tour_tour_other_info_details);
                                 // exit;
-                                foreach ($tour_itinerary_details as $key => $rslt) :
+                                foreach ($tour_tour_other_info_details as $key => $rslt) :
                                     $status_desc = ($rslt->status != 0) ? 'Active' : 'Inactive';
                                     $status_desc_class = ($rslt->status != 0) ? 'badge badge-success' : 'badge badge-danger';
                             ?>
                                     <tr>
                                         <td><?= ($key + 1) ?></td>
                                         <td><?= $rslt->name; ?></td>
-                                        <td class="text-wrap"><?= $rslt->itinerary; ?></td>
-                                        <td class="text-wrap"><?= $rslt->itinerary_sub; ?></td>
+                                        <td class="text-wrap"><?= $rslt->other_info; ?></td>
                                         <td><label class="<?= $status_desc_class; ?>"><?= $status_desc; ?></label></td>
                                         <td>
                                             <div class="d-flex">
-                                                <div class="pe-2"><i class="btn fa-solid fa-pen-to-square p-0 text-danger" data-bs-toggle="modal" data-bs-target="#tour_itinerary_details_modal" onclick="tour_itineraryFunctionalities(<?= $rslt->id ?>,'edit')"></i></div>
-                                                <div><i class="btn fa-solid fa-trash p-0 text-danger" onclick="tour_itineraryFunctionalities(<?= $rslt->id ?>,'delete','tour_itinerary_main')"></i></div>
+                                                <div class="pe-2"><i class="btn fa-solid fa-pen-to-square p-0 text-danger" data-bs-toggle="modal" data-bs-target="#tour_other_info_details_modal" onclick="tour_other_infoFunctionalities(<?= $rslt->id ?>,'edit')"></i></div>
+                                                <div><i class="btn fa-solid fa-trash p-0 text-danger" onclick="tour_other_infoFunctionalities(<?= $rslt->id ?>,'delete','tour_other_info')"></i></div>
                                             </div>
                                         </td>
                                     </tr>
