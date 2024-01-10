@@ -18,6 +18,10 @@
             border: none !important;
         }
 
+        .call_cl {
+            color: #FF4C15;
+        }
+
         /* table */
 
         .tbl {
@@ -1031,7 +1035,7 @@
                                                             </ul>
                                                         </li>
                                                         <li id="menu-item-473" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-473 disabled" aria-disabled="true">
-                                                            <a href="#">7003072006/8910271365</a>
+                                                            <a href="#"><i class="fa-solid fa-phone-volume call_cl"></i> 7003072006/8910271365</a>
                                                         </li>
                                                     </ul>
                                                 </div>

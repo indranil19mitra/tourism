@@ -58,7 +58,7 @@
 		</div>
 	</section>
 
-	<div>
+	<div class="mb-5">
 		<section class="elementor-section elementor-top-section elementor-element elementor-element-6521b521 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="6521b521" data-element_type="section">
 			<div class="elementor-background-overlay"></div>
 			<div class="container d-flex flex-wrap elementor-column-gap-default  p-0 g-0">
@@ -156,6 +156,29 @@
 		</div>
 	</div>
 
+	<section class="elementor-section elementor-inner-section elementor-element elementor-element-65bf764c animated-slow elementor-section-boxed elementor-section-height-default elementor-section-height-default crsl_tp mt-5 mb-5" data-id="6521b521" data-element_type="section">
+
+		<div class="container-fluid p-0 g-0">
+			<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+				<div class="carousel-indicators">
+					<button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+					<button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="1" aria-label="Slide 2"></button>
+					<button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="2" aria-label="Slide 3"></button>
+				</div>
+				<div class="carousel-inner rounded">
+					<div class="carousel-item active">
+						<img src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/in-hike-4-e1628420203493.jpg" class="d-block w-100 crsl_img" style="width: 100%;" alt="..." data-bs-interval="2000">
+					</div>
+					<div class="carousel-item">
+						<img src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/hiker-3-e1628420252326.jpg" class="d-block w-100 crsl_img" style="width: 100%;" alt="..." data-bs-interval="2000">
+					</div>
+					<div class="carousel-item">
+						<img src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/in-hike-3-e1628420193825.jpg" class="d-block w-100 crsl_img" style="width: 100%;" alt="..." data-bs-interval="2000">
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
 	<?php
 	if (!empty($get_tours_weekend_trip)) {
@@ -232,10 +255,33 @@
 				?>
 			</div>
 		</div>
-
-
 	<?php
 	}
+	?>
+	<section class="elementor-section elementor-inner-section elementor-element elementor-element-65bf764c animated-slow elementor-section-boxed elementor-section-height-default elementor-section-height-default crsl_tp mt-5 mb-5" data-id="6521b521" data-element_type="section">
+
+		<div class="container-fluid p-0 g-0">
+			<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+				<div class="carousel-indicators">
+					<button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+					<button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="1" aria-label="Slide 2"></button>
+					<button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="2" aria-label="Slide 3"></button>
+				</div>
+				<div class="carousel-inner rounded">
+					<div class="carousel-item active">
+						<img src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/in-hike-4-e1628420203493.jpg" class="d-block w-100 crsl_img" style="width: 100%;" alt="..." data-bs-interval="2000">
+					</div>
+					<div class="carousel-item">
+						<img src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/hiker-3-e1628420252326.jpg" class="d-block w-100 crsl_img" style="width: 100%;" alt="..." data-bs-interval="2000">
+					</div>
+					<div class="carousel-item">
+						<img src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/in-hike-3-e1628420193825.jpg" class="d-block w-100 crsl_img" style="width: 100%;" alt="..." data-bs-interval="2000">
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<?php
 	if (!empty($get_tours_popular_trip)) {
 	?>
 		<section class="elementor-section elementor-top-section elementor-element elementor-element-6521b521 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="6521b521" data-element_type="section">
@@ -313,6 +359,31 @@
 
 	<?php
 	}
+	?>
+	<section class="elementor-section elementor-inner-section elementor-element elementor-element-65bf764c animated-slow elementor-section-boxed elementor-section-height-default elementor-section-height-default crsl_tp mt-5 mb-5" data-id="6521b521" data-element_type="section">
+
+		<div class="container-fluid p-0 g-0">
+			<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+				<div class="carousel-indicators">
+					<button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+					<button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="1" aria-label="Slide 2"></button>
+					<button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="2" aria-label="Slide 3"></button>
+				</div>
+				<div class="carousel-inner rounded">
+					<div class="carousel-item active">
+						<img src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/in-hike-4-e1628420203493.jpg" class="d-block w-100 crsl_img" style="width: 100%;" alt="..." data-bs-interval="2000">
+					</div>
+					<div class="carousel-item">
+						<img src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/hiker-3-e1628420252326.jpg" class="d-block w-100 crsl_img" style="width: 100%;" alt="..." data-bs-interval="2000">
+					</div>
+					<div class="carousel-item">
+						<img src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/in-hike-3-e1628420193825.jpg" class="d-block w-100 crsl_img" style="width: 100%;" alt="..." data-bs-interval="2000">
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<?php
 	if (!empty($get_tours_adv_trip)) {
 	?>
 		<section class="elementor-section elementor-top-section elementor-element elementor-element-6521b521 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="6521b521" data-element_type="section">

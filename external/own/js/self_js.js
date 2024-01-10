@@ -1,6 +1,7 @@
 $(document).ready(function () {
 	$("#itinerary_details").hide();
 	$("#dates_and_costing").hide();
+	$("#other_info").hide();
 });
 function tourGetOnDates(date = "") {
 	window.location.href = baseurl + "?dts=" + date;
@@ -15,12 +16,21 @@ function get_itinerary() {
 	$("#itinerary_details").show();
 	$("#about_details").hide();
 	$("#dates_and_costing").hide();
+	$("#other_info").hide();
 }
 
 function get_book() {
-	$("#about_details").show();
+	$("#about_details").hide();
 	$("#itinerary_details").hide();
 	$("#dates_and_costing").hide();
+	$("#other_info").hide();
+}
+
+function get_other_info() {
+	$("#about_details").hide();
+	$("#itinerary_details").hide();
+	$("#dates_and_costing").hide();
+	$("#other_info").show();
 }
 
 function get_dates_costing(tour_details_id = "", tour_ids = "") {
@@ -102,6 +112,7 @@ function get_dates_costing(tour_details_id = "", tour_ids = "") {
 				$("#scheduled_months").html(html);
 				$("#about_details").hide();
 				$("#itinerary_details").hide();
+				$("#other_info").hide();
 				// console.log(index_1st);
 				if (index_1st != "") {
 					$("#" + index_1st).click();
