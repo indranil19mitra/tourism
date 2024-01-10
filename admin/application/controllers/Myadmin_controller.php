@@ -162,7 +162,8 @@ class Myadmin_controller extends CI_Controller
 
         $cond = array('id' => $eid);
         $updt_data = array(
-            'is_delete' => '0'
+            'is_delete' => '0',
+            'status' => '0'
         );
 
         $data = $this->myadmin_model->update_data($dlt_tables, $updt_data, $cond);
@@ -678,23 +679,22 @@ class Myadmin_controller extends CI_Controller
             $tour_itenary['created_by'] = $this->session->userdata('user_id');
             $tour_itenary['created_at'] = date('Y-m-d H:i:s');
             $tour_itenary['is_delete'] = '1';
-            foreach ($itinerary as $key => $val) {
-                if (!empty($itinerary[$key]) && !empty($itinerary_descriptions[$key])) {
-                    $tour_itenary['itinerary'] = $itinerary[$key];
-                    $last_inst_id = $this->myadmin_model->insert_data("tour_itinerary_main", $tour_itenary);
+            // foreach ($itinerary as $key => $val) {
+            if (!empty($itinerary) && !empty($itinerary_descriptions)) {
+                $tour_itenary['itinerary'] = $itinerary;
+                $last_inst_id = $this->myadmin_model->insert_data("tour_itinerary_main", $tour_itenary);
 
-                    $tour_itenary_sub = array(
-                        'itinery_main_id' => $last_inst_id,
-                        'itinerary_sub' => $itinerary_descriptions[$key],
-                        'status' => $this->input->post('status'),
-                        'created_by' => $this->session->userdata('user_id'),
-                        'created_at' => date('Y-m-d H:i:s'),
-                        'is_delete' => '1'
-                    );
-                    $last_inst_id = $this->myadmin_model->insert_data("tour_itinerary_sub", $tour_itenary_sub);
-                }
+                $tour_itenary_sub = array(
+                    'itinery_main_id' => $last_inst_id,
+                    'itinerary_sub' => $itinerary_descriptions,
+                    'status' => $this->input->post('status'),
+                    'created_by' => $this->session->userdata('user_id'),
+                    'created_at' => date('Y-m-d H:i:s'),
+                    'is_delete' => '1'
+                );
+                $last_inst_id = $this->myadmin_model->insert_data("tour_itinerary_sub", $tour_itenary_sub);
             }
-            // $last_inst_id = $this->myadmin_model->insert_data("tour_about", $tour_itenary);
+            // }
             $msg = 'You have successfully added';
         } else {
             $cond = array(
@@ -703,29 +703,25 @@ class Myadmin_controller extends CI_Controller
             $tour_itenary['updated_by'] = $this->session->userdata('user_id');
             $tour_itenary['updated_at'] = date('Y-m-d H:i:s');
 
-            foreach ($itinerary as $key => $val) {
-                if (!empty($itinerary[$key]) && !empty($itinerary_descriptions[$key])) {
-                    $tour_itenary['itinerary'] = $itinerary[$key];
-                    // $last_inst_id = $this->myadmin_model->insert_data("tour_itinerary_main", $tour_itenary);
-                    $last_inst_id = $this->myadmin_model->update_data("tour_itinerary_main", $tour_itenary, $cond);
+            // foreach ($itinerary as $key => $val) {
+            if (!empty($itinerary) && !empty($itinerary_descriptions)) {
+                $tour_itenary['itinerary'] = $itinerary;
+                $last_inst_id = $this->myadmin_model->update_data("tour_itinerary_main", $tour_itenary, $cond);
 
+                $cond1 = array(
+                    'tour_itinerary_sub.itinery_main_id' => $edit_id,
+                    'tour_itinerary_sub.status' => '1',
+                    'tour_itinerary_sub.is_delete' => '1',
+                );
+                $tour_itenary_sub = array(
+                    'itinerary_sub' => $itinerary_descriptions,
+                    'updated_by' => $this->session->userdata('user_id'),
+                    'updated_at' => date('Y-m-d H:i:s'),
+                );
 
-                    $cond1 = array(
-                        'tour_itinerary_sub.itinery_main_id' => $edit_id,
-                        'tour_itinerary_sub.status' => '1',
-                        'tour_itinerary_sub.is_delete' => '1',
-                    );
-                    $tour_itenary_sub = array(
-                        'itinerary_sub' => $itinerary_descriptions[$key],
-                        'updated_by' => $this->session->userdata('user_id'),
-                        'updated_at' => date('Y-m-d H:i:s'),
-                    );
-                    // $last_inst_id = $this->myadmin_model->insert_data("tour_itinerary_sub", $tour_itenary_sub);
-
-                    $last_inst_id = $this->myadmin_model->update_data("tour_itinerary_sub", $tour_itenary_sub, $cond1);
-                }
+                $last_inst_id = $this->myadmin_model->update_data("tour_itinerary_sub", $tour_itenary_sub, $cond1);
             }
-            // $last_inst_id = $this->myadmin_model->update_data("tour_itinerary_main", $tour_itenary, $cond);
+            // }
             $msg = 'You have successfully edited';
         }
 

@@ -35,14 +35,19 @@
                                 </div>
                                 <div class="col-12 mb-3">
                                     <div class="border rounded border-2 p-3 mb-3 col-lg-12 col-md-12 col-sm-12">
-                                        <div class="mb-3 form-floating"><textarea class="form-control" placeholder="Leave a question here" id="itinerary_0" name="itinerary[]"></textarea><label for="floatingTextarea2">Itinerary 1</label>
+                                        <div class="mb-3 form-floating"><textarea class="form-control" placeholder="Leave a question here" id="itinerary_0" name="itinerary"></textarea><label for="floatingTextarea2">Days</label>
                                         </div>
-                                        <div class="form-floating">
+
+                                        <div class="col-12 mt-5">
+                                            <label for="tour_about_details_text" class="col-form-label">Days Description</label>
+                                            <textarea id="itinerary_descriptions" name="itinerary_descriptions"></textarea>
+                                        </div>
+                                        <!-- <div class="form-floating">
                                             <textarea class="form-control" placeholder="Leave a question here" id="itinerary_descriptions_0" name="itinerary_descriptions[]"></textarea><label for="floatingTextarea2">Itinerary Descriptions 1</label>
-                                        </div>
+                                        </div> -->
                                     </div>
-                                    <div id="itinerary_data"></div>
-                                    <button type="button" id="add_itinerary" onclick="get_itinerary_form()" class="btn btn-primary float-end">Add Itinerary</button>
+                                    <!-- <div id="itinerary_data"></div> -->
+                                    <!-- <button type="button" id="add_itinerary" onclick="get_itinerary_form()" class="btn btn-primary float-end">Add Itinerary</button> -->
                                 </div>
                             </div>
                         </form>
