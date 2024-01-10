@@ -511,7 +511,7 @@
     var baseurl = '<?= base_url() ?>';
 </script>
 
-</section>
+<!-- </section> -->
 <script src='<?= base_url() ?>external/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.16.4' id='elementor-frontend-js'></script>
 <script id='elementor-frontend-js-after'>
     var jkit_ajax_url = "https://templatekit.jegtheme.com/hikker/?jkit-ajax-request=jkit_elements   ",
@@ -532,6 +532,9 @@
 </script>
 <script src='<?= base_url() ?>external/wp-content/plugins/jeg-elementor-kit/assets/js/elements/post-pagination.js?ver=2.6.2' id='jkit-element-pagination-js'></script>
 <script src='<?= base_url() ?>external/wp-content/plugins/jeg-elementor-kit/assets/js/elements/mailchimp.js?ver=2.6.2' id='jkit-element-mailchimp-js'></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+
 <script src='<?= base_url() ?>external/own/js/self_js.js'></script>
 </body>
 
