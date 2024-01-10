@@ -352,6 +352,8 @@
                                 <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>destination">Destination</a></li>
                                 <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>tour-about">Tour About</a></li>
                                 <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>tour-itinerary">Tour Itinerary</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>tour-inclu-exclus">Tour Inclusions/Exclusions</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>tour-other-info">Tour Other Info</a></li>
                                 <!-- <li class="nav-item"> <a class="nav-link" href="pages/ui-features/breadcrumbs.html">Breadcrumbs</a></li>
                                 <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Dropdowns</a></li>
                                 <li class="nav-item"> <a class="nav-link" href="pages/ui-features/modals.html">Modals</a></li>

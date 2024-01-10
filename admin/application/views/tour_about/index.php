@@ -49,13 +49,13 @@
     </div>
 
     <div class="d-flex justify-content-end">
-        <button type="button" class="btn btn-info" data-bs-toggle="modal" onclick="tourResetFun()" data-bs-target="#tour_about_details_modal" data-whatever="@mdo">Add Destination Details</button>
+        <button type="button" class="btn btn-info" data-bs-toggle="modal" onclick="tourResetFun()" data-bs-target="#tour_about_details_modal" data-whatever="@mdo">Add Tour About</button>
     </div>
 
     <div class="col-12 grid-margin stretch-card mt-5">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Destination Details List</h4>
+                <h4 class="card-title">Tour About List</h4>
                 <div class="table-responsive">
                     <table class="table table-hover">
                         <thead>
