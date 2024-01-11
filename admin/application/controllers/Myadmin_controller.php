@@ -735,7 +735,7 @@ class Myadmin_controller extends CI_Controller
             );
 
             $join = array('table' => 'tour_itinerary_sub', 'condition' => 'tour_itinerary_sub.itinery_main_id=tour_itinerary_main.id');
-            $data = $this->myadmin_model->get_data('tour_itinerary_main.id,tour_itinerary_main.itinerary,tour_itinerary_main.status,tour_itinerary_sub.itinerary_sub', "tour_itinerary_main", $cond, [$join], "1");
+            $data = $this->myadmin_model->get_data('tour_itinerary_main.id,tour_itinerary_main.tours_id,tour_itinerary_main.itinerary,tour_itinerary_main.status,tour_itinerary_sub.itinerary_sub', "tour_itinerary_main", $cond, [$join], "1");
             $rslt = array('status' => '101', 'msg' => '', 'data' => $data);
         } else {
             $rslt = array('status' => '103', 'msg' => '', 'data' => '');
@@ -908,6 +908,172 @@ class Myadmin_controller extends CI_Controller
                 'id' => $edit_id
             );
             $data = $this->myadmin_model->get_data('', "tour_other_info", $cond, "", "1");
+            $rslt = array('status' => '101', 'msg' => '', 'data' => $data);
+        } else {
+            $rslt = array('status' => '103', 'msg' => '', 'data' => '');
+        }
+
+        echo json_encode($rslt);
+    }
+
+
+    public function tour_tour_photos()
+    {
+        if (empty($this->session->userdata('user_id'))) {
+            redirect(base_url('login'));
+        }
+
+
+        $cond1 = array(
+            'is_delete!=' => '0',
+            'status!=' => '0',
+        );
+        $data['tours_data'] = $this->myadmin_model->get_data("id,name", "tours", $cond1);
+
+        $cond2 = array(
+            'tour_photos.is_delete!=' => '0'
+        );
+        $join1 = array('table' => 'tours', 'condition' => 'tours.id=tour_photos.tours_id');
+        $data['tour_photos'] = $this->myadmin_model->get_data('tour_photos.id,tour_photos.tours_id,tour_photos.tour_photo,tour_photos.status,tours.name', "tour_photos", $cond2, [$join1], "", "desc", "tour_photos.id", "tour_photos.id,tour_photos.tour_photo");
+
+        $this->load->view('include/header');
+        $this->load->view('tour_photos/index', $data);
+        $this->load->view('include/footer');
+    }
+
+    public function tour_photos_details()
+    {
+        $edit_id = $this->input->post('eid');
+        $msg = ''; // Initialize $msg variable
+        $last_inst_id = null; // Initialize $last_inst_id
+        $tours_photos = array();
+        $now = date('Y-m-d H:i:s'); // Initialize $now
+
+
+        $tours_photo = array(
+            'tours_id' => $this->input->post('tours_id'),
+            'status' => $this->input->post('status'),
+        );
+
+        // Check if files are uploaded
+        if (!empty($_FILES['tour_photos']['name'])) {
+            // Process each uploaded file
+            foreach ($_FILES['tour_photos']['name'] as $key => $f_name) {
+                $f_path = $_FILES['tour_photos']['tmp_name'][$key];
+
+                // Check if the file is uploaded
+                if (!empty($f_name) && is_uploaded_file($f_path)) {
+                    $i = uniqid();
+                    $f_arry = explode('.', $f_name);
+                    $f_new_name = $i . "_" . date('Y-m-d_H-i-s') . "." . end($f_arry);
+                    $img_path = 'assets/images/self_upload/' . $f_new_name;
+
+                    // Check if the file already exists
+                    if (file_exists($img_path)) {
+                        $rslt = array('status' => '103', 'msg' => 'File with the same name already exists.', 'data' => '');
+                        echo json_encode($rslt);
+                        return;
+                    }
+
+                    $tours_photo['tour_photo'] = $img_path;
+
+
+                    if (!move_uploaded_file($f_path, $img_path)) {
+                        $rslt = array('status' => '103', 'msg' => 'Failed to move the uploaded file.', 'data' => '');
+                        echo json_encode($rslt);
+                        return;
+                    }
+
+                    // Add the photo details to the array
+                    $tours_photos[] = $tours_photo;
+                }
+            }
+        }
+
+        // Existing file path for the record being edited
+        $existing_file_paths = array();
+
+        if (!empty($edit_id)) {
+            $f_cond = array('id' => $edit_id);
+            $e_rslt = $this->myadmin_model->get_data("tour_photo", "tour_photos", $f_cond, "", "", "", "1");
+            foreach ($e_rslt as $e) {
+                $existing_file_paths[] = $e->tour_photo;
+            }
+        }
+
+        // Now, you can loop through $tours_photos to insert each photo
+        if (!empty($tours_photos)) {
+            foreach ($tours_photos as $tours_photo) {
+                // Remove the previous file associated with the record being edited
+                if (!empty($existing_file_paths)) {
+                    foreach ($existing_file_paths as $existing_file_path) {
+                        if (!empty($existing_file_path) && file_exists($existing_file_path)) {
+                            unlink($existing_file_path);
+                        }
+                    }
+                }
+
+                $now = date('Y-m-d H:i:s');
+
+                if (empty($edit_id)) {
+                    // Insert the photo details into the database
+                    $tours_photo['created_by'] = $this->session->userdata('user_id');
+                    $tours_photo['created_at'] = $now;
+                    $tours_photo['is_delete'] = '1';
+
+                    $insert_result = $this->myadmin_model->insert_data("tour_photos", $tours_photo);
+
+                    if (!empty($insert_result)) {
+                        $last_inst_id = $insert_result;
+                        $msg = 'You have successfully added';
+                    } else {
+                        $msg = 'Failed to insert data.';
+                        $rslt = array('status' => '103', 'msg' => $msg, 'data' => '');
+                        echo json_encode($rslt);
+                        return;
+                    }
+                }
+            }
+        }
+
+        // Update code outside the loop
+        if (!empty($edit_id)) {
+            $cond = array('id' => $edit_id);
+            $tours_photo['updated_by'] = $this->session->userdata('user_id');
+            $tours_photo['updated_at'] = $now;
+            $update_result = $this->myadmin_model->update_data("tour_photos", $tours_photo, $cond);
+
+            if ($update_result) {
+                $last_inst_id = $edit_id;
+                $msg = 'You have successfully edited';
+            } else {
+                $msg = 'Failed to update data.';
+                $rslt = array('status' => '103', 'msg' => $msg, 'data' => '');
+                echo json_encode($rslt);
+                return;
+            }
+        }
+
+        if (empty($last_inst_id)) {
+            $rslt = array('status' => '103', 'msg' => 'Something went wrong!', 'data' => '');
+            echo json_encode($rslt);
+            return;
+        }
+
+        $rslt = array('status' => '101', 'msg' => $msg, 'data' => $last_inst_id);
+        echo json_encode($rslt);
+    }
+
+    public function edit_tour_photos_data()
+    {
+        $edit_id = (!empty($this->input->post('eid'))) ? $this->input->post('eid') : '';
+        // echo "edit_id=> ".$edit_id;
+        // exit;
+        if (!empty($edit_id)) {
+            $cond = array(
+                'id' => $edit_id
+            );
+            $data = $this->myadmin_model->get_data('id,tours_id,tour_photo,status', "tour_photos", $cond, "", "1");
             $rslt = array('status' => '101', 'msg' => '', 'data' => $data);
         } else {
             $rslt = array('status' => '103', 'msg' => '', 'data' => '');

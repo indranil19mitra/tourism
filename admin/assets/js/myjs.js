@@ -227,6 +227,29 @@ $(document).ready(function () {
 			},
 		});
 	});
+
+	$("#tour_photos_sbmt").click(function () {
+		var formData = new FormData($("#tour_photos_details")[0]);
+
+		// Perform an AJAX request
+		$.ajax({
+			type: "POST",
+			url: baseurl + "tour_photos_details",
+			data: formData,
+			dataType: "json",
+			contentType: false,
+			processData: false,
+			success: function (res) {
+				// Handle the server response
+				if (res.status != 103) {
+					window.location.href = baseurl + "tour_tour_photos";
+					successToster(res.msg);
+				} else {
+					errorToster(res.msg);
+				}
+			},
+		});
+	});
 });
 
 function stateFunctionalities(ids = "", types = "", tables = "") {
@@ -358,6 +381,79 @@ function tourFunctionalities(ids = "", types = "", tables = "") {
 	}
 }
 
+// function tour_photosFunctionalities(ids = "", types = "", tables = "") {
+// 	if (types == "edit" || types == "delete") {
+// 		$.ajax({
+// 			type: "post",
+// 			url:
+// 				baseurl + (types == "edit" ? "edit_tour_photos_data" : "delete_data"),
+// 			data: { eid: ids, tables: tables },
+// 			dataType: "json",
+// 			success: function (res) {
+// 				console.log(res);
+// 				if (res.status == 101) {
+// 					if (types != "delete") {
+// 						$("#eid").val(res.data.id);
+// 						$("#tours_id").val(res.data.tours_id).trigger("change");
+// 						$("#status").val(res.data.status).trigger("change");
+
+// 						displayExistingImage(baseurl_data + res.data.main_image);
+
+// 						$("#tour_photos_sbmt").show();
+// 						successToster(res.msg);
+// 					} else {
+// 						window.location.href = baseurl + "tour_tour_photos";
+// 						successToster(res.msg);
+// 					}
+// 				} else {
+// 					errorToster(res.msg);
+// 				}
+// 			},
+// 		});
+// 	}
+// }
+
+function tour_photosFunctionalities(ids = "", types = "", tables = "") {
+	if (types == "edit" || types == "delete") {
+		$.ajax({
+			type: "post",
+			url:
+				baseurl + (types == "edit" ? "edit_tour_photos_data" : "delete_data"),
+			data: { eid: ids, tables: tables },
+			dataType: "json",
+			success: function (res) {
+				console.log(res);
+				if (res.status == 101) {
+					if (types != "delete") {
+						$("#eid").val(res.data.id);
+						$("#tours_id").val(res.data.tours_id).trigger("change");
+						$("#status").val(res.data.status).trigger("change");
+
+						// Check if main_image property exists in the response
+						if (res.data.tour_photo) {
+							// console.log("Image URL:", baseurl_data + res.data.tour_photo);
+							displayExistingImage1(baseurl_data + res.data.tour_photo);
+							// console.log("After calling displayExistingImage");
+						}
+
+						$("#tour_photos_sbmt").show();
+						successToster(res.msg);
+					} else {
+						window.location.href = baseurl + "tour_tour_photos";
+						successToster(res.msg);
+					}
+				} else {
+					errorToster(res.msg);
+				}
+			},
+		});
+	}
+}
+
+function displayExistingImage1(imageUrl) {
+	$("#preview_tour_photos").attr("src", imageUrl);
+}
+
 function tourDestFunctionalities(ids = "", types = "", tables = "") {
 	if (types == "edit" || types == "delete") {
 		// alert(types);
@@ -424,7 +520,7 @@ function tour_aboutFunctionalities(ids = "", types = "", tables = "") {
 				if (res.status == 101) {
 					if (types != "delete") {
 						$("#eid").val(res.data.id);
-						$("#tours_id").val(res.data.id).trigger("change");
+						$("#tours_id").val(res.data.tours_id).trigger("change");
 						tinymce
 							.get("tour_about_details_text")
 							.setContent(res.data.tour_about_details);
@@ -459,7 +555,7 @@ function tour_itineraryFunctionalities(ids = "", types = "", tables = "") {
 				if (res.status == 101) {
 					if (types != "delete") {
 						$("#eid").val(res.data.id);
-						$("#tours_id").val(res.data.id).trigger("change");
+						$("#tours_id").val(res.data.tours_id).trigger("change");
 						$("#status").val(res.data.status).trigger("change");
 						$("#itinerary_0").val(res.data.itinerary);
 
@@ -503,7 +599,7 @@ function tour_inclusions_exclusionsFunctionalities(
 				if (res.status == 101) {
 					if (types != "delete") {
 						$("#eid").val(res.data.id);
-						$("#tours_id").val(res.data.id).trigger("change");
+						$("#tours_id").val(res.data.tours_id).trigger("change");
 						tinymce
 							.get("tour_inclusions_details_text")
 							.setContent(res.data.inclusions);
@@ -541,7 +637,7 @@ function tour_other_infoFunctionalities(ids = "", types = "", tables = "") {
 				if (res.status == 101) {
 					if (types != "delete") {
 						$("#eid").val(res.data.id);
-						$("#tours_id").val(res.data.id).trigger("change");
+						$("#tours_id").val(res.data.tours_id).trigger("change");
 						tinymce
 							.get("tour_other_info_details_text")
 							.setContent(res.data.other_info);
@@ -685,6 +781,80 @@ document.addEventListener("DOMContentLoaded", function () {
 				};
 
 				reader.readAsDataURL(file);
+			}
+		});
+});
+
+// document.addEventListener("DOMContentLoaded", function () {
+// 	document
+// 		.getElementById("tour_photos")
+// 		.addEventListener("change", function (event) {
+// 			const files = event.target.files;
+
+// 			if (files && files.length > 0) {
+// 				const previewContainer = document.getElementById("preview_tour_photos");
+
+// 				// Clear previous previews
+// 				previewContainer.innerHTML = "";
+
+// 				for (let i = 0; i < files.length; i++) {
+// 					const file = files[i];
+// 					const reader = new FileReader();
+
+// 					reader.onload = function (e) {
+// 						const image = new Image();
+// 						image.src = e.target.result;
+// 						image.width = 200;
+// 						image.height = 200;
+
+// 						previewContainer.appendChild(image);
+// 					};
+
+// 					reader.readAsDataURL(file);
+// 				}
+// 			}
+// 		});
+// });
+
+document.addEventListener("DOMContentLoaded", function () {
+	document
+		.getElementById("tour_photos")
+		.addEventListener("change", function (event) {
+			const files = event.target.files;
+
+			if (files && files.length > 0) {
+				const previewContainer = document.getElementById("preview_tour_photos");
+
+				// Clear previous previews
+				previewContainer.innerHTML = "";
+
+				for (let i = 0; i < files.length; i++) {
+					const file = files[i];
+					const reader = new FileReader();
+
+					reader.onload = function (e) {
+						const imageContainer = document.createElement("div");
+						imageContainer.className = "preview-image-container";
+
+						const closeButton = document.createElement("button");
+						closeButton.className = "close-button";
+						closeButton.innerHTML = "&times;"; // Use '×' for a close symbol
+						closeButton.addEventListener("click", function () {
+							previewContainer.removeChild(imageContainer);
+						});
+
+						const image = new Image();
+						image.src = e.target.result;
+						image.width = 200;
+						image.height = 200;
+
+						imageContainer.appendChild(closeButton);
+						imageContainer.appendChild(image);
+						previewContainer.appendChild(imageContainer);
+					};
+
+					reader.readAsDataURL(file);
+				}
 			}
 		});
 });
