@@ -564,6 +564,9 @@ if (!empty($get_tours_details)) {
                                                                 </tr>
                                                             </tbody>
                                                         </table>
+                                                        <input type="hidden" id="ttl_amount_of_booking_without_gst_1" name="ttl_amount_of_booking_without_gst_1">
+                                                        <input type="hidden" id="ttl_amount_of_booking_with_gst_1" name="ttl_amount_of_booking_with_gst_1">
+                                                        <input type="hidden" id="ttl_cost_of_booking_gst_amount_1" name="ttl_cost_of_booking_gst_amount_1">
                                                     </div>
 
                                                     <div>

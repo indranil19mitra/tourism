@@ -371,6 +371,9 @@ function check_date_function(tour_details_id = "", tours_id = "") {
 			$("#booking_member_count_1").hide().attr("readonly");
 			$("#booking_details_ids").val(tour_details_id);
 			$("#booking_details_ids").hide().attr("readonly");
+			$("#ttl_amount_of_booking_without_gst_1").hide().attr("readonly");
+			$("#ttl_amount_of_booking_with_gst_1").hide().attr("readonly");
+			$("#ttl_cost_of_booking_gst_amount_1").hide().attr("readonly");
 
 			$("#tour_details_name").html(
 				res.data.name +
@@ -400,82 +403,6 @@ $(document).on("click", ".outer_dv1", function () {
 
 function check_next(obj) {
 	console.log($(obj).attr("id"));
-	// if ($(obj).attr("id") == "tour_booking_details_next_4") {
-	// 	var formdata = new FormData($("#tour_booking_details_form")[0]);
-	// 	var url = baseurl + "Mycontroller/add_booking_details_bknd";
-	// 	$.ajax({
-	// 		url: url,
-	// 		type: "post",
-	// 		data: formdata,
-	// 		dataType: "json",
-	// 		contentType: false,
-	// 		processData: false,
-	// 		success: function (res) {
-	// 			console.log(res);
-	// 			if (res.status != 103) {
-	// 				swal(
-	// 					{
-	// 						title: "",
-	// 						html: true,
-	// 						text: res.msg,
-	// 						type: "success",
-	// 						// showCancelButton: true,
-	// 						confirmButtonColor: "#3085d6",
-	// 						// cancelButtonText: "No, cancel it!",
-	// 						confirmButtonText: "Ok..!",
-	// 						// closeOnConfirm: false,
-	// 						// closeOnCancel: false
-	// 					},
-	// 					function (isConfirm) {
-	// 						if (isConfirm) {
-	// 							alert("abcd");
-	// 							window.location.href = baseurl + "Mycontroller";
-	// 						} else {
-	// 							console.log("User clicked Cancel or closed the modal");
-	// 						}
-	// 					}
-	// 				);
-	// 			} else {
-	// 				errorToster(res.msg);
-	// 			}
-	// 		},
-	// 	});
-	// }
-
-	// if ($(obj).attr("id") == "tour_booking_details_next_4") {
-	// 	var formdata = new FormData($("#tour_booking_details_form")[0]);
-	// 	var url = baseurl + "Mycontroller/add_booking_details_bknd";
-	// 	$.ajax({
-	// 		url: url,
-	// 		type: "post",
-	// 		data: formdata,
-	// 		dataType: "json",
-	// 		contentType: false,
-	// 		processData: false,
-	// 		success: function (res) {
-	// 			console.log(res);
-	// 			if (res.status != 103) {
-	// 				swal({
-	// 					title: "",
-	// 					text: res.msg,
-	// 					icon: "success",
-	// 					confirmButtonColor: "#3085d6",
-	// 					confirmButtonText: "Ok..!",
-	// 					html: true,
-	// 				}).then((result) => {
-	// 					if (result.isConfirmed) {
-	// 						alert("abcd");
-	// 						window.location.href = baseurl + "Mycontroller";
-	// 					} else {
-	// 						console.log("User clicked Cancel or closed the modal");
-	// 					}
-	// 				});
-	// 			} else {
-	// 				errorToster(res.msg);
-	// 			}
-	// 		},
-	// 	});
-	// }
 
 	if ($(obj).attr("id") == "tour_booking_details_next_4") {
 		var formdata = new FormData($("#tour_booking_details_form")[0]);
@@ -583,6 +510,12 @@ function check_next(obj) {
 		$("#tour_booking_ac_ifsc").html("IFSC Code: HSBC0000000");
 
 		$("#booking_member_count_1").val(bookingMemberCount);
+
+		$("#ttl_amount_of_booking_without_gst_1").val(
+			tour_actual_amount_without_gst
+		);
+		$("#ttl_amount_of_booking_with_gst_1").val(tour_actual_amount_with_gst);
+		$("#ttl_cost_of_booking_gst_amount_1").val(tour_gst_amount);
 	}
 
 	if ($(obj).attr("id") == "tour_booking_details_next_2") {
