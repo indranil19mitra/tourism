@@ -907,7 +907,7 @@ class Myadmin_controller extends CI_Controller
         echo json_encode($rslt);
     }
 
-    public function tour_tour_photos()
+    public function tour_photos()
     {
         if (empty($this->session->userdata('user_id'))) {
             redirect(base_url('login'));
@@ -1070,5 +1070,31 @@ class Myadmin_controller extends CI_Controller
         }
 
         echo json_encode($rslt);
+    }
+
+    public function tour_booking_details()
+    {
+        if (empty($this->session->userdata('user_id'))) {
+            redirect(base_url('login'));
+        }
+
+        $data = array();
+
+        $cond1 = array(
+            'tour_details.is_delete!=' => '0',
+            'tours.status!=' => '0',
+            'tour_details.is_delete!=' => '0',
+            'tour_details.status!=' => '0'
+        );
+
+        $join1 = array('table' => 'tour_details', 'condition' => 'tour_details.id=tour_booking_details.tours_details_id');
+        $join2 = array('table' => 'tours', 'condition' => 'tours.id=tour_details.tours_id');
+        $join = array($join1, $join2);
+
+        $data['tour_booking_details'] = $this->myadmin_model->get_data("tour_booking_details.id as tour_booking_details_id,tours.name,tour_booking_details.cust_name,tour_booking_details.cust_contact,tour_booking_details.cust_mail,tour_booking_details.cust_addr,tour_booking_details.nmbr_of_person,tour_booking_details.booking_date_time,tour_booking_details.status,tour_booking_details.booking_amount_without_gst,tour_booking_details.booking_amount_with_gst,tour_booking_details.received_amount,tour_booking_details.booking_gst_amount,tour_details.start_date,tour_details.price,tour_details.end_date,tour_details.pikup_location,tour_details.drop_location,tour_details.duration,tour_details.price", 'tour_booking_details', $cond1, $join, "", "asc", "tour_details.start_date");
+
+        $this->load->view('include/header');
+        $this->load->view('tour_booking_details/index', $data);
+        $this->load->view('include/footer');
     }
 }
