@@ -240,6 +240,9 @@ class Mycontroller extends CI_Controller
             'cust_addr' => $this->input->post('address'),
             'nmbr_of_person' => $this->input->post('booking_member_count_1'),
             'booking_date_time' => date('Y-m-d H:i:s'),
+            'booking_amount_without_gst' => $this->input->post('ttl_amount_of_booking_without_gst_1'),
+            'booking_amount_with_gst' => $this->input->post('ttl_amount_of_booking_with_gst_1'),
+            'booking_gst_amount' => $this->input->post('ttl_cost_of_booking_gst_amount_1'),
         );
 
         // print_r($tour_booking_info);
