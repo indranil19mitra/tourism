@@ -44,10 +44,12 @@
         <?php
     }
     if (!empty($this->uri->segment('1'))) {
-        $page_url = ($this->uri->segment('1') == "about-us") ? (explode('-', $this->uri->segment('1'))) : (explode('-', $this->input->get('dtl_nm')));
+        $page_url = ($this->uri->segment('1') == "about-us") ? (explode('-', $this->uri->segment('1'))) : ((!empty($this->input->get('dtl_nm'))) ? (explode('-', $this->input->get('dtl_nm'))) : '');
         $current_page = "";
-        foreach ($page_url as $val) {
-            $current_page .= " " . $val;
+        if (!empty($page_url)) {
+            foreach ($page_url as $val) {
+                $current_page .= " " . $val;
+            }
         }
         // echo "current_page=> " . $current_page;
         // exit;

@@ -78,7 +78,7 @@ if (!empty($get_tours_details)) {
                         </div>
 
                         <div class="col-6">
-                            <div><i class="fa-solid fa-person-hiking dtl_icon"></i><span class="mnt_wish_dt_1"> Difficulty Level -</span><span class="ps-1 mnt_wish_dt dtl_icon1 word-wrap"> <?= $difficult; ?></span></div>
+                            <div><i class="fa-solid fa-person-hiking dtl_icon1"></i><span class="mnt_wish_dt_1"> Difficulty Level -</span><span class="ps-1 mnt_wish_dt dtl_icon1 word-wrap"> <?= $difficult; ?></span></div>
                         </div>
                     </div>
                 </div>
@@ -93,7 +93,7 @@ if (!empty($get_tours_details)) {
                         <button class="btn btn-primary rounded mx-auto" onclick="get_other_info()" type="button">Other Info</button>
                     </div>
                     <div class="mb-2 px-2">
-                        <button class="btn btn-primary rounded mx-auto" onclick="get_book()" type="button">Book Now</button>
+                        <button class="btn btn-primary rounded mx-auto" data-bs-toggle="modal" data-bs-target="#tour_booking_details_modal" onclick="get_book('<?= $tour_details_id; ?>','<?= $tours_id; ?>')" type="button">Book Now</button>
                     </div>
                 </div>
                 <?php
@@ -439,6 +439,176 @@ if (!empty($get_tours_details)) {
                 <?php
                 endif;
                 ?>
+
+
+                <div id="tour_booking_details">
+
+                    <div class="row">
+                        <!-- Modal -->
+                        <div class="modal fade" id="tour_booking_details_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog change_booking_mdl modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header d-flex justify-content-center">
+                                        <h1 class="modal-title fs-5" id="book_now_modal_header_title">PLEASE SELECT YOUR BATCH DATES</h1>
+                                        <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                                    </div>
+                                    <div class="modal-body">
+                                        <form class="forms-sample" id="tour_booking_details_form">
+                                            <div class="row" id="plase_select_your_batch_dates">
+                                                <div class="col-lg-6 col-md-12 col-sm-12 mb-3">
+                                                    <label for="tour_months" class="col-form-label">Months</label>
+                                                    <select class="form-select slct_cls" id="tour_months" name="tour_months" aria-label="select example">
+                                                    </select>
+                                                </div>
+                                                <div class="col-lg-6 col-md-12 col-sm-12 mb-3">
+                                                    <div id="get_booking_dates"></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row" id="room_sharing">
+                                                <div class="d-flex justify-content-between p-5 text-center">
+                                                    <div class="col-lg-4 col-md-12 col-sm-12 mb-3"><label for="type" class="col-form-label rs_cls1">Type</label></div>
+                                                    <div class="col-lg-4 col-md-12 col-sm-12 mb-3"><label for="per_person" class="col-form-label rs_cls1">Price (per person)</label></div>
+                                                    <div class="col-lg-4 col-md-12 col-sm-12 mb-3"><label for="per_person_icon" class="col-form-label rs_cls2"><i class="fa-solid fa-user"></i></label></div>
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 col-sm-12 mb-3 d-flex justify-content-between p-5 text-center">
+                                                    <div class="col-lg-4 col-md-12 col-sm-12 mb-3">
+                                                        <label for="type" class="col-form-label rs_cls3">Double Sharing/ Twin Sharing</label>
+                                                    </div>
+                                                    <div class="col-lg-4 col-md-12 col-sm-12 mb-3">
+                                                        <label for="per_person" class="col-form-label rs_cls3">
+                                                            <i class="fa-solid fa-indian-rupee-sign pe-1"></i>
+                                                            <span id="get_price_details"></span>
+                                                            /-
+                                                        </label>
+                                                        <input type="hidden" id="get_price_details_1" name="get_price_details_1" readonly>
+                                                    </div>
+                                                    <div class="col-lg-4 col-md-12 col-sm-12 mb-3">
+                                                        <label for="per_person_icon" class="col-form-label rs_cls4">
+                                                            <button id="fa_minus" type="button" class="rs_cls5" onclick="decrementCount()">
+                                                                <i class="fa-solid fa-minus"></i>
+                                                            </button>
+                                                            <span id="booking_member_count" class="px-2">0</span>
+                                                            <button id="fa_plus" type="button" class="rs_cls5" onclick="incrementCount()">
+                                                                <i class="fa-solid fa-plus"></i>
+                                                            </button>
+                                                        </label>
+                                                        <input type="hidden" id="booking_member_count_1" name="booking_member_count_1" readonly>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row" id="personal_details">
+                                                <div class="p-5">
+                                                    <input type="hidden" id="booking_details_ids" name="booking_details_ids" readonly>
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 mb-3 d-flex justify-content-center">
+                                                        <input type="text" class="form-control clr_input" onblur="check_booking_input(this.value, 'name')" id="name" name="name" placeholder="Please Enter Your Name">
+                                                    </div>
+
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 mb-3 d-flex justify-content-center">
+                                                        <input type="text" class="form-control clr_input" onblur="check_booking_input(this.value, 'contact_no')" id="contact_no" maxlength="10" name="contact_no" placeholder="Please Enter Contact Number">
+                                                    </div>
+
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 mb-3 d-flex justify-content-center">
+                                                        <input type="email" class="form-control clr_input" onblur="check_booking_input(this.value, 'email')" id="email" name="email" placeholder="Please Enter Email ID">
+                                                    </div>
+
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 mb-3 d-flex justify-content-center">
+                                                        <textarea type="text" class="form-control clr_input" onblur="check_booking_input(this.value,'address')" rows="4" id="address" name="address" placeholder="Please Enter Address"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row" id="review_booking">
+                                                <div class="px-5">
+                                                    <div>
+                                                        <span id="tour_details_name" class="tour_details_name"></span>
+                                                    </div>
+                                                    <div>
+                                                        <i class="fa-solid fa-calendar-days booking_fnt_icn"></i>
+                                                        <span id="tour_details_date" class="booking_fnt_txt"></span>
+                                                    </div>
+                                                    <div>
+                                                        <i class="fa-solid fa-user booking_fnt_icn"></i>
+                                                        <span id="tour_details_main_customer_name" class="booking_fnt_txt"></span>
+                                                        <span id="ttl_number_prsn" class="booking_fnt_txt_1"></span>
+                                                    </div>
+                                                    <div>
+                                                        <i class="fa-solid fa-envelope booking_fnt_icn"></i>
+                                                        <span id="tour_details_main_customer_email" class="booking_fnt_txt"></span>
+                                                    </div>
+                                                    <div>
+                                                        <i class="fa-solid fa-phone booking_fnt_icn"></i>
+                                                        <span id="tour_details_main_customer_phone" class="booking_fnt_txt"></span>
+                                                    </div>
+
+                                                    <div class="my-2"><span id="payment_details">Payment Details</span></div>
+
+                                                    <div class="table-responsive">
+                                                        <table class="table table-hover table-striped border table-rounded align-middle tbl">
+                                                            <thead class="table-dark tbl_head">
+                                                                <tr class="booking_tr1">
+                                                                    <th scope="col" class="border booking_bd">Total Cost</th>
+                                                                    <th scope="col" id="ttl_amount_of_booking_with_gst" class="border booking_bd"></th>
+                                                                    <th scope="col" class="border booking_bd">Details</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody class="table-secondary tbl_body">
+                                                                <tr class="booking_tr2">
+                                                                    <td class="border booking_bd">Double Sharing/ Twin Sharing</td>
+                                                                    <td id="ttl_amount_of_booking_without_gst" class="border booking_bd"></td>
+                                                                    <td id="ttl_amount_of_booking_per_head_charge_without_gst" class="border booking_bd"></td>
+                                                                </tr>
+                                                                <tr class="booking_tr2">
+                                                                    <td class="border booking_bd">GST @ 5%</td>
+                                                                    <td id="ttl_cost_of_booking_gst_amount" class="border booking_bd"></td>
+                                                                    <td class="border booking_bd"></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+
+                                                    <div>
+                                                        <span id="tour_booking_adv_requirement"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="mt-5" id="overall_payment_details">
+                                                    <div id="overall_payment_details_1">
+                                                        <div>
+                                                            <span id="tour_booking_adv_payment_methods"></span>
+                                                        </div>
+                                                        <div>
+                                                            <span id="tour_booking_upi_us_at"></span>
+                                                        </div>
+                                                        <div>
+                                                            <span id="tour_booking_upi_name"><strong>UPI Name: </strong></span>
+                                                            <span id="tour_booking_upi_name_details">Durbeen / Durbeen Private Limited</span>
+                                                        </div>
+                                                        <div>
+                                                            <span id="bank_transfer"><strong>Bank Transfer:</strong></span>
+                                                        </div>
+                                                        <div>
+                                                            <span id="tour_booking_ac_number"></span>
+                                                        </div>
+                                                        <div>
+                                                            <span id="tour_booking_ac_name"></span>
+                                                        </div>
+                                                        <div>
+                                                            <span id="tour_booking_ac_ifsc"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary back_to_initial_back" onclick="check_back(this)" id="tour_booking_details_back_1">Back</button>
+                                        <button type="button" class="btn btn-primary back_to_initial_next" onclick="check_next(this)" id="tour_booking_details_next_1">Next</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
             <div class="col-lg-4 col-md-12 col-sm-12">

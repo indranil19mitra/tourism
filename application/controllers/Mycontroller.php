@@ -183,4 +183,77 @@ class Mycontroller extends CI_Controller
 
         echo json_encode($rslt);
     }
+
+    public function get_months_wise_tour_price()
+    {
+        $tour_details_id = $this->input->post('tour_details_id');
+        $tours_id = $this->input->post('tours_id');
+        $cond = array(
+            'tour_details.id' => $tour_details_id,
+            'tour_details.is_delete!=' => '0',
+            'tour_details.status!=' => '0'
+        );
+        $join = array('table' => 'tours', 'condition' => 'tour_details.tours_id=tours.id');
+        $get_details = $this->myfront_model->get_data("tour_details.price,tour_details.duration,tour_details.start_date,tour_details.end_date,tours.name", "tour_details", $cond, [$join], "1");
+        // echo "<pre>";
+        // print_r($get_details);
+        $data['name'] = $get_details->name;
+        $data['tout_price'] = $get_details->price;
+        $data['duration'] = $get_details->duration;
+        $data['tour_total_days'] = str_replace("D", "", (explode('/', $get_details->duration)[1]));
+        $data['tour_exact_duration'] = str_replace("/", " - ", $get_details->duration);
+        $data['start_date'] = $this->date_modification($get_details->start_date);
+        $data['end_date'] = $this->date_modification($get_details->end_date);
+
+        // print_r($data);
+        // exit;
+
+        if (!empty($get_details)) {
+            $rslt = array('status' => '101', 'msg' => 'Get price', 'data' => $data);
+        } else {
+            $rslt = array('status' => '103', 'msg' => 'Not Get price', 'data' => '');
+        }
+
+        echo json_encode($rslt);
+    }
+
+    function date_modification($get_date)
+    {
+        $date = strtotime($get_date);
+        $formatted_end_date = date('D, j M, Y', $date);
+
+        return $formatted_end_date;
+    }
+
+    public function add_booking_details_bknd()
+    {
+        // echo "<pre>";
+        // print_r($_POST);
+        // exit;
+        // $edit_id = (!empty($this->input->post('eid'))) ? $this->input->post('eid') : '';
+
+        $tour_booking_info = array(
+            'tours_details_id' => $this->input->post('booking_details_ids'),
+            'cust_name' => $this->input->post('name'),
+            'cust_contact' => $this->input->post('contact_no'),
+            'cust_mail' => $this->input->post('email'),
+            'cust_addr' => $this->input->post('address'),
+            'nmbr_of_person' => $this->input->post('booking_member_count_1'),
+            'booking_date_time' => date('Y-m-d H:i:s'),
+        );
+
+        // print_r($tour_booking_info);
+        // exit;
+        $last_inst_id = $this->myfront_model->insert_data("tour_booking_details", $tour_booking_info);
+        $msg = 'Thank You..!<br>We will connect with you soon..!';
+
+
+        if (!empty($last_inst_id)) {
+            $rslt = array('status' => '101', 'msg' => $msg, 'data' => $last_inst_id);
+        } else {
+            $rslt = array('status' => '103', 'msg' => 'Something went wrong!', 'data' => '');
+        }
+
+        echo json_encode($rslt);
+    }
 }

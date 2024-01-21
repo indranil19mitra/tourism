@@ -443,7 +443,6 @@ class Myadmin_controller extends CI_Controller
         echo json_encode($rslt);
     }
 
-
     public function tour_destination()
     {
         if (empty($this->session->userdata('user_id'))) {
@@ -607,7 +606,6 @@ class Myadmin_controller extends CI_Controller
         echo json_encode($rslt);
     }
 
-
     public function edit_tour_about_data()
     {
         $edit_id = (!empty($this->input->post('eid'))) ? $this->input->post('eid') : '';
@@ -652,7 +650,6 @@ class Myadmin_controller extends CI_Controller
         $this->load->view('tour_itinerary/index', $data);
         $this->load->view('include/footer');
     }
-
 
     public function tour_itinerary_details()
     {
@@ -724,7 +721,6 @@ class Myadmin_controller extends CI_Controller
         echo json_encode($rslt);
     }
 
-
     public function edit_tour_itinerary_data()
     {
         $edit_id = (!empty($this->input->post('eid'))) ? $this->input->post('eid') : '';
@@ -743,7 +739,6 @@ class Myadmin_controller extends CI_Controller
 
         echo json_encode($rslt);
     }
-
 
     public function tour_inclusions_exclusions()
     {
@@ -769,7 +764,6 @@ class Myadmin_controller extends CI_Controller
         $this->load->view('tour_inclusions_exclusions/index', $data);
         $this->load->view('include/footer');
     }
-
 
     public function tour_inclusions_exclusions_details()
     {
@@ -813,7 +807,6 @@ class Myadmin_controller extends CI_Controller
         echo json_encode($rslt);
     }
 
-
     public function edit_tour_inclusions_exclusions_data()
     {
         $edit_id = (!empty($this->input->post('eid'))) ? $this->input->post('eid') : '';
@@ -830,7 +823,6 @@ class Myadmin_controller extends CI_Controller
 
         echo json_encode($rslt);
     }
-
 
     public function tour_other_info()
     {
@@ -856,7 +848,6 @@ class Myadmin_controller extends CI_Controller
         $this->load->view('tour_other_info/index', $data);
         $this->load->view('include/footer');
     }
-
 
     public function tour_other_info_details()
     {
@@ -915,7 +906,6 @@ class Myadmin_controller extends CI_Controller
 
         echo json_encode($rslt);
     }
-
 
     public function tour_tour_photos()
     {

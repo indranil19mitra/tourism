@@ -7,13 +7,184 @@
     <meta name='robots' content='max-image-preview:large'>
     <link rel="profile" href="https://gmpg.org/xfn/11">
     <link rel="pingback" href="https://templatekit.jegtheme.com/hikker/xmlrpc.php">
-    <title>Durbeen &#8211; Hiking &amp; Mountain Trekking Elementor Template Kit by Jegtheme</title>
+    <title>Durbeen</title>
     <link rel="alternate" type="application/rss+xml" title="Durbeen &raquo; Feed" href="feed/index.htm">
     <link rel="alternate" type="application/rss+xml" title="Durbeen &raquo; Comments Feed" href="comments/feed/index.htm">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
     <style>
+        #overall_payment_details {
+            display: flex !important;
+            -webkit-box-pack: justify !important;
+            justify-content: space-between !important;
+            -webkit-box-align: center !important;
+            align-items: center !important;
+            /* width: 70vw !important; */
+            flex-wrap: wrap !important;
+        }
+
+        /* #overall_payment_details_1 {
+            width: 70vw !important;
+            font-size: 0.8em !important;
+            line-height: 20px !important;
+        } */
+
+
+        #tour_booking_adv_payment_methods {
+            margin: 15px 0px !important;
+            font-size: 0.8em !important;
+            line-height: 20px !important;
+        }
+
+        #tour_booking_adv_requirement {
+            font-size: 1.2vw !important;
+            font-weight: 600 !important;
+            color: rgb(58, 58, 58) !important;
+            margin-bottom: 8px !important;
+        }
+
+        .booking_bd {
+            text-transform: capitalize !important;
+            width: 18vw !important;
+        }
+
+        .booking_tr2 {
+            font-size: 1.2vw !important;
+            font-weight: 400 !important;
+            color: rgb(58, 58, 58) !important;
+            background-color: rgba(58, 58, 58, 0.2) !important;
+            height: 2.5vw !important;
+        }
+
+        .booking_tr1 {
+            width: 30vw !important;
+            height: 3vw !important;
+            font-size: 1.2vw !important;
+            font-weight: 600 !important;
+            color: white !important;
+            background-color: rgb(58, 58, 58) !important;
+        }
+
+        #payment_details {
+            font-size: 1.5vw !important;
+            font-weight: 600 !important;
+            color: rgb(58, 58, 58) !important;
+            margin: 16px 0px !important;
+        }
+
+        #book_now_modal_header_title {
+            font-size: 2vw !important;
+            font-weight: 600 !important;
+            color: rgb(58, 58, 58) !important;
+            text-transform: uppercase !important;
+        }
+
+        .booking_fnt_icn {
+            height: 1.2vw !important;
+            width: 1.5vw !important;
+            margin-right: 8px !important;
+        }
+
+        .booking_fnt_txt {
+            font-size: 1.1vw !important;
+            font-weight: 400 !important;
+            color: rgb(58, 58, 58) !important;
+        }
+
+        .booking_fnt_txt_1 {
+            font-size: 1vw !important;
+            font-weight: 600 !important;
+        }
+
+
+        .tour_details_name {
+            font-size: 1.8vw !important;
+            font-weight: 600 !important;
+            color: rgb(58, 58, 58) !important;
+            margin-bottom: 16px !important;
+        }
+
+        .rs_cls1 {
+            font-size: 1.5vw !important;
+            font-weight: 600 !important;
+            color: rgb(58, 58, 58) !important;
+        }
+
+        .rs_cls2 {
+            font-size: 1.5vw !important;
+            color: rgb(58, 58, 58) !important;
+        }
+
+        .rs_cls3 {
+            font-size: 1.2vw !important;
+            font-weight: 600 !important;
+            color: rgb(58, 58, 58) !important;
+            text-transform: capitalize !important;
+            text-align: center !important;
+            align-self: center !important;
+        }
+
+        .rs_cls4 {
+            font-size: 1.5vw !important;
+            font-weight: 600 !important;
+            /* margin: 0px 8px; */
+        }
+
+        .rs_cls5 {
+            font-size: 1.2vw !important;
+            border: none !important;
+            background-color: unset !important;
+            color: black !important;
+            padding: 0px !important;
+            cursor: pointer !important;
+        }
+
+        .outer_dv1 {
+            border: 1px solid rgb(58, 58, 58) !important;
+            box-shadow: rgba(58, 58, 58, 0.3) 0px 3px 6px !important;
+            border-radius: 0.5vw !important;
+            padding: 16px 8px !important;
+            align-self: flex-start !important;
+            background-color: rgb(58, 58, 58) !important;
+        }
+
+        .outer_dv2 {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            font-size: 1.2vw !important;
+            color: rgb(58, 58, 58) !important;
+            align-self: center !important;
+            color: rgb(255, 255, 255) !important;
+        }
+
+        .outer_dv3 {
+            font-weight: bold !important;
+            /* margin-bottom: 8px !important; */
+            color: white !important;
+        }
+
+        .outer_dv4 {
+            color: rgb(255, 255, 255) !important;
+            font-size: 1.2vw !important;
+            align-self: center !important;
+        }
+
+        .outer_dv5 {
+            background-color: initial !important;
+            cursor: default !important;
+            appearance: auto !important;
+            box-sizing: border-box !important;
+            border: initial !important;
+        }
+
+        /* #book_now_modal_header_title {
+            font-weight: bold !important;
+            color: rgb(58, 58, 58) !important;
+            text-transform: uppercase !important;
+        } */
+
         .accordion-item {
             border: none !important;
         }
@@ -220,6 +391,13 @@
                 text-transform: capitalize !important;
             }
 
+            .outer_dv3 {
+                font-size: medium !important;
+            }
+
+            .outer_dv4 {
+                font-size: initial !important;
+            }
         }
 
         @media (min-width: 768px) {
@@ -302,7 +480,7 @@
                 -webkit-box-pack: center !important;
                 justify-content: center !important;
                 flex-shrink: 0 !important;
-                padding: 6% !important;
+                padding: 1% !important;
             }
 
             .scdl_mnth_1 {
@@ -348,6 +526,10 @@
                 color: rgb(58, 58, 58) !important;
                 text-transform: capitalize !important;
                 margin-bottom: 32px !important;
+            }
+
+            #tour_booking_adv_payment_methods {
+                font-size: 15px !important;
             }
 
         }
