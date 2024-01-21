@@ -469,8 +469,8 @@
       </div>
     </div> -->
   </div>
-  <div class="row">
-    <!-- <div class="col-md-4 stretch-card grid-margin">
+  <!-- <div class="row">
+    <div class="col-md-4 stretch-card grid-margin">
       <div class="card">
         <div class="card-body">
           <p class="card-title mb-0">Projects</p>
@@ -538,8 +538,8 @@
           </div>
         </div>
       </div>
-    </div> -->
-    <!-- <div class="col-md-4 stretch-card grid-margin">
+    </div>
+    <div class="col-md-4 stretch-card grid-margin">
       <div class="row">
         <div class="col-md-12 grid-margin stretch-card">
           <div class="card">
@@ -602,7 +602,7 @@
           </div>
         </div>
       </div>
-    </div> -->
+    </div>
     <div class="col-md-4 stretch-card grid-margin">
       <div class="card">
         <div class="card-body">
@@ -662,7 +662,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   <!-- <div class="row">
     <div class="col-md-12 grid-margin stretch-card">
       <div class="card">
