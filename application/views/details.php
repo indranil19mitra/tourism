@@ -1,5 +1,5 @@
 <?php
-$duration = $price = $pl = $dl = $difficult = $tour_about_details = $itinerary = $itinerary_sub = $tours_id = $tour_inclusions = $tour_exclusions = $tour_other_info = "";
+$duration = $price = $pl = $dl = $difficult = $tour_about_details = $itinerary = $itinerary_sub = $tours_id = $tour_inclusions = $tour_exclusions = $tour_other_info = $tour_photo = "";
 if (!empty($get_tours_details)) {
     // echo "<pre>";
     // print_r($get_tours_details);
@@ -16,6 +16,7 @@ if (!empty($get_tours_details)) {
     $itinerary_sub = (!empty($get_tours_details->itinerary_sub)) ? array_filter(explode("##,", rtrim($get_tours_details->itinerary_sub, "##"))) : '';
     $tour_details_id = (!empty($get_tours_details->tour_details_id)) ? $get_tours_details->tour_details_id : '';
     $tours_id = (!empty($get_tours_details->tours_id)) ? $get_tours_details->tours_id : '';
+    $tour_photo = (!empty($get_tours_details->tour_photo)) ? (explode(",", $get_tours_details->tour_photo)) : '';
     // echo "tour_details_id=> ".$tour_details_id;
     // echo "tours_id=> ".$tours_id;
     // exit;
@@ -616,7 +617,76 @@ if (!empty($get_tours_details)) {
                     </div>
                 </div>
 
+                <?php
+                if (!empty($tour_photo)) :
+                ?>
+                    <section id="other_info" class="elementor-section elementor-top-section elementor-element elementor-element-6521b521 elementor-section-boxed elementor-section-height-default elementor-section-height-default pt-5" data-id="6521b521" data-element_type="section">
+                        <div class="elementor-background-overlay"></div>
+                        <div class="container d-flex flex-wrap elementor-column-gap-default  p-0 g-0">
+                            <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3198fc93" data-id="3198fc93" data-element_type="column">
+                                <div class="elementor-widget-wrap elementor-element-populated">
+                                    <section class="elementor-section elementor-inner-section elementor-element elementor-element-73351ef elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="73351ef" data-element_type="section">
+                                        <div class="elementor-container elementor-column-gap-no">
+                                            <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-fbfb681" data-id="fbfb681" data-element_type="column">
+                                                <div class="elementor-widget-wrap elementor-element-populated">
+                                                    <div class="elementor-element elementor-element-446a8ec animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="446a8ec" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;}" data-widget_type="heading.default">
+                                                        <div class="elementor-widget-container">
+                                                            <h2 class="elementor-heading-title elementor-size-default mt-2">Photos</h2>
+                                                        </div>
+                                                    </div>
+                                                    <div class="elementor-element elementor-element-79e4907 elementor-absolute animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="79e4907" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;,&quot;_animation&quot;:&quot;fadeInLeft&quot;}" data-widget_type="heading.default">
+                                                        <div class="elementor-widget-container">
+                                                            <span class="elementor-heading-title elementor-size-default">Durbeen</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-100 mt-5">
+                            <div class="swiper mySwiper mb-3">
+                                <div class="swiper-wrapper  p-2 ps-0 ps-md-2">
+                                    <?php
+                                    // print_r($tour_photo);
+                                    // exit;
+
+                                    foreach ($tour_photo as $key => $img) :
+                                    ?>
+                                        <div class="swiper-slide p-1">
+                                            <div class="card mb-0 p-2 py-4 shadow-sm">
+                                                <div class="d-flex mb-0 align-items-left">
+                                                    <img src="<?= base_url('admin/' . $img); ?>" alt="story-img" class="tour_imgs rounded avatar-40  border bg-soft-light img-fluid" loading="lazy">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <?php
+                                    endforeach;
+                                    ?>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-wrap flex-md-nowrap justify-content-end align-items-center mb-0">
+
+                                <div class="d-flex flex-wrap flex-md-nowrap flex-column-reverse flex-md-row  gap-2">
+                                    <div class="carousel-slider d-flex justify-content-end gap-4">
+                                        <a class=" bg-transparent position-relative d-block" href="#recipeCarousel" role="button" data-bs-slide="prev">
+                                            <div class="swiper-button-prev text-primary position-relative w-auto p-1"></div>
+                                        </a>
+                                        <a class=" bg-transparent position-relative d-block w-auto" href="#recipeCarousel" role="button" data-bs-slide="next">
+                                            <div class="swiper-button-next text-primary position-relative w-auto p-1"></div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                <?php
+                endif;
+                ?>
             </div>
+
             <div class="col-lg-4 col-md-12 col-sm-12">
                 <!-- <h1>Contact Us</h1> -->
             </div>

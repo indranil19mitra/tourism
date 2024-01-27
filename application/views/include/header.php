@@ -14,6 +14,56 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
     <style>
+        /* swiper */
+
+        /* .btn-close {
+            color: #fff;
+        } */
+
+        /* .close:focus {
+            outline: 1px dotted #fff !important;
+        } */
+
+        /* .modal-body {
+            padding: 0rem !important;
+        } */
+
+        /* .modal-title {
+            color: #fff;
+        } */
+
+        /* .modal-header {
+            background: #d01337;
+            color: #fff !important;
+        } */
+
+        /* .heading {
+            font-weight: 500 !important;
+        } */
+
+        /* .subheadings {
+            white-space: normal;
+            text-wrap: wrap;
+        } */
+
+        .tour_imgs {
+            margin-right: 10px;
+        }
+
+        /* .fs-9 {
+            font-size: 9px;
+        } */
+
+        /* reschedule popup */
+
+        /* #reschedule .accordion-button:not(.collapsed)::after,
+        #reschedule .accordion-button::after {
+            display: none;
+        } */
+
+        /* swiper end */
+
+
         #overall_payment_details {
             display: flex !important;
             -webkit-box-pack: justify !important;
@@ -23,13 +73,6 @@
             /* width: 70vw !important; */
             flex-wrap: wrap !important;
         }
-
-        /* #overall_payment_details_1 {
-            width: 70vw !important;
-            font-size: 0.8em !important;
-            line-height: 20px !important;
-        } */
-
 
         #tour_booking_adv_payment_methods {
             margin: 15px 0px !important;
