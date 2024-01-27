@@ -90,10 +90,11 @@ class Mycontroller extends CI_Controller
         $join4 = array('table' => 'tour_itinerary_sub', 'condition' => 'tour_itinerary_sub.itinery_main_id=tour_itinerary_main.id AND tour_itinerary_sub.status="1"', 'type' => 'left');
         $join5 = array('table' => 'tour_inclusions_exclusions', 'condition' => 'tour_inclusions_exclusions.tours_id=tour_details.tours_id AND tour_inclusions_exclusions.status="1"', 'type' => 'left');
         $join6 = array('table' => 'tour_other_info', 'condition' => 'tour_other_info.tours_id=tour_details.tours_id AND tour_other_info.status="1"', 'type' => 'left');
+        $join7 = array('table' => 'tour_photos', 'condition' => 'tour_photos.tours_id=tours.id AND tour_photos.status="1" AND tour_photos.is_delete="1"', 'type' => 'left');
 
-        $join = [$join1, $join2, $join3, $join4, $join5, $join6];
+        $join = [$join1, $join2, $join3, $join4, $join5, $join6, $join7];
 
-        $data['get_tours_details'] = $this->myfront_model->get_data("tour_details.id as tour_details_id,tour_details.tours_id,tour_details.duration,tour_details.start_date,tour_details.price,tour_details.pikup_location,tour_details.drop_location,tours.difficulty,tour_about.tour_about_details,GROUP_CONCAT(tour_itinerary_main.itinerary,'##') as itinerary,GROUP_CONCAT(tour_itinerary_sub.itinerary_sub,'##') as itinerary_sub,tour_inclusions_exclusions.inclusions,tour_inclusions_exclusions.exclusions,tour_other_info.other_info", "tour_details", $cond, $join, "1");
+        $data['get_tours_details'] = $this->myfront_model->get_data("tour_details.id as tour_details_id,tour_details.tours_id,tour_details.duration,tour_details.start_date,tour_details.price,tour_details.pikup_location,tour_details.drop_location,tours.difficulty,tour_about.tour_about_details,GROUP_CONCAT(tour_itinerary_main.itinerary,'##') as itinerary,GROUP_CONCAT(tour_itinerary_sub.itinerary_sub,'##') as itinerary_sub,tour_inclusions_exclusions.inclusions,tour_inclusions_exclusions.exclusions,tour_other_info.other_info,GROUP_CONCAT(tour_photos.tour_photo) as tour_photo", "tour_details", $cond, $join, "1");
         // exit;
 
         $this->load->view('include/header', $data);

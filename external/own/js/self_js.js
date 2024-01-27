@@ -174,6 +174,7 @@ function get_schedule_dates(
 }
 
 function get_book(tour_details_id = "", tour_ids = "") {
+	// $("#about_details").show();
 	var url = baseurl + "Mycontroller/get_months_tour_wise";
 	bookingMemberCount = 0;
 	$.ajax({
@@ -219,7 +220,6 @@ function get_book(tour_details_id = "", tour_ids = "") {
 				html += "</div>";
 
 				$("#dates_and_costing").hide();
-				$("#about_details").hide();
 				$("#itinerary_details").hide();
 				$("#other_info").hide();
 				$("#tour_months").html(html);
@@ -701,3 +701,68 @@ function errorToster(text_data = "") {
 		text: text_data,
 	});
 }
+
+var swiper = new Swiper(".mySwiper", {
+	slidesPerView: 1,
+	spaceBetween: 10,
+	navigation: {
+		nextEl: ".swiper-button-next",
+		prevEl: ".swiper-button-prev",
+	},
+	// pagination: {
+	//   el: ".swiper-pagination",
+	//   clickable: true,
+	// },
+	autoplay: {
+		delay: 9500,
+		disableOnInteraction: true,
+		pauseOnMouseEnter: true,
+	},
+	breakpoints: {
+		"@0.00": {
+			slidesPerView: 1,
+			spaceBetween: 10,
+		},
+		"@0.75": {
+			slidesPerView: 2,
+			spaceBetween: 20,
+		},
+		"@1.00": {
+			slidesPerView: 2,
+			spaceBetween: 40,
+		},
+		"@1.50": {
+			slidesPerView: 3,
+			spaceBetween: 00,
+		},
+	},
+});
+
+// var swiper2 = new Swiper(".swiper-container2", {
+// 	slidesPerView: 3,
+// 	spaceBetween: 10,
+// 	navigation: {
+// 		nextEl: ".swiper-button-next2",
+// 		prevEl: ".swiper-button-prev2",
+// 	},
+// 	// Add other configurations as needed
+
+// 	breakpoints: {
+// 		"@0.00": {
+// 			slidesPerView: 1,
+// 			spaceBetween: 10,
+// 		},
+// 		"@0.75": {
+// 			slidesPerView: 2,
+// 			spaceBetween: 20,
+// 		},
+// 		"@1.00": {
+// 			slidesPerView: 2,
+// 			spaceBetween: 40,
+// 		},
+// 		"@1.50": {
+// 			slidesPerView: 3,
+// 			spaceBetween: 00,
+// 		},
+// 	},
+// });
