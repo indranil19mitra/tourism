@@ -431,7 +431,7 @@ function check_next(obj) {
 						},
 					}).then((result) => {
 						if (result) {
-							window.location.href = baseurl + "Mycontroller";
+							window.location.href = baseurl;
 						}
 					});
 				} else {
@@ -473,7 +473,7 @@ function check_next(obj) {
 		var tour_actual_amount_without_gst = tour_amount * bookingMemberCount;
 		var tour_actual_amount_with_gst =
 			tour_gst_amount + tour_actual_amount_without_gst;
-		var tour_booking_adv_requirement = (tour_actual_amount_with_gst * 40) / 100;
+		var tour_booking_adv_requirement = (tour_actual_amount_with_gst * 50) / 100;
 
 		$("#ttl_amount_of_booking_per_head_charge_without_gst").html(
 			tour_amount + " X " + bookingMemberCount

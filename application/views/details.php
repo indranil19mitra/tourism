@@ -595,8 +595,11 @@ if (!empty($get_tours_details)) {
                                                         <div>
                                                             <span id="tour_booking_ac_name"></span>
                                                         </div>
-                                                        <div>
+                                                        <div class="pb-1">
                                                             <span id="tour_booking_ac_ifsc"></span>
+                                                        </div>
+                                                        <div>
+                                                            <span class="text-danger">*</span><span id="tour_booking_ac_ifsc_1"><strong> Please Check Cancellation Policy</strong></span>
                                                         </div>
                                                     </div>
                                                 </div>
