@@ -242,7 +242,7 @@ $(document).ready(function () {
 			success: function (res) {
 				// Handle the server response
 				if (res.status != 103) {
-					window.location.href = baseurl + "tour_tour_photos";
+					window.location.href = baseurl + "tour_photos";
 					successToster(res.msg);
 				} else {
 					errorToster(res.msg);
@@ -402,7 +402,7 @@ function tourFunctionalities(ids = "", types = "", tables = "") {
 // 						$("#tour_photos_sbmt").show();
 // 						successToster(res.msg);
 // 					} else {
-// 						window.location.href = baseurl + "tour_tour_photos";
+// 						window.location.href = baseurl + "tour_photos";
 // 						successToster(res.msg);
 // 					}
 // 				} else {
@@ -439,7 +439,7 @@ function tour_photosFunctionalities(ids = "", types = "", tables = "") {
 						$("#tour_photos_sbmt").show();
 						successToster(res.msg);
 					} else {
-						window.location.href = baseurl + "tour_tour_photos";
+						window.location.href = baseurl + "tour_photos";
 						successToster(res.msg);
 					}
 				} else {
