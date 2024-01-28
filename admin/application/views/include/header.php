@@ -358,6 +358,12 @@
                             <span class="menu-title">Tour Booking <br>Details</span>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= base_url() ?>get-in-touch-details">
+                            <i class="icon-grid menu-icon"></i>
+                            <span class="menu-title">Get In Touch <br>Details</span>
+                        </a>
+                    </li>
                 </ul>
             </nav>
             <!-- partial -->
