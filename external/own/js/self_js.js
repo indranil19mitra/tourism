@@ -2,6 +2,7 @@ $(document).ready(function () {
 	$("#itinerary_details").hide();
 	$("#dates_and_costing").hide();
 	$("#other_info").hide();
+	$("#get_in_touch_form_sbmt").addClass("pe-none");
 });
 var bookingMemberCount = 0;
 function tourGetOnDates(date = "") {
@@ -226,7 +227,7 @@ function get_book(tour_details_id = "", tour_ids = "") {
 
 				$(".back_to_initial_back").attr("id", "tour_booking_details_back_1");
 				$(".back_to_initial_next").attr("id", "tour_booking_details_next_1");
-				$(".clr_input").html("");
+				$(".clr_input").val("");
 				$("#book_now_modal_header_title").html(
 					"PLEASE SELECT YOUR BATCH DATES"
 				);
@@ -613,7 +614,7 @@ function updateCount() {
 	}
 }
 
-function check_booking_input(inputValue, inputType) {
+function check_booking_input(inputValue = "", inputType = "") {
 	var inputElement = document.getElementById(inputType);
 
 	if (inputType === "name") {
@@ -623,8 +624,10 @@ function check_booking_input(inputValue, inputType) {
 	} else if (inputType === "email") {
 		var cleanedValue = inputValue.trim(); // Remove leading and trailing whitespaces for email
 		// You can add additional email validation logic here if needed
-	} else if (inputType === "address") {
-		var cleanedValue = inputValue;
+	} else {
+		if (inputType === "address") {
+			var cleanedValue = inputValue;
+		}
 	}
 
 	// Update the input value with the cleaned value
@@ -679,6 +682,65 @@ function checkAllInputsFilled() {
 		} else if (addressValue === "") {
 			document.getElementById("address").focus();
 		}
+	}
+}
+
+function check_getInTouch_input(inputValue = "", inputType = "") {
+	console.log(inputValue, " ", inputType);
+	var inputElement = document.getElementById(inputType);
+
+	if (inputType === "name_1") {
+		var cleanedValue = inputValue.replace(/[^A-Za-z ]/g, ""); // Remove non-alphabetic characters, allowing only one space
+	} else if (inputType === "contact_no_1") {
+		var cleanedValue = inputValue.replace(/[^0-9]/g, ""); // Remove non-numeric characters
+	} else if (inputType === "email_1") {
+		var cleanedValue = inputValue.trim(); // Remove leading and trailing whitespaces for email
+		// You can add additional email validation logic here if needed
+	} else {
+		if (inputType === "preferred_destination_1") {
+			var cleanedValue = inputValue;
+		}
+	}
+
+	// Update the input value with the cleaned value
+	inputElement.value = cleanedValue;
+
+	if (inputType === "email_1" && !isValidEmail(cleanedValue)) {
+		$("#get_in_touch_form_sbmt").addClass("pe-none");
+		inputElement.focus();
+		return false;
+	} else {
+		// $("#get_in_touch_form_sbmt").removeClass("pe-none");
+		checkAll_get_in_touch_InputsFilled();
+	}
+
+	// Additional validation if needed
+	// ...
+
+	return true; // The input is valid
+}
+
+function checkAll_get_in_touch_InputsFilled() {
+	var nameValue = document.getElementById("name_1").value.trim();
+	var contactNoValue = document.getElementById("contact_no_1").value.trim();
+	var emailValue = document.getElementById("email_1").value.trim();
+	var preferred_destination_Value = document
+		.getElementById("preferred_destination_1")
+		.value.trim();
+
+	if (
+		nameValue !== "" &&
+		contactNoValue !== "" &&
+		emailValue !== "" &&
+		preferred_destination_Value !== ""
+	) {
+		if (!isValidEmail(emailValue)) {
+			$("#get_in_touch_form_sbmt").addClass("pe-none");
+		} else {
+			$("#get_in_touch_form_sbmt").removeClass("pe-none");
+		}
+	} else {
+		$("#get_in_touch_form_sbmt").addClass("pe-none");
 	}
 }
 
@@ -766,3 +828,41 @@ var swiper = new Swiper(".mySwiper", {
 // 		},
 // 	},
 // });
+
+$("#get_in_touch_form_sbmt").click(function () {
+	var formdata = new FormData($("#get_in_touch_form")[0]);
+	var url = baseurl + "Mycontroller/add_get_in_touch_details_bknd";
+
+	$.ajax({
+		url: url,
+		type: "post",
+		data: formdata,
+		dataType: "json",
+		contentType: false,
+		processData: false,
+		success: function (res) {
+			console.log();
+			if (res.status != 103) {
+				swal({
+					title: "",
+					// text: res.msg,
+					icon: "success",
+					button: "Ok",
+					html: true,
+					content: {
+						element: "div",
+						attributes: {
+							innerHTML: res.msg,
+						},
+					},
+				}).then((result) => {
+					if (result) {
+						$(".clr_input").val("");
+					}
+				});
+			} else {
+				errorToster(res.msg);
+			}
+		},
+	});
+});
