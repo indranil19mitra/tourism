@@ -90,12 +90,17 @@ class Mycontroller extends CI_Controller
         $join4 = array('table' => 'tour_itinerary_sub', 'condition' => 'tour_itinerary_sub.itinery_main_id=tour_itinerary_main.id AND tour_itinerary_sub.status="1"', 'type' => 'left');
         $join5 = array('table' => 'tour_inclusions_exclusions', 'condition' => 'tour_inclusions_exclusions.tours_id=tour_details.tours_id AND tour_inclusions_exclusions.status="1"', 'type' => 'left');
         $join6 = array('table' => 'tour_other_info', 'condition' => 'tour_other_info.tours_id=tour_details.tours_id AND tour_other_info.status="1"', 'type' => 'left');
-        $join7 = array('table' => 'tour_photos', 'condition' => 'tour_photos.tours_id=tours.id AND tour_photos.status="1" AND tour_photos.is_delete="1"', 'type' => 'left');
 
-        $join = [$join1, $join2, $join3, $join4, $join5, $join6, $join7];
+        $join = [$join1, $join2, $join3, $join4, $join5, $join6];
 
-        $data['get_tours_details'] = $this->myfront_model->get_data("tour_details.id as tour_details_id,tour_details.tours_id,tour_details.duration,tour_details.start_date,tour_details.price,tour_details.pikup_location,tour_details.drop_location,tours.difficulty,tour_about.tour_about_details,GROUP_CONCAT(tour_itinerary_main.itinerary,'##') as itinerary,GROUP_CONCAT(tour_itinerary_sub.itinerary_sub,'##') as itinerary_sub,tour_inclusions_exclusions.inclusions,tour_inclusions_exclusions.exclusions,tour_other_info.other_info,GROUP_CONCAT(tour_photos.tour_photo) as tour_photo", "tour_details", $cond, $join, "1");
+        $data['get_tours_details'] = $this->myfront_model->get_data("tour_details.id as tour_details_id,tour_details.tours_id,tour_details.duration,tour_details.start_date,tour_details.price,tour_details.pikup_location,tour_details.drop_location,tours.difficulty,tour_about.tour_about_details,GROUP_CONCAT(tour_itinerary_main.itinerary,'##') as itinerary,GROUP_CONCAT(tour_itinerary_sub.itinerary_sub,'##') as itinerary_sub,tour_inclusions_exclusions.inclusions,tour_inclusions_exclusions.exclusions,tour_other_info.other_info", "tour_details", $cond, $join, "1");
         // exit;
+
+
+        $join7 = array('table' => 'tour_photos', 'condition' => 'tour_photos.tours_id=tours.id AND tour_photos.status="1" AND tour_photos.is_delete="1"', 'type' => 'left');
+        $join8 = [$join1, $join7];
+
+        $data['tour_photos'] = $this->myfront_model->get_data("GROUP_CONCAT(tour_photos.tour_photo) as tour_photo", "tour_details", $cond, $join8, "1");
 
         $this->load->view('include/header', $data);
         $this->load->view('details', $data);
@@ -228,11 +233,6 @@ class Mycontroller extends CI_Controller
 
     public function add_booking_details_bknd()
     {
-        // echo "<pre>";
-        // print_r($_POST);
-        // exit;
-        // $edit_id = (!empty($this->input->post('eid'))) ? $this->input->post('eid') : '';
-
         $tour_booking_info = array(
             'tours_details_id' => $this->input->post('booking_details_ids'),
             'cust_name' => $this->input->post('name'),
@@ -244,13 +244,47 @@ class Mycontroller extends CI_Controller
             'booking_amount_without_gst' => $this->input->post('ttl_amount_of_booking_without_gst_1'),
             'booking_amount_with_gst' => $this->input->post('ttl_amount_of_booking_with_gst_1'),
             'booking_gst_amount' => $this->input->post('ttl_cost_of_booking_gst_amount_1'),
+            'booking_status' => '1',
+            'status' => '1'
         );
 
         // print_r($tour_booking_info);
         // exit;
         $last_inst_id = $this->myfront_model->insert_data("tour_booking_details", $tour_booking_info);
-        $msg = 'Thank You..!<br>We will connect with you soon..!';
+        $msg = 'You have booked successfully..<br>We will connect with you soon..!';
 
+
+        if (!empty($last_inst_id)) {
+            $rslt = array('status' => '101', 'msg' => $msg, 'data' => $last_inst_id);
+        } else {
+            $rslt = array('status' => '103', 'msg' => 'Something went wrong!', 'data' => '');
+        }
+
+        echo json_encode($rslt);
+    }
+
+
+    public function add_get_in_touch_details_bknd()
+    {
+        // echo "<pre>";
+        // print_r($_POST);
+        // exit;
+        // $edit_id = (!empty($this->input->post('eid'))) ? $this->input->post('eid') : '';
+
+        $tour_get_in_touch = array(
+            'git_cust_name' => $this->input->post('name_1'),
+            'git_cust_contact' => $this->input->post('contact_no_1'),
+            'git_cust_email' => $this->input->post('email_1'),
+            'git_cust_destination' => $this->input->post('preferred_destination_1'),
+            'query_time' => date('Y-m-d H:i:s'),
+            'query_status' => '1',
+            'status' => '1'
+        );
+
+        // print_r($tour_get_in_touch);
+        // exit;
+        $last_inst_id = $this->myfront_model->insert_data("get_in_touch", $tour_get_in_touch);
+        $msg = 'Thank You..<br>We will connect with you soon..!';
 
         if (!empty($last_inst_id)) {
             $rslt = array('status' => '101', 'msg' => $msg, 'data' => $last_inst_id);

@@ -16,11 +16,18 @@ if (!empty($get_tours_details)) {
     $itinerary_sub = (!empty($get_tours_details->itinerary_sub)) ? array_filter(explode("##,", rtrim($get_tours_details->itinerary_sub, "##"))) : '';
     $tour_details_id = (!empty($get_tours_details->tour_details_id)) ? $get_tours_details->tour_details_id : '';
     $tours_id = (!empty($get_tours_details->tours_id)) ? $get_tours_details->tours_id : '';
-    $tour_photo = (!empty($get_tours_details->tour_photo)) ? (explode(",", $get_tours_details->tour_photo)) : '';
     // echo "tour_details_id=> ".$tour_details_id;
     // echo "tours_id=> ".$tours_id;
     // exit;
 }
+
+if (!empty($tour_photos)) {
+    // print_r($tour_photos);
+    $tour_photo = (!empty($tour_photos->tour_photo)) ? (explode(",", $tour_photos->tour_photo)) : '';
+    // exit;
+}
+
+
 ?>
 <div data-elementor-type="wp-page" data-elementor-id="17" class="elementor elementor-17 mb-5">
     <?php $this->load->view('slider'); ?>
@@ -689,6 +696,67 @@ if (!empty($get_tours_details)) {
 
             <div class="col-lg-4 col-md-12 col-sm-12">
                 <!-- <h1>Contact Us</h1> -->
+
+                <section id="other_info" class="elementor-section elementor-top-section elementor-element elementor-element-6521b521 elementor-section-boxed elementor-section-height-default elementor-section-height-default pt-5" data-id="6521b521" data-element_type="section">
+                    <div class="elementor-background-overlay"></div>
+                    <div class="container d-flex flex-wrap elementor-column-gap-default  p-0 g-0">
+                        <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3198fc93" data-id="3198fc93" data-element_type="column">
+                            <div class="elementor-widget-wrap elementor-element-populated">
+                                <section class="elementor-section elementor-inner-section elementor-element elementor-element-73351ef elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="73351ef" data-element_type="section">
+                                    <div class="elementor-container elementor-column-gap-no">
+                                        <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-fbfb681" data-id="fbfb681" data-element_type="column">
+                                            <div class="elementor-widget-wrap elementor-element-populated">
+                                                <div class="elementor-element elementor-element-446a8ec animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="446a8ec" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;}" data-widget_type="heading.default">
+                                                    <div class="elementor-widget-container">
+                                                        <h2 class="elementor-heading-title elementor-size-default mt-2">get in touch</h2>
+                                                    </div>
+                                                </div>
+                                                <div class="elementor-element elementor-element-79e4907 elementor-absolute animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="79e4907" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;,&quot;_animation&quot;:&quot;fadeInLeft&quot;}" data-widget_type="heading.default">
+                                                    <div class="elementor-widget-container">
+                                                        <span class="elementor-heading-title elementor-size-default">Durbeen</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="w-100 mt-5">
+                    <form class="forms-sample" id="get_in_touch_form">
+                        <div class="row" id="get_in_touch">
+                            <!-- <div class="p-5"> -->
+                            <div class="col-lg-12 col-md-12 col-sm-12 mb-3 d-flex justify-content-end">
+                                <span class="text-danger">All fields are mandatory</span>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 mb-3 d-flex justify-content-center">
+                                <input type="text" class="form-control clr_input" onkeyup="check_getInTouch_input(this.value, 'name_1')" id="name_1" name="name_1" placeholder="Please Enter Your Name">
+                            </div>
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 mb-3 d-flex justify-content-center">
+                                <input type="text" class="form-control clr_input" onkeyup="check_getInTouch_input(this.value, 'contact_no_1')" id="contact_no_1" maxlength="10" name="contact_no_1" placeholder="Please Enter Contact Number">
+                            </div>
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 mb-3 d-flex justify-content-center">
+                                <input type="email" class="form-control clr_input" onkeyup="check_getInTouch_input(this.value, 'email_1')" id="email_1" name="email_1" placeholder="Please Enter Email ID">
+                            </div>
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 mb-3 d-flex justify-content-center">
+                                <textarea type="text" class="form-control clr_input" onkeyup="check_getInTouch_input(this.value,'preferred_destination_1')" rows="4" id="preferred_destination_1" name="preferred_destination_1" placeholder="Preferred Destination"></textarea>
+                            </div>
+
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 mb-3 d-flex justify-content-start">
+                                <button type="button" class="btn btn-primary" id="get_in_touch_form_sbmt">SUBMIT</button>
+                            </div>
+                            <!-- </div> -->
+                        </div>
+                    </form>
+                </div>
+                <!-- </section> -->
             </div>
         </div>
     </div>
