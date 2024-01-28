@@ -38,17 +38,17 @@
                                     foreach ($tour_booking_details as $key => $rslt) :
                                         // 	'pending'=>1, 'confirmed'=>2, 'cancelled'=>3, 'paid'=>4, 'start'=>5, 'completed'=>6	
 
-                                        if ($rslt->status == 1) {
+                                        if ($rslt->booking_status == 1) {
                                             $status_desc = "pending";
-                                        } elseif ($rslt->status == 2) {
+                                        } elseif ($rslt->booking_status == 2) {
                                             $status_desc = "confirmed";
-                                        } elseif ($rslt->status == 3) {
+                                        } elseif ($rslt->booking_status == 3) {
                                             $status_desc = "cancelled";
-                                        } elseif ($rslt->status == 4) {
+                                        } elseif ($rslt->booking_status == 4) {
                                             $status_desc = "paid";
-                                        } elseif ($rslt->status == 5) {
+                                        } elseif ($rslt->booking_status == 5) {
                                             $status_desc = "start";
-                                        } elseif ($rslt->status == 6) {
+                                        } elseif ($rslt->booking_status == 6) {
                                             $status_desc = "completed";
                                         } else {
                                             $status_desc = "";
