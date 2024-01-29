@@ -114,44 +114,56 @@
 				?>
 			</div>
 		</div>
-
 		<div class="container-fluid crd_mn mb-5">
 			<div class="row">
-				<?php
-				// echo "<pre>";
-				// print_r($get_tours_date_wise);
-				// exit;
-
-				if (!empty($get_tours_date_wise)) :
-					foreach ($get_tours_date_wise as $val) {
-						$names = implode("-", explode(" ", $val->name));
-				?>
-						<div class="col-lg-4 col-md-6 col-sm-12">
-							<!-- <div class="card" style="width: 18rem;"> -->
-							<div class="card px-3 pt-3">
-								<img src="<?= base_url() . "admin/" . $val->main_image ?>" class="card-img-top rounded crd_img" alt="...">
-								<div class="card-body px-0">
-									<h4 class="card-title"><?= $val->name; ?></h4>
-									<!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-									<div class="d-flex justify-content-between">
-										<div><i class="fa-solid fa-clock"></i><span class="ps-1"><?= $val->duration; ?></span></div>
-										<div><i class="fa-solid fa-stamp"></i><span class="ps-1 text-danger"><?= $val->seat_availability; ?></span> Seat Availability</div>
+				<div class="w-100 mt-5">
+					<!-- Swiper Slider 1 -->
+					<div class="swiper swiper_container1 mb-3">
+						<div class="swiper-wrapper p-2 ps-0 ps-md-2">
+							<?php
+							if (!empty($get_tours_date_wise)) :
+								foreach ($get_tours_date_wise as $val) {
+									$names = implode("-", explode(" ", $val->name));
+							?>
+									<div class="swiper-slide p-1">
+										<div class="card px-3 pt-3">
+											<img src="<?= base_url() . "admin/" . $val->main_image ?>" class="card-img-top rounded crd_img" alt="...">
+											<div class="card-body px-0">
+												<h4 class="card-title"><?= $val->name; ?></h4>
+												<div class="d-flex justify-content-between">
+													<div><i class="fa-solid fa-clock"></i><span class="ps-1"><?= $val->duration; ?></span></div>
+													<div><i class="fa-solid fa-stamp"></i><span class="ps-1 text-danger"><?= $val->seat_availability; ?></span> Seat Availability</div>
+												</div>
+												<div class="d-flex justify-content-between">
+													<div><i class="fa-solid fa-calendar-days"></i><span class="ps-1"><?= date("d M", strtotime($val->start_date)); ?></span></div>
+													<div><i class="fa-solid fa-indian-rupee-sign"></i><span class="ps-1"><?= $val->price; ?>/- Onwards</span></div>
+												</div>
+												<div class="d-grid gap-2 mt-2">
+													<button class="btn btn-primary rounded" onclick="getDetails('<?= $names; ?>','<?= $val->tour_details_id; ?>')" type="button">View Details</button>
+												</div>
+											</div>
+										</div>
 									</div>
-
-									<div class="d-flex justify-content-between">
-										<div><i class="fa-solid fa-calendar-days"></i><span class="ps-1"><?= date("d M", strtotime($val->start_date)); ?></span></div>
-										<div><i class="fa-solid fa-indian-rupee-sign"></i><span class="ps-1"><?= $val->price; ?>/- Onwards</span></div>
-									</div>
-									<div class="d-grid gap-2 mt-2">
-										<button class="btn btn-primary rounded" onclick="getDetails('<?= $names; ?>','<?= $val->tour_details_id; ?>')" type="button">View Details</button>
-									</div>
-								</div>
+							<?php
+								}
+							endif;
+							?>
+						</div>
+					</div>
+					<!-- Navigation buttons for Swiper Slider 1 -->
+					<div class="d-flex flex-wrap flex-md-nowrap justify-content-end align-items-center mb-0">
+						<div class="d-flex flex-wrap flex-md-nowrap flex-column-reverse flex-md-row gap-2">
+							<div class="carousel-slider d-flex justify-content-end gap-4">
+								<a class=" bg-transparent position-relative d-block swiper-button-prev1" href="#" role="button">
+									<div class="swiper-button-prev text-primary position-relative w-auto p-1"></div>
+								</a>
+								<a class=" bg-transparent position-relative d-block w-auto swiper-button-next1" href="#" role="button">
+									<div class="swiper-button-next text-primary position-relative w-auto p-1"></div>
+								</a>
 							</div>
 						</div>
-				<?php
-					}
-				endif;
-				?>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -215,44 +227,58 @@
 				</div>
 			</div>
 		</section>
-
 		<div class="container-fluid crd_mn mb-5">
 			<div class="row">
-				<?php
-				// echo "<pre>";
-				// print_r($get_tours_weekend_trip);
-				// exit;
-
-				if (!empty($get_tours_weekend_trip)) :
-					foreach ($get_tours_weekend_trip as $val) {
-						$names = implode("-", explode(" ", $val->name));
-				?>
-						<div class="col-lg-4 col-md-6 col-sm-12">
-							<!-- <div class="card" style="width: 18rem;"> -->
-							<div class="card px-3 pt-3">
-								<img src="<?= base_url() . "admin/" . $val->main_image ?>" class="card-img-top rounded crd_img" alt="...">
-								<div class="card-body px-0">
-									<h4 class="card-title"><?= $val->name; ?></h4>
-									<!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-									<div class="d-flex justify-content-between">
-										<div><i class="fa-solid fa-clock"></i><span class="ps-1"><?= $val->duration; ?></span></div>
-										<div><i class="fa-solid fa-stamp"></i><span class="ps-1 text-danger"><?= $val->seat_availability; ?></span> Seat Availability</div>
+				<div class="w-100 mt-5">
+					<!-- Swiper Slider 1 -->
+					<div class="swiper swiper_container2 mb-3">
+						<div class="swiper-wrapper p-2 ps-0 ps-md-2">
+							<?php
+							if (!empty($get_tours_weekend_trip)) :
+								// echo "<pre>";
+								// print_r($get_tours_weekend_trip);
+								foreach ($get_tours_weekend_trip as $val) {
+									$names = implode("-", explode(" ", $val->name));
+							?>
+									<div class="swiper-slide p-1">
+										<div class="card px-3 pt-3">
+											<img src="<?= base_url() . "admin/" . $val->main_image ?>" class="card-img-top rounded crd_img" alt="...">
+											<div class="card-body px-0">
+												<h4 class="card-title"><?= $val->name; ?></h4>
+												<div class="d-flex justify-content-between">
+													<div><i class="fa-solid fa-clock"></i><span class="ps-1"><?= $val->duration; ?></span></div>
+													<div><i class="fa-solid fa-stamp"></i><span class="ps-1 text-danger"><?= $val->seat_availability; ?></span> Seat Availability</div>
+												</div>
+												<div class="d-flex justify-content-between">
+													<div><i class="fa-solid fa-calendar-days"></i><span class="ps-1"><?= date("d M", strtotime($val->start_date)); ?></span></div>
+													<div><i class="fa-solid fa-indian-rupee-sign"></i><span class="ps-1"><?= $val->price; ?>/- Onwards</span></div>
+												</div>
+												<div class="d-grid gap-2 mt-2">
+													<button class="btn btn-primary rounded" onclick="getDetails('<?= $names; ?>','<?= $val->tour_details_id; ?>')" type="button">View Details</button>
+												</div>
+											</div>
+										</div>
 									</div>
-
-									<div class="d-flex justify-content-between">
-										<div><i class="fa-solid fa-calendar-days"></i><span class="ps-1"><?= date("d M", strtotime($val->start_date)); ?></span></div>
-										<div><i class="fa-solid fa-indian-rupee-sign"></i><span class="ps-1"><?= $val->price; ?>/- Onwards</span></div>
-									</div>
-									<div class="d-grid gap-2 mt-2">
-										<button class="btn btn-primary rounded" onclick="getDetails('<?= $names; ?>','<?= $val->tour_details_id; ?>')" type="button">View Details</button>
-									</div>
-								</div>
+							<?php
+								}
+							endif;
+							?>
+						</div>
+					</div>
+					<!-- Navigation buttons for Swiper Slider 1 -->
+					<div class="d-flex flex-wrap flex-md-nowrap justify-content-end align-items-center mb-0">
+						<div class="d-flex flex-wrap flex-md-nowrap flex-column-reverse flex-md-row gap-2">
+							<div class="carousel-slider d-flex justify-content-end gap-4">
+								<a class=" bg-transparent position-relative d-block swiper-button-prev2" href="#" role="button">
+									<div class="swiper-button-prev text-primary position-relative w-auto p-1"></div>
+								</a>
+								<a class=" bg-transparent position-relative d-block w-auto swiper-button-next2" href="#" role="button">
+									<div class="swiper-button-next text-primary position-relative w-auto p-1"></div>
+								</a>
 							</div>
 						</div>
-				<?php
-					}
-				endif;
-				?>
+					</div>
+				</div>
 			</div>
 		</div>
 	<?php
@@ -319,44 +345,58 @@
 
 		<div class="container-fluid crd_mn mb-5">
 			<div class="row">
-				<?php
-				// echo "<pre>";
-				// print_r($get_tours_popular_trip);
-				// exit;
-
-				if (!empty($get_tours_popular_trip)) :
-					foreach ($get_tours_popular_trip as $val) {
-						$names = implode("-", explode(" ", $val->name));
-				?>
-						<div class="col-lg-4 col-md-6 col-sm-12">
-							<!-- <div class="card" style="width: 18rem;"> -->
-							<div class="card px-3 pt-3">
-								<img src="<?= base_url() . "admin/" . $val->main_image ?>" class="card-img-top rounded crd_img" alt="...">
-								<div class="card-body px-0">
-									<h4 class="card-title"><?= $val->name; ?></h4>
-									<!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-									<div class="d-flex justify-content-between">
-										<div><i class="fa-solid fa-clock"></i><span class="ps-1"><?= $val->duration; ?></span></div>
-										<div><i class="fa-solid fa-stamp"></i><span class="ps-1 text-danger"><?= $val->seat_availability; ?></span> Seat Availability</div>
+				<div class="w-100 mt-5">
+					<!-- Swiper Slider 1 -->
+					<div class="swiper swiper_container3 mb-3">
+						<div class="swiper-wrapper p-2 ps-0 ps-md-2">
+							<?php
+							if (!empty($get_tours_popular_trip)) :
+								// echo "<pre>";
+								// print_r($get_tours_popular_trip);
+								foreach ($get_tours_popular_trip as $val) {
+									$names = implode("-", explode(" ", $val->name));
+							?>
+									<div class="swiper-slide p-1">
+										<div class="card px-3 pt-3">
+											<img src="<?= base_url() . "admin/" . $val->main_image ?>" class="card-img-top rounded crd_img" alt="...">
+											<div class="card-body px-0">
+												<h4 class="card-title"><?= $val->name; ?></h4>
+												<div class="d-flex justify-content-between">
+													<div><i class="fa-solid fa-clock"></i><span class="ps-1"><?= $val->duration; ?></span></div>
+													<div><i class="fa-solid fa-stamp"></i><span class="ps-1 text-danger"><?= $val->seat_availability; ?></span> Seat Availability</div>
+												</div>
+												<div class="d-flex justify-content-between">
+													<div><i class="fa-solid fa-calendar-days"></i><span class="ps-1"><?= date("d M", strtotime($val->start_date)); ?></span></div>
+													<div><i class="fa-solid fa-indian-rupee-sign"></i><span class="ps-1"><?= $val->price; ?>/- Onwards</span></div>
+												</div>
+												<div class="d-grid gap-2 mt-2">
+													<button class="btn btn-primary rounded" onclick="getDetails('<?= $names; ?>','<?= $val->tour_details_id; ?>')" type="button">View Details</button>
+												</div>
+											</div>
+										</div>
 									</div>
-
-									<div class="d-flex justify-content-between">
-										<div><i class="fa-solid fa-calendar-days"></i><span class="ps-1"><?= date("d M", strtotime($val->start_date)); ?></span></div>
-										<div><i class="fa-solid fa-indian-rupee-sign"></i><span class="ps-1"><?= $val->price; ?>/- Onwards</span></div>
-									</div>
-									<div class="d-grid gap-2 mt-2">
-										<button class="btn btn-primary rounded" onclick="getDetails('<?= $names; ?>','<?= $val->tour_details_id; ?>')" type="button">View Details</button>
-									</div>
-								</div>
+							<?php
+								}
+							endif;
+							?>
+						</div>
+					</div>
+					<!-- Navigation buttons for Swiper Slider 1 -->
+					<div class="d-flex flex-wrap flex-md-nowrap justify-content-end align-items-center mb-0">
+						<div class="d-flex flex-wrap flex-md-nowrap flex-column-reverse flex-md-row gap-2">
+							<div class="carousel-slider d-flex justify-content-end gap-4">
+								<a class=" bg-transparent position-relative d-block swiper-button-prev3" href="#" role="button">
+									<div class="swiper-button-prev text-primary position-relative w-auto p-1"></div>
+								</a>
+								<a class=" bg-transparent position-relative d-block w-auto swiper-button-next3" href="#" role="button">
+									<div class="swiper-button-next text-primary position-relative w-auto p-1"></div>
+								</a>
 							</div>
 						</div>
-				<?php
-					}
-				endif;
-				?>
+					</div>
+				</div>
 			</div>
 		</div>
-
 	<?php
 	}
 	?>
@@ -421,41 +461,54 @@
 
 		<div class="container-fluid crd_mn mb-5">
 			<div class="row">
-				<?php
-				// echo "<pre>";
-				// print_r($get_tours_adv_trip);
-				// exit;
-
-				if (!empty($get_tours_adv_trip)) :
-					foreach ($get_tours_adv_trip as $val) {
-						$names = implode("-", explode(" ", $val->name));
-				?>
-						<div class="col-lg-4 col-md-6 col-sm-12">
-							<!-- <div class="card" style="width: 18rem;"> -->
-							<div class="card px-3 pt-3">
-								<img src="<?= base_url() . "admin/" . $val->main_image ?>" class="card-img-top rounded crd_img" alt="...">
-								<div class="card-body px-0">
-									<h4 class="card-title"><?= $val->name; ?></h4>
-									<!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-									<div class="d-flex justify-content-between">
-										<div><i class="fa-solid fa-clock"></i><span class="ps-1"><?= $val->duration; ?></span></div>
-										<div><i class="fa-solid fa-stamp"></i><span class="ps-1 text-danger"><?= $val->seat_availability; ?></span> Seat Availability</div>
+				<div class="w-100 mt-5">
+					<!-- Swiper Slider 1 -->
+					<div class="swiper swiper_container4 mb-3">
+						<div class="swiper-wrapper p-2 ps-0 ps-md-2">
+							<?php
+							if (!empty($get_tours_adv_trip)) :
+								foreach ($get_tours_adv_trip as $val) {
+									$names = implode("-", explode(" ", $val->name));
+							?>
+									<div class="swiper-slide p-1">
+										<div class="card px-3 pt-3">
+											<img src="<?= base_url() . "admin/" . $val->main_image ?>" class="card-img-top rounded crd_img" alt="...">
+											<div class="card-body px-0">
+												<h4 class="card-title"><?= $val->name; ?></h4>
+												<div class="d-flex justify-content-between">
+													<div><i class="fa-solid fa-clock"></i><span class="ps-1"><?= $val->duration; ?></span></div>
+													<div><i class="fa-solid fa-stamp"></i><span class="ps-1 text-danger"><?= $val->seat_availability; ?></span> Seat Availability</div>
+												</div>
+												<div class="d-flex justify-content-between">
+													<div><i class="fa-solid fa-calendar-days"></i><span class="ps-1"><?= date("d M", strtotime($val->start_date)); ?></span></div>
+													<div><i class="fa-solid fa-indian-rupee-sign"></i><span class="ps-1"><?= $val->price; ?>/- Onwards</span></div>
+												</div>
+												<div class="d-grid gap-2 mt-2">
+													<button class="btn btn-primary rounded" onclick="getDetails('<?= $names; ?>','<?= $val->tour_details_id; ?>')" type="button">View Details</button>
+												</div>
+											</div>
+										</div>
 									</div>
-
-									<div class="d-flex justify-content-between">
-										<div><i class="fa-solid fa-calendar-days"></i><span class="ps-1"><?= date("d M", strtotime($val->start_date)); ?></span></div>
-										<div><i class="fa-solid fa-indian-rupee-sign"></i><span class="ps-1"><?= $val->price; ?>/- Onwards</span></div>
-									</div>
-									<div class="d-grid gap-2 mt-2">
-										<button class="btn btn-primary rounded" onclick="getDetails('<?= $names; ?>','<?= $val->tour_details_id; ?>')" type="button">View Details</button>
-									</div>
-								</div>
+							<?php
+								}
+							endif;
+							?>
+						</div>
+					</div>
+					<!-- Navigation buttons for Swiper Slider 1 -->
+					<div class="d-flex flex-wrap flex-md-nowrap justify-content-end align-items-center mb-0">
+						<div class="d-flex flex-wrap flex-md-nowrap flex-column-reverse flex-md-row gap-2">
+							<div class="carousel-slider d-flex justify-content-end gap-4">
+								<a class=" bg-transparent position-relative d-block swiper-button-prev4" href="#" role="button">
+									<div class="swiper-button-prev text-primary position-relative w-auto p-1"></div>
+								</a>
+								<a class=" bg-transparent position-relative d-block w-auto swiper-button-next4" href="#" role="button">
+									<div class="swiper-button-next text-primary position-relative w-auto p-1"></div>
+								</a>
 							</div>
 						</div>
-				<?php
-					}
-				endif;
-				?>
+					</div>
+				</div>
 			</div>
 		</div>
 	<?php
