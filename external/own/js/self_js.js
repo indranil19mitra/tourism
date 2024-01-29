@@ -764,71 +764,6 @@ function errorToster(text_data = "") {
 	});
 }
 
-var swiper = new Swiper(".mySwiper", {
-	slidesPerView: 1,
-	spaceBetween: 10,
-	navigation: {
-		nextEl: ".swiper-button-next",
-		prevEl: ".swiper-button-prev",
-	},
-	// pagination: {
-	//   el: ".swiper-pagination",
-	//   clickable: true,
-	// },
-	autoplay: {
-		delay: 9500,
-		disableOnInteraction: true,
-		pauseOnMouseEnter: true,
-	},
-	breakpoints: {
-		"@0.00": {
-			slidesPerView: 1,
-			spaceBetween: 10,
-		},
-		"@0.75": {
-			slidesPerView: 2,
-			spaceBetween: 20,
-		},
-		"@1.00": {
-			slidesPerView: 2,
-			spaceBetween: 40,
-		},
-		"@1.50": {
-			slidesPerView: 3,
-			spaceBetween: 00,
-		},
-	},
-});
-
-// var swiper2 = new Swiper(".swiper-container2", {
-// 	slidesPerView: 3,
-// 	spaceBetween: 10,
-// 	navigation: {
-// 		nextEl: ".swiper-button-next2",
-// 		prevEl: ".swiper-button-prev2",
-// 	},
-// 	// Add other configurations as needed
-
-// 	breakpoints: {
-// 		"@0.00": {
-// 			slidesPerView: 1,
-// 			spaceBetween: 10,
-// 		},
-// 		"@0.75": {
-// 			slidesPerView: 2,
-// 			spaceBetween: 20,
-// 		},
-// 		"@1.00": {
-// 			slidesPerView: 2,
-// 			spaceBetween: 40,
-// 		},
-// 		"@1.50": {
-// 			slidesPerView: 3,
-// 			spaceBetween: 00,
-// 		},
-// 	},
-// });
-
 $("#get_in_touch_form_sbmt").click(function () {
 	var formdata = new FormData($("#get_in_touch_form")[0]);
 	var url = baseurl + "Mycontroller/add_get_in_touch_details_bknd";
@@ -863,6 +798,210 @@ $("#get_in_touch_form_sbmt").click(function () {
 			} else {
 				errorToster(res.msg);
 			}
+		},
+	});
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+	var swiper = new Swiper(".swiper_container1", {
+		slidesPerView: 1,
+		spaceBetween: 10,
+		navigation: {
+			nextEl: ".swiper-button-next1",
+			prevEl: ".swiper-button-prev1",
+		},
+		autoplay: {
+			delay: 9500,
+			disableOnInteraction: true,
+			pauseOnMouseEnter: true,
+		},
+		breakpoints: {
+			"@0.00": {
+				slidesPerView: 1,
+				spaceBetween: 10,
+			},
+			"@0.75": {
+				slidesPerView: 2,
+				spaceBetween: 20,
+			},
+			"@1.00": {
+				slidesPerView: 2,
+				spaceBetween: 40,
+			},
+			"@1.50": {
+				slidesPerView: 3,
+				spaceBetween: 0,
+			},
+		},
+		on: {
+			init: function () {
+				// Set custom Font Awesome icon for navigation buttons
+				document.querySelector(".swiper-button-next1").innerHTML =
+					'<i class="fa-solid fa-arrow-right-long"></i>';
+				document.querySelector(".swiper-button-prev1").innerHTML =
+					'<i class="fa-solid fa-arrow-left-long"></i>';
+			},
+		},
+	});
+
+	var swiper2 = new Swiper(".swiper_container2", {
+		slidesPerView: 1,
+		spaceBetween: 10,
+		navigation: {
+			nextEl: ".swiper-button-next2",
+			prevEl: ".swiper-button-prev2",
+		},
+		autoplay: {
+			delay: 9500,
+			disableOnInteraction: true,
+			pauseOnMouseEnter: true,
+		},
+		breakpoints: {
+			"@0.00": {
+				slidesPerView: 1,
+				spaceBetween: 10,
+			},
+			"@0.75": {
+				slidesPerView: 2,
+				spaceBetween: 20,
+			},
+			"@1.00": {
+				slidesPerView: 2,
+				spaceBetween: 40,
+			},
+			"@1.50": {
+				slidesPerView: 3,
+				spaceBetween: 0,
+			},
+		},
+		on: {
+			init: function () {
+				// Set custom Font Awesome icon for navigation buttons
+				document.querySelector(".swiper-button-next2").innerHTML =
+					'<i class="fa-solid fa-arrow-right-long"></i>';
+				document.querySelector(".swiper-button-prev2").innerHTML =
+					'<i class="fa-solid fa-arrow-left-long"></i>';
+			},
+		},
+	});
+
+	var swiper3 = new Swiper(".swiper_container3", {
+		slidesPerView: 1,
+		spaceBetween: 10,
+		navigation: {
+			nextEl: ".swiper-button-next3",
+			prevEl: ".swiper-button-prev3",
+		},
+		autoplay: {
+			delay: 9500,
+			disableOnInteraction: true,
+			pauseOnMouseEnter: true,
+		},
+		breakpoints: {
+			"@0.00": {
+				slidesPerView: 1,
+				spaceBetween: 10,
+			},
+			"@0.75": {
+				slidesPerView: 2,
+				spaceBetween: 20,
+			},
+			"@1.00": {
+				slidesPerView: 2,
+				spaceBetween: 40,
+			},
+			"@1.50": {
+				slidesPerView: 3,
+				spaceBetween: 0,
+			},
+		},
+		on: {
+			init: function () {
+				document.querySelector(".swiper-button-next3").innerHTML =
+					'<i class="fa-solid fa-arrow-right-long"></i>';
+				document.querySelector(".swiper-button-prev3").innerHTML =
+					'<i class="fa-solid fa-arrow-left-long"></i>';
+			},
+		},
+	});
+
+	var swiper4 = new Swiper(".swiper_container4", {
+		slidesPerView: 1,
+		spaceBetween: 10,
+		navigation: {
+			nextEl: ".swiper-button-next4",
+			prevEl: ".swiper-button-prev4",
+		},
+		autoplay: {
+			delay: 9500,
+			disableOnInteraction: true,
+			pauseOnMouseEnter: true,
+		},
+		breakpoints: {
+			"@0.00": {
+				slidesPerView: 1,
+				spaceBetween: 10,
+			},
+			"@0.75": {
+				slidesPerView: 2,
+				spaceBetween: 20,
+			},
+			"@1.00": {
+				slidesPerView: 2,
+				spaceBetween: 40,
+			},
+			"@1.50": {
+				slidesPerView: 3,
+				spaceBetween: 0,
+			},
+		},
+		on: {
+			init: function () {
+				document.querySelector(".swiper-button-next4").innerHTML =
+					'<i class="fa-solid fa-arrow-right-long"></i>';
+				document.querySelector(".swiper-button-prev4").innerHTML =
+					'<i class="fa-solid fa-arrow-left-long"></i>';
+			},
+		},
+	});
+
+	var swiper5 = new Swiper(".mySwiper", {
+		slidesPerView: 1,
+		spaceBetween: 10,
+		navigation: {
+			nextEl: ".swiper-button-next",
+			prevEl: ".swiper-button-prev",
+		},
+		autoplay: {
+			delay: 9500,
+			disableOnInteraction: true,
+			pauseOnMouseEnter: true,
+		},
+		breakpoints: {
+			"@0.00": {
+				slidesPerView: 1,
+				spaceBetween: 10,
+			},
+			"@0.75": {
+				slidesPerView: 2,
+				spaceBetween: 20,
+			},
+			"@1.00": {
+				slidesPerView: 2,
+				spaceBetween: 40,
+			},
+			"@1.50": {
+				slidesPerView: 3,
+				spaceBetween: 0,
+			},
+			on: {
+				init: function () {
+					document.querySelector(".swiper-button-next").innerHTML =
+						'<i class="fa-solid fa-arrow-right-long"></i>';
+					document.querySelector(".swiper-button-prev").innerHTML =
+						'<i class="fa-solid fa-arrow-left-long"></i>';
+				},
+			},
 		},
 	});
 });
