@@ -4,9 +4,138 @@ $(document).ready(function () {
 	$("#other_info").hide();
 	$("#get_in_touch_form_sbmt").addClass("pe-none");
 });
+
 var bookingMemberCount = 0;
+
 function tourGetOnDates(date = "") {
-	window.location.href = baseurl + "?dts=" + date;
+	// window.location.href = baseurl + "?dts=" + date;
+
+	$.ajax({
+		url: baseurl + "Mycontroller/dta_on_selection",
+		type: "post",
+		data: {
+			dts: date,
+		},
+		dataType: "json",
+		success: function (res) {
+			console.log(res);
+			if (res.status == 101) {
+				var html = "";
+				html += '<div class="swiper swiper_container6 mb-3">';
+				html += '<div class="swiper-wrapper p-2 ps-0 ps-md-2">';
+				$("#dt_swpr1").hide();
+				$.each(res.data, function (key, val) {
+					console.log(val);
+					// alert(key + ": " + value);
+					html += '<div class="swiper-slide p-1">';
+					html += '<div class="card px-3 pt-3">';
+					html +=
+						'<img src="' +
+						baseurl +
+						"admin/" +
+						val.main_image +
+						'" class="card-img-top rounded crd_img" alt="...">';
+					html += '<div class="card-body px-0">';
+					html += '<h4 class="card-title">' + val.name + "</h4>";
+					html += '<div class="d-flex justify-content-between">';
+					html +=
+						'<div><i class="fa-solid fa-clock"></i><span class="ps-1">' +
+						val.duration +
+						"</span></div>";
+					html +=
+						'<div><i class="fa-solid fa-stamp"></i><span class="ps-1 text-danger">' +
+						val.seat_availability +
+						"</span> Seat Availability</div>";
+					html += "</div>";
+					html += '<div class="d-flex justify-content-between">';
+					html +=
+						'<div><i class="fa-solid fa-calendar-days"></i><span class="ps-1">' +
+						val.tour_calendar_days +
+						"</span></div>";
+					html +=
+						'<div><i class="fa-solid fa-indian-rupee-sign"></i><span class="ps-1">' +
+						val.price +
+						"/- Onwards</span></div>";
+					html += "</div>";
+					html += '<div class="d-grid gap-2 mt-2">';
+					html +=
+						'<button class="btn btn-primary rounded" onclick="getDetails(' +
+						val.names +
+						"," +
+						val.tour_details_id +
+						')" type="button">View Details</button>';
+					html += "</div>";
+					html += "</div>";
+					html += "</div>";
+					html += "</div>";
+				});
+				html += "</div>";
+				html += "</div>";
+				html +=
+					'<div class="d-flex flex-wrap flex-md-nowrap justify-content-end align-items-center mb-0">';
+				html +=
+					'<div class="d-flex flex-wrap flex-md-nowrap flex-column-reverse flex-md-row gap-2">';
+				html +=
+					'<div class="carousel-slider d-flex justify-content-end gap-4">';
+				html +=
+					'<a class=" bg-transparent position-relative d-block swiper-button-prev6" href="#" role="button">';
+				html +=
+					'<div class="swiper-button-prev text-primary position-relative w-auto p-1"></div>';
+				html += "</a>";
+				html +=
+					'<a class=" bg-transparent position-relative d-block w-auto swiper-button-next6" href="#" role="button">';
+				html +=
+					'<div class="swiper-button-next text-primary position-relative w-auto p-1"></div>';
+				html += "</a>";
+				html += "</div>";
+				html += "</div>";
+				html += "</div>";
+				// console.log(html);
+
+				$("#dt_swpr2").html(html);
+
+				var swiper4 = new Swiper(".swiper_container6", {
+					slidesPerView: 1,
+					spaceBetween: 10,
+					navigation: {
+						nextEl: ".swiper-button-next6",
+						prevEl: ".swiper-button-prev6",
+					},
+					autoplay: {
+						delay: 9500,
+						disableOnInteraction: true,
+						pauseOnMouseEnter: true,
+					},
+					breakpoints: {
+						"@0.00": {
+							slidesPerView: 1,
+							spaceBetween: 10,
+						},
+						"@0.75": {
+							slidesPerView: 2,
+							spaceBetween: 20,
+						},
+						"@1.00": {
+							slidesPerView: 2,
+							spaceBetween: 40,
+						},
+						"@1.50": {
+							slidesPerView: 3,
+							spaceBetween: 0,
+						},
+					},
+					on: {
+						init: function () {
+							document.querySelector(".swiper-button-next6").innerHTML =
+								'<i class="fa-solid fa-arrow-right-long"></i>';
+							document.querySelector(".swiper-button-prev6").innerHTML =
+								'<i class="fa-solid fa-arrow-left-long"></i>';
+						},
+					},
+				});
+			}
+		},
+	});
 }
 
 function getDetails(dtl_nm = "", ids = "") {
@@ -474,21 +603,21 @@ function check_next(obj) {
 		var tour_actual_amount_without_gst = tour_amount * bookingMemberCount;
 		var tour_actual_amount_with_gst =
 			tour_gst_amount + tour_actual_amount_without_gst;
-		var tour_booking_adv_requirement = (tour_actual_amount_with_gst * 50) / 100;
+		var tour_booking_adv_requirement =
+			(tour_actual_amount_without_gst * 50) / 100;
 
 		$("#ttl_amount_of_booking_per_head_charge_without_gst").html(
 			tour_amount + " X " + bookingMemberCount
 		);
 		$("#ttl_amount_of_booking_without_gst").html(
-			'<i class="fa-solid fa-indian-rupee-sign"></i> ' +
-				tour_actual_amount_without_gst
+			'<i class="fa-solid fa-indian-rupee-sign"></i> ' + tour_amount
 		);
 		$("#ttl_cost_of_booking_gst_amount").html(
 			'<i class="fa-solid fa-indian-rupee-sign"></i> ' + tour_gst_amount
 		);
 		$("#ttl_amount_of_booking_with_gst").html(
 			'<i class="fa-solid fa-indian-rupee-sign"></i> ' +
-				tour_actual_amount_with_gst
+				tour_actual_amount_without_gst
 		);
 
 		$("#tour_booking_adv_requirement").html(
@@ -965,12 +1094,12 @@ document.addEventListener("DOMContentLoaded", function () {
 		},
 	});
 
-	var swiper5 = new Swiper(".mySwiper", {
+	var swiper5 = new Swiper(".swiper_container5", {
 		slidesPerView: 1,
 		spaceBetween: 10,
 		navigation: {
-			nextEl: ".swiper-button-next",
-			prevEl: ".swiper-button-prev",
+			nextEl: ".swiper-button-next5",
+			prevEl: ".swiper-button-prev5",
 		},
 		autoplay: {
 			delay: 9500,
@@ -994,14 +1123,17 @@ document.addEventListener("DOMContentLoaded", function () {
 				slidesPerView: 3,
 				spaceBetween: 0,
 			},
-			on: {
-				init: function () {
-					document.querySelector(".swiper-button-next").innerHTML =
-						'<i class="fa-solid fa-arrow-right-long"></i>';
-					document.querySelector(".swiper-button-prev").innerHTML =
-						'<i class="fa-solid fa-arrow-left-long"></i>';
-				},
-			},
 		},
+		// Enable Lightbox
+		// lightbox: {
+		// 	enabled: true,
+		// 	arrowEl: true,
+		// },
 	});
+
+	// Initialize Swiper navigation buttons with Font Awesome icons
+	document.querySelector(".swiper-button-next5").innerHTML =
+		'<i class="fas fa-arrow-right"></i>';
+	document.querySelector(".swiper-button-prev5").innerHTML =
+		'<i class="fas fa-arrow-left"></i>';
 });

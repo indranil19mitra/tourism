@@ -62,6 +62,34 @@ class Mycontroller extends CI_Controller
         $this->load->view('include/footer', $data);
     }
 
+    public function dta_on_selection()
+    {
+        // echo "<pre>";
+        // print_r($_POST);
+        // exit;
+
+        if (!empty($this->input->post('dts'))) {
+            $cond5 = array(
+                'tour_details.is_delete!=' => '0',
+                'tour_details.status!=' => '0',
+                'DATE_FORMAT(tour_details.start_date,"%Y-%m")' => date('Y-m', strtotime($this->input->post('dts'))),
+                'tour_details.start_date >=' => date('Y-m-d'),
+                'tours.is_delete!=' => '0',
+                'tours.status!=' => '0',
+            );
+        }
+        $join = array('table' => 'tours', 'condition' => 'tours.id=tour_details.tours_id');
+
+        $data['get_tours_date_wise'] = $this->myfront_model->get_data("tours.name,tours.main_image,tours.seat_availability,tour_details.id as tour_details_id,tour_details.duration,tour_details.start_date,tour_details.price,DATE_FORMAT(tour_details.start_date,'%d %b') as tour_calendar_days", "tour_details", $cond5, [$join], "", "asc", "tour_details.start_date", "", "");
+        if (!empty($data)) {
+            $rslt = array('status' => '101', 'data' => $data['get_tours_date_wise']);
+        } else {
+            $rslt = array('status' => '103', 'data' => '');
+        }
+        // print_r($data);
+        // exit;
+        echo json_encode($rslt);
+    }
 
     public function aboutUs()
     {
