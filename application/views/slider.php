@@ -29,10 +29,18 @@
 
                         <div class="elementor-element elementor-element-7e000c1 animated-slow elementor-invisible elementor-widget elementor-widget-text-editor" data-id="7e000c1" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;}" data-widget_type="text-editor.default">
 
-                            <div class="container mt-5" id="search_id">
+                            <!-- <div class="container mt-5" id="search_dv">
                                 <form class="d-flex">
-                                    <input class="form-control me-2" type="search" placeholder="Where do you want to go?" aria-label="Search" style="padding: 25px;">
-                                    <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
+                                    <input class="form-control me-2" id="serching_data" id="serching_data" type="search" placeholder="Where do you want to go?" aria-label="Search" style="padding: 25px;">
+                                    <button class="btn btn-outline-success" id="srch_box" type="submit">Search</button>
+                                </form>
+                            </div> -->
+                            <div class="container mt-5" id="search_dv">
+                                <form class="d-flex">
+                                    <div class="input-group mb-3">
+                                        <input type="search" id="serching_data" id="serching_data" class="form-control rounded-start-3 border border-3" placeholder="Where do you want to go?" aria-label="Where do you want to go?" aria-describedby="button-addon2">
+                                        <button class="btn btn-outline-secondary rounded-end-3" id="srch_box" type="submit" id="button-addon2"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                    </div>
                                 </form>
                             </div>
                             <!-- </section> -->

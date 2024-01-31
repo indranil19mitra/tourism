@@ -14,6 +14,16 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
     <style>
+        #serching_data {
+            background-color: rgba(255, 255, 255, 0.4);
+            border-color: #ff4c15 !important;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 6px 23px 2px !important;
+            color: rgb(255, 255, 255);
+            font-size: 17px;
+            font-weight: bold;
+            padding: 20px;
+        }
+
         /* swiper */
 
         /* .btn-close {
@@ -1265,7 +1275,7 @@
                                                     </ul>
                                                 </div>
                                                 <div class="jkit-nav-identity-panel">
-                                                    <div class="jkit-nav-site-title"><a href="index.htm" class="jkit-nav-logo"><img src="<?= base_url() ?>admin/assets/images/durbeen_final.png" class="mb_div_bg logo_size"></a>
+                                                    <div class="jkit-nav-site-title"><a href="<?= base_url() ?>" class="jkit-nav-logo"><img src="<?= base_url() ?>admin/assets/images/durbeen_final.png" class="mb_div_bg logo_size"></a>
                                                     </div>
                                                     <button class="jkit-close-menu"><i aria-hidden="true" class="fas fa-times"></i></button>
                                                 </div>
