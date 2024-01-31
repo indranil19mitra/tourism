@@ -565,11 +565,11 @@ if (!empty($tour_photos)) {
                                                                     <td id="ttl_amount_of_booking_without_gst" class="border booking_bd"></td>
                                                                     <td id="ttl_amount_of_booking_per_head_charge_without_gst" class="border booking_bd"></td>
                                                                 </tr>
-                                                                <tr class="booking_tr2">
+                                                                <!-- <tr class="booking_tr2">
                                                                     <td class="border booking_bd">GST @ 5%</td>
                                                                     <td id="ttl_cost_of_booking_gst_amount" class="border booking_bd"></td>
                                                                     <td class="border booking_bd"></td>
-                                                                </tr>
+                                                                </tr> -->
                                                             </tbody>
                                                         </table>
                                                         <input type="hidden" id="ttl_amount_of_booking_without_gst_1" name="ttl_amount_of_booking_without_gst_1">
@@ -653,42 +653,37 @@ if (!empty($tour_photos)) {
                                 </div>
                             </div>
                         </div>
-                        <div class="w-100 mt-5">
-                            <div class="swiper mySwiper mb-3">
-                                <div class="swiper-wrapper  p-2 ps-0 ps-md-2">
-                                    <?php
-                                    // print_r($tour_photo);
-                                    // exit;
+                    </section>
 
-                                    foreach ($tour_photo as $key => $img) :
-                                    ?>
-                                        <div class="swiper-slide p-1">
-                                            <div class="card mb-0 p-2 py-4 shadow-sm">
-                                                <div class="d-flex mb-0 align-items-left">
-                                                    <img src="<?= base_url('admin/' . $img); ?>" alt="story-img" class="tour_imgs rounded avatar-40  border bg-soft-light img-fluid" loading="lazy">
-                                                </div>
+                    <div class="w-100 mt-5">
+                        <div class="swiper swiper_container5 mb-3">
+                            <div class="swiper-wrapper p-2 ps-0 ps-md-2">
+                                <?php foreach ($tour_photo as $key => $img) : ?>
+                                    <div class="swiper-slide p-1">
+                                        <!-- Image container with click event -->
+                                        <div class="card mb-0 p-2 py-4 shadow-sm preview-section" data-index="<?= $key ?>">
+                                            <div class="d-flex mb-0 align-items-left">
+                                                <img src="<?= base_url('admin/' . $img); ?>" alt="story-img" class="tour_imgs rounded avatar-40 border bg-soft-light img-fluid preview-image swiper-zoom-container" loading="lazy" style="height: 150px; width: 250px;">
                                             </div>
                                         </div>
-                                    <?php
-                                    endforeach;
-                                    ?>
-                                </div>
-                            </div>
-                            <div class="d-flex flex-wrap flex-md-nowrap justify-content-end align-items-center mb-0">
-
-                                <div class="d-flex flex-wrap flex-md-nowrap flex-column-reverse flex-md-row  gap-2">
-                                    <div class="carousel-slider d-flex justify-content-end gap-4">
-                                        <a class=" bg-transparent position-relative d-block" href="#recipeCarousel" role="button" data-bs-slide="prev">
-                                            <div class="swiper-button-prev text-primary position-relative w-auto p-1"></div>
-                                        </a>
-                                        <a class=" bg-transparent position-relative d-block w-auto" href="#recipeCarousel" role="button" data-bs-slide="next">
-                                            <div class="swiper-button-next text-primary position-relative w-auto p-1"></div>
-                                        </a>
                                     </div>
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-wrap flex-md-nowrap justify-content-end align-items-center mb-0">
+                            <div class="d-flex flex-wrap flex-md-nowrap flex-column-reverse flex-md-row gap-2">
+                                <div class="carousel-slider d-flex justify-content-end gap-4">
+                                    <a class="bg-transparent position-relative d-block swiper-button-prev5" href="#" role="button">
+                                        <div class="swiper-button-prev text-primary position-relative w-auto p-1"></div>
+                                    </a>
+                                    <a class="bg-transparent position-relative d-block w-auto swiper-button-next5" href="#" role="button">
+                                        <div class="swiper-button-next text-primary position-relative w-auto p-1"></div>
+                                    </a>
                                 </div>
                             </div>
                         </div>
-                    </section>
+                    </div>
+
                 <?php
                 endif;
                 ?>

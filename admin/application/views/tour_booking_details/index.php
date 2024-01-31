@@ -17,10 +17,10 @@
                                     <th class="text-wrap">Number of Person</th>
                                     <th class="text-wrap">Amount Per-Head</th>
                                     <th class="text-wrap">Amount</th>
-                                    <th class="text-wrap">GST Amount</th>
-                                    <th class="text-wrap">Total Amount</th>
-                                    <th class="text-wrap">Received Amount</th>
-                                    <th class="text-wrap">Due Amount</th>
+                                    <!-- <th class="text-wrap">GST Amount</th> -->
+                                    <!-- <th class="text-wrap">Total Amount</th> -->
+                                    <!-- <th class="text-wrap">Received Amount</th>
+                                    <th class="text-wrap">Due Amount</th> -->
                                     <th class="text-wrap">Booking Date</th>
                                     <th class="text-wrap">Tour Date</th>
                                     <th class="text-wrap">P/D Location</th>
@@ -58,7 +58,7 @@
                                         // $status_desc_class = ($rslt->status != 0) ? 'badge badge-success' : 'badge badge-danger';
                                         $status_desc_class = 'badge badge-danger';
 
-                                        $ttl_due = $rslt->booking_amount_with_gst - $rslt->received_amount;
+                                        $ttl_due = $rslt->booking_amount_without_gst - $rslt->received_amount;
                                         $booked_date = date('D, j M, Y', strtotime($rslt->booking_date_time));
                                         $tour_date = date('D, j M, Y', strtotime($rslt->start_date)) . " - " . date('D, j M, Y', strtotime($rslt->end_date));
                                         $pickup_drop_lcn = $rslt->pikup_location . " - " . $rslt->drop_location;
@@ -73,10 +73,10 @@
                                             <td><?= $rslt->nmbr_of_person; ?></td>
                                             <td><?= $rslt->price; ?></td>
                                             <td><?= $rslt->booking_amount_without_gst; ?></td>
-                                            <td><?= $rslt->booking_gst_amount; ?></td>
-                                            <td><?= $rslt->booking_amount_with_gst; ?></td>
-                                            <td><?= $rslt->received_amount; ?></td>
-                                            <td><?= $ttl_due; ?></td>
+                                            <!-- <td><?= $rslt->booking_gst_amount; ?></td>
+                                            <td><?= $rslt->booking_amount_with_gst; ?></td> -->
+                                            <!-- <td><?= $rslt->received_amount; ?></td>
+                                            <td><?= $ttl_due; ?></td> -->
                                             <td><?= $booked_date; ?></td>
                                             <td><?= $tour_date; ?></td>
                                             <td><?= $pickup_drop_lcn; ?></td>

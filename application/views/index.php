@@ -116,8 +116,7 @@
 		</div>
 		<div class="container-fluid crd_mn mb-5">
 			<div class="row">
-				<div class="w-100 mt-5">
-					<!-- Swiper Slider 1 -->
+				<div class="w-100 mt-5" id="dt_swpr1">
 					<div class="swiper swiper_container1 mb-3">
 						<div class="swiper-wrapper p-2 ps-0 ps-md-2">
 							<?php
@@ -163,6 +162,8 @@
 							</div>
 						</div>
 					</div>
+				</div>
+				<div class="w-100 mt-5" id="dt_swpr2">
 				</div>
 			</div>
 		</div>

@@ -98,28 +98,12 @@
                                             <div class="elementor-element elementor-element-2431bc7 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="2431bc7" data-element_type="widget" data-widget_type="icon-list.default">
                                                 <div class="elementor-widget-container">
                                                     <ul class="elementor-icon-list-items">
-                                                        <!-- <li class="elementor-icon-list-item">
-                                                            <span class="elementor-icon-list-icon">
-                                                                <i aria-hidden="true" class="fas fa-angle-right"></i> </span>
-                                                            <span class="elementor-icon-list-text">Privacy
-                                                                Policy</span>
-                                                        </li> -->
                                                         <li class="elementor-icon-list-item">
                                                             <span class="elementor-icon-list-icon">
                                                                 <i aria-hidden="true" class="fas fa-angle-right"></i> </span>
                                                             <span class="elementor-icon-list-text">Terms and
                                                                 Conditions</span>
                                                         </li>
-                                                        <!-- <li class="elementor-icon-list-item">
-                                                            <span class="elementor-icon-list-icon">
-                                                                <i aria-hidden="true" class="fas fa-angle-right"></i> </span>
-                                                            <span class="elementor-icon-list-text">Disclaimer</span>
-                                                        </li>
-                                                        <li class="elementor-icon-list-item">
-                                                            <span class="elementor-icon-list-icon">
-                                                                <i aria-hidden="true" class="fas fa-angle-right"></i> </span>
-                                                            <span class="elementor-icon-list-text">Elemets</span>
-                                                        </li> -->
                                                         <li class="elementor-icon-list-item">
                                                             <span class="elementor-icon-list-icon">
                                                                 <i aria-hidden="true" class="fas fa-angle-right"></i> </span>
@@ -130,7 +114,34 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-1a89a5d" data-id="1a89a5d" data-element_type="column">
+
+                                    <div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-cb8d0e7" data-id="cb8d0e7" data-element_type="column">
+                                        <div class="elementor-widget-wrap elementor-element-populated">
+                                            <div class="elementor-element elementor-element-d629825 elementor-widget elementor-widget-heading" data-id="d629825" data-element_type="widget" data-widget_type="heading.default">
+                                                <div class="elementor-widget-container">
+                                                    <h4 class="elementor-heading-title elementor-size-default">
+                                                        Our Business Partner</h4>
+                                                </div>
+                                            </div>
+                                            <div class="elementor-element elementor-element-2431bc7 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="2431bc7" data-element_type="widget" data-widget_type="icon-list.default">
+                                                <div class="elementor-widget-container">
+                                                    <ul class="elementor-icon-list-items">
+                                                        <li class="elementor-icon-list-item">
+                                                            <span class="elementor-icon-list-icon">
+                                                                <i aria-hidden="true" class="fas fa-angle-right"></i> </span>
+                                                            <span class="elementor-icon-list-text"><img class="s-img bdr-4" width="166" alt="Decathlon" title="Decathlon" src="https://s.yimg.com/fz/api/res/1.2/oMJU2SlZXsMsHRoumbKsGw--~C/YXBwaWQ9c3JjaGRkO2ZpPWZpdDtoPTI0MDtxPTgwO3c9MzMy/https://s.yimg.com/zb/imgv1/48d50fbb-4069-3f69-baea-fb4d62db418b/t_500x300"></span>
+                                                        </li>
+                                                        <!-- <li class="elementor-icon-list-item">
+                                                            <span class="elementor-icon-list-icon">
+                                                                <i aria-hidden="true" class="fas fa-angle-right"></i> </span>
+                                                            <span class="elementor-icon-list-text">Support</span>
+                                                        </li> -->
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-1a89a5d" data-id="1a89a5d" data-element_type="column">
                                         <div class="elementor-widget-wrap elementor-element-populated">
                                             <div class="elementor-element elementor-element-2bc7102 elementor-widget elementor-widget-heading" data-id="2bc7102" data-element_type="widget" data-widget_type="heading.default">
                                                 <div class="elementor-widget-container">
@@ -166,51 +177,8 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- <div class="elementor-element elementor-element-07900c8 elementor-icon-list--layout-inline elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="07900c8" data-element_type="widget" data-widget_type="icon-list.default">
-                                                <div class="elementor-widget-container">
-                                                    <ul class="elementor-icon-list-items elementor-inline-items">
-                                                        <li class="elementor-icon-list-item elementor-inline-item">
-                                                            <span class="elementor-icon-list-text">Payment
-                                                                :</span>
-                                                        </li>
-                                                        <li class="elementor-icon-list-item elementor-inline-item">
-                                                            <a href="#">
-
-                                                                <span class="elementor-icon-list-icon">
-                                                                    <i aria-hidden="true" class="fab fa-cc-visa"></i> </span>
-                                                                <span class="elementor-icon-list-text"></span>
-                                                            </a>
-                                                        </li>
-                                                        <li class="elementor-icon-list-item elementor-inline-item">
-                                                            <a href="#">
-
-                                                                <span class="elementor-icon-list-icon">
-                                                                    <i aria-hidden="true" class="fab fa-cc-paypal"></i> </span>
-                                                                <span class="elementor-icon-list-text"></span>
-                                                            </a>
-                                                        </li>
-                                                        <li class="elementor-icon-list-item elementor-inline-item">
-                                                            <a href="#">
-
-                                                                <span class="elementor-icon-list-icon">
-                                                                    <i aria-hidden="true" class="fab fa-cc-mastercard"></i>
-                                                                </span>
-                                                                <span class="elementor-icon-list-text"></span>
-                                                            </a>
-                                                        </li>
-                                                        <li class="elementor-icon-list-item elementor-inline-item">
-                                                            <a href="#">
-
-                                                                <span class="elementor-icon-list-icon">
-                                                                    <i aria-hidden="true" class="fab fa-cc-apple-pay"></i> </span>
-                                                                <span class="elementor-icon-list-text"></span>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div> -->
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </section>
                             <section class="elementor-section elementor-inner-section elementor-element elementor-element-d6347fa elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="d6347fa" data-element_type="section">
@@ -539,8 +507,14 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 <!-- Swipper initialize -->
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> </script> -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
 <script src='<?= base_url() ?>external/own/js/self_js.js'></script>
 
 

@@ -132,12 +132,12 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="elementor-element elementor-element-b6a9ef2 animated-slow elementor-widget__width-auto elementor-absolute elementor-invisible elementor-widget elementor-widget-jkit_video_button" data-id="b6a9ef2" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;,&quot;_animation_delay&quot;:10,&quot;_position&quot;:&quot;absolute&quot;}" data-widget_type="jkit_video_button.default">
+                                    <!-- <div class="elementor-element elementor-element-b6a9ef2 animated-slow elementor-widget__width-auto elementor-absolute elementor-invisible elementor-widget elementor-widget-jkit_video_button" data-id="b6a9ef2" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;,&quot;_animation_delay&quot;:10,&quot;_position&quot;:&quot;absolute&quot;}" data-widget_type="jkit_video_button.default">
                                         <div class="elementor-widget-container">
                                             <div class="jeg-elementor-kit jkit-video-button jeg_module_17_16_654c63d5f4200" data-autoplay="0" data-loop="0" data-controls="0" data-type="youtube" data-mute="0" data-start="0" data-end="0"><a href="https://www.youtube.com/watch?v=MLpWrANjFbI" class="jkit-video-popup-btn glow-enable"><span class="icon-position-before"><i aria-hidden="true" class="jki jki-play-button-light"></i></span></a>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                             <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-2ce8324" data-id="2ce8324" data-element_type="column">
@@ -224,10 +224,113 @@
     </section>
 
 
-
-
-
     <section class="elementor-section elementor-top-section elementor-element elementor-element-6521b521 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="6521b521" data-element_type="section">
+        <div class="elementor-background-overlay"></div>
+        <div class="container d-flex flex-wrap elementor-column-gap-default  p-0 g-0">
+            <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3198fc93" data-id="3198fc93" data-element_type="column">
+                <div class="elementor-widget-wrap elementor-element-populated">
+                    <section class="elementor-section elementor-inner-section elementor-element elementor-element-73351ef elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="73351ef" data-element_type="section">
+                        <div class="elementor-container elementor-column-gap-no">
+                            <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-fbfb681" data-id="fbfb681" data-element_type="column">
+                                <div class="elementor-widget-wrap elementor-element-populated">
+                                    <div class="elementor-element elementor-element-446a8ec animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="446a8ec" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;}" data-widget_type="heading.default">
+                                        <div class="elementor-widget-container">
+                                            <h2 class="elementor-heading-title elementor-size-default">Admin</h2>
+                                        </div>
+                                    </div>
+                                    <div class="elementor-element elementor-element-79e4907 elementor-absolute animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="79e4907" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;,&quot;_animation&quot;:&quot;fadeInLeft&quot;}" data-widget_type="heading.default">
+                                        <div class="elementor-widget-container">
+                                            <!-- <span class="elementor-heading-title elementor-size-default">Our Guide</span> -->
+                                            <span class="elementor-heading-title elementor-size-default">Durbeen</span>
+
+                                        </div>
+                                    </div>
+                                    <div class="elementor-element elementor-element-cf1757d elementor-widget elementor-widget-text-editor" data-id="cf1757d" data-element_type="widget" data-widget_type="text-editor.default">
+                                        <div class="elementor-widget-container">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                            incididunt ut labore et dolore magna aliqua </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="elementor-section elementor-inner-section elementor-element elementor-element-a694223 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="a694223" data-element_type="section">
+                        <div class="container d-flex flex-wrap elementor-column-gap-default  p-0 g-0">
+                            <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-c977e93" data-id="c977e93" data-element_type="column">
+                                <div class="elementor-widget-wrap elementor-element-populated">
+                                    <div class="elementor-element elementor-element-b15479b elementor-widget elementor-widget-jkit_team" data-id="b15479b" data-element_type="widget" data-widget_type="jkit_team.default">
+                                        <div class="elementor-widget-container">
+                                            <div class="jeg-elementor-kit jkit-team style-title-horizontal  jeg_module_374_6_654c63f047c23">
+                                                <div class="profile-card"><img decoding="async" src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/Team-P5ZU4G8.jpg" alt="Arun Camacho">
+                                                    <div class="image-hover-bg"></div>
+                                                    <div class="profile-body">
+                                                        <div class="title-wrapper">
+                                                            <p class="profile-designation text-white ">Guide</p>
+
+                                                        </div>
+                                                        <div class="name-wrapper">
+                                                            <h3 class="profile-title text-white">Arun Camacho</h3>
+                                                            <ul class="social-list">
+                                                                <li class="social-icon elementor-repeater-item-c625a9a">
+                                                                    <a href="#"><i aria-hidden="true" class="fab fa-facebook-f"></i></a>
+                                                                </li>
+                                                                <li class="social-icon elementor-repeater-item-3a36d8c">
+                                                                    <a href="#"><i aria-hidden="true" class="fab fa-twitter"></i></a>
+                                                                </li>
+                                                                <li class="social-icon elementor-repeater-item-e9c8942">
+                                                                    <a href="#"><i aria-hidden="true" class="jki jki-instagram-1-light"></i></a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-c313d37" data-id="c313d37" data-element_type="column">
+                                <div class="elementor-widget-wrap elementor-element-populated">
+                                    <div class="elementor-element elementor-element-3b0a450 elementor-widget elementor-widget-jkit_team" data-id="3b0a450" data-element_type="widget" data-widget_type="jkit_team.default">
+                                        <div class="elementor-widget-container">
+                                            <div class="jeg-elementor-kit jkit-team style-title-horizontal  jeg_module_374_7_654c63f0492d3">
+                                                <div class="profile-card"><img decoding="async" src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/hike-in-mountains-DW8YXX7.jpg" alt="Enrique Sadler">
+                                                    <div class="image-hover-bg"></div>
+                                                    <div class="profile-body">
+                                                        <div class="title-wrapper">
+                                                            <p class="profile-designation text-white ">Guide</p>
+
+                                                        </div>
+                                                        <div class="name-wrapper">
+                                                            <h3 class="profile-title text-white">Enrique Sadler</h3>
+                                                            <ul class="social-list">
+                                                                <li class="social-icon elementor-repeater-item-c625a9a">
+                                                                    <a href="#"><i aria-hidden="true" class="fab fa-facebook-f"></i></a>
+                                                                </li>
+                                                                <li class="social-icon elementor-repeater-item-3a36d8c">
+                                                                    <a href="#"><i aria-hidden="true" class="fab fa-twitter"></i></a>
+                                                                </li>
+                                                                <li class="social-icon elementor-repeater-item-e9c8942">
+                                                                    <a href="#"><i aria-hidden="true" class="jki jki-instagram-1-light"></i></a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="mt-5 elementor-section elementor-top-section elementor-element elementor-element-6521b521 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="6521b521" data-element_type="section">
         <div class="elementor-background-overlay"></div>
         <div class="container d-flex flex-wrap elementor-column-gap-default  p-0 g-0">
             <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3198fc93" data-id="3198fc93" data-element_type="column">
@@ -349,6 +452,39 @@
                                                                     <a href="#"><i aria-hidden="true" class="jki jki-instagram-1-light"></i></a>
                                                                 </li>
                                                             </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-cbeed9f" data-id="cbeed9f" data-element_type="column">
+                                <div class="elementor-widget-wrap elementor-element-populated">
+                                    <div class="elementor-element elementor-element-7f0a401 elementor-widget elementor-widget-jkit_team" data-id="7f0a401" data-element_type="widget" data-widget_type="jkit_team.default">
+                                        <div class="elementor-widget-container">
+                                            <div class="jeg-elementor-kit jkit-team style-title-horizontal  jeg_module_374_8_654c63f04aa2d">
+                                                <div class="profile-card"><img decoding="async" src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/hiker-in-winter-mountains-PP85EJG.jpg" alt="Giorgio Davis">
+                                                    <div class="image-hover-bg"></div>
+                                                    <div class="profile-body">
+                                                        <div class="title-wrapper">
+                                                            <p class="profile-designation text-white">Guide</p>
+
+                                                        </div>
+                                                        <div class="name-wrapper">
+                                                            <h3 class="profile-title text-white">Giorgio Davis</h3>
+                                                            <!-- <ul class="social-list">
+                                                                <li class="social-icon elementor-repeater-item-c625a9a">
+                                                                    <a href="#"><i aria-hidden="true" class="fab fa-facebook-f"></i></a>
+                                                                </li>
+                                                                <li class="social-icon elementor-repeater-item-3a36d8c">
+                                                                    <a href="#"><i aria-hidden="true" class="fab fa-twitter"></i></a>
+                                                                </li>
+                                                                <li class="social-icon elementor-repeater-item-e9c8942">
+                                                                    <a href="#"><i aria-hidden="true" class="jki jki-instagram-1-light"></i></a>
+                                                                </li>
+                                                            </ul> -->
                                                         </div>
                                                     </div>
                                                 </div>
