@@ -10,7 +10,7 @@ class Myfront_model extends CI_Model
         // $this->load->database();
     }
 
-    public function get_data($specific_col = "", $table = "", $cond = "", $join = "", $fetching_type = "", $orderBy_type = "", $orderBy_col = "", $group_by = "", $limit_cnt = "", $where_not_in_field = "", $where_not_in_array = "")
+    public function get_data($specific_col = "", $table = "", $cond = "", $join = "", $fetching_type = "", $orderBy_type = "", $orderBy_col = "", $group_by = "", $limit_cnt = "", $where_not_in_field = "", $where_not_in_array = "", $search_data = "", $search_field = [])
     {
         if (!empty($specific_col)) {
             $this->db->select($specific_col);
@@ -37,6 +37,15 @@ class Myfront_model extends CI_Model
         if (!empty($where_not_in_field) && !empty($where_not_in_array)) {
             $this->db->where_not_in($where_not_in_field, $where_not_in_array);
         }
+
+        if (!empty($search_data) && !empty($search_field)) {
+            // print_r($search_field);
+            foreach ($search_field as $val) {
+                // print_r($val);
+                $this->db->like($val, $search_data);
+            }
+        }
+
         if (!empty($orderBy_type) && !empty($orderBy_col)) {
             $this->db->order_by($orderBy_col, $orderBy_type);
         }
