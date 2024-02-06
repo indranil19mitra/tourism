@@ -14,6 +14,41 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
     <style>
+        .mfp-arrow,
+        .mfp-close {
+            background-color: unset !important;
+        }
+
+        .mfp-close,
+        .lst_itm {
+            cursor: pointer !important;
+        }
+
+        .lst_itm {
+            text-align: left !important;
+            color: black !important;
+        }
+
+        #show-list {
+            max-height: 200px !important;
+            overflow-y: auto !important;
+        }
+
+        .swiper-wrapper {
+            display: flex;
+        }
+
+        .swiper-slide {
+            flex: 0 0 auto;
+            margin-right: 10px;
+            /* Adjust as needed */
+        }
+
+        .swiper-slide:last-child {
+            margin-right: 0;
+            /* Remove right margin for last slide */
+        }
+
         #serching_data {
             background-color: rgba(255, 255, 255, 0.4);
             border-color: #ff4c15 !important;

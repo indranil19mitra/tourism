@@ -322,4 +322,97 @@ class Mycontroller extends CI_Controller
 
         echo json_encode($rslt);
     }
+
+    public function getDestinations()
+    {
+        // echo "<pre>";
+        // print_r($_POST);
+        $serching_data = $this->input->post('serching_data');
+        $cond = array(
+            'tour_details.is_delete!=' => '0',
+            'tour_details.status!=' => '0',
+            'tour_details.start_date >=' => date('Y-m-d'),
+            'tours.is_delete!=' => '0',
+            'tours.status!=' => '0',
+        );
+        $serch_field_array = array(
+            "0" => "tours.name"
+        );
+        $join = array('table' => 'tour_details', 'condition' => 'tour_details.tours_id=tours.id', 'left');
+        $destinations = $this->myfront_model->get_data("tours.name,tour_details.id as tour_details_id,tour_details.start_date", "tours", $cond, [$join], "", "asc", "tour_details.start_date", "tour_details.tours_id", "", "", "", $serching_data, $serch_field_array);
+        if (!empty($destinations)) {
+            $rslt = array('status' => '101', 'data' => $destinations);
+        } else {
+            $rslt = array('status' => '103', 'data' => '');
+        }
+
+        // print_r($rslt);
+        // exit;
+
+        echo json_encode($rslt);
+    }
+
+    public function get_searchData()
+    {
+        $serching_data = $this->input->post('serchingData');
+        $cond = array(
+            'tour_details.is_delete!=' => '0',
+            'tour_details.status!=' => '0',
+            'tour_details.start_date >=' => date('Y-m-d'),
+            'tours.is_delete!=' => '0',
+            'tours.status!=' => '0',
+        );
+        $serch_field_array = array(
+            "0" => "tours.name"
+        );
+        $join = array('table' => 'tour_details', 'condition' => 'tour_details.tours_id=tours.id', 'left');
+        $destinations = $this->myfront_model->get_data("tours.name,tour_details.id as tour_details_id,tour_details.start_date", "tours", $cond, [$join], "", "asc", "tour_details.start_date", "tour_details.tours_id", "", "", "", $serching_data, $serch_field_array);
+        // print_r($destinations);
+        $serch_rslt = "";
+        if (!empty($destinations)) {
+            foreach ($destinations as $key => $val) {
+                // $names = implode("-", explode(" ", $val->name));
+                $serch_rslt .= '<a value="' . $val->tour_details_id . '" class="list-group-item list-group-item-action border-1 lst_itm">' . $val->name . '</a>';
+            }
+            $rslt = array('status' => '101', 'data' => $serch_rslt);
+        } else {
+            $serch_rslt .= '<p class="list-group-item border-1 lst_itm">Tour Is Available Currently. Thank You..!</p>';
+            $rslt = array('status' => '103', 'data' => $serch_rslt);
+        }
+        // exit;
+
+        echo json_encode($rslt);
+    }
+
+    public function search_form_data()
+    {
+        // echo "<pre>";
+        // print_r($_POST);
+        // exit;
+        $serching_data_id = $this->input->post('serching_data_id');
+        $cond = array(
+            'tour_details.id' => $serching_data_id,
+            'tour_details.is_delete!=' => '0',
+            'tour_details.status!=' => '0',
+            'tour_details.start_date >=' => date('Y-m-d'),
+            'tours.is_delete!=' => '0',
+            'tours.status!=' => '0',
+        );
+
+        $join = array('table' => 'tour_details', 'condition' => 'tour_details.tours_id=tours.id', 'left');
+        $destinations = $this->myfront_model->get_data("tours.name,tour_details.id as tour_details_id,tour_details.start_date", "tours", $cond, [$join], "1", "asc", "tour_details.start_date", "tour_details.tours_id");
+        // print_r($destinations);
+        $serch_rslt = "";
+        if (!empty($destinations)) {
+            $destinations_data['dtl_nm'] = implode("-", explode(" ", $destinations->name));
+            $destinations_data['ids'] = $destinations->tour_details_id;
+            $rslt = array('status' => '101', 'data' => $destinations_data);
+        } else {
+            $serch_rslt .= '<p class="list-group-item border-1 lst_itm">Tour Is Not Available Currently. Thank You..!</p>';
+            $rslt = array('status' => '103', 'data' => $serch_rslt);
+        }
+        // exit;
+
+        echo json_encode($rslt);
+    }
 }

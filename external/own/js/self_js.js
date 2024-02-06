@@ -3,6 +3,94 @@ $(document).ready(function () {
 	$("#dates_and_costing").hide();
 	$("#other_info").hide();
 	$("#get_in_touch_form_sbmt").addClass("pe-none");
+
+	$("#serching_data").keyup(function (e) {
+		e.preventDefault();
+		var serchingData = $(this).val();
+		console.log(serchingData);
+		var url = baseurl + "Mycontroller/get_searchData";
+		if (serchingData != "") {
+			$.ajax({
+				url: url,
+				type: "post",
+				data: {
+					serchingData: serchingData,
+				},
+				dataType: "json",
+				success: function (res) {
+					if (res.status == "101") {
+						$("#show-list").html(res.data);
+					}
+				},
+			});
+		} else {
+			$("#show-list").html("");
+		}
+	});
+
+	$(document).on("click", ".lst_itm", function () {
+		$("#serching_data").val($(this).text());
+		$("#serching_data_id").val($(this).attr("value"));
+		$("#serching_data_id").hide();
+		$("#show-list").html("");
+	});
+
+	$(document).on("click", "#srch_box", function () {
+		var formdata = new FormData($("#search_form")[0]);
+		var url = baseurl + "Mycontroller/search_form_data";
+
+		$.ajax({
+			url: url,
+			type: "post",
+			data: formdata,
+			dataType: "json",
+			contentType: false,
+			processData: false,
+			success: function (res) {
+				// console.log(res);
+				// return false;
+				if (res.status == 101) {
+					getDetails(res.data.dtl_nm, res.data.ids);
+					// return false;
+				} else {
+					$("#show-list").html(res.data);
+				}
+			},
+		});
+	});
+
+	$(document).on("click", "#srch_box", function () {
+		// e.preventDefault();
+		// alert("abcd");
+		var formdata = new FormData($("#search_form")[0]);
+		var url = baseurl + "Mycontroller/getDestinations";
+		$.ajax({
+			url: url,
+			type: "POST",
+			data: formdata,
+			dataType: "json",
+			contentType: false,
+			processData: false,
+			success: function (res) {
+				// Populate datalist options
+				if (res.status == "101") {
+					var html = "";
+					$.each(res.data, function (key, value) {
+						html +=
+							'<option value="' +
+							value.tour_details_id +
+							'">' +
+							value.name +
+							"</option>";
+					});
+					$("#destination_list").html(html);
+				} else {
+					html += '<option value="">Keep Searching..!</option>';
+					$("#destination_list").html(html);
+				}
+			},
+		});
+	});
 });
 
 var bookingMemberCount = 0;
@@ -483,7 +571,7 @@ function formatDate(inputDate) {
 // }
 
 function check_date_function(tour_details_id = "", tours_id = "") {
-	console.log(tour_details_id, tours_id);
+	// console.log(tour_details_id, tours_id);
 	var url = baseurl + "Mycontroller/get_months_wise_tour_price";
 	$.ajax({
 		url: url,
@@ -494,7 +582,7 @@ function check_date_function(tour_details_id = "", tours_id = "") {
 			tours_id: tours_id,
 		},
 		success: function (res) {
-			console.log(res);
+			// console.log(res);
 			$("#get_price_details").html(res.data.tout_price);
 			$("#get_price_details_1").val(res.data.tout_price);
 			$("#get_price_details_1").hide().attr("readonly");
@@ -532,7 +620,7 @@ $(document).on("click", ".outer_dv1", function () {
 });
 
 function check_next(obj) {
-	console.log($(obj).attr("id"));
+	// console.log($(obj).attr("id"));
 
 	if ($(obj).attr("id") == "tour_booking_details_next_4") {
 		var formdata = new FormData($("#tour_booking_details_form")[0]);
@@ -1094,6 +1182,43 @@ document.addEventListener("DOMContentLoaded", function () {
 		},
 	});
 
+	// var swiper5 = new Swiper(".swiper_container5", {
+	// 	slidesPerView: 1,
+	// 	spaceBetween: 10,
+	// 	navigation: {
+	// 		nextEl: ".swiper-button-next5",
+	// 		prevEl: ".swiper-button-prev5",
+	// 	},
+	// 	autoplay: {
+	// 		delay: 9500,
+	// 		disableOnInteraction: true,
+	// 		pauseOnMouseEnter: true,
+	// 	},
+	// 	breakpoints: {
+	// 		"@0.00": {
+	// 			slidesPerView: 1,
+	// 			spaceBetween: 10,
+	// 		},
+	// 		"@0.75": {
+	// 			slidesPerView: 2,
+	// 			spaceBetween: 20,
+	// 		},
+	// 		"@1.00": {
+	// 			slidesPerView: 2,
+	// 			spaceBetween: 40,
+	// 		},
+	// 		"@1.50": {
+	// 			slidesPerView: 6,
+	// 			spaceBetween: 0,
+	// 		},
+	// 	},
+	// });
+
+	// document.querySelector(".swiper-button-next5").innerHTML =
+	// 	'<i class="fas fa-arrow-right"></i>';
+	// document.querySelector(".swiper-button-prev5").innerHTML =
+	// 	'<i class="fas fa-arrow-left"></i>';
+
 	var swiper5 = new Swiper(".swiper_container5", {
 		slidesPerView: 1,
 		spaceBetween: 10,
@@ -1120,20 +1245,29 @@ document.addEventListener("DOMContentLoaded", function () {
 				spaceBetween: 40,
 			},
 			"@1.50": {
-				slidesPerView: 3,
+				slidesPerView: 6,
 				spaceBetween: 0,
 			},
 		},
-		// Enable Lightbox
-		// lightbox: {
-		// 	enabled: true,
-		// 	arrowEl: true,
-		// },
 	});
 
-	// Initialize Swiper navigation buttons with Font Awesome icons
+	// Customize navigation icons
 	document.querySelector(".swiper-button-next5").innerHTML =
 		'<i class="fas fa-arrow-right"></i>';
 	document.querySelector(".swiper-button-prev5").innerHTML =
 		'<i class="fas fa-arrow-left"></i>';
+
+	// Initialize Magnific Popup
+	$(".image-popup").magnificPopup({
+		type: "image",
+		gallery: {
+			enabled: true,
+		},
+		navigation: {
+			prevEl:
+				'<button title="Previous" type="button" class="mfp-arrow mfp-arrow-left">&#8592;</button>',
+			nextEl:
+				'<button title="Next" type="button" class="mfp-arrow mfp-arrow-right">&#8594;</button>',
+		},
+	});
 });
