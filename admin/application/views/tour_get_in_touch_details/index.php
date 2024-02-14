@@ -52,7 +52,7 @@
                                         <tr>
                                             <td><?= ($key + 1) ?></td>
                                             <td><?= $rslt->git_cust_name; ?></td>
-                                            <td><?= $rslt->git_cust_contact; ?></td>
+                                            <td><?= $rslt->code . ' ' . $rslt->git_cust_contact; ?></td>
                                             <td><?= $rslt->git_cust_email; ?></td>
                                             <td><?= $rslt->git_cust_destination; ?></td>
                                             <td><?= $query_date; ?></td>

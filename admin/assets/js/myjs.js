@@ -250,6 +250,27 @@ $(document).ready(function () {
 			},
 		});
 	});
+
+	$("#Country_details_sbmt").click(function () {
+		var formData = new FormData($("#Country_details")[0]);
+
+		$.ajax({
+			url: baseurl + "country_code_details",
+			type: "post",
+			data: formData,
+			dataType: "json",
+			contentType: false,
+			processData: false,
+			success: function (res) {
+				if (res.status != 103) {
+					window.location.href = baseurl + "country_code";
+					successToster(res.msg);
+				} else {
+					errorToster(res.msg);
+				}
+			},
+		});
+	});
 });
 
 function stateFunctionalities(ids = "", types = "", tables = "") {
@@ -657,6 +678,37 @@ function tour_other_infoFunctionalities(ids = "", types = "", tables = "") {
 	}
 }
 
+function CountryFunctionalities(ids = "", types = "", tables = "") {
+	if (types == "edit" || types == "delete") {
+		// alert(types);
+		$.ajax({
+			type: "post",
+			url:
+				baseurl + (types == "edit" ? "edit_country_code_data" : "delete_data"),
+			data: { eid: ids, tables: tables },
+			dataType: "json",
+			success: function (res) {
+				// console.log(res);
+				if (res.status == 101) {
+					if (types != "delete") {
+						$("#eid").val(res.data.id);
+						$("#name").val(res.data.name);
+						$("#code").val(res.data.code);
+						$("#status").val(res.data.status).trigger("change");
+						$("#place_details_sbmt").show();
+						successToster(res.msg);
+					} else {
+						window.location.href = baseurl + "country_code";
+						successToster(res.msg);
+					}
+				} else {
+					errorToster(res.msg);
+				}
+			},
+		});
+	}
+}
+
 function displayExistingImage(imageUrl) {
 	$("#preview_tour_image").attr("src", imageUrl);
 }
@@ -699,10 +751,18 @@ function isExist(val = "", table = "") {
 			if (val != "") {
 				if (res.status != 101) {
 					errorToster("State Already Exist!");
-					$("#state_details_sbmt").hide();
+					if (table == "country_code") {
+						$("#Country_details_sbmt").hide();
+					} else {
+						$("#state_details_sbmt").hide();
+					}
 				} else {
 					successToster("State Is Available!");
-					$("#state_details_sbmt").show();
+					if (table == "country_code") {
+						$("#Country_details_sbmt").show();
+					} else {
+						$("#state_details_sbmt").show();
+					}
 				}
 			} else {
 				$("#state_details_sbmt").hide();
@@ -1151,27 +1211,24 @@ tinymce.init({
 	},
 });
 
-// function get_itinerary_form() {
-// 	var lngt = $("#itinerary_data").children().length + 2;
-// 	console.log(lngt);
-// 	var html =
-// 		'<div class="border rounded border-2 p-3 mb-3 col-lg-12 col-md-12 col-sm-12">';
-// 	html += '<div class="mb-3 form-floating">';
-// 	html +=
-// 		'<textarea class="form-control" placeholder="Leave a question here" id="itinerary_' +
-// 		lngt +
-// 		'" name="itinerary[]"></textarea><label for="floatingTextarea2">Itinerary ' +
-// 		lngt +
-// 		"</label>";
-// 	html += "</div>";
-// 	html += '<div class="form-floating">';
-// 	html +=
-// 		'<textarea class="form-control" placeholder="Leave a question here" id="itinerary_descriptions_' +
-// 		lngt +
-// 		'" name="itinerary_descriptions[]"></textarea><label for="floatingTextarea2">Itinerary Descriptions ' +
-// 		lngt +
-// 		"</label>";
-// 	html += "</div></div>";
-
-// 	$("#itinerary_data").append(html);
-// }
+function check_num(obj) {
+	$(obj).val(
+		$(obj)
+			.val()
+			.replace(/[^0-9]/g, "")
+	);
+}
+function check_char(obj) {
+	$(obj).val(
+		$(obj)
+			.val()
+			.replace(/[^A-Za-z]/g, "")
+	);
+}
+function check_char_with_space(obj) {
+	$(obj).val(
+		$(obj)
+			.val()
+			.replace(/[^A-Za-z\s]/g, "")
+	);
+}

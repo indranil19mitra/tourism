@@ -136,6 +136,9 @@ class Myadmin_controller extends CI_Controller
         if ($checked_table == 'place') {
             $cond = array('name' => $val, 'is_delete!=' => '0');
         }
+        if ($checked_table == 'country_code') {
+            $cond = array('name' => $val, 'is_delete!=' => '0');
+        }
 
         $data = $this->myadmin_model->get_data("", $checked_table, $cond);
         if (!empty($data)) {
@@ -1106,11 +1109,81 @@ class Myadmin_controller extends CI_Controller
         }
 
         $data = array();
-
-        $data['get_in_touch_details'] = $this->myadmin_model->get_data("get_in_touch.id as get_in_touch_details_id,get_in_touch.git_cust_name,get_in_touch.git_cust_contact,get_in_touch.git_cust_email,get_in_touch.git_cust_destination,get_in_touch.query_time,get_in_touch.query_status,get_in_touch.status,get_in_touch.updated_by,get_in_touch.updated_at", 'get_in_touch', "", "", "", "desc", "get_in_touch_details_id");
+        $join = ['table' => 'country_code', 'condition' => 'country_code.id=get_in_touch.country_id', 'type' => 'left'];
+        $data['get_in_touch_details'] = $this->myadmin_model->get_data("get_in_touch.id as get_in_touch_details_id,get_in_touch.git_cust_name,get_in_touch.git_cust_contact,get_in_touch.git_cust_email,get_in_touch.git_cust_destination,get_in_touch.query_time,get_in_touch.query_status,get_in_touch.status,get_in_touch.updated_by,get_in_touch.updated_at,country_code.code", 'get_in_touch', "", [$join], "", "desc", "get_in_touch_details_id");
 
         $this->load->view('include/header');
         $this->load->view('tour_get_in_touch_details/index', $data);
         $this->load->view('include/footer');
+    }
+
+    public function country_code()
+    {
+        if (empty($this->session->userdata('user_id'))) {
+            redirect(base_url('login'));
+        }
+
+        $cond = array('is_delete!=' => '0');
+        $data['Country_details'] = $this->myadmin_model->get_data("", "country_code", $cond, "", "", "ace", "name");
+        $this->load->view('include/header');
+        $this->load->view('country/index', $data);
+        $this->load->view('include/footer');
+    }
+
+    public function country_code_details()
+    {
+        // echo "<pre>";
+        // print_r($this->input->post());
+        // exit;
+        $edit_id = (!empty($this->input->post('eid'))) ? $this->input->post('eid') : '';
+        $country_name = ucwords(implode(' ', explode(' ', trim($this->input->post('name'), " "))));
+        $state_details = array(
+            'name' => $country_name,
+            'code' => $this->input->post('code'),
+            'status' => $this->input->post('status')
+        );
+
+        if (empty($edit_id)) {
+            $state_details['created_by'] = $this->session->userdata('user_id');
+            $state_details['created_at'] = date('Y-m-d H:i:s');
+            $state_details['is_delete'] = '1';
+            $last_inst_id = $this->myadmin_model->insert_data("country_code", $state_details);
+            $msg = 'You have successfully added';
+        } else {
+            $cond = array(
+                'id' => $edit_id
+            );
+            $state_details['updated_by'] = $this->session->userdata('user_id');
+            $state_details['updated_at'] = date('Y-m-d H:i:s');
+            $last_inst_id = $this->myadmin_model->update_data("country_code", $state_details, $cond);
+            $msg = 'You have successfully edited';
+        }
+
+        if (!empty($last_inst_id)) {
+            $rslt = array('status' => '101', 'msg' => $msg, 'data' => $last_inst_id);
+        } else {
+            $rslt = array('status' => '103', 'msg' => 'Something went wrong!', 'data' => '');
+        }
+
+        echo json_encode($rslt);
+    }
+
+
+    public function edit_country_code_data()
+    {
+        $edit_id = (!empty($this->input->post('eid'))) ? $this->input->post('eid') : '';
+        // echo "edit_id=> ".$edit_id;
+        // exit;
+        if (!empty($edit_id)) {
+            $cond = array(
+                'id' => $edit_id
+            );
+            $data = $this->myadmin_model->get_data('id,name,code,status', "country_code", $cond, "", "1");
+            $rslt = array('status' => '101', 'msg' => '', 'data' => $data);
+        } else {
+            $rslt = array('status' => '103', 'msg' => '', 'data' => '');
+        }
+
+        echo json_encode($rslt);
     }
 }
