@@ -62,35 +62,6 @@ class Mycontroller extends CI_Controller
         $this->load->view('include/footer', $data);
     }
 
-    public function dta_on_selection()
-    {
-        // echo "<pre>";
-        // print_r($_POST);
-        // exit;
-
-        if (!empty($this->input->post('dts'))) {
-            $cond5 = array(
-                'tour_details.is_delete!=' => '0',
-                'tour_details.status!=' => '0',
-                'DATE_FORMAT(tour_details.start_date,"%Y-%m")' => date('Y-m', strtotime($this->input->post('dts'))),
-                'tour_details.start_date >=' => date('Y-m-d'),
-                'tours.is_delete!=' => '0',
-                'tours.status!=' => '0',
-            );
-        }
-        $join = array('table' => 'tours', 'condition' => 'tours.id=tour_details.tours_id');
-
-        $data['get_tours_date_wise'] = $this->myfront_model->get_data("tours.name,tours.main_image,tours.seat_availability,tour_details.id as tour_details_id,tour_details.duration,tour_details.start_date,tour_details.price,DATE_FORMAT(tour_details.start_date,'%d %b') as tour_calendar_days", "tour_details", $cond5, [$join], "", "asc", "tour_details.start_date", "", "");
-        if (!empty($data)) {
-            $rslt = array('status' => '101', 'data' => $data['get_tours_date_wise']);
-        } else {
-            $rslt = array('status' => '103', 'data' => '');
-        }
-        // print_r($data);
-        // exit;
-        echo json_encode($rslt);
-    }
-
     public function aboutUs()
     {
         $data = array();
@@ -103,6 +74,7 @@ class Mycontroller extends CI_Controller
 
     public function details()
     {
+        // echo "<pre>";
         $data = array();
         $data = $this->nav_tour_details();
         $ids = $this->input->get('ids');
@@ -121,7 +93,39 @@ class Mycontroller extends CI_Controller
 
         $join = [$join1, $join2, $join3, $join4, $join5, $join6];
 
-        $data['get_tours_details'] = $this->myfront_model->get_data("tour_details.id as tour_details_id,tour_details.tours_id,tour_details.duration,tour_details.start_date,tour_details.price,tour_details.pikup_location,tour_details.drop_location,tours.difficulty,tour_about.tour_about_details,GROUP_CONCAT(tour_itinerary_main.itinerary,'##') as itinerary,GROUP_CONCAT(tour_itinerary_sub.itinerary_sub,'##') as itinerary_sub,tour_inclusions_exclusions.inclusions,tour_inclusions_exclusions.exclusions,tour_other_info.other_info", "tour_details", $cond, $join, "1");
+        $data['get_tours_details'] = $this->myfront_model->get_data("tour_details.id as tour_details_id,tour_details.tours_id,tour_details.duration,tour_details.start_date,tour_details.price,tour_details.pikup_location,tour_details.drop_location,tours.difficulty,tours.tour_category_id,tour_about.tour_about_details,GROUP_CONCAT(tour_itinerary_main.itinerary,'##') as itinerary,GROUP_CONCAT(tour_itinerary_sub.itinerary_sub,'##') as itinerary_sub,tour_inclusions_exclusions.inclusions,tour_inclusions_exclusions.exclusions,tour_other_info.other_info", "tour_details", $cond, $join, "1");
+        // exit;
+
+        $cond1 = array(
+            'tour_details.tours_id!=' => $data['get_tours_details']->tours_id,
+            'tour_details.is_delete!=' => '0',
+            'tour_details.status!=' => '0',
+            'tour_details.start_date >=' => date('Y-m-d'),
+            'tours.is_delete!=' => '0',
+            'tours.status!=' => '0',
+            'tours.tour_category_id' => $data['get_tours_details']->tour_category_id,
+        );
+
+
+        $join7 = array('table' => 'tour_category', 'condition' => 'tour_category.id=tours.tour_category_id', 'type' => 'left');
+        $join8 = [$join1, $join7];
+
+        $get_tours_category_wise = $this->myfront_model->get_data("tours.name,tours.main_image,tours.seat_availability,tours.tour_category_id,tour_details.id as tour_details_id,tour_details.duration,tour_details.start_date,tour_details.price,DATE_FORMAT(tour_details.start_date,'%d %b') as tour_calendar_days", "tour_details", $cond1, $join8, "", "asc", "tour_details.start_date", "tour_details.tours_id", "");
+
+        foreach ($get_tours_category_wise as $key => $val) {
+            $data['get_tours_category_wise_data'][$key]['name'] = $val->name;
+            $data['get_tours_category_wise_data'][$key]['main_image'] = $val->main_image;
+            $data['get_tours_category_wise_data'][$key]['seat_availability'] = $val->seat_availability;
+            $data['get_tours_category_wise_data'][$key]['tour_details_id'] = $val->tour_details_id;
+            $data['get_tours_category_wise_data'][$key]['duration'] = $val->duration;
+            $data['get_tours_category_wise_data'][$key]['start_date'] = $val->start_date;
+            $data['get_tours_category_wise_data'][$key]['price'] = $val->price;
+            $data['get_tours_category_wise_data'][$key]['tour_calendar_days'] = $val->tour_calendar_days;
+            $data['get_tours_category_wise_data'][$key]['tour_category_id'] = $val->tour_category_id;
+        }
+
+        // print_r($data['get_tours_category_wise_data']);
+        // print_r($data['get_tours_details']);
         // exit;
 
 
@@ -129,6 +133,13 @@ class Mycontroller extends CI_Controller
         $join8 = [$join1, $join7];
 
         $data['tour_photos'] = $this->myfront_model->get_data("GROUP_CONCAT(tour_photos.tour_photo) as tour_photo", "tour_details", $cond, $join8, "1");
+
+        $cond2 = array(
+            'is_delete!=' => '0',
+            'status!=' => '0'
+        );
+
+        $data['country_codes'] = $this->myfront_model->get_data("", "country_code", $cond2);
 
         $this->load->view('include/header', $data);
         $this->load->view('details', $data);
@@ -301,6 +312,7 @@ class Mycontroller extends CI_Controller
 
         $tour_get_in_touch = array(
             'git_cust_name' => $this->input->post('name_1'),
+            'country_id' => $this->input->post('country_code_1'),
             'git_cust_contact' => $this->input->post('contact_no_1'),
             'git_cust_email' => $this->input->post('email_1'),
             'git_cust_destination' => $this->input->post('preferred_destination_1'),
@@ -349,6 +361,48 @@ class Mycontroller extends CI_Controller
         // print_r($rslt);
         // exit;
 
+        echo json_encode($rslt);
+    }
+
+    public function dta_on_selection()
+    {
+        // echo "<pre>";
+        // print_r($_POST);
+        // exit;
+
+        if (!empty($this->input->post('dts'))) {
+            $cond5 = array(
+                'tour_details.is_delete!=' => '0',
+                'tour_details.status!=' => '0',
+                'DATE_FORMAT(tour_details.start_date,"%Y-%m")' => date('Y-m', strtotime($this->input->post('dts'))),
+                'tour_details.start_date >=' => date('Y-m-d'),
+                'tours.is_delete!=' => '0',
+                'tours.status!=' => '0',
+            );
+        }
+        $join = array('table' => 'tours', 'condition' => 'tours.id=tour_details.tours_id');
+
+        $get_tours_date_wise = $this->myfront_model->get_data("tours.name,tours.main_image,tours.seat_availability,tour_details.id as tour_details_id,tour_details.duration,tour_details.start_date,tour_details.price,DATE_FORMAT(tour_details.start_date,'%d %b') as tour_calendar_days", "tour_details", $cond5, [$join], "", "asc", "tour_details.start_date", "", "");
+        if (!empty($get_tours_date_wise)) {
+            // print_r($get_tours_date_wise);
+            foreach ($get_tours_date_wise as $key => $val) {
+                $get_tours_date_wise_data[$key]['dtl_nm'] = implode("-", explode(" ", $val->name));
+                $get_tours_date_wise_data[$key]['name'] = $val->name;
+                $get_tours_date_wise_data[$key]['main_image'] = $val->main_image;
+                $get_tours_date_wise_data[$key]['seat_availability'] = $val->seat_availability;
+                $get_tours_date_wise_data[$key]['tour_details_id'] = $val->tour_details_id;
+                $get_tours_date_wise_data[$key]['duration'] = $val->duration;
+                $get_tours_date_wise_data[$key]['start_date'] = $val->start_date;
+                $get_tours_date_wise_data[$key]['price'] = $val->price;
+                $get_tours_date_wise_data[$key]['tour_calendar_days'] = $val->tour_calendar_days;
+            }
+            // print_r($get_tours_date_wise_data);
+            $rslt = array('status' => '101', 'data' => $get_tours_date_wise_data);
+        } else {
+            $rslt = array('status' => '103', 'data' => '');
+        }
+        // print_r($data);
+        // exit;
         echo json_encode($rslt);
     }
 

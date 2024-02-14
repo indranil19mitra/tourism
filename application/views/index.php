@@ -91,27 +91,43 @@
 				</div>
 			</div>
 		</section>
-		<div class="row mb-5">
-			<div class="d-flex justify-content-center flex-wrap">
+		<div class="container">
+			<div class="row mb-5">
+				<!-- <div class="d-flex justify-content-center flex-wrap">
 				<?php
-				if (!empty($get_tours_dates)) {
-					foreach ($get_tours_dates as $key => $val) {
-						if ($key <= 5) :
+				// if (!empty($get_tours_dates)) {
+				// 	foreach ($get_tours_dates as $key => $val) {
+				// 		if ($key <= 5) :
 				?>
 							<button type="button" onclick="tourGetOnDates('<?= $val->start_date ?>')" style="padding: 10px 20px 10px 20px" class="btn btn-outline-info rounded-pill btn-sm m-1"><?= date("M 'y", strtotime($val->start_date)); ?></button>
 						<?php
-						else :
-							// Introduce a line break after the third button
-							if ($key == 6) {
-								echo '</div><div class="d-flex justify-content-center flex-wrap">';
-							}
+						// else :
+						// Introduce a line break after the third button
+						// if ($key == 6) {
+						// 	echo '</div><div class="d-flex justify-content-center flex-wrap">';
+						// }
 						?>
 							<button type="button" onclick="tourGetOnDates('<?= $val->start_date ?>')" style="padding: 10px 20px 10px 20px" class="btn btn-outline-info rounded-pill btn-sm m-1"><?= date("M 'y", strtotime($val->start_date)); ?></button>
 				<?php
-						endif;
-					}
-				}
+				// 		endif;
+				// 	}
+				// }
 				?>
+				</div> -->
+
+				<div class="d-flex justify-content-between flex-wrap">
+					<?php
+					if (!empty($get_tours_dates)) :
+						foreach ($get_tours_dates as $key => $val) :
+							if ($key < 12) :
+					?>
+								<a type="button" onclick="tourGetOnDates('<?= $val->start_date ?>')" style="padding: 5px 20px 5px 20px" class="text-secondary btn btn-outline-secondary rounded-pill btn-sm dt_btn"><?= date("M 'y", strtotime($val->start_date)); ?></a>
+					<?php
+							endif;
+						endforeach;
+					endif;
+					?>
+				</div>
 			</div>
 		</div>
 		<div class="container-fluid crd_mn mb-5">

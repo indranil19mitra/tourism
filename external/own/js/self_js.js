@@ -1,4 +1,5 @@
 $(document).ready(function () {
+	$('.select2').select2();
 	$("#itinerary_details").hide();
 	$("#dates_and_costing").hide();
 	$("#other_info").hide();
@@ -147,9 +148,9 @@ function tourGetOnDates(date = "") {
 					html += "</div>";
 					html += '<div class="d-grid gap-2 mt-2">';
 					html +=
-						'<button class="btn btn-primary rounded" onclick="getDetails(' +
-						val.names +
-						"," +
+						'<button class="btn btn-primary rounded" onclick="getDetails(\'' +
+						val.dtl_nm +
+						"'," +
 						val.tour_details_id +
 						')" type="button">View Details</button>';
 					html += "</div>";
@@ -182,7 +183,7 @@ function tourGetOnDates(date = "") {
 
 				$("#dt_swpr2").html(html);
 
-				var swiper4 = new Swiper(".swiper_container6", {
+				var swiper6 = new Swiper(".swiper_container6", {
 					slidesPerView: 1,
 					spaceBetween: 10,
 					navigation: {
@@ -1270,4 +1271,41 @@ document.addEventListener("DOMContentLoaded", function () {
 				'<button title="Next" type="button" class="mfp-arrow mfp-arrow-right">&#8594;</button>',
 		},
 	});
+
+	var swiper7 = new Swiper(".swiper_container7", {
+		slidesPerView: 1,
+		spaceBetween: 10,
+		navigation: {
+			nextEl: ".swiper-button-next7",
+			prevEl: ".swiper-button-prev7",
+		},
+		autoplay: {
+			delay: 9500,
+			disableOnInteraction: true,
+			pauseOnMouseEnter: true,
+		},
+		breakpoints: {
+			"@0.00": {
+				slidesPerView: 1,
+				spaceBetween: 10,
+			},
+			"@0.75": {
+				slidesPerView: 1,
+				spaceBetween: 20,
+			},
+			"@1.00": {
+				slidesPerView: 1,
+				spaceBetween: 40,
+			},
+			"@1.50": {
+				slidesPerView: 1,
+				spaceBetween: 0,
+			},
+		},
+	});
+
+	document.querySelector(".swiper-button-next7").innerHTML =
+		'<i class="fas fa-arrow-right"></i>';
+	document.querySelector(".swiper-button-prev7").innerHTML =
+		'<i class="fas fa-arrow-left"></i>';
 });
