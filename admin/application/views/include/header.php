@@ -364,6 +364,12 @@
                             <span class="menu-title">Get In Touch <br>Details</span>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= base_url() ?>country-code">
+                            <i class="icon-grid menu-icon"></i>
+                            <span class="menu-title">Country Code</span>
+                        </a>
+                    </li>
                 </ul>
             </nav>
             <!-- partial -->

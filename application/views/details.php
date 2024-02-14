@@ -42,7 +42,7 @@ if (!empty($tour_photos)) {
                             <div class="elementor-widget-wrap elementor-element-populated">
                                 <section class="elementor-section elementor-inner-section elementor-element elementor-element-73351ef elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="73351ef" data-element_type="section">
                                     <div class="elementor-container elementor-column-gap-no">
-                                        <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-fbfb681" data-id="fbfb681" data-element_type="column">
+                                        <div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-fbfb681" data-id="fbfb681" data-element_type="column">
                                             <div class="elementor-widget-wrap elementor-element-populated">
                                                 <div class="elementor-element elementor-element-446a8ec animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="446a8ec" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;}" data-widget_type="heading.default">
                                                     <div class="elementor-widget-container">
@@ -114,7 +114,7 @@ if (!empty($tour_photos)) {
                                 <div class="elementor-widget-wrap elementor-element-populated">
                                     <section class="elementor-section elementor-inner-section elementor-element elementor-element-73351ef elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="73351ef" data-element_type="section">
                                         <div class="elementor-container elementor-column-gap-no">
-                                            <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-fbfb681" data-id="fbfb681" data-element_type="column">
+                                            <div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-fbfb681" data-id="fbfb681" data-element_type="column">
                                                 <div class="elementor-widget-wrap elementor-element-populated">
                                                     <div class="elementor-element elementor-element-446a8ec animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="446a8ec" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;}" data-widget_type="heading.default">
                                                         <div class="elementor-widget-container">
@@ -167,7 +167,7 @@ if (!empty($tour_photos)) {
                                 <div class="elementor-widget-wrap elementor-element-populated">
                                     <section class="elementor-section elementor-inner-section elementor-element elementor-element-73351ef elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="73351ef" data-element_type="section">
                                         <div class="elementor-container elementor-column-gap-no">
-                                            <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-fbfb681" data-id="fbfb681" data-element_type="column">
+                                            <div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-fbfb681" data-id="fbfb681" data-element_type="column">
                                                 <div class="elementor-widget-wrap elementor-element-populated">
                                                     <div class="elementor-element elementor-element-446a8ec animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="446a8ec" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;}" data-widget_type="heading.default">
                                                         <div class="elementor-widget-container">
@@ -228,7 +228,7 @@ if (!empty($tour_photos)) {
                                 <div class="elementor-widget-wrap elementor-element-populated">
                                     <section class="elementor-section elementor-inner-section elementor-element elementor-element-73351ef elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="73351ef" data-element_type="section">
                                         <div class="elementor-container elementor-column-gap-no">
-                                            <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-fbfb681" data-id="fbfb681" data-element_type="column">
+                                            <div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-fbfb681" data-id="fbfb681" data-element_type="column">
                                                 <div class="elementor-widget-wrap elementor-element-populated">
                                                     <div class="elementor-element elementor-element-446a8ec animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="446a8ec" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;}" data-widget_type="heading.default">
                                                         <div class="elementor-widget-container">
@@ -264,7 +264,7 @@ if (!empty($tour_photos)) {
                                 <div class="elementor-widget-wrap elementor-element-populated">
                                     <section class="elementor-section elementor-inner-section elementor-element elementor-element-73351ef elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="73351ef" data-element_type="section">
                                         <div class="elementor-container elementor-column-gap-no">
-                                            <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-fbfb681" data-id="fbfb681" data-element_type="column">
+                                            <div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-fbfb681" data-id="fbfb681" data-element_type="column">
                                                 <div class="elementor-widget-wrap elementor-element-populated">
                                                     <div class="elementor-element elementor-element-446a8ec animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="446a8ec" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;}" data-widget_type="heading.default">
                                                         <div class="elementor-widget-container">
@@ -310,7 +310,7 @@ if (!empty($tour_photos)) {
                                     <div class="elementor-widget-wrap elementor-element-populated">
                                         <section class="elementor-section elementor-inner-section elementor-element elementor-element-73351ef elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="73351ef" data-element_type="section">
                                             <div class="elementor-container elementor-column-gap-no">
-                                                <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-fbfb681" data-id="fbfb681" data-element_type="column">
+                                                <div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-fbfb681" data-id="fbfb681" data-element_type="column">
                                                     <div class="elementor-widget-wrap elementor-element-populated">
                                                         <div class="elementor-element elementor-element-446a8ec animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="446a8ec" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;}" data-widget_type="heading.default">
                                                             <div class="elementor-widget-container">
@@ -355,7 +355,7 @@ if (!empty($tour_photos)) {
                                     <div class="elementor-widget-wrap elementor-element-populated">
                                         <section class="elementor-section elementor-inner-section elementor-element elementor-element-73351ef elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="73351ef" data-element_type="section">
                                             <div class="elementor-container elementor-column-gap-no">
-                                                <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-fbfb681" data-id="fbfb681" data-element_type="column">
+                                                <div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-fbfb681" data-id="fbfb681" data-element_type="column">
                                                     <div class="elementor-widget-wrap elementor-element-populated">
                                                         <div class="elementor-element elementor-element-446a8ec animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="446a8ec" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;}" data-widget_type="heading.default">
                                                             <div class="elementor-widget-container">
@@ -404,7 +404,7 @@ if (!empty($tour_photos)) {
                                 <div class="elementor-widget-wrap elementor-element-populated">
                                     <section class="elementor-section elementor-inner-section elementor-element elementor-element-73351ef elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="73351ef" data-element_type="section">
                                         <div class="elementor-container elementor-column-gap-no">
-                                            <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-fbfb681" data-id="fbfb681" data-element_type="column">
+                                            <div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-fbfb681" data-id="fbfb681" data-element_type="column">
                                                 <div class="elementor-widget-wrap elementor-element-populated">
                                                     <div class="elementor-element elementor-element-446a8ec animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="446a8ec" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;}" data-widget_type="heading.default">
                                                         <div class="elementor-widget-container">
@@ -635,7 +635,7 @@ if (!empty($tour_photos)) {
                             <div class="elementor-widget-wrap elementor-element-populated">
                                 <section class="elementor-section elementor-inner-section elementor-element elementor-element-73351ef elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="73351ef" data-element_type="section">
                                     <div class="elementor-container elementor-column-gap-no">
-                                        <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-fbfb681" data-id="fbfb681" data-element_type="column">
+                                        <div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-fbfb681" data-id="fbfb681" data-element_type="column">
                                             <div class="elementor-widget-wrap elementor-element-populated">
                                                 <div class="elementor-element elementor-element-446a8ec animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="446a8ec" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;}" data-widget_type="heading.default">
                                                     <div class="elementor-widget-container">
@@ -668,23 +668,18 @@ if (!empty($tour_photos)) {
                             </div>
                             <!-- country -->
                             <div class="input-group col-lg-12 col-md-12 col-sm-12 mb-3 d-flex justify-content-center">
-                                <select class="form-select select2" onkeyup="" id="country_code" name="country_code" aria-label="country Code">
+                                <select class="form-select select2 me-2 select2" onkeyup="" id="country_code_1" name="country_code_1" aria-label="country Code">
                                     <option value="" selected disabled>Country</option>
+                                    <?php
+                                    if (!empty($country_codes)) {
+                                        foreach ($country_codes as $cc_val) {
+                                            echo '<option value="' . $cc_val->id . '">' . $cc_val->name . '</option>';
+                                        }
+                                    }
+                                    ?>
                                 </select>
-                                <input type="text" class="form-control clr_input" onkeyup="check_getInTouch_input(this.value, 'contact_no_1')" id="contact_no_1" maxlength="10" name="contact_no_1" placeholder="Please Enter Contact Number">
+                                <input type="text" class="form-control clr_input" onkeyup="check_getInTouch_input(this.value, 'contact_no_1')" id="contact_no_1" maxlength="10" name="contact_no_1" placeholder="Contact Number">
                             </div>
-
-                            <!-- country -->
-                            <!-- <div class="col-lg-12 col-md-12 col-sm-12 mb-3 d-flex justify-content-center">
-                                <div class="col-lg-4 col-md-4 col-sm-4 mb-3 d-flex">
-                                    <select class="form-select clr_input select2" onkeyup="" id="country_code" maxlength="10" name="country_code" aria-label="country Code">
-                                        <option value="" selected disabled>Country</option>
-                                    </select>
-                                </div>
-                                <div class="col-lg-8 col-md-8 col-sm-8 mb-3 d-flex">
-                                    <input type="text" class="form-control clr_input" onkeyup="check_getInTouch_input(this.value, 'contact_no_1')" id="contact_no_1" maxlength="10" name="contact_no_1" placeholder="Please Enter Contact Number">
-                                </div>
-                            </div> -->
 
                             <div class="col-lg-12 col-md-12 col-sm-12 mb-3 d-flex justify-content-center">
                                 <input type="email" class="form-control clr_input" onkeyup="check_getInTouch_input(this.value, 'email_1')" id="email_1" name="email_1" placeholder="Please Enter Email ID">
@@ -703,6 +698,90 @@ if (!empty($tour_photos)) {
                     </form>
                 </div>
                 <!-- </section> -->
+
+                <?php
+                if (!empty($get_tours_category_wise_data)) :
+                    // echo "<pre>";
+                    // print_r($get_tours_category_wise_data);
+                ?>
+
+                    <section id="other_info" class="elementor-section elementor-top-section elementor-element elementor-element-6521b521 elementor-section-boxed elementor-section-height-default elementor-section-height-default pt-5" data-id="6521b521" data-element_type="section">
+                        <div class="elementor-background-overlay"></div>
+                        <div class="container d-flex flex-wrap elementor-column-gap-default  p-0 g-0">
+                            <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3198fc93" data-id="3198fc93" data-element_type="column">
+                                <div class="elementor-widget-wrap elementor-element-populated">
+                                    <section class="elementor-section elementor-inner-section elementor-element elementor-element-73351ef elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="73351ef" data-element_type="section">
+                                        <div class="elementor-container elementor-column-gap-no">
+                                            <div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-fbfb681" data-id="fbfb681" data-element_type="column">
+                                                <div class="elementor-widget-wrap elementor-element-populated">
+                                                    <div class="elementor-element elementor-element-446a8ec animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="446a8ec" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;}" data-widget_type="heading.default">
+                                                        <div class="elementor-widget-container">
+                                                            <h2 class="elementor-heading-title mt-2">similar trips</h2>
+                                                        </div>
+                                                    </div>
+                                                    <div class="elementor-element elementor-element-79e4907 elementor-absolute animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="79e4907" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;,&quot;_animation&quot;:&quot;fadeInLeft&quot;}" data-widget_type="heading.default">
+                                                        <div class="elementor-widget-container">
+                                                            <span class="elementor-heading-title elementor-size-default">Durbeen</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <div class="w-100 mt-5" id="dt_swpr1">
+                        <div class="swiper swiper_container7 mb-3">
+                            <div class="swiper-wrapper p-2 ps-0 ps-md-2">
+                                <?php
+                                if (!empty($get_tours_category_wise_data)) :
+                                    foreach ($get_tours_category_wise_data as $val) {
+                                        $names = implode("-", explode(" ", $val['name']));
+                                ?>
+                                        <div class="swiper-slide p-1">
+                                            <div class="card px-3 pt-3">
+                                                <img src="<?= base_url() . "admin/" . $val['main_image'] ?>" class="card-img-top rounded crd_img" alt="...">
+                                                <div class="card-body px-0">
+                                                    <h4 class="card-title"><?= $val['name']; ?></h4>
+                                                    <div class="d-flex justify-content-between">
+                                                        <div><i class="fa-solid fa-clock"></i><span class="ps-1"><?= $val['duration']; ?></span></div>
+                                                        <div><i class="fa-solid fa-stamp"></i><span class="ps-1 text-danger"><?= $val['seat_availability']; ?></span> Seat Availability</div>
+                                                    </div>
+                                                    <div class="d-flex justify-content-between">
+                                                        <div><i class="fa-solid fa-calendar-days"></i><span class="ps-1"><?= date("d M", strtotime($val['start_date'])); ?></span></div>
+                                                        <div><i class="fa-solid fa-indian-rupee-sign"></i><span class="ps-1"><?= $val['price']; ?>/- Onwards</span></div>
+                                                    </div>
+                                                    <div class="d-grid gap-2 mt-2">
+                                                        <button class="btn btn-primary rounded" onclick="getDetails('<?= $names; ?>','<?= $val['tour_details_id']; ?>')" type="button">View Details</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                <?php
+                                    }
+                                endif;
+                                ?>
+                            </div>
+                        </div>
+                        <!-- Navigation buttons for Swiper Slider 1 -->
+                        <div class="d-flex flex-wrap flex-md-nowrap justify-content-end align-items-center mb-0">
+                            <div class="d-flex flex-wrap flex-md-nowrap flex-column-reverse flex-md-row gap-2">
+                                <div class="carousel-slider d-flex justify-content-end gap-4">
+                                    <a class=" bg-transparent position-relative d-block swiper-button-prev7" role="button">
+                                        <div class="swiper-button-prev text-primary position-relative w-auto p-1"></div>
+                                    </a>
+                                    <a class=" bg-transparent position-relative d-block w-auto swiper-button-next7" role="button">
+                                        <div class="swiper-button-next text-primary position-relative w-auto p-1"></div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php
+                endif;
+                ?>
             </div>
         </div>
 
@@ -718,7 +797,7 @@ if (!empty($tour_photos)) {
                                 <div class="elementor-widget-wrap elementor-element-populated">
                                     <section class="elementor-section elementor-inner-section elementor-element elementor-element-73351ef elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="73351ef" data-element_type="section">
                                         <div class="elementor-container elementor-column-gap-no">
-                                            <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-fbfb681" data-id="fbfb681" data-element_type="column">
+                                            <div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-fbfb681" data-id="fbfb681" data-element_type="column">
                                                 <div class="elementor-widget-wrap elementor-element-populated">
                                                     <div class="elementor-element elementor-element-446a8ec animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="446a8ec" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;}" data-widget_type="heading.default">
                                                         <div class="elementor-widget-container">
@@ -738,34 +817,6 @@ if (!empty($tour_photos)) {
                             </div>
                         </div>
                     </section>
-
-                    <!-- <div class="w-100 mt-5">
-                        <div class="swiper swiper_container5 mb-3">
-                            <div class="swiper-wrapper p-2 ps-0 ps-md-2">
-                                <?php foreach ($tour_photo as $key => $img) : ?>
-                                    <div class="swiper-slide p-1">
-                                        <div class="card mb-0 p-2 py-4 shadow-sm preview-section" data-index="<?= $key ?>">
-                                            <div class="d-flex mb-0 align-items-left">
-                                                <img src="<?= base_url('admin/' . $img); ?>" alt="story-img" class="tour_imgs rounded avatar-40 border bg-soft-light img-fluid preview-image swiper-zoom-container" loading="lazy" style="height: 150px; width: 250px;">
-                                            </div>
-                                        </div>
-                                    </div>
-                                <?php endforeach; ?>
-                            </div>
-                        </div>
-                        <div class="d-flex flex-wrap flex-md-nowrap justify-content-end align-items-center mb-0">
-                            <div class="d-flex flex-wrap flex-md-nowrap flex-column-reverse flex-md-row gap-2">
-                                <div class="carousel-slider d-flex justify-content-end gap-4">
-                                    <a class="bg-transparent position-relative d-block swiper-button-prev5" href="#" role="button">
-                                        <div class="swiper-button-prev text-primary position-relative w-auto p-1"></div>
-                                    </a>
-                                    <a class="bg-transparent position-relative d-block w-auto swiper-button-next5" href="#" role="button">
-                                        <div class="swiper-button-next text-primary position-relative w-auto p-1"></div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
 
                     <div class="w-100 mt-5">
                         <div class="swiper swiper_container5 mb-3">
@@ -796,8 +847,6 @@ if (!empty($tour_photos)) {
                             </div>
                         </div>
                     </div>
-
-
                 <?php
                 endif;
                 ?>

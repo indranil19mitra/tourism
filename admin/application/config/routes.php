@@ -63,6 +63,7 @@ $route['tour-other-info'] = 'myadmin_controller/tour_other_info';
 $route['tour-photos'] = 'myadmin_controller/tour_photos';
 $route['tour-booking-details'] = 'myadmin_controller/tour_booking_details';
 $route['get-in-touch-details'] = 'myadmin_controller/get_in_touch_details';
+$route['country-code'] = 'myadmin_controller/country_code';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
