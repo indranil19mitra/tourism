@@ -1,5 +1,4 @@
 $(document).ready(function () {
-	$('.select2').select2();
 	$("#itinerary_details").hide();
 	$("#dates_and_costing").hide();
 	$("#other_info").hide();

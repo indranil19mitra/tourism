@@ -323,7 +323,7 @@ button:-moz-focusring {
 [type=button],
 [type=submit],
 button {
-    display: inline-block;
+    /* display: inline-block; */
     font-weight: 400;
     color: #c36;
     text-align: center;
