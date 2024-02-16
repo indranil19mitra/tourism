@@ -193,13 +193,27 @@ if (!empty($tour_photos)) {
                                         <?php
                                         foreach ($itinerary as $key => $val) {
                                         ?>
-                                            <div class="accordion-item  mt-2">
+                                            <!-- <div class="accordion-item  mt-2">
                                                 <h2 class="accordion-header rounded">
                                                     <a class="accordion-button collapsed w-100 itinarary_bg_clr itinarary_bg_clr_hvr text-dark rounded-4" type="button" data-bs-toggle="collapse" data-bs-target="#flush-<?= $key; ?>" aria-expanded="false" aria-controls="flush-<?= $key; ?>">
                                                         <div class="d-flex justify-content-between">
-                                                            <div class="fw-bold">Day <?= $key; ?>: </div>
-                                                            <div class=""><span><?= $itinerary[$key] ?></span></div>
-                                                            <div class=""><i class="fa-regular fa-angle-down"></i></div>
+                                                            <div class="fw-bold text-start">Day <?= $key; ?>: </div>
+                                                            <div class="text-center"><span><?= $itinerary[$key] ?></span></div>
+                                                        </div>
+                                                    </a>
+                                                </h2>
+                                                <div id="flush-<?= $key; ?>" class="accordion-collapse collapse itinarary_bg_clr text-dark rounded-4 mt-3 itinarary_bg_clr_2" data-bs-parent="#accordionFlushExample">
+                                                    <div class="accordion-body">
+                                                        <span><?= $itinerary_sub[$key] ?></span>
+                                                    </div>
+                                                </div>
+                                            </div> -->
+                                            <div class="accordion-item mt-2">
+                                                <h2 class="accordion-header rounded">
+                                                    <a class="accordion-button collapsed w-100 itinarary_bg_clr itinarary_bg_clr_hvr text-dark rounded-4" type="button" data-bs-toggle="collapse" data-bs-target="#flush-<?= $key; ?>" aria-expanded="false" aria-controls="flush-<?= $key; ?>">
+                                                        <div class="d-flex align-items-center w-100">
+                                                            <div class="fw-bold text-start">Day <?= $key; ?>: </div>
+                                                            <div class="text-center flex-grow-1"><span><?= $itinerary[$key] ?></span></div>
                                                         </div>
                                                     </a>
                                                 </h2>
@@ -209,6 +223,8 @@ if (!empty($tour_photos)) {
                                                     </div>
                                                 </div>
                                             </div>
+
+
                                         <?php
                                         }
                                         ?>

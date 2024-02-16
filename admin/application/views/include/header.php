@@ -341,7 +341,8 @@
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>state">State</a></li>
                                 <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>place">Place</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>tour_category">Tour Category</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>tour-category">Tour Category</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>tour-category-photos">Tour Category<br>Photos</a></li>
                                 <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>tours">Tour</a></li>
                                 <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>destination">Destination</a></li>
                                 <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>tour-about">Tour About</a></li>
