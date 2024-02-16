@@ -251,6 +251,29 @@ $(document).ready(function () {
 		});
 	});
 
+	$("#category_photos_sbmt").click(function () {
+		var formData = new FormData($("#category_photos_details")[0]);
+
+		// Perform an AJAX request
+		$.ajax({
+			type: "POST",
+			url: baseurl + "tour_category_photos_details",
+			data: formData,
+			dataType: "json",
+			contentType: false,
+			processData: false,
+			success: function (res) {
+				// Handle the server response
+				if (res.status != 103) {
+					window.location.href = baseurl + "tour_category_photos";
+					successToster(res.msg);
+				} else {
+					errorToster(res.msg);
+				}
+			},
+		});
+	});
+
 	$("#Country_details_sbmt").click(function () {
 		var formData = new FormData($("#Country_details")[0]);
 
@@ -471,10 +494,50 @@ function tour_photosFunctionalities(ids = "", types = "", tables = "") {
 	}
 }
 
+function tour_categoryFunctionalities(ids = "", types = "", tables = "") {
+	if (types == "edit" || types == "delete") {
+		$.ajax({
+			type: "post",
+			url:
+				baseurl + (types == "edit" ? "edit_tour_category_photos_data" : "delete_data"),
+			data: { eid: ids, tables: tables },
+			dataType: "json",
+			success: function (res) {
+				console.log(res);
+				if (res.status == 101) {
+					if (types != "delete") {
+						$("#eid").val(res.data.id);
+						$("#category_id").val(res.data.tour_category_id).trigger("change");
+						$("#status").val(res.data.status).trigger("change");
+
+						// Check if main_image property exists in the response
+						if (res.data.trip_image) {
+							// console.log("Image URL:", baseurl_data + res.data.tour_photo);
+							displayExistingImage2(baseurl_data + res.data.trip_image);
+							// console.log("After calling displayExistingImage");
+						}
+
+						$("#category_photos_sbmt").show();
+						successToster(res.msg);
+					} else {
+						window.location.href = baseurl + "tour_category_photos";
+						successToster(res.msg);
+					}
+				} else {
+					errorToster(res.msg);
+				}
+			},
+		});
+	}
+}
+
 function displayExistingImage1(imageUrl) {
 	$("#preview_tour_photos").attr("src", imageUrl);
 }
 
+function displayExistingImage2(imageUrl) {
+	$("#preview_category_photos").attr("src", imageUrl);
+}
 function tourDestFunctionalities(ids = "", types = "", tables = "") {
 	if (types == "edit" || types == "delete") {
 		// alert(types);
@@ -845,37 +908,6 @@ document.addEventListener("DOMContentLoaded", function () {
 		});
 });
 
-// document.addEventListener("DOMContentLoaded", function () {
-// 	document
-// 		.getElementById("tour_photos")
-// 		.addEventListener("change", function (event) {
-// 			const files = event.target.files;
-
-// 			if (files && files.length > 0) {
-// 				const previewContainer = document.getElementById("preview_tour_photos");
-
-// 				// Clear previous previews
-// 				previewContainer.innerHTML = "";
-
-// 				for (let i = 0; i < files.length; i++) {
-// 					const file = files[i];
-// 					const reader = new FileReader();
-
-// 					reader.onload = function (e) {
-// 						const image = new Image();
-// 						image.src = e.target.result;
-// 						image.width = 200;
-// 						image.height = 200;
-
-// 						previewContainer.appendChild(image);
-// 					};
-
-// 					reader.readAsDataURL(file);
-// 				}
-// 			}
-// 		});
-// });
-
 document.addEventListener("DOMContentLoaded", function () {
 	document
 		.getElementById("tour_photos")
@@ -917,6 +949,95 @@ document.addEventListener("DOMContentLoaded", function () {
 				}
 			}
 		});
+});
+
+// document.addEventListener("DOMContentLoaded", function () {
+// 	document
+// 		.getElementById("category_photos")
+// 		.addEventListener("change", function (event) {
+// 			const file = event.target.files[0]; // Get the first selected file
+
+// 			if (file) {
+// 				const previewContainer = document.getElementById(
+// 					"preview_category_photos"
+// 				);
+
+// 				// Clear previous previews
+// 				previewContainer.innerHTML = "";
+
+// 				const reader = new FileReader();
+
+// 				reader.onload = function (e) {
+// 					const imageContainer = document.createElement("div");
+// 					imageContainer.className = "preview-image-container";
+
+// 					const closeButton = document.createElement("button");
+// 					closeButton.className = "close-button";
+// 					closeButton.innerHTML = "&times;"; // Use '×' for a close symbol
+// 					closeButton.addEventListener("click", function () {
+// 						previewContainer.removeChild(imageContainer);
+// 						document.getElementById("category_photos").value = ""; // Clear the file input value
+// 					});
+
+// 					const image = new Image();
+// 					image.src = e.target.result;
+// 					image.height = 200;
+
+// 					imageContainer.appendChild(closeButton);
+// 					imageContainer.appendChild(image);
+// 					previewContainer.appendChild(imageContainer);
+// 				};
+
+// 				reader.readAsDataURL(file);
+// 			}
+// 		});
+// });
+
+document.addEventListener("DOMContentLoaded", function () {
+	// Event listener for category_photos input
+	document
+		.getElementById("category_photos")
+		.addEventListener("change", function (event) {
+			preview_Images(event, "preview_category_photos");
+		});
+
+	// Event listener for tour_photos input
+
+	function preview_Images(event, previewContainerId) {
+		const file = event.target.files[0]; // Get the first selected file
+
+		if (file) {
+			const previewContainer = document.getElementById(previewContainerId);
+
+			// Clear previous previews
+			previewContainer.innerHTML = "";
+
+			const reader = new FileReader();
+
+			reader.onload = function (e) {
+				const imageContainer = document.createElement("div");
+				imageContainer.className = "preview-image-container";
+
+				const closeButton = document.createElement("button");
+				closeButton.className = "close-button";
+				closeButton.innerHTML = "&times;"; // Use '×' for a close symbol
+				closeButton.addEventListener("click", function () {
+					previewContainer.removeChild(imageContainer);
+					document.getElementById(previewContainerId).value = ""; // Clear the file input value
+				});
+
+				const image = new Image();
+				image.src = e.target.result;
+				image.height = 200;
+
+				imageContainer.appendChild(closeButton);
+				imageContainer.appendChild(image);
+				previewContainer.appendChild(imageContainer);
+			};
+
+			reader.readAsDataURL(file);
+		}
+	}
 });
 
 function getCheck(obj) {

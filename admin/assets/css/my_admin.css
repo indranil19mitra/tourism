@@ -31,7 +31,11 @@
 }
 
 #tour_photos {
-    display: none;
+    display: none !important;
+}
+
+#category_photos {
+    display: none !important;
 }
 
 #uploadButton {
