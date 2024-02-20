@@ -59,7 +59,8 @@
                 <div class="card-body">
                     <h4 class="card-title">Tour List</h4>
                     <div class="table-responsive">
-                        <table class="table table-hover">
+                    <table id="tour_photos_tbl" class="table table-sm table-sm0 table-striped table-hover w-100 dataTable" data-page-length='10'>
+
                             <thead>
                                 <tr>
                                     <th>Sl No</th>
@@ -103,3 +104,18 @@
         </div>
     </div>
 </div>
+<script>
+    window.onload = onPageLoad;
+
+    function onPageLoad() {
+    document.querySelector('.dt-buttons').classList.add("float-start", "mb-2");
+    document.querySelector('.buttons-csv').classList.add("btn", "btn-sm", "btn-primary");
+    document.querySelector('.buttons-excel').classList.add("btn", "btn-sm", "btn-primary");
+    document.querySelector('.buttons-pdf').classList.add("btn", "btn-sm", "btn-primary");
+    document.querySelector('.dataTables_paginate').classList.add("btn", "btn-sm", "btn-primary");
+    // document.querySelector('.dataTables_paginate').classList.add("btn-outline-primary");
+    document.querySelector('.dataTables_paginate').classList.add("float-end"); // Float pagination buttons to the right
+    // $("#example_filter").children("label").hide();
+}
+
+</script>

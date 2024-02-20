@@ -1,5 +1,5 @@
 <?php
-$duration = $price = $pl = $dl = $difficult = $tour_about_details = $itinerary = $itinerary_sub = $tours_id = $tour_inclusions = $tour_exclusions = $tour_other_info = $tour_photo = "";
+$duration = $price = $pl = $dl = $difficult = $tour_about_details = $itinerary_sequence = $itinerary = $itinerary_sub = $tours_id = $tour_inclusions = $tour_exclusions = $tour_other_info = $tour_photo = "";
 if (!empty($get_tours_details)) {
     // echo "<pre>";
     // print_r($get_tours_details);
@@ -12,6 +12,7 @@ if (!empty($get_tours_details)) {
     $tour_inclusions = $get_tours_details->inclusions;
     $tour_exclusions = $get_tours_details->exclusions;
     $tour_other_info = $get_tours_details->other_info;
+    $itinerary_sequence = (!empty($get_tours_details->itinerary_sequence)) ? (array_filter(explode("##,", rtrim($get_tours_details->itinerary_sequence, "##")))) : '';
     $itinerary = (!empty($get_tours_details->itinerary)) ? (array_filter(explode("##,", rtrim($get_tours_details->itinerary, "##")))) : '';
     $itinerary_sub = (!empty($get_tours_details->itinerary_sub)) ? array_filter(explode("##,", rtrim($get_tours_details->itinerary_sub, "##"))) : '';
     $tour_details_id = (!empty($get_tours_details->tour_details_id)) ? $get_tours_details->tour_details_id : '';
@@ -159,6 +160,22 @@ if (!empty($tour_photos)) {
                 ?>
                 <?php
                 if (!empty($itinerary)) :
+                    $pre_itinerary_array = array();
+                    $final_itinerary_array = array();
+                    // echo "<pre>";
+                    foreach ($itinerary as $key => $val) {
+                        $pre_itinerary_array[$itinerary_sequence[$key]]['itinerary'] = $itinerary[$key];
+                        $pre_itinerary_array[$itinerary_sequence[$key]]['itinerary_sub'] = $itinerary_sub[$key];
+                    }
+                    ksort($pre_itinerary_array);
+                    $i = 0;
+                    foreach ($pre_itinerary_array as $key => $val) {
+                        $final_itinerary_array[$i]['itinerary'] = $val['itinerary'];
+                        $final_itinerary_array[$i]['itinerary_sub'] = $val['itinerary_sub'];
+                        $i += 1;
+                    }
+                    // print_r($final_itinerary_array);
+                    // exit;
                 ?>
                     <section id="itinerary_details" class="elementor-section elementor-top-section elementor-element elementor-element-6521b521 elementor-section-boxed elementor-section-height-default elementor-section-height-default pt-5" data-id="6521b521" data-element_type="section">
                         <div class="elementor-background-overlay"></div>
@@ -191,35 +208,20 @@ if (!empty($tour_photos)) {
                                 <div class="col-12">
                                     <div class="accordion accordion-flush" id="accordionFlushExample">
                                         <?php
-                                        foreach ($itinerary as $key => $val) {
+                                        foreach ($final_itinerary_array as $key => $val) {
                                         ?>
-                                            <!-- <div class="accordion-item  mt-2">
-                                                <h2 class="accordion-header rounded">
-                                                    <a class="accordion-button collapsed w-100 itinarary_bg_clr itinarary_bg_clr_hvr text-dark rounded-4" type="button" data-bs-toggle="collapse" data-bs-target="#flush-<?= $key; ?>" aria-expanded="false" aria-controls="flush-<?= $key; ?>">
-                                                        <div class="d-flex justify-content-between">
-                                                            <div class="fw-bold text-start">Day <?= $key; ?>: </div>
-                                                            <div class="text-center"><span><?= $itinerary[$key] ?></span></div>
-                                                        </div>
-                                                    </a>
-                                                </h2>
-                                                <div id="flush-<?= $key; ?>" class="accordion-collapse collapse itinarary_bg_clr text-dark rounded-4 mt-3 itinarary_bg_clr_2" data-bs-parent="#accordionFlushExample">
-                                                    <div class="accordion-body">
-                                                        <span><?= $itinerary_sub[$key] ?></span>
-                                                    </div>
-                                                </div>
-                                            </div> -->
                                             <div class="accordion-item mt-2">
                                                 <h2 class="accordion-header rounded">
                                                     <a class="accordion-button collapsed w-100 itinarary_bg_clr itinarary_bg_clr_hvr text-dark rounded-4" type="button" data-bs-toggle="collapse" data-bs-target="#flush-<?= $key; ?>" aria-expanded="false" aria-controls="flush-<?= $key; ?>">
                                                         <div class="d-flex align-items-center w-100">
                                                             <div class="fw-bold text-start">Day <?= $key; ?>: </div>
-                                                            <div class="text-center flex-grow-1"><span><?= $itinerary[$key] ?></span></div>
+                                                            <div class="text-center flex-grow-1"><span><?= $val['itinerary'] ?></span></div>
                                                         </div>
                                                     </a>
                                                 </h2>
                                                 <div id="flush-<?= $key; ?>" class="accordion-collapse collapse itinarary_bg_clr text-dark rounded-4 mt-3 itinarary_bg_clr_2" data-bs-parent="#accordionFlushExample">
                                                     <div class="accordion-body">
-                                                        <span><?= $itinerary_sub[$key] ?></span>
+                                                        <span><?= $val['itinerary_sub'] ?></span>
                                                     </div>
                                                 </div>
                                             </div>

@@ -660,9 +660,25 @@ class Myadmin_controller extends CI_Controller
         $itinerary = $this->input->post('itinerary');
         $itinerary_descriptions = $this->input->post('itinerary_descriptions');
 
+        $check_itinerary_cond = array(
+            'tours_id' => $this->input->post('tours_id'),
+            'sequence' => $this->input->post('sequence'),
+        );
+
+        $check_itinerary_sequence = $this->myadmin_model->get_data("id", "tour_itinerary_main", $check_itinerary_cond);
+        if (!empty($check_itinerary_sequence)) {
+            foreach ($check_itinerary_sequence as $val) {
+                $tour_update_data = array(
+                    'status' => '0',
+                );
+                $this->myadmin_model->update_data("tour_itinerary_main", $tour_update_data, ["id " => $val->id]);
+            }
+        }
+
         $tour_itenary = array(
             'tours_id' => $this->input->post('tours_id'),
             'status' => $this->input->post('status'),
+            'sequence' => $this->input->post('sequence'),
         );
 
         if (empty($edit_id)) {
@@ -734,7 +750,7 @@ class Myadmin_controller extends CI_Controller
             );
 
             $join = array('table' => 'tour_itinerary_sub', 'condition' => 'tour_itinerary_sub.itinery_main_id=tour_itinerary_main.id');
-            $data = $this->myadmin_model->get_data('tour_itinerary_main.id,tour_itinerary_main.tours_id,tour_itinerary_main.itinerary,tour_itinerary_main.status,tour_itinerary_sub.itinerary_sub', "tour_itinerary_main", $cond, [$join], "1");
+            $data = $this->myadmin_model->get_data('tour_itinerary_main.id,tour_itinerary_main.tours_id,tour_itinerary_main.sequence,tour_itinerary_main.itinerary,tour_itinerary_main.status,tour_itinerary_sub.itinerary_sub', "tour_itinerary_main", $cond, [$join], "1");
             $rslt = array('status' => '101', 'msg' => '', 'data' => $data);
         } else {
             $rslt = array('status' => '103', 'msg' => '', 'data' => '');
@@ -1330,7 +1346,7 @@ class Myadmin_controller extends CI_Controller
         $rslt = array('status' => '101', 'msg' => $msg, 'data' => $last_inst_id);
         echo json_encode($rslt);
     }
-    
+
     public function edit_tour_category_photos_data()
     {
         $edit_id = (!empty($this->input->post('eid'))) ? $this->input->post('eid') : '';
