@@ -93,7 +93,7 @@ class Mycontroller extends CI_Controller
 
         $join = [$join1, $join2, $join3, $join4, $join5, $join6];
 
-        $data['get_tours_details'] = $this->myfront_model->get_data("tour_details.id as tour_details_id,tour_details.tours_id,tour_details.duration,tour_details.start_date,tour_details.price,tour_details.pikup_location,tour_details.drop_location,tours.difficulty,tours.tour_category_id,tour_about.tour_about_details,GROUP_CONCAT(tour_itinerary_main.itinerary,'##') as itinerary,GROUP_CONCAT(tour_itinerary_sub.itinerary_sub,'##') as itinerary_sub,tour_inclusions_exclusions.inclusions,tour_inclusions_exclusions.exclusions,tour_other_info.other_info", "tour_details", $cond, $join, "1");
+        $data['get_tours_details'] = $this->myfront_model->get_data("tour_details.id as tour_details_id,tour_details.tours_id,tour_details.duration,tour_details.start_date,tour_details.price,tour_details.pikup_location,tour_details.drop_location,tours.difficulty,tours.tour_category_id,tour_about.tour_about_details,GROUP_CONCAT(tour_itinerary_main.sequence,'##') as itinerary_sequence,GROUP_CONCAT(tour_itinerary_main.itinerary,'##') as itinerary,GROUP_CONCAT(tour_itinerary_sub.itinerary_sub,'##') as itinerary_sub,tour_inclusions_exclusions.inclusions,tour_inclusions_exclusions.exclusions,tour_other_info.other_info", "tour_details", $cond, $join, "1");
         // exit;
 
         $cond1 = array(
