@@ -499,7 +499,8 @@ function tour_categoryFunctionalities(ids = "", types = "", tables = "") {
 		$.ajax({
 			type: "post",
 			url:
-				baseurl + (types == "edit" ? "edit_tour_category_photos_data" : "delete_data"),
+				baseurl +
+				(types == "edit" ? "edit_tour_category_photos_data" : "delete_data"),
 			data: { eid: ids, tables: tables },
 			dataType: "json",
 			success: function (res) {
@@ -640,6 +641,7 @@ function tour_itineraryFunctionalities(ids = "", types = "", tables = "") {
 					if (types != "delete") {
 						$("#eid").val(res.data.id);
 						$("#tours_id").val(res.data.tours_id).trigger("change");
+						$("#sequence").val(res.data.sequence);
 						$("#status").val(res.data.status).trigger("change");
 						$("#itinerary_0").val(res.data.itinerary);
 
@@ -1353,3 +1355,428 @@ function check_char_with_space(obj) {
 			.replace(/[^A-Za-z\s]/g, "")
 	);
 }
+
+function resetFun() {
+	// Reset regular input fields
+	$(".clr").val("");
+
+	// Reset select dropdowns
+	$(".clr_slct").val("").trigger("change");
+
+	// Reset TinyMCE editors
+	$(".clr_tinymce").each(function () {
+		var editor = tinymce.get(this.id);
+		if (editor) {
+			editor.setContent("");
+		} else {
+			console.error("TinyMCE editor not found for element with ID: " + this.id);
+		}
+	});
+}
+
+// new DataTable("#example", {
+// 	dom: "Bfrtip",
+// 	buttons: ["csv", "excel", "pdf"],
+// aaSorting: [[0, "desc"]],
+// 	bDestroy: true,
+// });
+
+function get_currentDate() {
+	var currentDate = new Date().toISOString().slice(0, 10);
+	return currentDate;
+}
+function get_currentTime() {
+	var currentTime = new Date(); // Get current date and time
+	var hours = currentTime.getHours(); // Get current hours (0-23)
+	var minutes = currentTime.getMinutes(); // Get current minutes (0-59)
+	var seconds = currentTime.getSeconds(); // Get current seconds (0-59)
+
+	// Formatting hours, minutes, and seconds to have leading zeros if necessary
+	hours = (hours < 10 ? "0" : "") + hours;
+	minutes = (minutes < 10 ? "0" : "") + minutes;
+	seconds = (seconds < 10 ? "0" : "") + seconds;
+
+	var currentTime = hours + ":" + minutes + ":" + seconds;
+	console.log(currentTime);
+	return currentTime;
+}
+
+var currentDateTime = get_currentDate() + " " + get_currentTime(); // Combine date and time with a space
+
+new DataTable("#tour_itinerary_tbl", {
+	dom: "Bfrtip",
+	buttons: [
+		{
+			extend: "csv",
+			text: "CSV",
+			filename: function () {
+				return "Tour Itinerary CSV " + currentDateTime;
+			},
+		},
+		{
+			extend: "excel",
+			text: "Excel",
+			filename: function () {
+				return "Tour Itinerary Excel " + currentDateTime;
+			},
+		},
+		{
+			extend: "pdf",
+			text: "PDF",
+			filename: function () {
+				return "Tour Itinerary PDF " + currentDateTime;
+			},
+		},
+	],
+	// aaSorting: [[0, "desc"]],
+	bDestroy: true,
+});
+
+new DataTable("#tour_tbl", {
+	dom: "Bfrtip",
+	buttons: [
+		{
+			extend: "csv",
+			text: "CSV",
+			filename: function () {
+				return "Tour CSV " + currentDateTime;
+			},
+		},
+		{
+			extend: "excel",
+			text: "Excel",
+			filename: function () {
+				return "Tour Excel " + currentDateTime;
+			},
+		},
+		{
+			extend: "pdf",
+			text: "PDF",
+			filename: function () {
+				return "Tour PDF " + currentDateTime;
+			},
+		},
+	],
+	// aaSorting: [[0, "desc"]],
+	bDestroy: true,
+});
+
+new DataTable("#tour_photos_tbl", {
+	dom: "Bfrtip",
+	buttons: [
+		{
+			extend: "csv",
+			text: "CSV",
+			filename: function () {
+				return "Tour Photos CSV " + currentDateTime;
+			},
+		},
+		{
+			extend: "excel",
+			text: "Excel",
+			filename: function () {
+				return "Tour Photos Excel " + currentDateTime;
+			},
+		},
+		{
+			extend: "pdf",
+			text: "PDF",
+			filename: function () {
+				return "Tour Photos PDF " + currentDateTime;
+			},
+		},
+	],
+	// aaSorting: [[0, "desc"]],
+	bDestroy: true,
+});
+
+new DataTable("#tour_other_info_tbl", {
+	dom: "Bfrtip",
+	buttons: [
+		{
+			extend: "csv",
+			text: "CSV",
+			filename: function () {
+				return "Tour Other Info CSV " + currentDateTime;
+			},
+		},
+		{
+			extend: "excel",
+			text: "Excel",
+			filename: function () {
+				return "Tour Other Info Excel " + currentDateTime;
+			},
+		},
+		{
+			extend: "pdf",
+			text: "PDF",
+			filename: function () {
+				return "Tour Other Info PDF " + currentDateTime;
+			},
+		},
+	],
+	// aaSorting: [[0, "desc"]],
+	bDestroy: true,
+});
+
+new DataTable("#tour_inclusions_exclusions_tbl", {
+	dom: "Bfrtip",
+	buttons: [
+		{
+			extend: "csv",
+			text: "CSV",
+			filename: function () {
+				return "Tour Inclusions-Exclusions CSV " + currentDateTime;
+			},
+		},
+		{
+			extend: "excel",
+			text: "Excel",
+			filename: function () {
+				return "Tour Inclusions-Exclusions Excel " + currentDateTime;
+			},
+		},
+		{
+			extend: "pdf",
+			text: "PDF",
+			filename: function () {
+				return "Tour Inclusions-Exclusions PDF " + currentDateTime;
+			},
+		},
+	],
+	// aaSorting: [[0, "desc"]],
+	bDestroy: true,
+});
+
+new DataTable("#tour_get_in_touch_tbl", {
+	dom: "Bfrtip",
+	buttons: [
+		{
+			extend: "csv",
+			text: "CSV",
+			filename: function () {
+				return "Tour Get In touch CSV " + currentDateTime;
+			},
+		},
+		{
+			extend: "excel",
+			text: "Excel",
+			filename: function () {
+				return "Tour Get In touch Excel " + currentDateTime;
+			},
+		},
+		{
+			extend: "pdf",
+			text: "PDF",
+			filename: function () {
+				return "Tour Get In touch PDF " + currentDateTime;
+			},
+		},
+	],
+	// aaSorting: [[0, "desc"]],
+	bDestroy: true,
+});
+
+new DataTable("#tour_category_tbl", {
+	dom: "Bfrtip",
+	buttons: [
+		{
+			extend: "csv",
+			text: "CSV",
+			filename: function () {
+				return "Tour Category CSV " + currentDateTime;
+			},
+		},
+		{
+			extend: "excel",
+			text: "Excel",
+			filename: function () {
+				return "Tour Category Excel " + currentDateTime;
+			},
+		},
+		{
+			extend: "pdf",
+			text: "PDF",
+			filename: function () {
+				return "Tour Category PDF " + currentDateTime;
+			},
+		},
+	],
+	// aaSorting: [[0, "desc"]],
+	bDestroy: true,
+});
+
+new DataTable("#tour_booking_details_tbl", {
+	dom: "Bfrtip",
+	buttons: [
+		{
+			extend: "csv",
+			text: "CSV",
+			filename: function () {
+				return "Tour Booking Details CSV " + currentDateTime;
+			},
+		},
+		{
+			extend: "excel",
+			text: "Excel",
+			filename: function () {
+				return "Tour Booking Details Excel " + currentDateTime;
+			},
+		},
+		{
+			extend: "pdf",
+			text: "PDF",
+			orientation: "landscape", // Set orientation to landscape
+			filename: function () {
+				return "Tour Booking Details PDF " + currentDateTime;
+			},
+		},
+	],
+	// aaSorting: [[0, "desc"]],
+	bDestroy: true,
+});
+
+new DataTable("#tour_about_tbl", {
+	dom: "Bfrtip",
+	buttons: [
+		{
+			extend: "csv",
+			text: "CSV",
+			filename: function () {
+				return "Tour About CSV " + currentDateTime;
+			},
+		},
+		{
+			extend: "excel",
+			text: "Excel",
+			filename: function () {
+				return "Tour About Excel " + currentDateTime;
+			},
+		},
+		{
+			extend: "pdf",
+			text: "PDF",
+			filename: function () {
+				return "Tour About PDF " + currentDateTime;
+			},
+		},
+	],
+	// aaSorting: [[0, "desc"]],
+	bDestroy: true,
+});
+
+new DataTable("#state_tbl", {
+	dom: "Bfrtip",
+	buttons: [
+		{
+			extend: "csv",
+			text: "CSV",
+			filename: function () {
+				return "States CSV " + currentDateTime;
+			},
+		},
+		{
+			extend: "excel",
+			text: "Excel",
+			filename: function () {
+				return "States Excel " + currentDateTime;
+			},
+		},
+		{
+			extend: "pdf",
+			text: "PDF",
+			filename: function () {
+				return "States PDF " + currentDateTime;
+			},
+		},
+	],
+	// aaSorting: [[0, "desc"]],
+	bDestroy: true,
+});
+
+new DataTable("#tuor_place_tbl", {
+	dom: "Bfrtip",
+	buttons: [
+		{
+			extend: "csv",
+			text: "CSV",
+			filename: function () {
+				return "Tour Place CSV " + currentDateTime;
+			},
+		},
+		{
+			extend: "excel",
+			text: "Excel",
+			filename: function () {
+				return "Tour Place Excel " + currentDateTime;
+			},
+		},
+		{
+			extend: "pdf",
+			text: "PDF",
+			filename: function () {
+				return "Tour Place PDF " + currentDateTime;
+			},
+		},
+	],
+	// aaSorting: [[0, "desc"]],
+	bDestroy: true,
+});
+
+new DataTable("#tuor_destination_details_tbl", {
+	dom: "Bfrtip",
+	buttons: [
+		{
+			extend: "csv",
+			text: "CSV",
+			filename: function () {
+				return "Tour Destination Details CSV " + currentDateTime;
+			},
+		},
+		{
+			extend: "excel",
+			text: "Excel",
+			filename: function () {
+				return "Tour Destination Details Excel " + currentDateTime;
+			},
+		},
+		{
+			extend: "pdf",
+			text: "PDF",
+			filename: function () {
+				return "Tour Destination Details PDF " + currentDateTime;
+			},
+		},
+	],
+	// aaSorting: [[0, "desc"]],
+	bDestroy: true,
+});
+
+new DataTable("#country_tbl", {
+	dom: "Bfrtip",
+	buttons: [
+		{
+			extend: "csv",
+			text: "CSV",
+			filename: function () {
+				return "Country CSV " + currentDateTime;
+			},
+		},
+		{
+			extend: "excel",
+			text: "Excel",
+			filename: function () {
+				return "Country Excel " + currentDateTime;
+			},
+		},
+		{
+			extend: "pdf",
+			text: "PDF",
+			filename: function () {
+				return "Country PDF " + currentDateTime;
+			},
+		},
+	],
+	// aaSorting: [[0, "desc"]],
+	bDestroy: true,
+});
