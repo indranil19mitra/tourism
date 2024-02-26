@@ -334,7 +334,7 @@ class Myadmin_controller extends CI_Controller
         $join2 = array('table' => 'tour_category', 'condition' => 'tour_category.id=tours.tour_category_id');
         $join = [$join1, $join2];
 
-        $data['tour_details'] = $this->myadmin_model->get_data("tours.id,tours.name,tours.main_image,tours.difficulty,tours.seat_availability,place.name as place_name,tour_category.name as tour_category_name,tours.status", "tours", $cond, $join, "", "desc", "id");
+        $data['tour_details'] = $this->myadmin_model->get_data("tours.id,tours.name,tours.main_image,tours.difficulty,tours.seat_availability,tours.short_desc,place.name as place_name,tour_category.name as tour_category_name,tours.status", "tours", $cond, $join, "", "desc", "id");
 
 
         $cond1 = array('place.is_delete!=' => '0');
@@ -357,6 +357,7 @@ class Myadmin_controller extends CI_Controller
             'tour_category_id' => $this->input->post('tour_category'),
             'seat_availability' => $this->input->post('seat_availability'),
             'difficulty' => $this->input->post('difficulty'),
+            'short_desc' => $this->input->post('tour_short_desc'),
             'status' => $this->input->post('status'),
         );
 
@@ -437,7 +438,7 @@ class Myadmin_controller extends CI_Controller
             $cond = array(
                 'id' => $edit_id
             );
-            $data = $this->myadmin_model->get_data('id,name,place_id,tour_category_id,difficulty,seat_availability,status,main_image', "tours", $cond, "", "1");
+            $data = $this->myadmin_model->get_data('id,name,place_id,tour_category_id,difficulty,seat_availability,short_desc,status,main_image', "tours", $cond, "", "1");
             $rslt = array('status' => '101', 'msg' => '', 'data' => $data);
         } else {
             $rslt = array('status' => '103', 'msg' => '', 'data' => '');
@@ -646,7 +647,7 @@ class Myadmin_controller extends CI_Controller
         $join1 = array('table' => 'tours', 'condition' => 'tours.id=tour_itinerary_main.tours_id');
         $join2 = array('table' => 'tour_itinerary_sub', 'condition' => 'tour_itinerary_sub.itinery_main_id=tour_itinerary_main.id');
         $join = [$join1, $join2];
-        $data['tour_itinerary_details'] = $this->myadmin_model->get_data("tour_itinerary_main.id,tour_itinerary_main.itinerary,tour_itinerary_main.status,tours.name,tour_itinerary_sub.itinerary_sub", "tour_itinerary_main", $cond2, $join, "", "desc", "tour_itinerary_main.id");
+        $data['tour_itinerary_details'] = $this->myadmin_model->get_data("tour_itinerary_main.id,tour_itinerary_main.itinerary,tour_itinerary_main.status,tour_itinerary_main.sequence,tours.name,tour_itinerary_sub.itinerary_sub", "tour_itinerary_main", $cond2, $join, "", "desc", "tour_itinerary_main.id");
 
         // exit;
         $this->load->view('include/header');

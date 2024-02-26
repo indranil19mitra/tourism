@@ -20,6 +20,11 @@
                                 <input type="text" class="form-control clr" onkeyup="isExist(this.value,'tours')" name="tour_name" id="tour_name" placeholder="Tour Name">
                             </div>
 
+                            <div class="form-floating">
+                                <textarea class="form-control" placeholder="Tour Short Description" name="tour_short_desc" id="tour_short_desc" style="height: 100px"></textarea>
+                                <label for="tour_short_desc">Tour Short Description</label>
+                            </div>
+
                             <select class="form-group form-select slct_cls" id="place" name="place" aria-label="select example">
                                 <option value="" disabled selected>--Please Select Place--</option>
                                 <?php
@@ -78,7 +83,7 @@
                 <div class="card-body">
                     <h4 class="card-title">Tour List</h4>
                     <div class="table-responsive">
-                    <table id="tour_tbl" class="table table-sm table-sm0 table-striped table-hover w-100 dataTable" data-page-length='10'>
+                        <table id="tour_tbl" class="table table-sm table-sm0 table-striped table-hover w-100 dataTable" data-page-length='10'>
 
                             <thead>
                                 <tr>
@@ -89,6 +94,7 @@
                                     <th>Difficulty</th>
                                     <th>Seat Availability</th>
                                     <th>Image</th>
+                                    <th>Short Description</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
@@ -110,6 +116,7 @@
                                             <td><?= $rslt->difficulty; ?></td>
                                             <td><?= $rslt->seat_availability; ?></td>
                                             <td><img src="<?= base_url() . $rslt->main_image; ?>" alt=""></td>
+                                            <td><?= $rslt->short_desc; ?></td>
                                             <td><label class="<?= $status_desc_class; ?>"><?= $status_desc; ?></label></td>
                                             <td>
                                                 <div class="d-flex">
@@ -135,14 +142,13 @@
     window.onload = onPageLoad;
 
     function onPageLoad() {
-    document.querySelector('.dt-buttons').classList.add("float-start", "mb-2");
-    document.querySelector('.buttons-csv').classList.add("btn", "btn-sm", "btn-primary");
-    document.querySelector('.buttons-excel').classList.add("btn", "btn-sm", "btn-primary");
-    document.querySelector('.buttons-pdf').classList.add("btn", "btn-sm", "btn-primary");
-    document.querySelector('.dataTables_paginate').classList.add("btn", "btn-sm", "btn-primary");
-    // document.querySelector('.dataTables_paginate').classList.add("btn-outline-primary");
-    document.querySelector('.dataTables_paginate').classList.add("float-end"); // Float pagination buttons to the right
-    // $("#example_filter").children("label").hide();
-}
-
+        document.querySelector('.dt-buttons').classList.add("float-start", "mb-2");
+        document.querySelector('.buttons-csv').classList.add("btn", "btn-sm", "btn-primary");
+        document.querySelector('.buttons-excel').classList.add("btn", "btn-sm", "btn-primary");
+        document.querySelector('.buttons-pdf').classList.add("btn", "btn-sm", "btn-primary");
+        document.querySelector('.dataTables_paginate').classList.add("btn", "btn-sm", "btn-primary");
+        // document.querySelector('.dataTables_paginate').classList.add("btn-outline-primary");
+        document.querySelector('.dataTables_paginate').classList.add("float-end"); // Float pagination buttons to the right
+        // $("#example_filter").children("label").hide();
+    }
 </script>
