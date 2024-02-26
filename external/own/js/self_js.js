@@ -229,6 +229,19 @@ function tourGetOnDates(date = "") {
 function getDetails(dtl_nm = "", ids = "") {
 	window.location.href =
 		baseurl + "get-Details?dtl_nm=" + dtl_nm + "&ids=" + ids;
+	// tour_srt_desc_1
+	// $.ajax({
+	// 	url: baseurl + "Mycontroller/get_tour_srt_desc",
+	// 	type: "post",
+	// 	data: { ids: ids },
+	// 	dataType: "json",
+	// 	processData: false,
+	// 	contentType: false,
+	// 	catch: false,
+	// 	success: function (res) {
+	// 		console.log(res);
+	// 	},
+	// });
 }
 
 function get_itinerary() {

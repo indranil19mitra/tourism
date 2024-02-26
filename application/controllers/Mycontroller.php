@@ -469,4 +469,11 @@ class Mycontroller extends CI_Controller
 
         echo json_encode($rslt);
     }
+
+    // public function get_tour_srt_desc()
+    // {
+    //     echo "<pre>";
+    //     print_r($_POST);
+    //     exit;
+    // }
 }
