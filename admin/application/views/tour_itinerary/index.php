@@ -77,8 +77,9 @@
                             <tr>
                                 <th>Sl No</th>
                                 <th>Tour</th>
-                                <th>Itenary Question</th>
-                                <th>Itenary Answer</th>
+                                <th>Itenary</th>
+                                <th>Itenary Description</th>
+                                <th>Sequence</th>
                                 <th>Status</th>
                                 <th>Action</th>
                             </tr>
@@ -98,6 +99,7 @@
                                         <td><?= $rslt->name; ?></td>
                                         <td class="text-wrap"><?= $rslt->itinerary; ?></td>
                                         <td class="text-wrap"><?= $rslt->itinerary_sub; ?></td>
+                                        <td class="text-wrap"><?= $rslt->sequence; ?></td>
                                         <td><label class="<?= $status_desc_class; ?>"><?= $status_desc; ?></label></td>
                                         <td>
                                             <div class="d-flex">
@@ -124,14 +126,13 @@
     window.onload = onPageLoad;
 
     function onPageLoad() {
-    document.querySelector('.dt-buttons').classList.add("float-start", "mb-2");
-    document.querySelector('.buttons-csv').classList.add("btn", "btn-sm", "btn-primary");
-    document.querySelector('.buttons-excel').classList.add("btn", "btn-sm", "btn-primary");
-    document.querySelector('.buttons-pdf').classList.add("btn", "btn-sm", "btn-primary");
-    document.querySelector('.dataTables_paginate').classList.add("btn", "btn-sm", "btn-primary");
-    // document.querySelector('.dataTables_paginate').classList.add("btn-outline-primary");
-    document.querySelector('.dataTables_paginate').classList.add("float-end"); // Float pagination buttons to the right
-    // $("#example_filter").children("label").hide();
-}
-
+        document.querySelector('.dt-buttons').classList.add("float-start", "mb-2");
+        document.querySelector('.buttons-csv').classList.add("btn", "btn-sm", "btn-primary");
+        document.querySelector('.buttons-excel').classList.add("btn", "btn-sm", "btn-primary");
+        document.querySelector('.buttons-pdf').classList.add("btn", "btn-sm", "btn-primary");
+        document.querySelector('.dataTables_paginate').classList.add("btn", "btn-sm", "btn-primary");
+        // document.querySelector('.dataTables_paginate').classList.add("btn-outline-primary");
+        document.querySelector('.dataTables_paginate').classList.add("float-end"); // Float pagination buttons to the right
+        // $("#example_filter").children("label").hide();
+    }
 </script>

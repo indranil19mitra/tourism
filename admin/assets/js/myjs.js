@@ -399,6 +399,7 @@ function tourFunctionalities(ids = "", types = "", tables = "") {
 					if (types != "delete") {
 						$("#eid").val(res.data.id);
 						$("#tour_name").val(res.data.name);
+						$("#tour_short_desc").html(res.data.short_desc);
 						$("#place").val(res.data.place_id).trigger("change");
 						$("#tour_category")
 							.val(res.data.tour_category_id)
