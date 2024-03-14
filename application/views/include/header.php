@@ -14,6 +14,18 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
     <style>
+        .cnct_us3 {
+            background-color: rgb(213 218 222) !important;
+        }
+
+        .cnct_us1 {
+            width: 100%;
+            height: 100vh;
+            background-image: url('<?= base_url() ?>/external/wp-content/uploads/sites/139/2021/08/self/about/20221117_094757-01.jpeg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
         .dt_btn:hover {
             color: whitesmoke !important;
             background-color: #FF4C15 !important;
@@ -23,6 +35,8 @@
         .mfp-arrow,
         .mfp-close {
             background-color: unset !important;
+            font-size: 30px !important;
+            padding: 10px !important;
         }
 
         .mfp-close,
@@ -495,6 +509,14 @@
         }
 
         @media (min-width: 768px) {
+
+
+            .cnct_us1 {
+                padding-top: 10%;
+                padding-left: 25%;
+                padding-right: 25%;
+
+            }
 
             /* Desktop View Styling */
             #elementor-background-overlay_1,
@@ -1247,9 +1269,12 @@
                                             <div class="jkit-menu-wrapper">
                                                 <div class="jkit-menu-container">
                                                     <ul id="menu-menu-1" class="jkit-menu jkit-menu-direction-flex jkit-submenu-position-top">
-                                                        <li id="menu-item-389" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-17 current_page_item menu-item-389">
-                                                            <a href="<?= base_url() ?>" aria-current="page">Home</a>
+                                                        <li id="menu-item-388" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-388">
+                                                            <a href="<?= base_url() ?>">Home</a>
                                                         </li>
+                                                        <!-- <li id="menu-item-389" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-17 current_page_item menu-item-389">
+                                                            <a href="<?= base_url() ?>" aria-current="page">Home</a>
+                                                        </li> -->
                                                         <li id="menu-item-388" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-388">
                                                             <a href="<?= base_url() ?>about-us">About</a>
                                                         </li>

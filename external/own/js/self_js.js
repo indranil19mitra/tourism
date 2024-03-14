@@ -3,6 +3,7 @@ $(document).ready(function () {
 	$("#dates_and_costing").hide();
 	$("#other_info").hide();
 	$("#get_in_touch_form_sbmt").addClass("pe-none");
+	$("#contact_us_form_sbmt").addClass("pe-none");
 
 	$("#serching_data").keyup(function (e) {
 		e.preventDefault();
@@ -420,7 +421,7 @@ function get_book(tour_details_id = "", tour_ids = "") {
 			console.log(res);
 			if (res.status == 101) {
 				var html =
-					'<option value="" disabled selected>--Please Select Months--</option>';
+					'<option value="" disabled selected>--Please Select Month--</option>';
 				$.each(res.data.get_tour_schduled_month, function (key, value) {
 					const originalDate = new Date(value.formatted_date);
 					const monthNames = [
@@ -852,11 +853,11 @@ function check_booking_input(inputValue = "", inputType = "") {
 	} else if (inputType === "contact_no") {
 		var cleanedValue = inputValue.replace(/[^0-9]/g, ""); // Remove non-numeric characters
 	} else if (inputType === "email") {
-		var cleanedValue = inputValue.trim(); // Remove leading and trailing whitespaces for email
+		var cleanedValue = inputValue.replace(/[^0-9A-Za-z@.]/g, ""); // Remove leading and trailing whitespaces for email
 		// You can add additional email validation logic here if needed
 	} else {
 		if (inputType === "address") {
-			var cleanedValue = inputValue;
+			var cleanedValue = inputValue.replace(/[^A-Za-z0-9.()+*,:/| ]/g, "");
 		}
 	}
 
@@ -924,11 +925,11 @@ function check_getInTouch_input(inputValue = "", inputType = "") {
 	} else if (inputType === "contact_no_1") {
 		var cleanedValue = inputValue.replace(/[^0-9]/g, ""); // Remove non-numeric characters
 	} else if (inputType === "email_1") {
-		var cleanedValue = inputValue.trim(); // Remove leading and trailing whitespaces for email
+		var cleanedValue = inputValue.replace(/[^A-Za-z0-9@.]/g, ""); // Remove leading and trailing whitespaces for email
 		// You can add additional email validation logic here if needed
 	} else {
 		if (inputType === "preferred_destination_1") {
-			var cleanedValue = inputValue;
+			var cleanedValue = inputValue.replace(/[^A-Za-z0-9.()+*,:/| ]/g, "");
 		}
 	}
 
@@ -997,6 +998,44 @@ function errorToster(text_data = "") {
 $("#get_in_touch_form_sbmt").click(function () {
 	var formdata = new FormData($("#get_in_touch_form")[0]);
 	var url = baseurl + "Mycontroller/add_get_in_touch_details_bknd";
+
+	$.ajax({
+		url: url,
+		type: "post",
+		data: formdata,
+		dataType: "json",
+		contentType: false,
+		processData: false,
+		success: function (res) {
+			console.log();
+			if (res.status != 103) {
+				swal({
+					title: "",
+					// text: res.msg,
+					icon: "success",
+					button: "Ok",
+					html: true,
+					content: {
+						element: "div",
+						attributes: {
+							innerHTML: res.msg,
+						},
+					},
+				}).then((result) => {
+					if (result) {
+						$(".clr_input").val("");
+					}
+				});
+			} else {
+				errorToster(res.msg);
+			}
+		},
+	});
+});
+
+$("#contact_us_form_sbmt").click(function () {
+	var formdata = new FormData($("#contact_us_form")[0]);
+	var url = baseurl + "Mycontroller/add_contact_us_form_details_bknd";
 
 	$.ajax({
 		url: url,
@@ -1321,3 +1360,66 @@ document.addEventListener("DOMContentLoaded", function () {
 	document.querySelector(".swiper-button-prev7").innerHTML =
 		'<i class="fas fa-arrow-left"></i>';
 });
+
+function current_date() {
+	var today = new Date();
+	var dd = String(today.getDate()).padStart(2, "0");
+	var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+	var yyyy = today.getFullYear();
+
+	today = yyyy + "-" + mm + "-" + dd;
+	return today;
+}
+
+function get_svn_date_before() {
+	// Get today's date
+	var today = new Date();
+
+	// Get the date for 7 days ago
+	var sevenDaysAgo = new Date(today);
+	sevenDaysAgo.setDate(today.getDate() - 7);
+
+	// console.log(sevenDaysAgo);
+}
+
+function check_cnct_us_input(val, type) {
+	var is_checked = 1;
+	if (type == "name") {
+		$("#" + type).val(val.replace(/[^A-Za-z ]/g, ""));
+	}
+	
+	is_checked=check_is_field($("#name").val(), $("#email").val());
+
+	if (type == "email") {
+		$("#" + type).val(val.replace(/[^A-Za-z0-9@.]/g, ""));
+
+		if (!isValidEmail(val)) {
+			is_checked = 0;
+		}
+	}
+
+	if (type == "query") {
+		$("#" + type).val(val.replace(/[^A-Za-z0-9.()+*,:/| ]/g, ""));
+	}
+
+	// console.log(is_checked);
+	if (is_checked == 0) {
+		$("#contact_us_form_sbmt").addClass("pe-none");
+	} else {
+		$("#contact_us_form_sbmt").removeClass("pe-none");
+	}
+}
+
+function check_is_field(name, email) {
+	if (name == "" || email == "") {
+		if (email == "") {
+			$("#email").focus();
+		}
+		if (name == "") {
+			$("#name").focus();
+		}
+		return 0;
+	} else {
+		return 1;
+	}
+}

@@ -1,12 +1,14 @@
 <?php
-$duration = $price = $pl = $dl = $difficult = $tour_about_details = $itinerary_sequence = $itinerary = $itinerary_sub = $tours_id = $tour_inclusions = $tour_exclusions = $tour_other_info = $tour_photo = "";
+$duration = $seat_availability = $pack_size = $price = $pl = $dl = $difficult = $tour_about_details = $itinerary_sequence = $itinerary = $itinerary_sub = $tours_id = $tour_inclusions = $tour_exclusions = $tour_other_info = $tour_photo = "";
 if (!empty($get_tours_details)) {
     // echo "<pre>";
     // print_r($get_tours_details);
     $duration = $get_tours_details->duration;
+    $seat_availability = (!empty($get_tours_details->seat_availability)) ? $get_tours_details->seat_availability : "NA";
     $price = $get_tours_details->price;
     $pl = $get_tours_details->pikup_location;
     $dl = $get_tours_details->drop_location;
+    $pack_size = (!empty($get_tours_details->pack_size)) ? $get_tours_details->pack_size : "NA";
     $difficult = (!empty($get_tours_details->difficulty)) ? $get_tours_details->difficulty : 'NA';
     $tour_about_details = $get_tours_details->tour_about_details;
     $tour_inclusions = $get_tours_details->inclusions;
@@ -72,14 +74,23 @@ if (!empty($tour_photos)) {
                 <div class="col-12 mb-5">
                     <div class="d-flex justify-content-between">
                         <div class="col-6">
-                            <div><i class="fa-solid fa-clock dtl_icon"></i><span class="mnt_wish_dt_1"> Duration</span><span class="ps-1 mnt_wish_dt dtl_icon1 word-wrap"> <?= $duration; ?></span></div>
+                            <div><i class="fa-solid fa-clock dtl_icon"></i><span class="mnt_wish_dt_1"> Duration -</span><span class="ps-1 mnt_wish_dt dtl_icon1 word-wrap"> <?= $duration; ?></span></div>
                         </div>
 
                         <div class="col-6">
-                            <div><i class="fa-solid fa-indian-rupee-sign dtl_icon"></i><span class="mnt_wish_dt_1"> Starting Price</span><span class="ps-1 mnt_wish_dt dtl_icon1 "> <?= $price; ?>/-</span></div>
+                            <div><i class="fa-solid fa-indian-rupee-sign dtl_icon"></i><span class="mnt_wish_dt_1"> Price -</span><span class="ps-1 mnt_wish_dt dtl_icon1 "> <?= $price; ?>/-</span></div>
                         </div>
                     </div>
 
+                    <div class="mt-5 d-flex justify-content-between">
+                        <div class="col-6">
+                            <div><i class="fa-solid fa-stamp dtl_icon1"></i><span class="mnt_wish_dt_1"> Seat Availability -</span><span class="ps-1 mnt_wish_dt dtl_icon1 word-wrap"> <?= $seat_availability; ?></span></div>
+                        </div>
+
+                        <div class="col-6">
+                            <div><i class="fa-solid fa-person-hiking dtl_icon1"></i><span class="mnt_wish_dt_1"> Difficulty Level -</span><span class="ps-1 mnt_wish_dt dtl_icon1 word-wrap"> <?= $difficult; ?></span></div>
+                        </div>
+                    </div>
 
                     <div class="mt-5 d-flex justify-content-between">
                         <div class="col-6">
@@ -87,9 +98,11 @@ if (!empty($tour_photos)) {
                         </div>
 
                         <div class="col-6">
-                            <div><i class="fa-solid fa-person-hiking dtl_icon1"></i><span class="mnt_wish_dt_1"> Difficulty Level -</span><span class="ps-1 mnt_wish_dt dtl_icon1 word-wrap"> <?= $difficult; ?></span></div>
+                            <div><i class="fa-solid fa-user-group dtl_icon1"></i><span class="mnt_wish_dt_1"> Pack Size -</span><span class="ps-1 mnt_wish_dt dtl_icon1 word-wrap"> <?= $pack_size; ?></span></div>
                         </div>
                     </div>
+
+
                 </div>
                 <div class="d-flex flex-wrap justify-content-start mx-auto col-12">
                     <div class="mb-2 px-2">

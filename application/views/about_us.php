@@ -76,7 +76,7 @@
                 <div class="elementor-widget-wrap elementor-element-populated">
                     <div class="elementor-element elementor-element-c4afbb2 elementor-widget elementor-widget-image" data-id="c4afbb2" data-element_type="widget" data-widget_type="image.default">
                         <div class="elementor-widget-container">
-                            <img decoding="async" src="<?= base_url() ?>external/wp-content/uploads/sites/139/elementor/thumbs/hiker-at-a-mountain-pb9f8naytqbj5s6mn02gqhhqj0iwe5cd6kl030zcaw.jpg" title="Hiker at a mountain" alt="Hiker at a mountain" loading="lazy">
+                            <img decoding="async" src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/self/about/20221117_094757-01.jpeg" title="Hiker at a mountain" alt="Hiker at a mountain" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -124,14 +124,14 @@
                         <div class="elementor-container elementor-column-gap-no">
                             <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-57eec52 animated-slow elementor-invisible" data-id="57eec52" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;fadeInUp&quot;}">
                                 <div class="elementor-widget-wrap elementor-element-populated">
-                                    <div class="elementor-background-overlay"></div>
-                                    <div class="elementor-element elementor-element-77af7e9 elementor-widget elementor-widget-spacer" data-id="77af7e9" data-element_type="widget" data-widget_type="spacer.default">
+                                    <!-- <div class="elementor-background-overlay"></div> -->
+                                    <!-- <div class="elementor-element elementor-element-77af7e9 elementor-widget elementor-widget-spacer" data-id="77af7e9" data-element_type="widget" data-widget_type="spacer.default">
                                         <div class="elementor-widget-container">
                                             <div class="elementor-spacer">
                                                 <div class="elementor-spacer-inner"></div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <!-- <div class="elementor-element elementor-element-b6a9ef2 animated-slow elementor-widget__width-auto elementor-absolute elementor-invisible elementor-widget elementor-widget-jkit_video_button" data-id="b6a9ef2" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;,&quot;_animation_delay&quot;:10,&quot;_position&quot;:&quot;absolute&quot;}" data-widget_type="jkit_video_button.default">
                                         <div class="elementor-widget-container">
                                             <div class="jeg-elementor-kit jkit-video-button jeg_module_17_16_654c63d5f4200" data-autoplay="0" data-loop="0" data-controls="0" data-type="youtube" data-mute="0" data-start="0" data-end="0"><a href="https://www.youtube.com/watch?v=MLpWrANjFbI" class="jkit-video-popup-btn glow-enable"><span class="icon-position-before"><i aria-hidden="true" class="jki jki-play-button-light"></i></span></a>
@@ -235,7 +235,7 @@
                                 <div class="elementor-widget-wrap elementor-element-populated">
                                     <div class="elementor-element elementor-element-446a8ec animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="446a8ec" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;}" data-widget_type="heading.default">
                                         <div class="elementor-widget-container">
-                                            <h2 class="elementor-heading-title elementor-size-default">Admin</h2>
+                                            <h2 class="elementor-heading-title elementor-size-default">Founder</h2>
                                         </div>
                                     </div>
                                     <div class="elementor-element elementor-element-79e4907 elementor-absolute animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="79e4907" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;,&quot;_animation&quot;:&quot;fadeInLeft&quot;}" data-widget_type="heading.default">
@@ -260,12 +260,11 @@
                                     <div class="elementor-element elementor-element-b15479b elementor-widget elementor-widget-jkit_team" data-id="b15479b" data-element_type="widget" data-widget_type="jkit_team.default">
                                         <div class="elementor-widget-container">
                                             <div class="jeg-elementor-kit jkit-team style-title-horizontal  jeg_module_374_6_654c63f047c23">
-                                                <div class="profile-card"><img decoding="async" src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/Team-P5ZU4G8.jpg" alt="Arun Camacho">
+                                                <div class="profile-card"><img decoding="async" src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/self/about/members/20231227_114519.jpg" alt="Arun Camacho">
                                                     <div class="image-hover-bg"></div>
                                                     <div class="profile-body">
                                                         <div class="title-wrapper">
                                                             <p class="profile-designation text-white ">Guide</p>
-
                                                         </div>
                                                         <div class="name-wrapper">
                                                             <h3 class="profile-title text-white">Arun Camacho</h3>
@@ -274,7 +273,7 @@
                                                                     <a href="#"><i aria-hidden="true" class="fab fa-facebook-f"></i></a>
                                                                 </li>
                                                                 <li class="social-icon elementor-repeater-item-3a36d8c">
-                                                                    <a href="#"><i aria-hidden="true" class="fab fa-twitter"></i></a>
+                                                                    <a href="#"><i aria-hidden="true" class="fab fa-instagram"></i></a>
                                                                 </li>
                                                             </ul>
                                                         </div>
@@ -290,7 +289,7 @@
                                     <div class="elementor-element elementor-element-3b0a450 elementor-widget elementor-widget-jkit_team" data-id="3b0a450" data-element_type="widget" data-widget_type="jkit_team.default">
                                         <div class="elementor-widget-container">
                                             <div class="jeg-elementor-kit jkit-team style-title-horizontal  jeg_module_374_7_654c63f0492d3">
-                                                <div class="profile-card"><img decoding="async" src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/hike-in-mountains-DW8YXX7.jpg" alt="Enrique Sadler">
+                                                <div class="profile-card"><img decoding="async" src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/self/about/members/FB_IMG_1709742822649.jpg" alt="Enrique Sadler">
                                                     <div class="image-hover-bg"></div>
                                                     <div class="profile-body">
                                                         <div class="title-wrapper">
@@ -304,7 +303,7 @@
                                                                     <a href="#"><i aria-hidden="true" class="fab fa-facebook-f"></i></a>
                                                                 </li>
                                                                 <li class="social-icon elementor-repeater-item-3a36d8c">
-                                                                    <a href="#"><i aria-hidden="true" class="fab fa-twitter"></i></a>
+                                                                    <a href="#"><i aria-hidden="true" class="fab fa-instagram"></i></a>
                                                                 </li>
                                                             </ul>
                                                         </div>
@@ -358,7 +357,7 @@
                                     <div class="elementor-element elementor-element-b15479b elementor-widget elementor-widget-jkit_team" data-id="b15479b" data-element_type="widget" data-widget_type="jkit_team.default">
                                         <div class="elementor-widget-container">
                                             <div class="jeg-elementor-kit jkit-team style-title-horizontal  jeg_module_374_6_654c63f047c23">
-                                                <div class="profile-card"><img decoding="async" src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/Team-P5ZU4G8.jpg" alt="Arun Camacho">
+                                                <div class="profile-card"><img decoding="async" src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/self/about/members/FB_IMG_1709742822649.jpg" alt="Arun Camacho">
                                                     <div class="image-hover-bg"></div>
                                                     <div class="profile-body">
                                                         <div class="title-wrapper">
@@ -372,7 +371,7 @@
                                                                     <a href="#"><i aria-hidden="true" class="fab fa-facebook-f"></i></a>
                                                                 </li>
                                                                 <li class="social-icon elementor-repeater-item-3a36d8c">
-                                                                    <a href="#"><i aria-hidden="true" class="fab fa-twitter"></i></a>
+                                                                    <a href="#"><i aria-hidden="true" class="fab fa-instagram"></i></a>
                                                                 </li>
                                                             </ul>
                                                         </div>
@@ -402,7 +401,7 @@
                                                                     <a href="#"><i aria-hidden="true" class="fab fa-facebook-f"></i></a>
                                                                 </li>
                                                                 <li class="social-icon elementor-repeater-item-3a36d8c">
-                                                                    <a href="#"><i aria-hidden="true" class="fab fa-twitter"></i></a>
+                                                                    <a href="#"><i aria-hidden="true" class="fab fa-instagram"></i></a>
                                                                 </li>
                                                             </ul>
                                                         </div>
@@ -432,7 +431,7 @@
                                                                     <a href="#"><i aria-hidden="true" class="fab fa-facebook-f"></i></a>
                                                                 </li>
                                                                 <li class="social-icon elementor-repeater-item-3a36d8c">
-                                                                    <a href="#"><i aria-hidden="true" class="fab fa-twitter"></i></a>
+                                                                    <a href="#"><i aria-hidden="true" class="fab fa-instagram"></i></a>
                                                                 </li>
                                                             </ul>
                                                         </div>
@@ -462,7 +461,7 @@
                                                                     <a href="#"><i aria-hidden="true" class="fab fa-facebook-f"></i></a>
                                                                 </li>
                                                                 <li class="social-icon elementor-repeater-item-3a36d8c">
-                                                                    <a href="#"><i aria-hidden="true" class="fab fa-twitter"></i></a>
+                                                                    <a href="#"><i aria-hidden="true" class="fab fa-instagram"></i></a>
                                                                 </li>
                                                             </ul> -->
                                                         </div>
@@ -479,7 +478,7 @@
             </div>
         </div>
     </section>
-    
+
     <section class="mt-5 elementor-section elementor-top-section elementor-element elementor-element-6521b521 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="6521b521" data-element_type="section">
         <div class="elementor-background-overlay"></div>
         <div class="container d-flex flex-wrap elementor-column-gap-default  p-0 g-0">
@@ -491,7 +490,7 @@
                                 <div class="elementor-widget-wrap elementor-element-populated">
                                     <div class="elementor-element elementor-element-446a8ec animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="446a8ec" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;}" data-widget_type="heading.default">
                                         <div class="elementor-widget-container">
-                                            <h2 class="elementor-heading-title elementor-size-default">Back Office</h2>
+                                            <h2 class="elementor-heading-title elementor-size-default">Operation Support</h2>
                                         </div>
                                     </div>
                                     <div class="elementor-element elementor-element-79e4907 elementor-absolute animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="79e4907" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;,&quot;_animation&quot;:&quot;fadeInLeft&quot;}" data-widget_type="heading.default">
@@ -530,7 +529,7 @@
                                                                     <a href="#"><i aria-hidden="true" class="fab fa-facebook-f"></i></a>
                                                                 </li>
                                                                 <li class="social-icon elementor-repeater-item-3a36d8c">
-                                                                    <a href="#"><i aria-hidden="true" class="fab fa-twitter"></i></a>
+                                                                    <a href="#"><i aria-hidden="true" class="fab fa-instagram"></i></a>
                                                                 </li>
                                                             </ul>
                                                         </div>
@@ -560,7 +559,7 @@
                                                                     <a href="#"><i aria-hidden="true" class="fab fa-facebook-f"></i></a>
                                                                 </li>
                                                                 <li class="social-icon elementor-repeater-item-3a36d8c">
-                                                                    <a href="#"><i aria-hidden="true" class="fab fa-twitter"></i></a>
+                                                                    <a href="#"><i aria-hidden="true" class="fab fa-instagram"></i></a>
                                                                 </li>
                                                             </ul>
                                                         </div>
@@ -590,7 +589,7 @@
                                                                     <a href="#"><i aria-hidden="true" class="fab fa-facebook-f"></i></a>
                                                                 </li>
                                                                 <li class="social-icon elementor-repeater-item-3a36d8c">
-                                                                    <a href="#"><i aria-hidden="true" class="fab fa-twitter"></i></a>
+                                                                    <a href="#"><i aria-hidden="true" class="fab fa-instagram"></i></a>
                                                                 </li>
                                                             </ul>
                                                         </div>
@@ -620,7 +619,7 @@
                                                                     <a href="#"><i aria-hidden="true" class="fab fa-facebook-f"></i></a>
                                                                 </li>
                                                                 <li class="social-icon elementor-repeater-item-3a36d8c">
-                                                                    <a href="#"><i aria-hidden="true" class="fab fa-twitter"></i></a>
+                                                                    <a href="#"><i aria-hidden="true" class="fab fa-instagram"></i></a>
                                                                 </li>
                                                             </ul> -->
                                                         </div>

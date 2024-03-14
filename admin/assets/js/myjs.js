@@ -567,15 +567,16 @@ function tourDestFunctionalities(ids = "", types = "", tables = "") {
 						$("#price").val(res.data.price);
 						$("#start_date").val(res.data.start_date);
 						$("#end_date").val(res.data.end_date);
+						$("#pack_size").val(res.data.pack_size);
 
 						if (res.data.is_discount != "" && res.data.is_discount == "1") {
 							$("#is_discount").prop("checked", true);
 							$("#is_discount").attr("value", "1");
-							$("#disc_percent").show();
+							$(".disc_percent_chk").show();
 						} else {
 							$("#is_discount").removeAttr("checked");
 							$("#is_discount").attr("value", "0");
-							$("#disc_percent").hide();
+							$(".disc_percent_chk").hide();
 						}
 						$("#status").val(res.data.status).trigger("change");
 
@@ -803,6 +804,7 @@ function tourDetailsResetFun() {
 
 	$("#end_date").attr("min", today);
 	$("#start_date").attr("min", today);
+	$(".disc_percent_chk").hide();
 }
 
 function isExist(val = "", table = "") {
@@ -1047,10 +1049,10 @@ function getCheck(obj) {
 	var id = $(obj).attr("id");
 	if ($("#" + id).is(":checked")) {
 		$("#" + id).attr("value", "1");
-		$("#disc_percent").show();
+		$(".disc_percent_chk").show();
 	} else {
 		$("#" + id).attr("value", "0");
-		$("#disc_percent").hide();
+		$(".disc_percent_chk").hide();
 	}
 	$("#disc_percent").val("");
 }
@@ -1542,6 +1544,35 @@ new DataTable("#tour_inclusions_exclusions_tbl", {
 			text: "PDF",
 			filename: function () {
 				return "Tour Inclusions-Exclusions PDF " + currentDateTime;
+			},
+		},
+	],
+	// aaSorting: [[0, "desc"]],
+	bDestroy: true,
+});
+
+new DataTable("#tour_contact_us_tbl", {
+	dom: "Bfrtip",
+	buttons: [
+		{
+			extend: "csv",
+			text: "CSV",
+			filename: function () {
+				return "Tour Contact Us CSV " + currentDateTime;
+			},
+		},
+		{
+			extend: "excel",
+			text: "Excel",
+			filename: function () {
+				return "Tour Contact Us Excel " + currentDateTime;
+			},
+		},
+		{
+			extend: "pdf",
+			text: "PDF",
+			filename: function () {
+				return "Tour Contact Us PDF " + currentDateTime;
 			},
 		},
 	],

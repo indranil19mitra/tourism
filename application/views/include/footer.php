@@ -80,7 +80,7 @@
                                                         <li class="elementor-icon-list-item">
                                                             <span class="elementor-icon-list-icon">
                                                                 <i aria-hidden="true" class="fas fa-angle-right"></i> </span>
-                                                            <span class="elementor-icon-list-text">Contact</span>
+                                                            <a href="<?= base_url() ?>contact-us"><span class="elementor-icon-list-text">Contact</span></a>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -104,11 +104,11 @@
                                                             <span class="elementor-icon-list-text">Terms and
                                                                 Conditions</span>
                                                         </li>
-                                                        <li class="elementor-icon-list-item">
+                                                        <!-- <li class="elementor-icon-list-item">
                                                             <span class="elementor-icon-list-icon">
                                                                 <i aria-hidden="true" class="fas fa-angle-right"></i> </span>
                                                             <span class="elementor-icon-list-text">Support</span>
-                                                        </li>
+                                                        </li> -->
                                                     </ul>
                                                 </div>
                                             </div>
@@ -350,18 +350,18 @@
 
         if (url_para == "") {
             var images = [
-                '<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/in-hike-1-e1628420179864.jpg',
-                '<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/in-hike-5-e1628420215612.jpg',
-                '<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/in-hike-3-e1628420193825.jpg',
-                '<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/hiker-3-e1628420252326.jpg',
-                '<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/in-hike-4-e1628420203493.jpg'
+                '<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/self/main/20231101_050218.jpg',
+                '<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/self/main/top1.jpg',
+                '<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/self/main/IMG_9848.jpg',
+                '<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/self/main/lasar_edited4.jpg',
+                '<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/self/main/IMG_9331_photo-full.jpeg'
             ];
         }
         if (url_para != "") {
             // console.log(url_para);
             var images = [
-                '<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/in-hike-1-e1628420179864.jpg',
-                '<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/in-hike-4-e1628420203493.jpg'
+                '<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/self/about/20221117_094757-01.jpeg"',
+                '<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/self/about/DSC_0039.jpg'
             ];
             $("#section_2").css('height', (url_para != "") ? '50vh' : '100vh');
         }

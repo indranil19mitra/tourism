@@ -51,7 +51,7 @@
             </div>
         </div>
         <div class="d-flex justify-content-end">
-            <button type="button" class="btn btn-info" data-bs-toggle="modal" onclick="tourResetFun()" data-bs-target="#tour_photos_modal" data-whatever="@mdo">Add Tour</button>
+            <button type="button" class="btn btn-info" data-bs-toggle="modal" onclick="tourResetFun()" data-bs-target="#tour_photos_modal" data-whatever="@mdo">Add Tour Photos</button>
         </div>
 
         <div class="col-12 grid-margin stretch-card">
