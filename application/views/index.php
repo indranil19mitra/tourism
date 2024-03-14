@@ -12,7 +12,7 @@
 								<div class="elementor-widget-wrap elementor-element-populated">
 									<div class="elementor-element elementor-element-446a8ec animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="446a8ec" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;}" data-widget_type="heading.default">
 										<div class="elementor-widget-container">
-											<h2 class="elementor-heading-title elementor-size-default">Our Travel Meets</h2>
+											<h2 class="elementor-heading-title elementor-size-default">Our Travel Mates</h2>
 										</div>
 									</div>
 									<div class="elementor-element elementor-element-79e4907 elementor-absolute animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="79e4907" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;,&quot;_animation&quot;:&quot;fadeInLeft&quot;}" data-widget_type="heading.default">
@@ -34,9 +34,9 @@
 			</div>
 		</div>
 	</section>
-	<section class="elementor-section elementor-inner-section elementor-element elementor-element-65bf764c animated-slow elementor-section-boxed elementor-section-height-default elementor-section-height-default crsl_tp" data-id="6521b521" data-element_type="section">
+	<!-- <section class="elementor-section elementor-inner-section elementor-element elementor-element-65bf764c animated-slow elementor-section-boxed elementor-section-height-default elementor-section-height-default crsl_tp" data-id="6521b521" data-element_type="section">
 
-		<div class="container-fluid p-0 g-0">
+		<div class="container p-0 g-0">
 			<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
 				<div class="carousel-indicators">
 					<button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -45,7 +45,7 @@
 				</div>
 				<div class="carousel-inner rounded">
 					<div class="carousel-item active">
-						<img src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/in-hike-4-e1628420203493.jpg" class="d-block w-100 crsl_img" style="width: 100%;" alt="..." data-bs-interval="2000">
+						<img src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/self/main/IMG_3552.jpg" style="width: 100%;" alt="..." data-bs-interval="2000">
 					</div>
 					<div class="carousel-item">
 						<img src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/hiker-3-e1628420252326.jpg" class="d-block w-100 crsl_img" style="width: 100%;" alt="..." data-bs-interval="2000">
@@ -54,6 +54,15 @@
 						<img src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/in-hike-3-e1628420193825.jpg" class="d-block w-100 crsl_img" style="width: 100%;" alt="..." data-bs-interval="2000">
 					</div>
 				</div>
+			</div>
+		</div>
+	</section> -->
+
+	<section class="elementor-section elementor-inner-section elementor-element elementor-element-65bf764c animated-slow elementor-section-boxed elementor-section-height-default elementor-section-height-default crsl_tp mt-5" data-id="6521b521" data-element_type="section">
+
+		<div class="container-fluid p-0 g-0">
+			<div class="">
+				<img src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/self/main/lasar_edited4.jpg" class="d-block w-100 crsl_img" style="width: 100%;" alt="..." data-bs-interval="2000">
 			</div>
 		</div>
 	</section>
@@ -185,7 +194,7 @@
 		</div>
 	</div>
 
-	<section class="elementor-section elementor-inner-section elementor-element elementor-element-65bf764c animated-slow elementor-section-boxed elementor-section-height-default elementor-section-height-default crsl_tp mt-5 mb-5" data-id="6521b521" data-element_type="section">
+	<section class="elementor-section elementor-inner-section elementor-element elementor-element-65bf764c animated-slow elementor-section-boxed elementor-section-height-default elementor-section-height-default crsl_tp mt-5" data-id="6521b521" data-element_type="section">
 
 		<div class="container-fluid p-0 g-0">
 			<div class="">
@@ -287,7 +296,7 @@
 	}
 	?>
 
-	<section class="elementor-section elementor-inner-section elementor-element elementor-element-65bf764c animated-slow elementor-section-boxed elementor-section-height-default elementor-section-height-default crsl_tp mt-5 mb-5" data-id="6521b521" data-element_type="section">
+	<section class="elementor-section elementor-inner-section elementor-element elementor-element-65bf764c animated-slow elementor-section-boxed elementor-section-height-default elementor-section-height-default crsl_tp mt-5" data-id="6521b521" data-element_type="section">
 
 		<div class="container-fluid p-0 g-0">
 			<div class="">
@@ -389,7 +398,7 @@
 	}
 	?>
 
-	<section class="elementor-section elementor-inner-section elementor-element elementor-element-65bf764c animated-slow elementor-section-boxed elementor-section-height-default elementor-section-height-default crsl_tp mt-5 mb-5" data-id="6521b521" data-element_type="section">
+	<section class="elementor-section elementor-inner-section elementor-element elementor-element-65bf764c animated-slow elementor-section-boxed elementor-section-height-default elementor-section-height-default crsl_tp mt-5" data-id="6521b521" data-element_type="section">
 
 		<div class="container-fluid p-0 g-0">
 			<div class="">
