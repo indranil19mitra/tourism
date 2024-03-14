@@ -63,6 +63,7 @@ $route['tour-inclu-exclus'] = 'myadmin_controller/tour_inclusions_exclusions';
 $route['tour-other-info'] = 'myadmin_controller/tour_other_info';
 $route['tour-photos'] = 'myadmin_controller/tour_photos';
 $route['tour-booking-details'] = 'myadmin_controller/tour_booking_details';
+$route['contact-us-details'] = 'myadmin_controller/contact_us_details';
 $route['get-in-touch-details'] = 'myadmin_controller/get_in_touch_details';
 $route['country-code'] = 'myadmin_controller/country_code';
 

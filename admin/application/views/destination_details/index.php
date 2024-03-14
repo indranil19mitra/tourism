@@ -68,6 +68,10 @@
                                     <input type="text" class="form-control" id="price" name="price" placeholder="Price">
                                 </div>
                                 <div class="col-lg-6 col-md-12 col-sm-12 mb-3">
+                                    <label for="pack_size" class="col-form-label">Pack Size</label>
+                                    <input type="text" class="form-control" id="pack_size" name="pack_size" placeholder="Pack Size">
+                                </div>
+                                <div class="col-lg-6 col-md-12 col-sm-12 mb-3 disc_percent_chk">
                                     <label for="disc_percent" class="col-form-label">Discount Percent</label>
                                     <input type="number" class="form-control" id="disc_percent" name="disc_percent" placeholder="Discount Percent">
                                 </div>
@@ -99,12 +103,13 @@
                                     <th>Tour</th>
                                     <th>Start Date</th>
                                     <th>End Date</th>
-                                    <th>Pikup Location</th>
-                                    <th>Drop Location</th>
+                                    <th class="text-wrap">Pikup Location</th>
+                                    <th class="text-wrap">Drop Location</th>
                                     <th>Duration</th>
                                     <th>Price</th>
+                                    <th>Pack Size</th>
                                     <th>Discount</th>
-                                    <th>Discount Amount</th>
+                                    <th class="text-wrap">Discount Amount</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
@@ -129,6 +134,7 @@
                                             <td><?= $rslt->drop_location; ?></td>
                                             <td><?= $rslt->duration; ?></td>
                                             <td><?= $rslt->price; ?></td>
+                                            <td><?= $rslt->pack_size; ?></td>
                                             <td><?= (!empty($rslt->disc_percent)) ? $rslt->disc_percent : 'No'; ?></td>
                                             <td><?= $disc_amnt; ?></td>
                                             <td><label class="<?= $status_desc_class; ?>"><?= $status_desc; ?></label></td>

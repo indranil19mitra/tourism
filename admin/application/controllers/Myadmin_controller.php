@@ -488,6 +488,7 @@ class Myadmin_controller extends CI_Controller
             'drop_location' => $this->input->post('drop_location'),
             'duration' => $this->input->post('duration'),
             'price' => $this->input->post('price'),
+            'pack_size' => $this->input->post('pack_size'),
             'is_discount' => (!empty($this->input->post('is_discount'))) ? $this->input->post('is_discount') : '0',
             'disc_percent' => (!empty($this->input->post('is_discount'))) ? (($this->input->post('is_discount') != 0) ? ($this->input->post('disc_percent')) : 0) : 0,
             'status' => $this->input->post('status'),
@@ -1364,5 +1365,20 @@ class Myadmin_controller extends CI_Controller
         }
 
         echo json_encode($rslt);
+    }
+
+
+    public function contact_us_details()
+    {
+        if (empty($this->session->userdata('user_id'))) {
+            redirect(base_url('login'));
+        }
+
+        $data = array();
+        $data['contact_us_details'] = $this->myadmin_model->get_data("contact_us.id as contact_us_details_id,contact_us.cnct_us_name,contact_us.cnct_us_email,contact_us.cnct_us_query,contact_us.query_time,contact_us.query_status,contact_us.status,contact_us.updated_by,contact_us.updated_at", 'contact_us', "", "", "desc", "contact_us_details_id");
+
+        $this->load->view('include/header');
+        $this->load->view('tour_contact_us_details/index', $data);
+        $this->load->view('include/footer');
     }
 }
