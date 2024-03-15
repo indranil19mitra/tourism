@@ -53,6 +53,7 @@ $route['default_controller'] = 'mycontroller';
 $route['about-us'] = 'mycontroller/aboutUs';
 $route['contact-us'] = 'mycontroller/contactUs';
 $route['get-Details'] = 'mycontroller/details';
+$route['terms-and-conditions'] = 'mycontroller/terms_conditions';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
