@@ -382,6 +382,10 @@
 
         @media (max-width: 767px) {
 
+            .abut_btn_wdth {
+                width: 100%;
+            }
+
             /* Mobile View Styling */
             #elementor-background-overlay_1,
             #section_1 {
