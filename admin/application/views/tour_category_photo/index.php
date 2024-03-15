@@ -44,7 +44,6 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-success" id="category_photos_sbmt">Submit</button>
-                        <!-- <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button> -->
                     </div>
                 </div>
             </div>
@@ -84,8 +83,8 @@
                                             <td><label class="<?= $status_desc_class; ?>"><?= $status_desc; ?></label></td>
                                             <td>
                                                 <div class="d-flex">
-                                                    <div class="pe-2"><i class="btn fa-solid fa-pen-to-square p-0 text-danger" data-bs-toggle="modal" data-bs-target="#tour_photos_modal" onclick="tour_categoryFunctionalities(<?= $rslt->id ?>,'edit')"></i></div>
-                                                    <div><i class="btn fa-solid fa-trash p-0 text-danger" onclick="tour_categoryFunctionalities(<?= $rslt->id ?>,'delete','tour_photos')"></i></div>
+                                                    <div class="pe-2"><i class="btn fa-solid fa-pen-to-square p-0 text-danger" data-bs-toggle="modal" data-bs-target="#tour_photos_modal" onclick="tour_category_photo_Functionalities(<?= $rslt->id ?>,'edit')"></i></div>
+                                                    <div><i class="btn fa-solid fa-trash p-0 text-danger" onclick="tour_category_photo_Functionalities(<?= $rslt->id ?>,'delete','tour_photos')"></i></div>
                                                 </div>
                                             </td>
                                         </tr>

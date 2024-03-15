@@ -1205,18 +1205,113 @@ class Myadmin_controller extends CI_Controller
         echo json_encode($rslt);
     }
 
-    public function tour_category_photos()
+    public function contact_us_details()
     {
-
         if (empty($this->session->userdata('user_id'))) {
             redirect(base_url('login'));
         }
 
+        $data = array();
+        $data['contact_us_details'] = $this->myadmin_model->get_data("contact_us.id as contact_us_details_id,contact_us.cnct_us_name,contact_us.cnct_us_email,contact_us.cnct_us_query,contact_us.query_time,contact_us.query_status,contact_us.status,contact_us.updated_by,contact_us.updated_at", 'contact_us', "", "", "desc", "contact_us_details_id");
+
+        $this->load->view('include/header');
+        $this->load->view('tour_contact_us_details/index', $data);
+        $this->load->view('include/footer');
+    }
+
+    public function terms_conditions_details()
+    {
+        // echo "<per>";
+        // print_r($_POST);
+        // exit;
+
+        $edit_id = (!empty($this->input->post('eid'))) ? $this->input->post('eid') : '';
+
+        $terms_conditions = array(
+            'status' => $this->input->post('status'),
+            'terms_conditions_data' => $this->input->post('terms_conditions_details_text'),
+        );
+
+        $terms_conditions_prev_data = array(
+            'status' => '0',
+            'updated_by' => $this->session->userdata('user_id'),
+            'updated_at' => date('Y-m-d H:i:s')
+        );
+        $this->myadmin_model->update_data("terms_conditions", $terms_conditions_prev_data);
+        // print_r($tour_details);
+        // exit;
+        if (empty($edit_id)) {
+            $terms_conditions['created_by'] = $this->session->userdata('user_id');
+            $terms_conditions['created_at'] = date('Y-m-d H:i:s');
+            $terms_conditions['is_delete'] = '1';
+
+            $last_inst_id = $this->myadmin_model->insert_data("terms_conditions", $terms_conditions);
+            $msg = 'You have successfully added';
+        } else {
+            $cond = array(
+                'id' => $edit_id
+            );
+            $terms_conditions['updated_by'] = $this->session->userdata('user_id');
+            $terms_conditions['updated_at'] = date('Y-m-d H:i:s');
+            $last_inst_id = $this->myadmin_model->update_data("terms_conditions", $terms_conditions, $cond);
+            $msg = 'You have successfully edited';
+        }
+
+        if (!empty($last_inst_id)) {
+            $rslt = array('status' => '101', 'msg' => $msg, 'data' => $last_inst_id);
+        } else {
+            $rslt = array('status' => '103', 'msg' => 'Something went wrong!', 'data' => '');
+        }
+
+        echo json_encode($rslt);
+    }
+
+    public function terms_conditions()
+    {
+        // echo "<pre>";
+        if (empty($this->session->userdata('user_id'))) {
+            redirect(base_url('login'));
+        }
+
+        $cond1 = array(
+            'is_delete!=' => '0',
+        );
+        $data['terms_conditions_details'] = $this->myadmin_model->get_data("id,terms_conditions_data,status", "terms_conditions", $cond1, "", "", "desc", "id");
+
+        // exit;
+        $this->load->view('include/header');
+        $this->load->view('tour_terms_and_conditions/index', $data);
+        $this->load->view('include/footer');
+    }
+
+    public function terms_conditions_about_data()
+    {
+        $edit_id = (!empty($this->input->post('eid'))) ? $this->input->post('eid') : '';
+
+        if (!empty($edit_id)) {
+            $cond = array(
+                'id' => $edit_id
+            );
+            $data = $this->myadmin_model->get_data('', "terms_conditions", $cond, "", "1");
+            $rslt = array('status' => '101', 'msg' => '', 'data' => $data);
+        } else {
+            $rslt = array('status' => '103', 'msg' => '', 'data' => '');
+        }
+
+        echo json_encode($rslt);
+    }
+
+    public function tour_category_photos()
+    {
+        if (empty($this->session->userdata('user_id'))) {
+            redirect(base_url('login'));
+        }
 
         $cond1 = array(
             'is_delete!=' => '0',
             'status!=' => '0',
         );
+
         $data['tour_category_data'] = $this->myadmin_model->get_data("id,name", "tour_category", $cond1);
 
         $cond2 = array(
@@ -1230,7 +1325,6 @@ class Myadmin_controller extends CI_Controller
         $this->load->view('include/footer');
     }
 
-
     public function tour_category_photos_details()
     {
         $edit_id = $this->input->post('eid');
@@ -1239,11 +1333,13 @@ class Myadmin_controller extends CI_Controller
         $category_photos = array();
         $now = date('Y-m-d H:i:s'); // Initialize $now
 
-
         $category_photo = array(
             'tour_category_id' => $this->input->post('category_id'),
             'status' => $this->input->post('status'),
         );
+
+
+        $this->myadmin_model->update_data("tour_category_photos", ['status' => '0'], ["tour_category_id" => $this->input->post('category_id')]);
 
         // Check if files are uploaded
         if (!empty($_FILES['category_photos']['name'])) {
@@ -1285,7 +1381,7 @@ class Myadmin_controller extends CI_Controller
             $f_cond = array('id' => $edit_id);
             $e_rslt = $this->myadmin_model->get_data("trip_image", "tour_category_photos", $f_cond, "", "", "", "1");
             foreach ($e_rslt as $e) {
-                $existing_file_paths[] = $e->tour_photo;
+                $existing_file_paths[] = $e->trip_image;
             }
         }
         // Now, you can loop through $category_photos to insert each photo
@@ -1343,9 +1439,10 @@ class Myadmin_controller extends CI_Controller
             $rslt = array('status' => '103', 'msg' => 'Something went wrong!', 'data' => '');
             echo json_encode($rslt);
             return;
+        } else {
+            $rslt = array('status' => '101', 'msg' => $msg, 'data' => $last_inst_id);
         }
 
-        $rslt = array('status' => '101', 'msg' => $msg, 'data' => $last_inst_id);
         echo json_encode($rslt);
     }
 
@@ -1365,20 +1462,5 @@ class Myadmin_controller extends CI_Controller
         }
 
         echo json_encode($rslt);
-    }
-
-
-    public function contact_us_details()
-    {
-        if (empty($this->session->userdata('user_id'))) {
-            redirect(base_url('login'));
-        }
-
-        $data = array();
-        $data['contact_us_details'] = $this->myadmin_model->get_data("contact_us.id as contact_us_details_id,contact_us.cnct_us_name,contact_us.cnct_us_email,contact_us.cnct_us_query,contact_us.query_time,contact_us.query_status,contact_us.status,contact_us.updated_by,contact_us.updated_at", 'contact_us', "", "", "desc", "contact_us_details_id");
-
-        $this->load->view('include/header');
-        $this->load->view('tour_contact_us_details/index', $data);
-        $this->load->view('include/footer');
     }
 }

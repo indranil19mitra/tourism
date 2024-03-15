@@ -296,6 +296,34 @@ $(document).ready(function () {
 	});
 });
 
+$("#terms_conditions_details_sbmt").click(function () {
+	// Trigger TinyMCE to update the original textarea
+	// tinymce.triggerSave();
+	tinymce.triggerSave("terms_conditions_details");
+
+	// Create a FormData object from the form with the id "terms_conditions_details"
+	var formData = new FormData($("#terms_conditions_details")[0]);
+
+	// Perform an AJAX request
+	$.ajax({
+		type: "POST",
+		url: baseurl + "terms_conditions_details",
+		data: formData,
+		dataType: "json",
+		contentType: false,
+		processData: false,
+		success: function (res) {
+			// Handle the server response
+			if (res.status != 103) {
+				window.location.href = baseurl + "terms_conditions";
+				successToster(res.msg);
+			} else {
+				errorToster(res.msg);
+			}
+		},
+	});
+});
+
 function stateFunctionalities(ids = "", types = "", tables = "") {
 	if (types == "edit" || types == "delete") {
 		// alert(types);
@@ -426,37 +454,46 @@ function tourFunctionalities(ids = "", types = "", tables = "") {
 	}
 }
 
-// function tour_photosFunctionalities(ids = "", types = "", tables = "") {
-// 	if (types == "edit" || types == "delete") {
-// 		$.ajax({
-// 			type: "post",
-// 			url:
-// 				baseurl + (types == "edit" ? "edit_tour_photos_data" : "delete_data"),
-// 			data: { eid: ids, tables: tables },
-// 			dataType: "json",
-// 			success: function (res) {
-// 				console.log(res);
-// 				if (res.status == 101) {
-// 					if (types != "delete") {
-// 						$("#eid").val(res.data.id);
-// 						$("#tours_id").val(res.data.tours_id).trigger("change");
-// 						$("#status").val(res.data.status).trigger("change");
+function tour_category_photo_Functionalities(
+	ids = "",
+	types = "",
+	tables = ""
+) {
+	if (types == "edit" || types == "delete") {
+		$.ajax({
+			type: "post",
+			url:
+				baseurl +
+				(types == "edit" ? "edit_tour_category_photos_data" : "delete_data"),
+			data: { eid: ids, tables: tables },
+			dataType: "json",
+			success: function (res) {
+				console.log(res);
+				if (res.status == 101) {
+					if (types != "delete") {
+						$("#eid").val(res.data.id);
+						$("#category_id").val(res.data.tour_category_id);
+						$("#status").val(res.data.status).trigger("change");
+						$("#preview_category_photos").html(
+							'<img src="' +
+								baseurl_data +
+								res.data.trip_image +
+								'" height="200px" width="auto">'
+						);
 
-// 						displayExistingImage(baseurl_data + res.data.main_image);
-
-// 						$("#tour_photos_sbmt").show();
-// 						successToster(res.msg);
-// 					} else {
-// 						window.location.href = baseurl + "tour_photos";
-// 						successToster(res.msg);
-// 					}
-// 				} else {
-// 					errorToster(res.msg);
-// 				}
-// 			},
-// 		});
-// 	}
-// }
+						$("#tour_photos_sbmt").show();
+						successToster(res.msg);
+					} else {
+						window.location.href = baseurl + "tour_photos";
+						successToster(res.msg);
+					}
+				} else {
+					errorToster(res.msg);
+				}
+			},
+		});
+	}
+}
 
 function tour_photosFunctionalities(ids = "", types = "", tables = "") {
 	if (types == "edit" || types == "delete") {
@@ -485,44 +522,6 @@ function tour_photosFunctionalities(ids = "", types = "", tables = "") {
 						successToster(res.msg);
 					} else {
 						window.location.href = baseurl + "tour_photos";
-						successToster(res.msg);
-					}
-				} else {
-					errorToster(res.msg);
-				}
-			},
-		});
-	}
-}
-
-function tour_categoryFunctionalities(ids = "", types = "", tables = "") {
-	if (types == "edit" || types == "delete") {
-		$.ajax({
-			type: "post",
-			url:
-				baseurl +
-				(types == "edit" ? "edit_tour_category_photos_data" : "delete_data"),
-			data: { eid: ids, tables: tables },
-			dataType: "json",
-			success: function (res) {
-				console.log(res);
-				if (res.status == 101) {
-					if (types != "delete") {
-						$("#eid").val(res.data.id);
-						$("#category_id").val(res.data.tour_category_id).trigger("change");
-						$("#status").val(res.data.status).trigger("change");
-
-						// Check if main_image property exists in the response
-						if (res.data.trip_image) {
-							// console.log("Image URL:", baseurl_data + res.data.tour_photo);
-							displayExistingImage2(baseurl_data + res.data.trip_image);
-							// console.log("After calling displayExistingImage");
-						}
-
-						$("#category_photos_sbmt").show();
-						successToster(res.msg);
-					} else {
-						window.location.href = baseurl + "tour_category_photos";
 						successToster(res.msg);
 					}
 				} else {
@@ -766,6 +765,40 @@ function CountryFunctionalities(ids = "", types = "", tables = "") {
 						successToster(res.msg);
 					} else {
 						window.location.href = baseurl + "country_code";
+						successToster(res.msg);
+					}
+				} else {
+					errorToster(res.msg);
+				}
+			},
+		});
+	}
+}
+
+function terms_conditionsFunctionalities(ids = "", types = "", tables = "") {
+	if (types == "edit" || types == "delete") {
+		// alert(types);
+		$.ajax({
+			type: "post",
+			url:
+				baseurl +
+				(types == "edit" ? "terms_conditions_about_data" : "delete_data"),
+			data: { eid: ids, tables: tables },
+			dataType: "json",
+			success: function (res) {
+				console.log(res);
+				if (res.status == 101) {
+					if (types != "delete") {
+						$("#eid").val(res.data.id);
+						tinymce
+							.get("terms_conditions_details_text")
+							.setContent(res.data.terms_conditions_data);
+						$("#status").val(res.data.status).trigger("change");
+
+						$("#terms_conditions_details_sbmt").show();
+						successToster(res.msg);
+					} else {
+						window.location.href = baseurl + "terms_conditions";
 						successToster(res.msg);
 					}
 				} else {
@@ -1337,6 +1370,53 @@ tinymce.init({
 	},
 });
 
+tinymce.init({
+	selector: "textarea#terms_conditions_details_text",
+	width: "auto",
+	height: 300,
+	plugins: [
+		"advlist",
+		"autolink",
+		"link",
+		// "image",
+		"lists",
+		"charmap",
+		"prewiew",
+		"anchor",
+		"pagebreak",
+		"searchreplace",
+		"wordcount",
+		"visualblocks",
+		"code",
+		"fullscreen",
+		"insertdatetime",
+		// "media",
+		"table",
+		"emoticons",
+		"template",
+		"codesample",
+	],
+	toolbar:
+		"undo redo | styles | bold italic underline | alignleft aligncenter alignright alignjustify |" +
+		"bullist numlist outdent indent | print preview media fullscreen | " +
+		"forecolor backcolor emoticons",
+	menu: {
+		favs: {
+			title: "menu",
+			items: "code visualaid | searchreplace | emoticons",
+		},
+	},
+	menubar: "favs file edit view insert format tools table",
+	content_style: "body{font-family:Helvetica,Arial,sans-serif; font-size:16px}",
+	setup: function (editor) {
+		// This event is triggered when TinyMCE is initialized
+		editor.on("init", function () {
+			// Hide the promotion element after initialization
+			$(".tox-promotion").hide();
+			$(".tox-statusbar__branding").hide();
+		});
+	},
+});
 function check_num(obj) {
 	$(obj).val(
 		$(obj)
@@ -1806,6 +1886,35 @@ new DataTable("#country_tbl", {
 			text: "PDF",
 			filename: function () {
 				return "Country PDF " + currentDateTime;
+			},
+		},
+	],
+	// aaSorting: [[0, "desc"]],
+	bDestroy: true,
+});
+
+new DataTable("#terms_conditions_tbl", {
+	dom: "Bfrtip",
+	buttons: [
+		{
+			extend: "csv",
+			text: "CSV",
+			filename: function () {
+				return "Tour Terms and Conditions CSV " + currentDateTime;
+			},
+		},
+		{
+			extend: "excel",
+			text: "Excel",
+			filename: function () {
+				return "Tour Terms and Conditions Excel " + currentDateTime;
+			},
+		},
+		{
+			extend: "pdf",
+			text: "PDF",
+			filename: function () {
+				return "Tour Terms and Conditions PDF " + currentDateTime;
 			},
 		},
 	],

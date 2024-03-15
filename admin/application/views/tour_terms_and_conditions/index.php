@@ -1,15 +1,15 @@
 <div class="content-wrapper">
     <div class="row">
         <!-- Modal -->
-        <div class="modal fade" id="tour_about_details_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="terms_conditions_details_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Tour About</h1>
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Terms and Conditions</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form class="forms-sample" id="tour_about_details">
+                        <form class="forms-sample" id="terms_conditions_details">
                             <div class="row">
                                 <input type="hidden" class="clr" id="eid" name="eid">
                                 <div class="col-lg-6 col-md-12 col-sm-12 mb-3">
@@ -21,14 +21,14 @@
                                     </select>
                                 </div>
                                 <div class="col-12 mt-5">
-                                    <label for="tour_about_details_text" class="col-form-label">About Section:</label>
-                                    <textarea id="tour_about_details_text" name="tour_about_details_text"></textarea>
+                                    <label for="terms_conditions_details_text" class="col-form-label">Terms and Conditions:</label>
+                                    <textarea id="terms_conditions_details_text" name="terms_conditions_details_text"></textarea>
                                 </div>
                             </div>
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" id="tour_about_details_sbmt">Submit</button>
+                        <button type="button" class="btn btn-primary" id="terms_conditions_details_sbmt">Submit</button>
                     </div>
                 </div>
             </div>
@@ -36,7 +36,7 @@
     </div>
 
     <div class="d-flex justify-content-end">
-        <button type="button" class="btn btn-info" data-bs-toggle="modal" onclick="tourResetFun()" data-bs-target="#tour_about_details_modal" data-whatever="@mdo">Add Terms and Conditions</button>
+        <button type="button" class="btn btn-info" data-bs-toggle="modal" onclick="tourResetFun()" data-bs-target="#terms_conditions_details_modal" data-whatever="@mdo">Add Terms and Conditions</button>
     </div>
 
     <div class="col-12 grid-margin stretch-card mt-5">
@@ -44,7 +44,7 @@
             <div class="card-body">
                 <h4 class="card-title">Terms and Conditions List</h4>
                 <div class="table-responsive">
-                    <table id="tour_about_tbl" class="table table-sm table-sm0 table-striped table-hover w-100 dataTable" data-page-length='10'>
+                    <table id="terms_conditions_tbl" class="table table-sm table-sm0 table-striped table-hover w-100 dataTable" data-page-length='10'>
                         <thead>
                             <tr>
                                 <th>Sl No</th>
@@ -55,22 +55,22 @@
                         </thead>
                         <tbody>
                             <?php
-                            if (!empty($tour_about_details)) :
+                            if (!empty($terms_conditions_details)) :
                                 // echo "<pre>";
-                                // print_r($tour_about_details);
+                                // print_r($terms_conditions_details);
                                 // exit;
-                                foreach ($tour_about_details as $key => $rslt) :
+                                foreach ($terms_conditions_details as $key => $rslt) :
                                     $status_desc = ($rslt->status != 0) ? 'Active' : 'Inactive';
                                     $status_desc_class = ($rslt->status != 0) ? 'badge badge-success' : 'badge badge-danger';
                             ?>
                                     <tr>
                                         <td><?= ($key + 1) ?></td>
-                                        <td class="text-wrap"><?= $rslt->tour_about_details; ?></td>
+                                        <td class="text-wrap"><?= $rslt->terms_conditions_data; ?></td>
                                         <td><label class="<?= $status_desc_class; ?>"><?= $status_desc; ?></label></td>
                                         <td>
                                             <div class="d-flex">
-                                                <div class="pe-2"><i class="btn fa-solid fa-pen-to-square p-0 text-danger" data-bs-toggle="modal" data-bs-target="#tour_about_details_modal" onclick="tour_aboutFunctionalities(<?= $rslt->id ?>,'edit')"></i></div>
-                                                <div><i class="btn fa-solid fa-trash p-0 text-danger" onclick="tour_aboutFunctionalities(<?= $rslt->id ?>,'delete','tour_about')"></i></div>
+                                                <div class="pe-2"><i class="btn fa-solid fa-pen-to-square p-0 text-danger" data-bs-toggle="modal" data-bs-target="#terms_conditions_details_modal" onclick="terms_conditionsFunctionalities(<?= $rslt->id ?>,'edit')"></i></div>
+                                                <div><i class="btn fa-solid fa-trash p-0 text-danger" onclick="terms_conditionsFunctionalities(<?= $rslt->id ?>,'delete','terms_conditions')"></i></div>
                                             </div>
                                         </td>
                                     </tr>
