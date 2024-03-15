@@ -71,53 +71,57 @@ if (!empty($tour_photos)) {
                         </div>
                     </div>
                 </section>
+
                 <div class="col-12 mb-5">
                     <div class="d-flex justify-content-between">
                         <div class="col-6">
-                            <div><i class="fa-solid fa-clock dtl_icon"></i><span class="mnt_wish_dt_1"> Duration -</span><span class="ps-1 mnt_wish_dt dtl_icon1 word-wrap"> <?= $duration; ?></span></div>
+                            <div><i class="fa-solid fa-clock dtl_icon"></i><span class="fw-bold"> Duration -</span><span class="ps-1 fw-bold dtl_icon1 word-wrap"> <?= $duration; ?></span></div>
                         </div>
 
                         <div class="col-6">
-                            <div><i class="fa-solid fa-indian-rupee-sign dtl_icon"></i><span class="mnt_wish_dt_1"> Price -</span><span class="ps-1 mnt_wish_dt dtl_icon1 "> <?= $price; ?>/-</span></div>
+                            <div><i class="fa-solid fa-indian-rupee-sign dtl_icon"></i><span class="fw-bold"> Price -</span><span class="ps-1 fw-bold dtl_icon1 "> <?= $price; ?>/-</span></div>
                         </div>
                     </div>
 
                     <div class="mt-5 d-flex justify-content-between">
                         <div class="col-6">
-                            <div><i class="fa-solid fa-stamp dtl_icon1"></i><span class="mnt_wish_dt_1"> Seat Availability -</span><span class="ps-1 mnt_wish_dt dtl_icon1 word-wrap"> <?= $seat_availability; ?></span></div>
+                            <div><i class="fa-solid fa-stamp dtl_icon1"></i><span class="fw-bold"> Seat Availability -</span><span class="ps-1 fw-bold dtl_icon1 word-wrap"> <?= $seat_availability; ?></span></div>
                         </div>
 
                         <div class="col-6">
-                            <div><i class="fa-solid fa-person-hiking dtl_icon1"></i><span class="mnt_wish_dt_1"> Difficulty Level -</span><span class="ps-1 mnt_wish_dt dtl_icon1 word-wrap"> <?= $difficult; ?></span></div>
+                            <div><i class="fa-solid fa-person-hiking dtl_icon1"></i><span class="fw-bold"> Difficulty Level -</span><span class="ps-1 fw-bold dtl_icon1 word-wrap"> <?= $difficult; ?></span></div>
                         </div>
                     </div>
 
                     <div class="mt-5 d-flex justify-content-between">
                         <div class="col-6">
-                            <div><i class="fa-solid fa-location-dot dtl_icon"></i><span class="ps-1 mnt_wish_dt dtl_icon1 word-wrap"><?= $pl; ?> - <?= $dl; ?></span></div>
+                            <div><i class="fa-solid fa-location-dot dtl_icon1"></i><span class="ps-1 fw-bold dtl_icon1 word-wrap"><?= $pl; ?> - <?= $dl; ?></span></div>
                         </div>
 
                         <div class="col-6">
-                            <div><i class="fa-solid fa-user-group dtl_icon1"></i><span class="mnt_wish_dt_1"> Pack Size -</span><span class="ps-1 mnt_wish_dt dtl_icon1 word-wrap"> <?= $pack_size; ?></span></div>
+                            <div><i class="fa-solid fa-user-group dtl_icon1"></i><span class="fw-bold"> Pack Size -</span><span class="ps-1 fw-bold dtl_icon1 word-wrap"> <?= $pack_size; ?></span></div>
                         </div>
                     </div>
-
-
                 </div>
+
                 <div class="d-flex flex-wrap justify-content-start mx-auto col-12">
-                    <div class="mb-2 px-2">
-                        <button class="btn btn-primary rounded mx-auto" onclick="get_itinerary()" type="button">Itinerary</button>
+                    <div class="mb-2 col-lg-3 col-md-6 col-sm-6 px-2 abut_btn_wdth">
+                        <button class="btn btn-primary rounded mx-auto w-100" onclick="get_itinerary()" type="button">Itinerary</button>
                     </div>
-                    <div class="mb-2 px-2">
-                        <button class="btn btn-primary rounded mx-auto" onclick="get_dates_costing('<?= $tour_details_id; ?>','<?= $tours_id; ?>')" type="button">Dates & Costing</button>
+                    <div class="mb-2 col-lg-3 col-md-6 col-sm-6 px-2 abut_btn_wdth">
+                        <button class="btn btn-primary rounded mx-auto w-100" onclick="get_dates_costing('<?= $tour_details_id; ?>','<?= $tours_id; ?>')" type="button">Dates & Costing</button>
                     </div>
-                    <div class="mb-2">
-                        <button class="btn btn-primary rounded mx-auto" onclick="get_other_info()" type="button">Other Info</button>
+                    <div class="mb-2 col-lg-3 col-md-6 col-sm-6 px-2 abut_btn_wdth">
+                        <button class="btn btn-primary rounded mx-auto w-100" onclick="get_other_info()" type="button">Other Info</button>
                     </div>
-                    <div class="mb-2 px-2">
-                        <button class="btn btn-primary rounded mx-auto" data-bs-toggle="modal" data-bs-target="#tour_booking_details_modal" onclick="get_book('<?= $tour_details_id; ?>','<?= $tours_id; ?>')" type="button">Book Now</button>
+                    <div class="mb-2 col-lg-3 col-md-6 col-sm-6 px-2 abut_btn_wdth">
+                        <button class="btn btn-primary rounded mx-auto w-100" data-bs-toggle="modal" data-bs-target="#tour_booking_details_modal" onclick="get_book('<?= $tour_details_id; ?>','<?= $tours_id; ?>')" type="button">Book Now</button>
                     </div>
                 </div>
+
+
+
+
                 <?php
                 if (!empty($tour_about_details)) :
                 ?>
