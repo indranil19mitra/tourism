@@ -66,6 +66,7 @@ $route['tour-booking-details'] = 'myadmin_controller/tour_booking_details';
 $route['contact-us-details'] = 'myadmin_controller/contact_us_details';
 $route['get-in-touch-details'] = 'myadmin_controller/get_in_touch_details';
 $route['country-code'] = 'myadmin_controller/country_code';
+$route['terms-conditions'] = 'myadmin_controller/terms_conditions';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

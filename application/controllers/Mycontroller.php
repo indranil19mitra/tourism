@@ -55,6 +55,12 @@ class Mycontroller extends CI_Controller
         $data['get_tours_popular_trip'] = $this->myfront_model->get_data("tours.name,tours.main_image,tours.seat_availability,tour_details.id as tour_details_id,tour_details.duration,tour_details.start_date,tour_details.price", "tour_details", $cond5, [$join2], "", "asc", "tour_details.start_date", "", "");
 
         $data['get_tours_adv_trip'] = $this->myfront_model->get_data("tours.name,tours.main_image,tours.seat_availability,tour_details.id as tour_details_id,tour_details.duration,tour_details.start_date,tour_details.price", "tour_details", $cond5, [$join3], "", "asc", "tour_details.start_date", "", "");
+
+        $cond6 = array(
+            'is_delete!=' => '0',
+            'status!=' => '0',
+        );
+        $data['get_tour_category_images'] = $this->myfront_model->get_data("tour_category_id,trip_image", "tour_category_photos", $cond6);
         // print_r($data);
         // exit;
         $this->load->view('include/header', $data);
@@ -519,5 +525,22 @@ class Mycontroller extends CI_Controller
         }
 
         echo json_encode($rslt);
+    }
+
+
+    public function terms_conditions()
+    {
+        $data = array();
+        $data = $this->nav_tour_details();
+
+        $cond = array(
+            'is_delete!=' => '0',
+            'status!=' => '0'
+        );
+
+        $data['terms_conditions_details'] = $this->myfront_model->get_data("id,terms_conditions_data", "terms_conditions", $cond, "", 1);
+        $this->load->view('include/header', $data);
+        $this->load->view('terms_conditions', $data);
+        $this->load->view('include/footer', $data);
     }
 }

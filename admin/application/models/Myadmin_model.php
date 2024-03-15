@@ -16,7 +16,7 @@ class Myadmin_model extends CI_Model
         } else {
             $this->db->select('*');
         }
-        
+
         if (!empty($join)) {
             if (is_array($join)) {
                 foreach ($join as $join_arr_name) {
@@ -66,7 +66,9 @@ class Myadmin_model extends CI_Model
 
     public function update_data($table = "", $data = "", $cond = "")
     {
-        $this->db->where($cond);
+        if (!empty($cond)) {
+            $this->db->where($cond);
+        }
         $this->db->update($table, $data);
         return $this->db->affected_rows();
     }

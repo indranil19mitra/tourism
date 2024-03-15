@@ -194,14 +194,24 @@
 		</div>
 	</div>
 
-	<section class="elementor-section elementor-inner-section elementor-element elementor-element-65bf764c animated-slow elementor-section-boxed elementor-section-height-default elementor-section-height-default crsl_tp mt-5" data-id="6521b521" data-element_type="section">
+	<?php
+	if (!empty($get_tour_category_images)) :
+		foreach ($get_tour_category_images as $val) :
+			if ($val->tour_category_id == 1) :
+	?>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-65bf764c animated-slow elementor-section-boxed elementor-section-height-default elementor-section-height-default crsl_tp mt-5" data-id="6521b521" data-element_type="section">
 
-		<div class="container-fluid p-0 g-0">
-			<div class="">
-				<img src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/in-hike-4-e1628420203493.jpg" class="d-block w-100 crsl_img" style="width: 100%;" alt="..." data-bs-interval="2000">
-			</div>
-		</div>
-	</section>
+					<div class="container-fluid p-0 g-0">
+						<div class="">
+							<img src="<?= base_url("admin/" . $val->trip_image) ?>" class="d-block w-100 crsl_img" style="width: 100%;" alt="..." data-bs-interval="2000">
+						</div>
+					</div>
+				</section>
+	<?php
+			endif;
+		endforeach;
+	endif;
+	?>
 
 	<?php
 	if (!empty($get_tours_weekend_trip)) {
@@ -295,15 +305,25 @@
 	<?php
 	}
 	?>
+	<?php
+	if (!empty($get_tour_category_images)) :
+		foreach ($get_tour_category_images as $val) :
+			if ($val->tour_category_id == 2) :
+	?>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-65bf764c animated-slow elementor-section-boxed elementor-section-height-default elementor-section-height-default crsl_tp mt-5" data-id="6521b521" data-element_type="section">
 
-	<section class="elementor-section elementor-inner-section elementor-element elementor-element-65bf764c animated-slow elementor-section-boxed elementor-section-height-default elementor-section-height-default crsl_tp mt-5" data-id="6521b521" data-element_type="section">
+					<div class="container-fluid p-0 g-0">
+						<div class="">
+							<img src="<?= base_url("admin/" . $val->trip_image) ?>" class="d-block w-100 crsl_img" style="width: 100%;" alt="..." data-bs-interval="2000">
+						</div>
+					</div>
+				</section>
+	<?php
+			endif;
+		endforeach;
+	endif;
+	?>
 
-		<div class="container-fluid p-0 g-0">
-			<div class="">
-				<img src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/hiker-3-e1628420252326.jpg" class="d-block w-100 crsl_img" style="width: 100%;" alt="..." data-bs-interval="2000">
-			</div>
-		</div>
-	</section>
 	<?php
 	if (!empty($get_tours_popular_trip)) {
 	?>
@@ -398,14 +418,24 @@
 	}
 	?>
 
-	<section class="elementor-section elementor-inner-section elementor-element elementor-element-65bf764c animated-slow elementor-section-boxed elementor-section-height-default elementor-section-height-default crsl_tp mt-5" data-id="6521b521" data-element_type="section">
+	<?php
+	if (!empty($get_tour_category_images)) :
+		foreach ($get_tour_category_images as $val) :
+			if ($val->tour_category_id == 3) :
+	?>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-65bf764c animated-slow elementor-section-boxed elementor-section-height-default elementor-section-height-default crsl_tp mt-5" data-id="6521b521" data-element_type="section">
 
-		<div class="container-fluid p-0 g-0">
-			<div class="">
-				<img src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/in-hike-3-e1628420193825.jpg" class="d-block w-100 crsl_img" style="width: 100%;" alt="..." data-bs-interval="2000">
-			</div>
-		</div>
-	</section>
+					<div class="container-fluid p-0 g-0">
+						<div class="">
+							<img src="<?= base_url("admin/" . $val->trip_image) ?>" class="d-block w-100 crsl_img" style="width: 100%;" alt="..." data-bs-interval="2000">
+						</div>
+					</div>
+				</section>
+	<?php
+			endif;
+		endforeach;
+	endif;
+	?>
 	<?php
 	if (!empty($get_tours_adv_trip)) {
 	?>
