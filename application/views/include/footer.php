@@ -1,4 +1,3 @@
-<!-- <a id="to-top"><span class="icon-chevron-thin-up"></span></a> -->
 <a id="whatsapp-widget" href="https://wa.me/8910271365" target="_blank">
     <i class="fab fa-whatsapp"></i>
 </a>
@@ -61,22 +60,6 @@
                                                                 <i aria-hidden="true" class="fas fa-angle-right"></i> </span>
                                                             <a href="<?= base_url() ?>about-us"><span class="elementor-icon-list-text">About</span></a>
                                                         </li>
-                                                        <!-- <li class="elementor-icon-list-item">
-                                                            <span class="elementor-icon-list-icon">
-                                                                <i aria-hidden="true" class="fas fa-angle-right"></i> </span>
-                                                            <span class="elementor-icon-list-text">Trekking</span>
-                                                        </li>
-                                                        <li class="elementor-icon-list-item">
-                                                            <span class="elementor-icon-list-icon">
-                                                                <i aria-hidden="true" class="fas fa-angle-right"></i> </span>
-                                                            <span class="elementor-icon-list-text">Gallery</span>
-                                                        </li>
-                                                        <li class="elementor-icon-list-item">
-                                                            <span class="elementor-icon-list-icon">
-                                                                <i aria-hidden="true" class="fas fa-angle-right"></i> </span>
-                                                            <span class="elementor-icon-list-text">Our
-                                                                Team</span>
-                                                        </li> -->
                                                         <li class="elementor-icon-list-item">
                                                             <span class="elementor-icon-list-icon">
                                                                 <i aria-hidden="true" class="fas fa-angle-right"></i> </span>
@@ -104,11 +87,6 @@
                                                             <a href="<?= base_url() ?>terms-and-conditions"><span class="elementor-icon-list-text">Terms and
                                                                     Conditions</span></a>
                                                         </li>
-                                                        <!-- <li class="elementor-icon-list-item">
-                                                            <span class="elementor-icon-list-icon">
-                                                                <i aria-hidden="true" class="fas fa-angle-right"></i> </span>
-                                                            <span class="elementor-icon-list-text">Support</span>
-                                                        </li> -->
                                                     </ul>
                                                 </div>
                                             </div>
@@ -131,54 +109,11 @@
                                                                 <i aria-hidden="true" class="fas fa-angle-right"></i> </span>
                                                             <span class="elementor-icon-list-text"><img class="s-img bdr-4" width="166" alt="Decathlon" title="Decathlon" src="https://s.yimg.com/fz/api/res/1.2/oMJU2SlZXsMsHRoumbKsGw--~C/YXBwaWQ9c3JjaGRkO2ZpPWZpdDtoPTI0MDtxPTgwO3c9MzMy/https://s.yimg.com/zb/imgv1/48d50fbb-4069-3f69-baea-fb4d62db418b/t_500x300"></span>
                                                         </li>
-                                                        <!-- <li class="elementor-icon-list-item">
-                                                            <span class="elementor-icon-list-icon">
-                                                                <i aria-hidden="true" class="fas fa-angle-right"></i> </span>
-                                                            <span class="elementor-icon-list-text">Support</span>
-                                                        </li> -->
                                                     </ul>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- <div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-1a89a5d" data-id="1a89a5d" data-element_type="column">
-                                        <div class="elementor-widget-wrap elementor-element-populated">
-                                            <div class="elementor-element elementor-element-2bc7102 elementor-widget elementor-widget-heading" data-id="2bc7102" data-element_type="widget" data-widget_type="heading.default">
-                                                <div class="elementor-widget-container">
-                                                    <h4 class="elementor-heading-title elementor-size-default">
-                                                        Newsletter</h4>
-                                                </div>
-                                            </div>
-                                            <div class="elementor-element elementor-element-441f2ee elementor-widget elementor-widget-text-editor" data-id="441f2ee" data-element_type="widget" data-widget_type="text-editor.default">
-                                                <div class="elementor-widget-container">
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                                    do eiusmod </div>
-                                            </div>
-                                            <div class="elementor-element elementor-element-035576d elementor-widget elementor-widget-jkit_mailchimp" data-id="035576d" data-element_type="widget" data-widget_type="jkit_mailchimp.default">
-                                                <div class="elementor-widget-container">
-                                                    <div class="jeg-elementor-kit jkit-mailchimp style-inline jeg_module_17_37_654c63d634a58">
-                                                        <form method="post" class="jkit-mailchimp-form" data-listed="" data-success-message="Successfully listed this email" data-error-message="Something went wrong">
-                                                            <div class="jkit-mailchimp-message"></div>
-                                                            <div class="jkit-form-wrapper email-form">
-                                                                <div class="jkit-mailchimp-email jkit-input-wrapper input-container">
-                                                                    <div class="jkit-form-group">
-                                                                        <div class="jkit-input-element-container jkit-input-group">
-                                                                            <input type="email" name="email" class="jkit-email jkit-form-control " placeholder="Your Email Address" required="">
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="jkit-submit-input-holder jkit-input-wrapper">
-                                                                    <button type="submit" class="jkit-mailchimp-submit position-before" name="jkit-mailchimp">
-                                                                        Send
-                                                                    </button>
-                                                                </div>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> -->
                                 </div>
                             </section>
                             <section class="elementor-section elementor-inner-section elementor-element elementor-element-d6347fa elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="d6347fa" data-element_type="section">
@@ -186,9 +121,6 @@
                                     <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-f42a144" data-id="f42a144" data-element_type="column">
                                         <div class="elementor-widget-wrap elementor-element-populated">
                                             <div class="elementor-element elementor-element-9a9b077 elementor-widget elementor-widget-text-editor" data-id="9a9b077" data-element_type="widget" data-widget_type="text-editor.default">
-                                                <!-- <div class="elementor-widget-container">
-                                                    Hiking &#038; Trekking Mountain Template Kit
-                                                    by Jegtheme </div> -->
                                             </div>
                                         </div>
                                     </div>
@@ -221,6 +153,9 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    var baseurl = '<?= base_url() ?>';
+</script>
 <script id='elementor-frontend-js-before'>
     var elementorFrontendConfig = {
         "environmentMode": {
@@ -336,9 +271,7 @@
             "featuredImage": false
         }
     };
-</script>
 
-<script>
     $(document).ready(function() {
         var url_para = '<?= (!empty($this->uri->segment('1'))) ? $this->uri->segment('1') : '' ?>';
         console.log(url_para);
@@ -350,18 +283,18 @@
 
         if (url_para == "") {
             var images = [
-                '<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/self/main/20231101_050218.jpg',
-                '<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/self/main/top1.jpg',
-                '<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/self/main/IMG_9848.jpg',
-                '<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/self/main/lasar_edited4.jpg',
-                '<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/self/main/IMG_9331_photo-full.jpeg'
+                baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/main/20231101_050218.jpg',
+                baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/main/top1.jpg',
+                baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/main/IMG_9848.jpg',
+                baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/main/lasar_edited4.jpg',
+                baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/main/IMG_9331_photo-full.jpeg'
             ];
         }
         if (url_para != "") {
             // console.log(url_para);
             var images = [
-                '<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/self/about/20221117_094757-01.jpeg"',
-                '<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/self/about/DSC_0039.jpg'
+                baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/about/DSC_0039.jpg',
+                baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/about/20231101_050218.jpg"'
             ];
             $("#section_2").css('height', (url_para != "") ? '50vh' : '100vh');
         }
@@ -476,7 +409,7 @@
             );
     });
 
-    var baseurl = '<?= base_url() ?>';
+    // var baseurl = '<?= base_url() ?>';
 </script>
 
 <!-- </section> -->
@@ -505,36 +438,16 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
-<!-- Swipper initialize -->
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> </script> -->
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
 
-<!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
-
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
 
-<script src='<?= base_url() ?>external/own/js/self_js.js'></script>
-
-
-<!-- <script>
-  $(document).ready(function() {
-
-    $('#editable-sample').dataTable({
-      "aaSorting": [
-        [0, "desc"]
-      ],
-      "bDestroy": true
-    });
-  });
-</script> -->
+<script src='<?= base_url() ?>external/own/js/self_js.js' defer></script>
 </body>
 
 </html>
