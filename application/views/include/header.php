@@ -12,8 +12,15 @@
     <link rel="alternate" type="application/rss+xml" title="Durbeen &raquo; Comments Feed" href="comments/feed/index.htm">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="<?= base_url() ?>external/own/css/self_css.css">
+    <link rel="stylesheet" href="<?= base_url() ?>external/own/css/ex_css.css">
 
     <style>
+        .cnct_us1 {
+            background-image: url('<?= base_url() ?>/external/wp-content/uploads/sites/139/2021/08/self/about/20231101_050218.jpg');
+        }
+    </style>
+    <!-- <style>
         .cnct_us3 {
             background-color: rgb(213 218 222) !important;
         }
@@ -61,12 +68,10 @@
         .swiper-slide {
             flex: 0 0 auto;
             margin-right: 10px;
-            /* Adjust as needed */
         }
 
         .swiper-slide:last-child {
             margin-right: 0;
-            /* Remove right margin for last slide */
         }
 
         #serching_data {
@@ -77,65 +82,17 @@
             font-size: 17px;
             font-weight: bold;
             padding: 20px;
-        }
-
-        /* swiper */
-
-        /* .btn-close {
-            color: #fff;
-        } */
-
-        /* .close:focus {
-            outline: 1px dotted #fff !important;
-        } */
-
-        /* .modal-body {
-            padding: 0rem !important;
-        } */
-
-        /* .modal-title {
-            color: #fff;
-        } */
-
-        /* .modal-header {
-            background: #d01337;
-            color: #fff !important;
-        } */
-
-        /* .heading {
-            font-weight: 500 !important;
-        } */
-
-        /* .subheadings {
-            white-space: normal;
-            text-wrap: wrap;
-        } */
+        }      
 
         .tour_imgs {
             margin-right: 10px;
         }
-
-        /* .fs-9 {
-            font-size: 9px;
-        } */
-
-        /* reschedule popup */
-
-        /* #reschedule .accordion-button:not(.collapsed)::after,
-        #reschedule .accordion-button::after {
-            display: none;
-        } */
-
-        /* swiper end */
-
-
         #overall_payment_details {
             display: flex !important;
             -webkit-box-pack: justify !important;
             justify-content: space-between !important;
             -webkit-box-align: center !important;
             align-items: center !important;
-            /* width: 70vw !important; */
             flex-wrap: wrap !important;
         }
 
@@ -236,7 +193,6 @@
         .rs_cls4 {
             font-size: 1.5vw !important;
             font-weight: 600 !important;
-            /* margin: 0px 8px; */
         }
 
         .rs_cls5 {
@@ -269,7 +225,6 @@
 
         .outer_dv3 {
             font-weight: bold !important;
-            /* margin-bottom: 8px !important; */
             color: white !important;
         }
 
@@ -287,12 +242,6 @@
             border: initial !important;
         }
 
-        /* #book_now_modal_header_title {
-            font-weight: bold !important;
-            color: rgb(58, 58, 58) !important;
-            text-transform: uppercase !important;
-        } */
-
         .accordion-item {
             border: none !important;
         }
@@ -300,8 +249,6 @@
         .call_cl {
             color: #FF4C15;
         }
-
-        /* table */
 
         .tbl {
             border-radius: 5% !important;
@@ -325,8 +272,6 @@
         .table-rounded tbody td {
             border-bottom: 1px solid #dee2e6;
         }
-
-        /* table */
 
         .mb_div_bg {
             background-color: #362752 !important;
@@ -353,8 +298,6 @@
             overflow: hidden;
             background-position: center;
             background-repeat: no-repeat;
-            /* height: 100%; */
-            /* You can remove this line unless you want the section to take up the entire height */
         }
 
         #elementor-background-overlay_1 {
@@ -362,8 +305,6 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            /* height: 100%; */
-            /* You can remove this line unless you want the overlay to take up the entire height */
             background: rgba(0, 0, 0, 0.5);
             z-index: 1;
             background-color: #000;
@@ -408,9 +349,6 @@
                 top: -15px !important;
             }
 
-            /* .set_ht1 {
-                top: 10px !important;
-            } */
             .set_ht_2 {
                 top: -28px !important;
             }
@@ -527,14 +465,12 @@
             #section_2,
             #section_1 {
                 height: 100%;
-                /* Adjust based on your design requirements */
             }
 
             .crsl_img {
                 height: 400px !important;
                 padding-right: 10%;
                 padding-left: 10%;
-                /* width: 100% !important; */
             }
 
             .crd_mn {
@@ -626,10 +562,7 @@
 
             .mnt_wish_dt_div {
                 min-height: 3vw !important;
-                /* display: grid !important; */
                 grid-template-columns: 1fr 1fr !important;
-                /* margin-top: 48px; */
-                /* margin-bottom: 16px; */
             }
 
             .mnt_wish_dt {
@@ -673,34 +606,8 @@
         }
 
         #to-top:hover {
-            /* background: #19a9e5; */
             background: #57b479;
         }
-
-        /* Your existing styles for WhatsApp button */
-        /* #whatsapp-widget {
-            background: #38de75 !important;
-            position: fixed;
-            right: -65px;
-            bottom: 30px;
-            z-index: 1;
-            padding: 9px;
-            -webkit-border-radius: 6px;
-            -moz-border-radius: 6px;
-            border-radius: 6px;
-            color: #fff;
-            font-size: 50px;
-            line-height: 20px;
-            cursor: pointer;
-            -webkit-transition: 0.75s;
-            transition: 0.75s;
-            background: #57b479;
-        }
-
-        #whatsapp-widget:hover {
-            background: #186f38 !important;
-            font-size: 40px;
-        } */
 
         #whatsapp-widget {
             position: fixed;
@@ -739,12 +646,11 @@
         }
 
         #whatsapp-widget:hover {
-            /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); */
             background: #186f38 !important;
             font-size: 40px;
         }
-    </style>
-    <style>
+    </style> -->
+    <!-- <style>
         img.wp-smiley,
         img.emoji {
             display: inline !important;
@@ -757,11 +663,11 @@
             background: none !important;
             padding: 0 !important;
         }
-    </style>
+    </style> -->
     <link rel='stylesheet' id='jkit-elements-main-css' href='<?php echo base_url() ?>external/wp-content/plugins/jeg-elementor-kit/assets/css/elements/main.css?ver=2.6.2' media='all'>
     <link rel='stylesheet' id='wp-block-library-css' href='<?= base_url() ?>external/wp-includes/css/dist/block-library/style.min.css?ver=6.1.4' media='all'>
     <link rel='stylesheet' id='classic-theme-styles-css' href='<?= base_url() ?>external/wp-includes/css/classic-themes.min.css?ver=1' media='all'>
-    <style id='global-styles-inline-css'>
+    <!-- <style id='global-styles-inline-css'>
         body {
             --wp--preset--color--black: #000000;
             --wp--preset--color--cyan-bluish-gray: #abb8c3;
@@ -1093,7 +999,7 @@
             font-size: 1.5em;
             line-height: 1.6;
         }
-    </style>
+    </style> -->
     <link rel='stylesheet' id='allow-webp-image-css' href='<?= base_url() ?>external/wp-content/plugins/allow-webp-image/public/css/allow-webp-image-public.css?ver=1.0.1' media='all'>
     <link rel='stylesheet' id='template-kit-export-css' href='<?= base_url() ?>external/wp-content/plugins/template-kit-export/public/assets/css/template-kit-export-public.min.css?ver=1.0.21' media='all'>
     <link rel='stylesheet' id='hfe-style-css' href='<?= base_url() ?>external/wp-content/plugins/header-footer-elementor/assets/css/header-footer-elementor.css?ver=1.6.13' media='all'>
@@ -1276,9 +1182,6 @@
                                                         <li id="menu-item-388" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-388">
                                                             <a href="<?= base_url() ?>">Home</a>
                                                         </li>
-                                                        <!-- <li id="menu-item-389" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-17 current_page_item menu-item-389">
-                                                            <a href="<?= base_url() ?>" aria-current="page">Home</a>
-                                                        </li> -->
                                                         <li id="menu-item-388" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-388">
                                                             <a href="<?= base_url() ?>about-us">About</a>
                                                         </li>
