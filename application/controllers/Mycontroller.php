@@ -259,6 +259,7 @@ class Mycontroller extends CI_Controller
         $data['duration'] = $get_details->duration;
         $data['tour_total_days'] = str_replace("D", "", (explode('/', $get_details->duration)[1]));
         $data['tour_exact_duration'] = str_replace("/", " - ", $get_details->duration);
+        $data['tour_start_date'] = $get_details->start_date;
         $data['start_date'] = $this->date_modification($get_details->start_date);
         $data['end_date'] = $this->date_modification($get_details->end_date);
 
@@ -302,7 +303,7 @@ class Mycontroller extends CI_Controller
         // print_r($tour_booking_info);
         // exit;
         $last_inst_id = $this->myfront_model->insert_data("tour_booking_details", $tour_booking_info);
-        $msg = 'You have booked successfully..<br>We will connect with you soon..!';
+        $msg = 'Thank U for choosing us, your booking will be confirm<br> within next 24 Hours following verification';
 
 
         if (!empty($last_inst_id)) {
