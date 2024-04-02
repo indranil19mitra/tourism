@@ -484,7 +484,7 @@ function tour_category_photo_Functionalities(
 						$("#tour_photos_sbmt").show();
 						successToster(res.msg);
 					} else {
-						window.location.href = baseurl + "tour_photos";
+						window.location.href = baseurl + "tour_category_photos";
 						successToster(res.msg);
 					}
 				} else {

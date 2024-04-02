@@ -283,23 +283,23 @@
 
         if (url_para == "") {
             var images = [
-                baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/main/20231101_050218.jpg',
-                baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/main/top1.jpg',
-                baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/main/IMG_9848.jpg',
-                baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/main/lasar_edited4.jpg',
-                baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/main/IMG_9331_photo-full.jpeg'
+                baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/home/home_header/IMG_8334_photo.jpg',
+                baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/home/home_header/20231101_050218.jpg',
+                baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/home/home_header/photo_2024_03-31_18.jpg',
+                baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/home/home_header/hhedited4.jpg',
+                baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/home/home_header/IMG_9331_photo_full.jpg',
             ];
         }
         if (url_para != "") {
             // console.log(url_para);
             var images = [
-                baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/about/DSC_0039.jpg',
-                baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/about/20231101_050218.jpg"'
+                baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/about/about_header/20240225_140012.jpg',
+                baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/about/about_header/DSC07559.jpg'
             ];
             $("#section_2").css('height', (url_para != "") ? '50vh' : '100vh');
         }
         // Set the initial height immediately on page load for mobile
-        // if (isMobile) {
+        // if (isMobile) {          
         //     section.css('height', (url_para != "") ? '50vh' : '100vh');
         // }
 

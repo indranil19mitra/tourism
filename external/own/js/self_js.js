@@ -596,7 +596,7 @@ function check_date_function(tour_details_id = "", tours_id = "") {
 			tours_id: tours_id,
 		},
 		success: function (res) {
-			// console.log(res);
+			console.log(res);
 			$("#get_price_details").html(res.data.tout_price);
 			$("#get_price_details_1").val(res.data.tout_price);
 			$("#get_price_details_1").hide().attr("readonly");
@@ -618,6 +618,7 @@ function check_date_function(tour_details_id = "", tours_id = "") {
 			$("#tour_details_date").html(
 				res.data.start_date + " - " + res.data.end_date
 			);
+			$("#tour_details_start_date").val(res.data.tour_start_date);
 		},
 	});
 }
@@ -700,13 +701,23 @@ function check_next(obj) {
 		$("#tour_details_main_customer_email").html($("#email").val());
 		$("#tour_details_main_customer_phone").html($("#contact_no").val());
 
+		var tour_start_date = $("#tour_details_start_date").val();
+		var today_date = current_date();
+		var gapInDays = get_gap_between_days(tour_start_date, today_date);
+
+		if (gapInDays > 7) {
+			var pmnt_prsnt = 50;
+		} else {
+			var pmnt_prsnt = 100;
+		}
+
 		var tour_amount = $("#get_price_details_1").val();
 		var tour_gst_amount = (tour_amount * bookingMemberCount * 5) / 100;
 		var tour_actual_amount_without_gst = tour_amount * bookingMemberCount;
 		var tour_actual_amount_with_gst =
 			tour_gst_amount + tour_actual_amount_without_gst;
 		var tour_booking_adv_requirement =
-			(tour_actual_amount_without_gst * 50) / 100;
+			(tour_actual_amount_without_gst * pmnt_prsnt) / 100;
 
 		$("#ttl_amount_of_booking_per_head_charge_without_gst").html(
 			tour_amount + " X " + bookingMemberCount
@@ -1387,8 +1398,8 @@ function check_cnct_us_input(val, type) {
 	if (type == "name") {
 		$("#" + type).val(val.replace(/[^A-Za-z ]/g, ""));
 	}
-	
-	is_checked=check_is_field($("#name").val(), $("#email").val());
+
+	is_checked = check_is_field($("#name").val(), $("#email").val());
 
 	if (type == "email") {
 		$("#" + type).val(val.replace(/[^A-Za-z0-9@.]/g, ""));
@@ -1422,4 +1433,18 @@ function check_is_field(name, email) {
 	} else {
 		return 1;
 	}
+}
+
+function get_gap_between_days(date1_string, date2_string) {
+	// Create date objects from the date strings
+	var date1 = new Date(date1_string);
+	var date2 = new Date(date2_string);
+
+	// Calculate the difference in milliseconds
+	var differenceInMs = date1.getTime() - date2.getTime();
+
+	// Convert milliseconds to days
+	var gapInDays = Math.floor(differenceInMs / (1000 * 60 * 60 * 24));
+
+	return gapInDays;
 }

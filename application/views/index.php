@@ -62,7 +62,7 @@
 
 		<div class="container-fluid p-0 g-0">
 			<div class="">
-				<img src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/self/main/lasar_edited4.jpg" class="d-block w-100 crsl_img" style="width: 100%;" alt="..." data-bs-interval="2000">
+				<img src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/self/home/IMG_3425.jpg" class="d-block w-100 crsl_img1" style="width: 100%;" alt="..." data-bs-interval="2000">
 			</div>
 		</div>
 	</section>
@@ -130,7 +130,7 @@
 						foreach ($get_tours_dates as $key => $val) :
 							if ($key < 12) :
 					?>
-								<a type="button" onclick="tourGetOnDates('<?= $val->start_date ?>')" style="padding: 5px 20px 5px 20px" class="text-secondary btn btn-outline-secondary rounded-pill btn-sm dt_btn"><?= date("M 'y", strtotime($val->start_date)); ?></a>
+								<a type="button" onclick="tourGetOnDates('<?= $val->start_date ?>')" style="padding: 5px 20px 5px 20px" class="text-secondary btn btn-outline-secondary rounded-pill btn-sm dt_btn mb-2"><?= date("M 'y", strtotime($val->start_date)); ?></a>
 					<?php
 							endif;
 						endforeach;
@@ -139,7 +139,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="container-fluid crd_mn mb-5">
+		<div class="container-fluid crd_mn mb-3">
 			<div class="row">
 				<div class="w-100 mt-5" id="dt_swpr1">
 					<div class="swiper swiper_container1 mb-3">

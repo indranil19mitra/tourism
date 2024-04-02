@@ -76,7 +76,8 @@
                 <div class="elementor-widget-wrap elementor-element-populated">
                     <div class="elementor-element elementor-element-c4afbb2 elementor-widget elementor-widget-image" data-id="c4afbb2" data-element_type="widget" data-widget_type="image.default">
                         <div class="elementor-widget-container">
-                            <img decoding="async" src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/self/about/20221117_094757-01.jpeg" title="Hiker at a mountain" alt="Hiker at a mountain" loading="lazy">
+                            <!-- <img decoding="async" src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/self/about/20221117_094757-01.jpeg" title="Hiker at a mountain" alt="Hiker at a mountain" loading="lazy"> -->
+                            <img decoding="async" src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/self/about/20221117_094757-01.jpeg" title="" alt="" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -260,20 +261,20 @@
                                     <div class="elementor-element elementor-element-b15479b elementor-widget elementor-widget-jkit_team" data-id="b15479b" data-element_type="widget" data-widget_type="jkit_team.default">
                                         <div class="elementor-widget-container">
                                             <div class="jeg-elementor-kit jkit-team style-title-horizontal  jeg_module_374_6_654c63f047c23">
-                                                <div class="profile-card"><img decoding="async" src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/self/about/members/20231227_114519.jpg" alt="Arun Camacho">
+                                                <div class="profile-card"><img decoding="async" src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/self/about/members/IMG_5006.jpg" alt="Medha Saha">
                                                     <div class="image-hover-bg"></div>
                                                     <div class="profile-body">
                                                         <div class="title-wrapper">
-                                                            <p class="profile-designation text-white ">Guide</p>
+                                                            <p class="profile-designation text-white "></p>
                                                         </div>
                                                         <div class="name-wrapper">
-                                                            <h3 class="profile-title text-white">Arun Camacho</h3>
+                                                            <h3 class="profile-title text-white">Medha Saha</h3>
                                                             <ul class="social-list">
                                                                 <li class="social-icon elementor-repeater-item-c625a9a">
-                                                                    <a href="#"><i aria-hidden="true" class="fab fa-facebook-f"></i></a>
+                                                                    <a href="https://www.facebook.com/medha.saha.5?mibextid=ZbWKwL" target="_blank"><i aria-hidden="true" class="fab fa-facebook-f"></i></a>
                                                                 </li>
                                                                 <li class="social-icon elementor-repeater-item-3a36d8c">
-                                                                    <a href="#"><i aria-hidden="true" class="fab fa-instagram"></i></a>
+                                                                    <a href="https://www.instagram.com/m_e_d_h_a_saha?igsh=OWVybTN2ODlpaDF4" target="_blank"><i aria-hidden="true" class="fab fa-instagram"></i></a>
                                                                 </li>
                                                             </ul>
                                                         </div>
@@ -289,21 +290,20 @@
                                     <div class="elementor-element elementor-element-3b0a450 elementor-widget elementor-widget-jkit_team" data-id="3b0a450" data-element_type="widget" data-widget_type="jkit_team.default">
                                         <div class="elementor-widget-container">
                                             <div class="jeg-elementor-kit jkit-team style-title-horizontal  jeg_module_374_7_654c63f0492d3">
-                                                <div class="profile-card"><img decoding="async" src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/self/about/members/FB_IMG_1709742822649.jpg" alt="Enrique Sadler">
+                                                <div class="profile-card"><img decoding="async" src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/self/about/members/340915069.jpg" alt="Sumi Singha Roy">
                                                     <div class="image-hover-bg"></div>
                                                     <div class="profile-body">
                                                         <div class="title-wrapper">
-                                                            <p class="profile-designation text-white ">Guide</p>
-
+                                                            <p class="profile-designation text-white "></p>
                                                         </div>
                                                         <div class="name-wrapper">
-                                                            <h3 class="profile-title text-white">Enrique Sadler</h3>
+                                                            <h3 class="profile-title text-white">Sumi Singha Roy</h3>
                                                             <ul class="social-list">
                                                                 <li class="social-icon elementor-repeater-item-c625a9a">
-                                                                    <a href="#"><i aria-hidden="true" class="fab fa-facebook-f"></i></a>
+                                                                    <a href="https://www.facebook.com/sumi.singharoy.12?mibextid=ZbWKwL" target="_blank"><i aria-hidden="true" class="fab fa-facebook-f"></i></a>
                                                                 </li>
                                                                 <li class="social-icon elementor-repeater-item-3a36d8c">
-                                                                    <a href="#"><i aria-hidden="true" class="fab fa-instagram"></i></a>
+                                                                    <a href="https://www.instagram.com/__a_flawed_character__?igsh=Z3Y3dDJ0cmdqa3Nn" target="_blank"><i aria-hidden="true" class="fab fa-instagram"></i></a>
                                                                 </li>
                                                             </ul>
                                                         </div>
@@ -337,7 +337,7 @@
                                     </div>
                                     <div class="elementor-element elementor-element-79e4907 elementor-absolute animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="79e4907" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;,&quot;_animation&quot;:&quot;fadeInLeft&quot;}" data-widget_type="heading.default">
                                         <div class="elementor-widget-container">
-                                            <!-- <span class="elementor-heading-title elementor-size-default">Our Guide</span> -->
+                                            <!-- <span class="elementor-heading-title elementor-size-default">Our </span> -->
                                             <span class="elementor-heading-title elementor-size-default">Durbeen</span>
 
                                         </div>
@@ -357,11 +357,11 @@
                                     <div class="elementor-element elementor-element-b15479b elementor-widget elementor-widget-jkit_team" data-id="b15479b" data-element_type="widget" data-widget_type="jkit_team.default">
                                         <div class="elementor-widget-container">
                                             <div class="jeg-elementor-kit jkit-team style-title-horizontal  jeg_module_374_6_654c63f047c23">
-                                                <div class="profile-card"><img decoding="async" src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/self/about/members/FB_IMG_1709742822649.jpg" alt="Arun Camacho">
+                                                <div class="profile-card"><img decoding="async" src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/self/about/members/340915069.jpg" alt="Arun Camacho">
                                                     <div class="image-hover-bg"></div>
                                                     <div class="profile-body">
                                                         <div class="title-wrapper">
-                                                            <p class="profile-designation text-white ">Guide</p>
+                                                            <p class="profile-designation text-white "></p>
 
                                                         </div>
                                                         <div class="name-wrapper">
@@ -391,7 +391,7 @@
                                                     <div class="image-hover-bg"></div>
                                                     <div class="profile-body">
                                                         <div class="title-wrapper">
-                                                            <p class="profile-designation text-white ">Guide</p>
+                                                            <p class="profile-designation text-white "></p>
 
                                                         </div>
                                                         <div class="name-wrapper">
@@ -421,7 +421,7 @@
                                                     <div class="image-hover-bg"></div>
                                                     <div class="profile-body">
                                                         <div class="title-wrapper">
-                                                            <p class="profile-designation text-white">Guide</p>
+                                                            <p class="profile-designation text-white"></p>
 
                                                         </div>
                                                         <div class="name-wrapper">
@@ -451,7 +451,7 @@
                                                     <div class="image-hover-bg"></div>
                                                     <div class="profile-body">
                                                         <div class="title-wrapper">
-                                                            <p class="profile-designation text-white">Guide</p>
+                                                            <p class="profile-designation text-white"></p>
 
                                                         </div>
                                                         <div class="name-wrapper">
@@ -495,7 +495,7 @@
                                     </div>
                                     <div class="elementor-element elementor-element-79e4907 elementor-absolute animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="79e4907" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;,&quot;_animation&quot;:&quot;fadeInLeft&quot;}" data-widget_type="heading.default">
                                         <div class="elementor-widget-container">
-                                            <!-- <span class="elementor-heading-title elementor-size-default">Our Guide</span> -->
+                                            <!-- <span class="elementor-heading-title elementor-size-default">Our </span> -->
                                             <span class="elementor-heading-title elementor-size-default">Durbeen</span>
 
                                         </div>
@@ -519,7 +519,7 @@
                                                     <div class="image-hover-bg"></div>
                                                     <div class="profile-body">
                                                         <div class="title-wrapper">
-                                                            <p class="profile-designation text-white ">Guide</p>
+                                                            <p class="profile-designation text-white "></p>
 
                                                         </div>
                                                         <div class="name-wrapper">
@@ -549,7 +549,7 @@
                                                     <div class="image-hover-bg"></div>
                                                     <div class="profile-body">
                                                         <div class="title-wrapper">
-                                                            <p class="profile-designation text-white ">Guide</p>
+                                                            <p class="profile-designation text-white "></p>
 
                                                         </div>
                                                         <div class="name-wrapper">
@@ -579,7 +579,7 @@
                                                     <div class="image-hover-bg"></div>
                                                     <div class="profile-body">
                                                         <div class="title-wrapper">
-                                                            <p class="profile-designation text-white">Guide</p>
+                                                            <p class="profile-designation text-white"></p>
 
                                                         </div>
                                                         <div class="name-wrapper">
@@ -609,7 +609,7 @@
                                                     <div class="image-hover-bg"></div>
                                                     <div class="profile-body">
                                                         <div class="title-wrapper">
-                                                            <p class="profile-designation text-white">Guide</p>
+                                                            <p class="profile-designation text-white"></p>
 
                                                         </div>
                                                         <div class="name-wrapper">

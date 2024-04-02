@@ -569,6 +569,7 @@ if (!empty($tour_photos)) {
                                                         <i class="fa-solid fa-calendar-days booking_fnt_icn"></i>
                                                         <span id="tour_details_date" class="booking_fnt_txt"></span>
                                                     </div>
+                                                    <input type="hidden" id="tour_details_start_date">
                                                     <div>
                                                         <i class="fa-solid fa-user booking_fnt_icn"></i>
                                                         <span id="tour_details_main_customer_name" class="booking_fnt_txt"></span>
@@ -617,32 +618,41 @@ if (!empty($tour_photos)) {
                                                     </div>
                                                 </div>
 
-                                                <div class="mt-5" id="overall_payment_details">
+                                                <div class="mt-5 px-5" id="overall_payment_details">
                                                     <div id="overall_payment_details_1">
                                                         <div>
                                                             <span id="tour_booking_adv_payment_methods"></span>
                                                         </div>
-                                                        <div>
-                                                            <span id="tour_booking_upi_us_at"></span>
-                                                        </div>
-                                                        <div>
-                                                            <span id="tour_booking_upi_name"><strong>UPI Name: </strong></span>
-                                                            <span id="tour_booking_upi_name_details">Durbeen / Durbeen Private Limited</span>
-                                                        </div>
-                                                        <div>
-                                                            <span id="bank_transfer"><strong>Bank Transfer:</strong></span>
-                                                        </div>
-                                                        <div>
-                                                            <span id="tour_booking_ac_number"></span>
-                                                        </div>
-                                                        <div>
-                                                            <span id="tour_booking_ac_name"></span>
-                                                        </div>
-                                                        <div class="pb-1">
-                                                            <span id="tour_booking_ac_ifsc"></span>
-                                                        </div>
-                                                        <div>
-                                                            <span class="text-danger">*</span><span id="tour_booking_ac_ifsc_1"><strong> Please Check Cancellation Policy</strong></span>
+                                                        <div class="row">
+                                                            <div class="col-lg-6 col-md-6 col-sm-12 mt-5">
+                                                                <div>
+                                                                    <span id="tour_booking_upi_us_at"></span>
+                                                                </div>
+                                                                <div>
+                                                                    <span id="tour_booking_upi_name"><strong>UPI Name: </strong></span>
+                                                                    <span id="tour_booking_upi_name_details">Durbeen / Durbeen Private Limited</span>
+                                                                </div>
+                                                                <div>
+                                                                    <span id="bank_transfer"><strong>Bank Transfer:</strong></span>
+                                                                </div>
+                                                                <div>
+                                                                    <span id="tour_booking_ac_number"></span>
+                                                                </div>
+                                                                <div>
+                                                                    <span id="tour_booking_ac_name"></span>
+                                                                </div>
+                                                                <div class="pb-1">
+                                                                    <span id="tour_booking_ac_ifsc"></span>
+                                                                </div>
+                                                                <div>
+                                                                    <span class="text-danger">*</span><span id="tour_booking_ac_ifsc_1"><strong> Please Check Cancellation Policy</strong></span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6 col-sm-12 d-flex justify-content-end">
+                                                                <div>
+                                                                    <img src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/self/payment/1712088277571.jpg" alt="" id="upi_id">
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
