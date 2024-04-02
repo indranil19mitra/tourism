@@ -84,7 +84,7 @@
                                             <td>
                                                 <div class="d-flex">
                                                     <div class="pe-2"><i class="btn fa-solid fa-pen-to-square p-0 text-danger" data-bs-toggle="modal" data-bs-target="#tour_photos_modal" onclick="tour_category_photo_Functionalities(<?= $rslt->id ?>,'edit')"></i></div>
-                                                    <div><i class="btn fa-solid fa-trash p-0 text-danger" onclick="tour_category_photo_Functionalities(<?= $rslt->id ?>,'delete','tour_photos')"></i></div>
+                                                    <div><i class="btn fa-solid fa-trash p-0 text-danger" onclick="tour_category_photo_Functionalities(<?= $rslt->id ?>,'delete','tour_category_photos')"></i></div>
                                                 </div>
                                             </td>
                                         </tr>
