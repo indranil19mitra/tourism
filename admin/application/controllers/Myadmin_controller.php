@@ -334,7 +334,7 @@ class Myadmin_controller extends CI_Controller
         $join2 = array('table' => 'tour_category', 'condition' => 'tour_category.id=tours.tour_category_id');
         $join = [$join1, $join2];
 
-        $data['tour_details'] = $this->myadmin_model->get_data("tours.id,tours.name,tours.main_image,tours.difficulty,tours.seat_availability,tours.short_desc,place.name as place_name,tour_category.name as tour_category_name,tours.status", "tours", $cond, $join, "", "desc", "id");
+        $data['tour_details'] = $this->myadmin_model->get_data("tours.id,tours.name,tours.main_image,tours.difficulty,tours.seat_availability,tours.short_desc,tours.header_desc,place.name as place_name,tour_category.name as tour_category_name,tours.status", "tours", $cond, $join, "", "desc", "id");
 
 
         $cond1 = array('place.is_delete!=' => '0');
@@ -358,6 +358,7 @@ class Myadmin_controller extends CI_Controller
             'seat_availability' => $this->input->post('seat_availability'),
             'difficulty' => $this->input->post('difficulty'),
             'short_desc' => $this->input->post('tour_short_desc'),
+            'header_desc' => $this->input->post('tour_header_desc'),
             'status' => $this->input->post('status'),
         );
 
@@ -438,7 +439,7 @@ class Myadmin_controller extends CI_Controller
             $cond = array(
                 'id' => $edit_id
             );
-            $data = $this->myadmin_model->get_data('id,name,place_id,tour_category_id,difficulty,seat_availability,short_desc,status,main_image', "tours", $cond, "", "1");
+            $data = $this->myadmin_model->get_data('id,name,place_id,tour_category_id,difficulty,seat_availability,short_desc,header_desc,status,main_image', "tours", $cond, "", "1");
             $rslt = array('status' => '101', 'msg' => '', 'data' => $data);
         } else {
             $rslt = array('status' => '103', 'msg' => '', 'data' => '');
@@ -488,7 +489,7 @@ class Myadmin_controller extends CI_Controller
             'drop_location' => $this->input->post('drop_location'),
             'duration' => $this->input->post('duration'),
             'price' => $this->input->post('price'),
-            'pack_size' => $this->input->post('pack_size'),
+            'pax_size' => $this->input->post('pax_size'),
             'is_discount' => (!empty($this->input->post('is_discount'))) ? $this->input->post('is_discount') : '0',
             'disc_percent' => (!empty($this->input->post('is_discount'))) ? (($this->input->post('is_discount') != 0) ? ($this->input->post('disc_percent')) : 0) : 0,
             'status' => $this->input->post('status'),
