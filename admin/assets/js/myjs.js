@@ -428,6 +428,7 @@ function tourFunctionalities(ids = "", types = "", tables = "") {
 						$("#eid").val(res.data.id);
 						$("#tour_name").val(res.data.name);
 						$("#tour_short_desc").html(res.data.short_desc);
+						$("#tour_header_desc").html(res.data.header_desc);
 						$("#place").val(res.data.place_id).trigger("change");
 						$("#tour_category")
 							.val(res.data.tour_category_id)
@@ -566,7 +567,7 @@ function tourDestFunctionalities(ids = "", types = "", tables = "") {
 						$("#price").val(res.data.price);
 						$("#start_date").val(res.data.start_date);
 						$("#end_date").val(res.data.end_date);
-						$("#pack_size").val(res.data.pack_size);
+						$("#pax_size").val(res.data.pax_size);
 
 						if (res.data.is_discount != "" && res.data.is_discount == "1") {
 							$("#is_discount").prop("checked", true);

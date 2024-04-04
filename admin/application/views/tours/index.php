@@ -20,11 +20,14 @@
                                 <input type="text" class="form-control clr" onkeyup="isExist(this.value,'tours')" name="tour_name" id="tour_name" placeholder="Tour Name">
                             </div>
 
-                            <div class="form-floating">
+                            <div class="form-group form-floating">
                                 <textarea class="form-control" placeholder="Tour Short Description" name="tour_short_desc" id="tour_short_desc" style="height: 100px"></textarea>
                                 <label for="tour_short_desc">Tour Short Description</label>
                             </div>
-
+                            <div class="form-group form-floating">
+                                <textarea class="form-control" placeholder="Tour Header Description" name="tour_header_desc" id="tour_header_desc" style="height: 100px"></textarea>
+                                <label for="tour_header_desc">Tour Header Description</label>
+                            </div>
                             <select class="form-group form-select slct_cls" id="place" name="place" aria-label="select example">
                                 <option value="" disabled selected>--Please Select Place--</option>
                                 <?php
@@ -95,6 +98,7 @@
                                     <th>Seat Availability</th>
                                     <th>Image</th>
                                     <th>Short Description</th>
+                                    <th>Header Description</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
@@ -117,6 +121,7 @@
                                             <td><?= $rslt->seat_availability; ?></td>
                                             <td><img src="<?= base_url() . $rslt->main_image; ?>" alt=""></td>
                                             <td><?= $rslt->short_desc; ?></td>
+                                            <td><?= $rslt->header_desc; ?></td>
                                             <td><label class="<?= $status_desc_class; ?>"><?= $status_desc; ?></label></td>
                                             <td>
                                                 <div class="d-flex">

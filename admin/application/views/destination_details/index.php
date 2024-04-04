@@ -68,8 +68,8 @@
                                     <input type="text" class="form-control" id="price" name="price" placeholder="Price">
                                 </div>
                                 <div class="col-lg-6 col-md-12 col-sm-12 mb-3">
-                                    <label for="pack_size" class="col-form-label">Pack Size</label>
-                                    <input type="text" class="form-control" id="pack_size" name="pack_size" placeholder="Pack Size">
+                                    <label for="pax_size" class="col-form-label">Pax Size</label>
+                                    <input type="text" class="form-control" id="pax_size" name="pax_size" placeholder="pax Size">
                                 </div>
                                 <div class="col-lg-6 col-md-12 col-sm-12 mb-3 disc_percent_chk">
                                     <label for="disc_percent" class="col-form-label">Discount Percent</label>
@@ -107,7 +107,7 @@
                                     <th class="text-wrap">Drop Location</th>
                                     <th>Duration</th>
                                     <th>Price</th>
-                                    <th>Pack Size</th>
+                                    <th>Pax Size</th>
                                     <th>Discount</th>
                                     <th class="text-wrap">Discount Amount</th>
                                     <th>Status</th>
@@ -134,7 +134,7 @@
                                             <td><?= $rslt->drop_location; ?></td>
                                             <td><?= $rslt->duration; ?></td>
                                             <td><?= $rslt->price; ?></td>
-                                            <td><?= $rslt->pack_size; ?></td>
+                                            <td><?= $rslt->pax_size; ?></td>
                                             <td><?= (!empty($rslt->disc_percent)) ? $rslt->disc_percent : 'No'; ?></td>
                                             <td><?= $disc_amnt; ?></td>
                                             <td><label class="<?= $status_desc_class; ?>"><?= $status_desc; ?></label></td>

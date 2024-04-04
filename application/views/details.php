@@ -1,5 +1,5 @@
 <?php
-$duration = $seat_availability = $pack_size = $price = $pl = $dl = $difficult = $tour_about_details = $itinerary_sequence = $itinerary = $itinerary_sub = $tours_id = $tour_inclusions = $tour_exclusions = $tour_other_info = $tour_photo = "";
+$duration = $seat_availability = $pax_size = $price = $pl = $dl = $difficult = $tour_about_details = $itinerary_sequence = $itinerary = $itinerary_sub = $tours_id = $tour_inclusions = $tour_exclusions = $tour_other_info = $tour_photo = "";
 if (!empty($get_tours_details)) {
     // echo "<pre>";
     // print_r($get_tours_details);
@@ -8,13 +8,15 @@ if (!empty($get_tours_details)) {
     $price = $get_tours_details->price;
     $pl = $get_tours_details->pikup_location;
     $dl = $get_tours_details->drop_location;
-    $pack_size = (!empty($get_tours_details->pack_size)) ? $get_tours_details->pack_size : "NA";
+    $pax_size = (!empty($get_tours_details->pax_size)) ? $get_tours_details->pax_size : "NA";
     $difficult = (!empty($get_tours_details->difficulty)) ? $get_tours_details->difficulty : 'NA';
     $tour_about_details = $get_tours_details->tour_about_details;
     $tour_inclusions = $get_tours_details->inclusions;
     $tour_exclusions = $get_tours_details->exclusions;
     $tour_other_info = $get_tours_details->other_info;
-    $itinerary_sequence = (!empty($get_tours_details->itinerary_sequence)) ? (array_filter(explode("##,", rtrim($get_tours_details->itinerary_sequence, "##")))) : '';
+    $itinerary_sequence = (!empty($get_tours_details->itinerary_sequence)) ? (array_filter(explode("##,", rtrim($get_tours_details->itinerary_sequence, "##")), function ($seq_value) {
+        return $seq_value !== '' || $seq_value === '0';
+    })) : '';
     $itinerary = (!empty($get_tours_details->itinerary)) ? (array_filter(explode("##,", rtrim($get_tours_details->itinerary, "##")))) : '';
     $itinerary_sub = (!empty($get_tours_details->itinerary_sub)) ? array_filter(explode("##,", rtrim($get_tours_details->itinerary_sub, "##"))) : '';
     $tour_details_id = (!empty($get_tours_details->tour_details_id)) ? $get_tours_details->tour_details_id : '';
@@ -72,7 +74,7 @@ if (!empty($tour_photos)) {
                     </div>
                 </section>
 
-                <div class="col-12 mb-5">
+                <div class="col-12 mb-5 px-2">
                     <div class="d-flex justify-content-between">
                         <div class="col-6">
                             <div><i class="fa-solid fa-clock dtl_icon"></i><span class="fw-bold"> Duration -</span><span class="ps-1 fw-bold dtl_icon1 word-wrap"> <?= $duration; ?></span></div>
@@ -89,17 +91,17 @@ if (!empty($tour_photos)) {
                         </div>
 
                         <div class="col-6">
-                            <div><i class="fa-solid fa-person-hiking dtl_icon1"></i><span class="fw-bold"> Difficulty -</span><span class="ps-1 fw-bold dtl_icon1 word-wrap"> <?= $difficult; ?></span></div>
+                            <div><i class="fa-solid fa-person-hiking dtl_icon3"></i><span class="fw-bold"> Difficulty -</span><span class="ps-1 fw-bold dtl_icon1 word-wrap"> <?= $difficult; ?></span></div>
                         </div>
                     </div>
 
                     <div class="mt-5 d-flex justify-content-between">
                         <div class="col-6">
-                            <div><i class="fa-solid fa-location-dot dtl_icon1"></i><span class="ps-1 fw-bold dtl_icon1 word-wrap"><?= $pl; ?> - <?= $dl; ?></span></div>
+                            <div><i class="fa-solid fa-location-dot dtl_icon1"></i><span class="ps-1 fw-bold dtl_icon2 word-wrap"><?= $pl; ?> - <?= $dl; ?></span></div>
                         </div>
 
                         <div class="col-6">
-                            <div><i class="fa-solid fa-user-group dtl_icon1"></i><span class="fw-bold"> Pack Size -</span><span class="ps-1 fw-bold dtl_icon1 word-wrap"> <?= $pack_size; ?></span></div>
+                            <div><i class="fa-solid fa-user-group dtl_icon2"></i><span class="fw-bold"> Pax Size -</span><span class="ps-1 fw-bold dtl_icon1 word-wrap"> <?= $pax_size; ?></span></div>
                         </div>
                     </div>
                 </div>
@@ -179,7 +181,6 @@ if (!empty($tour_photos)) {
                 if (!empty($itinerary)) :
                     $pre_itinerary_array = array();
                     $final_itinerary_array = array();
-                    // echo "<pre>";
                     foreach ($itinerary as $key => $val) {
                         $pre_itinerary_array[$itinerary_sequence[$key]]['itinerary'] = $itinerary[$key];
                         $pre_itinerary_array[$itinerary_sequence[$key]]['itinerary_sub'] = $itinerary_sub[$key];
@@ -255,7 +256,7 @@ if (!empty($tour_photos)) {
                 <?php
                 endif;
                 ?>
-                <div id="dates_and_costing">
+                <section id="dates_and_costing">
                     <section id="dates_and_costing1" class="elementor-section elementor-top-section elementor-element elementor-element-6521b521 elementor-section-boxed elementor-section-height-default elementor-section-height-default pt-5" data-id="6521b521" data-element_type="section">
                         <div class="elementor-background-overlay"></div>
                         <div class="container d-flex flex-wrap elementor-column-gap-default  p-0 g-0">
@@ -292,7 +293,7 @@ if (!empty($tour_photos)) {
                         </div>
                     </div>
 
-                    <section id="dates_and_costing1" class="elementor-section elementor-top-section elementor-element elementor-element-6521b521 elementor-section-boxed elementor-section-height-default elementor-section-height-default pt-5" data-id="6521b521" data-element_type="section">
+                    <section id="dates_and_costing2" class="elementor-section elementor-top-section elementor-element elementor-element-6521b521 elementor-section-boxed elementor-section-height-default elementor-section-height-default pt-5" data-id="6521b521" data-element_type="section">
                         <div class="elementor-background-overlay"></div>
                         <div class="container d-flex flex-wrap elementor-column-gap-default  p-0 g-0">
                             <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3198fc93" data-id="3198fc93" data-element_type="column">
@@ -329,7 +330,7 @@ if (!empty($tour_photos)) {
                             </thead>
                             <tbody class="table-secondary tbl_body">
                                 <tr>
-                                    <td>Double/ Twin Sharing</td>
+                                    <td>Shared Room/Dormitory</td>
                                     <td id="tour_price_month_wise"></td>
                                 </tr>
                             </tbody>
@@ -338,7 +339,7 @@ if (!empty($tour_photos)) {
                     <?php
                     if (!empty($tour_inclusions)) :
                     ?>
-                        <section id="dates_and_costing1" class="elementor-section elementor-top-section elementor-element elementor-element-6521b521 elementor-section-boxed elementor-section-height-default elementor-section-height-default pt-5" data-id="6521b521" data-element_type="section">
+                        <section id="dates_and_costing3" class="elementor-section elementor-top-section elementor-element elementor-element-6521b521 elementor-section-boxed elementor-section-height-default elementor-section-height-default pt-5" data-id="6521b521" data-element_type="section">
                             <div class="elementor-background-overlay"></div>
                             <div class="container d-flex flex-wrap elementor-column-gap-default  p-0 g-0">
                                 <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3198fc93" data-id="3198fc93" data-element_type="column">
@@ -383,7 +384,7 @@ if (!empty($tour_photos)) {
                     endif;
                     if (!empty($tour_exclusions)) :
                     ?>
-                        <section id="dates_and_costing1" class="elementor-section elementor-top-section elementor-element elementor-element-6521b521 elementor-section-boxed elementor-section-height-default elementor-section-height-default pt-5" data-id="6521b521" data-element_type="section">
+                        <section id="dates_and_costing4" class="elementor-section elementor-top-section elementor-element elementor-element-6521b521 elementor-section-boxed elementor-section-height-default elementor-section-height-default pt-5" data-id="6521b521" data-element_type="section">
                             <div class="elementor-background-overlay"></div>
                             <div class="container d-flex flex-wrap elementor-column-gap-default  p-0 g-0">
                                 <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3198fc93" data-id="3198fc93" data-element_type="column">
@@ -427,7 +428,7 @@ if (!empty($tour_photos)) {
                     <?php
                     endif;
                     ?>
-                </div>
+                </section>
 
                 <?php
                 if (!empty($tour_other_info)) :
@@ -516,7 +517,7 @@ if (!empty($tour_photos)) {
                                                 </div>
                                                 <div class="col-lg-12 col-md-12 col-sm-12 mb-3 d-flex justify-content-between p-5 text-center">
                                                     <div class="col-lg-4 col-md-12 col-sm-12 mb-3">
-                                                        <label for="type" class="col-form-label rs_cls3">Double Sharing/ Twin Sharing</label>
+                                                        <label for="type" class="col-form-label rs_cls3">Shared Room/Dormitory</label>
                                                     </div>
                                                     <div class="col-lg-4 col-md-12 col-sm-12 mb-3">
                                                         <label for="per_person" class="col-form-label rs_cls3">
@@ -597,7 +598,7 @@ if (!empty($tour_photos)) {
                                                             </thead>
                                                             <tbody class="table-secondary tbl_body">
                                                                 <tr class="booking_tr2">
-                                                                    <td class="border booking_bd">Double Sharing/ Twin Sharing</td>
+                                                                    <td class="border booking_bd">Shared Room/Dormitory</td>
                                                                     <td id="ttl_amount_of_booking_without_gst" class="border booking_bd"></td>
                                                                     <td id="ttl_amount_of_booking_per_head_charge_without_gst" class="border booking_bd"></td>
                                                                 </tr>
@@ -645,7 +646,7 @@ if (!empty($tour_photos)) {
                                                                     <span id="tour_booking_ac_ifsc"></span>
                                                                 </div>
                                                                 <div>
-                                                                    <span class="text-danger">*</span><span id="tour_booking_ac_ifsc_1"><strong> Please Check Cancellation Policy</strong></span>
+                                                                    <span class="text-danger">*</span><span id="tour_booking_ac_ifsc_1"><strong> Please Check Cancellation Policy </strong><a href="<?= base_url() ?>admin/assets/images/cancelation_policy_pdf/cancellation_rules_final.pdf" target="_blank" download><i class="fa-solid fa-file-pdf"></i></a></span>
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-6 col-md-6 col-sm-12 d-flex justify-content-end">
@@ -673,7 +674,7 @@ if (!empty($tour_photos)) {
             <div class="col-lg-4 col-md-12 col-sm-12">
                 <!-- <h1>Contact Us</h1> -->
 
-                <section id="other_info" class="elementor-section elementor-top-section elementor-element elementor-element-6521b521 elementor-section-boxed elementor-section-height-default elementor-section-height-default pt-5" data-id="6521b521" data-element_type="section">
+                <section id="get_in_touch" class="elementor-section elementor-top-section elementor-element elementor-element-6521b521 elementor-section-boxed elementor-section-height-default elementor-section-height-default pt-5" data-id="6521b521" data-element_type="section">
                     <div class="elementor-background-overlay"></div>
                     <div class="container d-flex flex-wrap elementor-column-gap-default  p-0 g-0">
                         <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3198fc93" data-id="3198fc93" data-element_type="column">
@@ -750,7 +751,7 @@ if (!empty($tour_photos)) {
                         // print_r($get_tours_category_wise_data);
                     ?>
 
-                        <section id="other_info" class="elementor-section elementor-top-section elementor-element elementor-element-6521b521 elementor-section-boxed elementor-section-height-default elementor-section-height-default pt-5" data-id="6521b521" data-element_type="section">
+                        <section id="similar_trip" class="elementor-section elementor-top-section elementor-element elementor-element-6521b521 elementor-section-boxed elementor-section-height-default elementor-section-height-default pt-5" data-id="6521b521" data-element_type="section">
                             <div class="elementor-background-overlay"></div>
                             <div class="container d-flex flex-wrap elementor-column-gap-default  p-0 g-0">
                                 <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3198fc93" data-id="3198fc93" data-element_type="column">
@@ -836,7 +837,7 @@ if (!empty($tour_photos)) {
                 <?php
                 if (!empty($tour_photo)) :
                 ?>
-                    <section id="other_info" class="elementor-section elementor-top-section elementor-element elementor-element-6521b521 elementor-section-boxed elementor-section-height-default elementor-section-height-default pt-5" data-id="6521b521" data-element_type="section">
+                    <section id="trip_photos" class="elementor-section elementor-top-section elementor-element elementor-element-6521b521 elementor-section-boxed elementor-section-height-default elementor-section-height-default pt-5" data-id="6521b521" data-element_type="section">
                         <div class="elementor-background-overlay"></div>
                         <div class="container d-flex flex-wrap elementor-column-gap-default  p-0 g-0">
                             <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3198fc93" data-id="3198fc93" data-element_type="column">
@@ -907,7 +908,7 @@ if (!empty($tour_photos)) {
                     // print_r($get_tours_category_wise_data);
                 ?>
 
-                    <section id="other_info" class="elementor-section elementor-top-section elementor-element elementor-element-6521b521 elementor-section-boxed elementor-section-height-default elementor-section-height-default pt-5" data-id="6521b521" data-element_type="section">
+                    <section id="similar_trip1" class="elementor-section elementor-top-section elementor-element elementor-element-6521b521 elementor-section-boxed elementor-section-height-default elementor-section-height-default pt-5" data-id="6521b521" data-element_type="section">
                         <div class="elementor-background-overlay"></div>
                         <div class="container d-flex flex-wrap elementor-column-gap-default  p-0 g-0">
                             <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3198fc93" data-id="3198fc93" data-element_type="column">

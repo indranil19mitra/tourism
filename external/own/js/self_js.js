@@ -250,6 +250,7 @@ function get_itinerary() {
 	$("#about_details").hide();
 	$("#dates_and_costing").hide();
 	$("#other_info").hide();
+	scrollToSection("itinerary_details");
 }
 
 function get_other_info() {
@@ -257,11 +258,10 @@ function get_other_info() {
 	$("#itinerary_details").hide();
 	$("#dates_and_costing").hide();
 	$("#other_info").show();
+	scrollToSection("other_info");
 }
 
 function get_dates_costing(tour_details_id = "", tour_ids = "") {
-	// console.log(tour_details_id, tour_ids);
-	// console.log(baseurl);
 	var url = baseurl + "Mycontroller/get_months_tour_wise";
 	$.ajax({
 		url: url,
@@ -272,7 +272,7 @@ function get_dates_costing(tour_details_id = "", tour_ids = "") {
 		},
 		dataType: "json",
 		success: function (res) {
-			console.log(res);
+			// console.log(res);
 			if (res.status == 101) {
 				var index_1st = "";
 				var html = "<div class='d-flex justify-content-start'>";
@@ -343,6 +343,7 @@ function get_dates_costing(tour_details_id = "", tour_ids = "") {
 				$("#about_details").hide();
 				$("#itinerary_details").hide();
 				$("#other_info").hide();
+				scrollToSection("dates_and_costing");
 				// console.log(index_1st);
 				if (index_1st != "") {
 					$("#" + index_1st).click();
@@ -777,7 +778,7 @@ function check_next(obj) {
 
 	if ($(obj).attr("id") == "tour_booking_details_next_1") {
 		$(obj).attr("id", "tour_booking_details_next_2");
-		$("#book_now_modal_header_title").html("ROOM SHARING");
+		$("#book_now_modal_header_title").html("Booking Details");
 		$("#tour_booking_details_back_1").show();
 		$("#tour_booking_details_back_1").attr("id", "tour_booking_details_back_2");
 		$("#plase_select_your_batch_dates").hide();
@@ -809,7 +810,7 @@ function check_back(obj) {
 	if ($(obj).attr("id") == "tour_booking_details_back_3") {
 		$(obj).attr("id", "tour_booking_details_back_2");
 		$("#tour_booking_details_next_3").attr("id", "tour_booking_details_next_2");
-		$("#book_now_modal_header_title").html("ROOM SHARING");
+		$("#book_now_modal_header_title").html("Booking Details");
 		$("#room_sharing").show();
 		$("#plase_select_your_batch_dates").hide();
 		$("#personal_details").hide();
@@ -1447,4 +1448,12 @@ function get_gap_between_days(date1_string, date2_string) {
 	var gapInDays = Math.floor(differenceInMs / (1000 * 60 * 60 * 24));
 
 	return gapInDays;
+}
+
+function scrollToSection(sectionId) {
+	var section = document.getElementById(sectionId);
+	if (section) {
+		section.scrollIntoView({ behavior: "smooth" });
+	}
+	return 1;
 }

@@ -93,7 +93,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-cb8d0e7" data-id="cb8d0e7" data-element_type="column">
+                                    <!-- <div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-cb8d0e7" data-id="cb8d0e7" data-element_type="column">
                                         <div class="elementor-widget-wrap elementor-element-populated">
                                             <div class="elementor-element elementor-element-d629825 elementor-widget elementor-widget-heading" data-id="d629825" data-element_type="widget" data-widget_type="heading.default">
                                                 <div class="elementor-widget-container">
@@ -113,7 +113,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </section>
                             <section class="elementor-section elementor-inner-section elementor-element elementor-element-d6347fa elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="d6347fa" data-element_type="section">
@@ -141,6 +141,14 @@
         </div>
     </div>
 </footer>
+<?php
+$main_image = "";
+$main_image_header_desc = "";
+if (!empty($get_tours_details)) {
+    $main_image = (!empty($get_tours_details->main_image)) ? $get_tours_details->main_image : '';
+    $main_image_header_desc = (!empty($get_tours_details->header_desc)) ? $get_tours_details->header_desc : '';
+}
+?>
 </div><!-- #page -->
 <link rel='stylesheet' id='jeg-dynamic-style-css' href='<?= base_url() ?>external/wp-content/plugins/jeg-elementor-kit/lib/jeg-framework/assets/css/jeg-dynamic-styles.css?ver=1.3.0' media='all'>
 <link rel='stylesheet' id='sweetalert2-css' href='<?= base_url() ?>external/wp-content/plugins/jeg-elementor-kit/assets/js/sweetalert2/sweetalert2.min.css?ver=11.6.16' media='all'>
@@ -292,10 +300,19 @@
         }
         if (url_para != "") {
             // console.log(url_para);
-            var images = [
-                baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/about/about_header/20240225_140012.jpg',
-                baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/about/about_header/DSC07559.jpg'
-            ];
+            if ('<?= $main_image ?>' == "") {
+                console.log('<?= $main_image ?>');
+                var images = [
+                    baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/about/about_header/20240225_140012.jpg',
+                    baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/about/about_header/DSC07559.jpg'
+                ];
+            } else {
+                console.log('<?= $main_image ?>');
+                var images = [
+                    baseurl + 'admin/<?= $main_image ?>',
+                ];
+                $("#tour_srt_desc_1").html('<?= $main_image_header_desc; ?>');
+            }
             $("#section_2").css('height', (url_para != "") ? '50vh' : '100vh');
         }
         // Set the initial height immediately on page load for mobile
