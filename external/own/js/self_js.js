@@ -862,26 +862,27 @@ function check_booking_input(inputValue = "", inputType = "") {
 
 	if (inputType === "name") {
 		var cleanedValue = inputValue.replace(/[^A-Za-z ]/g, ""); // Remove non-alphabetic characters, allowing only one space
-	} else if (inputType === "contact_no") {
-		var cleanedValue = inputValue.replace(/[^0-9]/g, ""); // Remove non-numeric characters
-	} else if (inputType === "email") {
+	}
+	if (inputType === "contact_no") {
+		var cleanedValue = inputValue.replace(/[^0-9+ ]/g, ""); // Remove non-numeric characters
+	}
+	if (inputType === "email") {
 		var cleanedValue = inputValue.replace(/[^0-9A-Za-z@.]/g, ""); // Remove leading and trailing whitespaces for email
 		// You can add additional email validation logic here if needed
-	} else {
-		if (inputType === "address") {
-			var cleanedValue = inputValue.replace(/[^A-Za-z0-9.()+*,:/| ]/g, "");
-		}
+	}
+	if (inputType === "address") {
+		var cleanedValue = inputValue.replace(/[^A-Za-z0-9.()+*,:/| ]/g, "");
 	}
 
 	// Update the input value with the cleaned value
 	inputElement.value = cleanedValue;
 
 	if (
-		cleanedValue === "" ||
+		(cleanedValue === "" && inputType != "address") ||
 		(inputType === "email" && !isValidEmail(cleanedValue))
 	) {
 		$("#tour_booking_details_next_3").addClass("pe-none");
-		inputElement.focus();
+		// inputElement.focus();
 		return false;
 	} else {
 		checkAllInputsFilled();
@@ -902,15 +903,10 @@ function isValidEmail(email) {
 function checkAllInputsFilled() {
 	var nameValue = document.getElementById("name").value.trim();
 	var contactNoValue = document.getElementById("contact_no").value.trim();
-	var emailValue = document.getElementById("email").value.trim();
-	var addressValue = document.getElementById("address").value.trim();
+	// var emailValue = document.getElementById("email").value.trim();
+	// var addressValue = document.getElementById("address").value.trim();
 
-	if (
-		nameValue !== "" &&
-		contactNoValue !== "" &&
-		emailValue !== "" &&
-		addressValue !== ""
-	) {
+	if (nameValue !== "" && contactNoValue !== "") {
 		$("#tour_booking_details_next_3").removeClass("pe-none");
 	} else {
 		$("#tour_booking_details_next_3").addClass("pe-none");
@@ -918,12 +914,9 @@ function checkAllInputsFilled() {
 		// Find the first empty input field and focus on it
 		if (nameValue === "") {
 			document.getElementById("name").focus();
-		} else if (contactNoValue === "") {
+		}
+		if (contactNoValue === "") {
 			document.getElementById("contact_no").focus();
-		} else if (emailValue === "") {
-			document.getElementById("email").focus();
-		} else if (addressValue === "") {
-			document.getElementById("address").focus();
 		}
 	}
 }

@@ -12,7 +12,7 @@
 								<div class="elementor-widget-wrap elementor-element-populated">
 									<div class="elementor-element elementor-element-446a8ec animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="446a8ec" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;}" data-widget_type="heading.default">
 										<div class="elementor-widget-container">
-											<h2 class="elementor-heading-title elementor-size-default">Our Travel Mates</h2>
+											<h2 class="elementor-heading-title elementor-size-default"><?= (!empty($category_5)) ? $category_5->name : '' ?></h2>
 										</div>
 									</div>
 									<div class="elementor-element elementor-element-79e4907 elementor-absolute animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="79e4907" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;,&quot;_animation&quot;:&quot;fadeInLeft&quot;}" data-widget_type="heading.default">
@@ -58,14 +58,27 @@
 		</div>
 	</section> -->
 
-	<section class="elementor-section elementor-inner-section elementor-element elementor-element-65bf764c animated-slow elementor-section-boxed elementor-section-height-default elementor-section-height-default crsl_tp mt-5" data-id="6521b521" data-element_type="section">
+	<?php
+	if (!empty($get_tour_category_images)) :
+		foreach ($get_tour_category_images as $val) :
+			if ($val->tour_category_id == 5) :
+	?>
 
-		<div class="container-fluid p-0 g-0">
-			<div class="">
-				<img src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/self/home/IMG_3425.jpg" class="d-block w-100 crsl_img1" style="width: 100%;" alt="..." data-bs-interval="2000">
-			</div>
-		</div>
-	</section>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-65bf764c animated-slow elementor-section-boxed elementor-section-height-default elementor-section-height-default crsl_tp mt-5" data-id="6521b521" data-element_type="section">
+
+					<div class="container-fluid p-0 g-0">
+						<div class="">
+							<img src="<?= base_url("admin/" . $val->trip_image) ?>" class="d-block w-100 crsl_img1" style="width: 100%;" alt="..." data-bs-interval="2000">
+						</div>
+					</div>
+				</section>
+
+	<?php
+			endif;
+		endforeach;
+	endif;
+	?>
+
 
 	<div class="mb-5">
 		<section class="elementor-section elementor-top-section elementor-element elementor-element-6521b521 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="6521b521" data-element_type="section">
@@ -101,7 +114,7 @@
 			</div>
 		</section>
 		<div class="container">
-			<div class="row mb-5">
+			<div class="row mb-2">
 				<!-- <div class="d-flex justify-content-center flex-wrap">
 				<?php
 				// if (!empty($get_tours_dates)) {
@@ -141,7 +154,7 @@
 		</div>
 		<div class="container-fluid crd_mn mb-3">
 			<div class="row">
-				<div class="w-100 mt-5" id="dt_swpr1">
+				<div class="w-100" id="dt_swpr1">
 					<div class="swiper swiper_container1 mb-3">
 						<div class="swiper-wrapper p-2 ps-0 ps-md-2">
 							<?php
@@ -188,7 +201,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="w-100 mt-5" id="dt_swpr2">
+				<div class="w-100" id="dt_swpr2">
 				</div>
 			</div>
 		</div>
@@ -216,7 +229,7 @@
 	<?php
 	if (!empty($get_tours_weekend_trip)) {
 	?>
-		<section class="elementor-section elementor-top-section elementor-element elementor-element-6521b521 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="6521b521" data-element_type="section">
+		<section id="category_section_1" class="elementor-section elementor-top-section elementor-element elementor-element-6521b521 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="6521b521" data-element_type="section">
 			<div class="elementor-background-overlay"></div>
 			<div class="container d-flex flex-wrap elementor-column-gap-default  p-0 g-0">
 				<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3198fc93" data-id="3198fc93" data-element_type="column">
@@ -227,7 +240,7 @@
 									<div class="elementor-widget-wrap elementor-element-populated">
 										<div class="elementor-element elementor-element-446a8ec animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="446a8ec" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;}" data-widget_type="heading.default">
 											<div class="elementor-widget-container">
-												<h2 class="elementor-heading-title elementor-size-default">Weekend Trip</h2>
+												<h2 class="elementor-heading-title elementor-size-default"><?= (!empty($category_1)) ? $category_1->name : '' ?></h2>
 											</div>
 										</div>
 										<div class="elementor-element elementor-element-79e4907 elementor-absolute animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="79e4907" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;,&quot;_animation&quot;:&quot;fadeInLeft&quot;}" data-widget_type="heading.default">
@@ -250,7 +263,7 @@
 		</section>
 		<div class="container-fluid crd_mn mb-5">
 			<div class="row">
-				<div class="w-100 mt-5">
+				<div class="w-100">
 					<!-- Swiper Slider 1 -->
 					<div class="swiper swiper_container2 mb-3">
 						<div class="swiper-wrapper p-2 ps-0 ps-md-2">
@@ -327,7 +340,7 @@
 	<?php
 	if (!empty($get_tours_popular_trip)) {
 	?>
-		<section class="elementor-section elementor-top-section elementor-element elementor-element-6521b521 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="6521b521" data-element_type="section">
+		<section id="category_section_2" class="elementor-section elementor-top-section elementor-element elementor-element-6521b521 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="6521b521" data-element_type="section">
 			<div class="elementor-background-overlay"></div>
 			<div class="container d-flex flex-wrap elementor-column-gap-default  p-0 g-0">
 				<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3198fc93" data-id="3198fc93" data-element_type="column">
@@ -338,7 +351,7 @@
 									<div class="elementor-widget-wrap elementor-element-populated">
 										<div class="elementor-element elementor-element-446a8ec animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="446a8ec" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;}" data-widget_type="heading.default">
 											<div class="elementor-widget-container">
-												<h2 class="elementor-heading-title elementor-size-default">Popular Trip</h2>
+												<h2 class="elementor-heading-title elementor-size-default"><?= (!empty($category_2)) ? $category_2->name : '' ?></h2>
 											</div>
 										</div>
 										<div class="elementor-element elementor-element-79e4907 elementor-absolute animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="79e4907" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;,&quot;_animation&quot;:&quot;fadeInLeft&quot;}" data-widget_type="heading.default">
@@ -362,7 +375,7 @@
 
 		<div class="container-fluid crd_mn mb-5">
 			<div class="row">
-				<div class="w-100 mt-5">
+				<div class="w-100">
 					<!-- Swiper Slider 1 -->
 					<div class="swiper swiper_container3 mb-3">
 						<div class="swiper-wrapper p-2 ps-0 ps-md-2">
@@ -439,7 +452,7 @@
 	<?php
 	if (!empty($get_tours_adv_trip)) {
 	?>
-		<section class="elementor-section elementor-top-section elementor-element elementor-element-6521b521 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="6521b521" data-element_type="section">
+		<section id="category_section_3" class="elementor-section elementor-top-section elementor-element elementor-element-6521b521 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="6521b521" data-element_type="section">
 			<div class="elementor-background-overlay"></div>
 			<div class="container d-flex flex-wrap elementor-column-gap-default  p-0 g-0">
 				<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3198fc93" data-id="3198fc93" data-element_type="column">
@@ -450,7 +463,7 @@
 									<div class="elementor-widget-wrap elementor-element-populated">
 										<div class="elementor-element elementor-element-446a8ec animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="446a8ec" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;}" data-widget_type="heading.default">
 											<div class="elementor-widget-container">
-												<h2 class="elementor-heading-title elementor-size-default">Adv & Thrill Trip</h2>
+												<h2 class="elementor-heading-title elementor-size-default"><?= (!empty($category_3)) ? $category_3->name : '' ?></h2>
 											</div>
 										</div>
 										<div class="elementor-element elementor-element-79e4907 elementor-absolute animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="79e4907" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;,&quot;_animation&quot;:&quot;fadeInLeft&quot;}" data-widget_type="heading.default">
@@ -474,7 +487,7 @@
 
 		<div class="container-fluid crd_mn mb-5">
 			<div class="row">
-				<div class="w-100 mt-5">
+				<div class="w-100">
 					<!-- Swiper Slider 1 -->
 					<div class="swiper swiper_container4 mb-3">
 						<div class="swiper-wrapper p-2 ps-0 ps-md-2">

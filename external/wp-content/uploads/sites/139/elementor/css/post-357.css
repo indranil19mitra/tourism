@@ -15,7 +15,8 @@
     transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
     margin-top: 0px;
     /* margin-bottom: -86px; */
-    margin-bottom: -130px;
+    /* margin-bottom: -130px; */
+    margin-bottom: -125px;
     z-index: 2;
 }
 
@@ -74,7 +75,8 @@
     line-height: var(--e-global-typography-6b1f488-line-height);
     letter-spacing: var(--e-global-typography-6b1f488-letter-spacing);
     word-spacing: var(--e-global-typography-6b1f488-word-spacing);
-    padding: 0px 18px 0px 8px;
+    /* padding: 0px 18px 0px 8px; */
+    padding: 0px 5px 0px 8px;
     color: #FFFFFF;
 }
 
@@ -236,7 +238,8 @@
 @media(max-width:1024px) {
     .elementor-357 .elementor-element.elementor-element-7f240d7 {
         margin-top: 0px;
-        margin-bottom: -130px;
+        margin-bottom: -125px;
+        /* margin-bottom: -130px; */
         /* padding: 10px 10px 10px 10px; */
     }
 

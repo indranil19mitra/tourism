@@ -62,7 +62,7 @@
     <meta name="generator" content="Elementor 3.16.4; features: e_dom_optimization, e_optimized_assets_loading, additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-auto">
 </head>
 
-<body class="home page-template page-template-elementor_header_footer page page-id-17 ehf-header ehf-footer ehf-template-hello-elementor ehf-stylesheet-hello-elementor jkit-color-scheme elementor-default elementor-template-full-width elementor-kit-19 elementor-page elementor-page-17">
+<body id="home_body" class="home page-template page-template-elementor_header_footer page page-id-17 ehf-header ehf-footer ehf-template-hello-elementor ehf-stylesheet-hello-elementor jkit-color-scheme elementor-default elementor-template-full-width elementor-kit-19 elementor-page elementor-page-17">
     <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
         <defs>
             <filter id="wp-duotone-dark-grayscale">
@@ -209,17 +209,25 @@
                                                             <a href="<?= base_url() ?>about-us">About</a>
                                                         </li>
                                                         <li id="menu-item-9" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-9">
-                                                            <a href="#">Weekend Trip</a>
+                                                            <!-- <a href="#">Weekend Trip</a> -->
+                                                            <a href="#"><?= (!empty($category_1)) ? $category_1->name : '' ?></a>
                                                             <ul class="sub-menu">
                                                                 <?php
                                                                 if (!empty($weekend_trip)) {
-                                                                    foreach ($weekend_trip as $val) {
+                                                                    foreach ($weekend_trip as $key => $val) {
                                                                         $names = implode("-", explode(" ", $val->name));
+                                                                        if ($key < 10) {
                                                                 ?>
-                                                                        <li id="menu-item-476" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-476">
-                                                                            <a href="#" onclick="getDetails('<?= $names; ?>','<?= $val->tour_details_id; ?>')"><?= $val->name ?></a>
-                                                                        </li>
+                                                                            <li id="menu-item-476" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-476">
+                                                                                <a onclick="getDetails('<?= $names; ?>','<?= $val->tour_details_id; ?>')"><?= $val->name ?></a>
+                                                                            </li>
+                                                                        <?php } else {
+                                                                        ?>
+                                                                            <li id="menu-item-476" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-476">
+                                                                                <a onclick="scrollToSection('category_section_1')">Show more</a>
+                                                                            </li>
                                                                 <?php
+                                                                        }
                                                                     }
                                                                 } else {
                                                                     echo "Trip Will Available Soon..!";
@@ -228,17 +236,25 @@
                                                             </ul>
                                                         </li>
                                                         <li id="menu-item-11" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-11">
-                                                            <a href="#">Popular Trip</a>
+                                                            <!-- <a href="#">Popular Trip</a> -->
+                                                            <a href="#"><?= (!empty($category_2)) ? $category_2->name : '' ?></a>
                                                             <ul class="sub-menu">
                                                                 <?php
                                                                 if (!empty($popular_trip)) {
-                                                                    foreach ($popular_trip as $val) {
+                                                                    foreach ($popular_trip as $key => $val) {
                                                                         $names = implode("-", explode(" ", $val->name));
+                                                                        if ($key < 10) {
                                                                 ?>
-                                                                        <li id="menu-item-535" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-535">
-                                                                            <a href="#" onclick="getDetails('<?= $names; ?>','<?= $val->tour_details_id; ?>')"><?= $val->name; ?></a>
-                                                                        </li>
+                                                                            <li id="menu-item-535" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-535">
+                                                                                <a onclick="getDetails('<?= $names; ?>','<?= $val->tour_details_id; ?>')"><?= $val->name; ?></a>
+                                                                            </li>
+                                                                        <?php } else {
+                                                                        ?>
+                                                                            <li id="menu-item-476" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-476">
+                                                                                <a onclick="scrollToSection('category_section_2')">Show more</a>
+                                                                            </li>
                                                                 <?php
+                                                                        }
                                                                     }
                                                                 } else {
                                                                     echo "Trip Will Available Soon..!";
@@ -247,17 +263,29 @@
                                                             </ul>
                                                         </li>
                                                         <li id="menu-item-13" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-13">
-                                                            <a href="#">Adv & Thrill Trip</a>
+                                                            <!-- <a href="#">Adv & Thrill Trip</a> -->
+                                                            <a href="#"><?= (!empty($category_3)) ? $category_3->name : '' ?></a>
                                                             <ul class="sub-menu">
                                                                 <?php
                                                                 if (!empty($adv_thrill_trip)) {
-                                                                    foreach ($adv_thrill_trip as $val) {
+                                                                    // echo "<pre>";
+                                                                    // print_r($adv_thrill_trip);
+                                                                    // exit;
+
+                                                                    foreach ($adv_thrill_trip as $key => $val) {
                                                                         $names = implode("-", explode(" ", $val->name));
+                                                                        if ($key < 10) {
                                                                 ?>
-                                                                        <li id="menu-item-534" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-534">
-                                                                            <a href="#" onclick="getDetails('<?= $names; ?>','<?= $val->tour_details_id; ?>')"><?= $val->name; ?></a>
-                                                                        </li>
+                                                                            <li id="menu-item-534" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-534">
+                                                                                <a onclick="getDetails('<?= $names; ?>','<?= $val->tour_details_id; ?>')"><?= $val->name; ?></a>
+                                                                            </li>
+                                                                        <?php } else {
+                                                                        ?>
+                                                                            <li id="menu-item-476" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-476">
+                                                                                <a onclick="scrollToSection('category_section_3')">Show more</a>
+                                                                            </li>
                                                                 <?php
+                                                                        }
                                                                     }
                                                                 } else {
                                                                     echo "Trip Will Available Soon..!";
@@ -267,6 +295,23 @@
                                                         </li>
                                                         <li id="menu-item-473" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-473 disabled" aria-disabled="true">
                                                             <a href="#"><i class="fa-solid fa-phone-volume call_cl"></i> 7003072006/8910271365</a>
+                                                        </li>
+                                                        <li id="menu-item-473" class="mobile_social_media menu-item menu-item-type-post_type menu-item-object-page menu-item-473 disabled d-flex justify-content-start mt-3" aria-disabled="true">
+                                                            <span class="elementor-grid-item px-1">
+                                                                <a href="https://www.facebook.com/groups/2056710644498532/?ref=share" class="elementor-icon elementor-social-icon elementor-social-icon-facebook-f elementor-animation-shrink elementor-repeater-item-9bffea0" target="_blank">
+                                                                    <span class="elementor-screen-only">Facebook-f</span>
+                                                                    <i class="fab fa-facebook-f"></i> </a>
+                                                            </span>
+                                                            <span class="elementor-grid-item px-1">
+                                                                <a href="https://www.instagram.com/durbeen_21/?igsh=eHF2ZnpvOXo3dzdz" class="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-animation-shrink elementor-repeater-item-9058f94" target="_blank">
+                                                                    <span class="elementor-screen-only">Instagram</span>
+                                                                    <i class="fab fa-instagram"></i> </a>
+                                                            </span>
+                                                            <span class="elementor-grid-item px-1">
+                                                                <a href="https://www.youtube.com/@user-kr3hx1ie6w" class="elementor-icon elementor-social-icon elementor-social-icon-youtube elementor-animation-shrink elementor-repeater-item-53e68eb" target="_blank">
+                                                                    <span class="elementor-screen-only">Youtube</span>
+                                                                    <i class="fab fa-youtube"></i> </a>
+                                                            </span>
                                                         </li>
                                                     </ul>
                                                 </div>

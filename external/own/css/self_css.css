@@ -77,24 +77,7 @@
     -webkit-box-align: center !important;
     align-items: center !important;
     flex-wrap: wrap !important;
-}
-
-#tour_booking_adv_payment_methods {
-    margin: 15px 0px !important;
-    font-size: 0.8em !important;
-    line-height: 20px !important;
-}
-
-#tour_booking_adv_requirement {
-    font-size: 1.2vw !important;
-    font-weight: 600 !important;
-    color: rgb(58, 58, 58) !important;
-    margin-bottom: 8px !important;
-}
-
-.booking_bd {
-    text-transform: capitalize !important;
-    width: 18vw !important;
+    text-align: left;
 }
 
 .booking_tr2 {
@@ -114,77 +97,15 @@
     background-color: rgb(58, 58, 58) !important;
 }
 
-#payment_details {
-    font-size: 1.5vw !important;
-    font-weight: 600 !important;
-    color: rgb(58, 58, 58) !important;
-    margin: 16px 0px !important;
-}
-
-#book_now_modal_header_title {
-    font-size: 2vw !important;
-    font-weight: 600 !important;
-    color: rgb(58, 58, 58) !important;
-    text-transform: uppercase !important;
-}
-
 .booking_fnt_icn {
     height: 1.2vw !important;
     width: 1.5vw !important;
     margin-right: 8px !important;
 }
 
-.booking_fnt_txt {
-    font-size: 1.1vw !important;
-    font-weight: 400 !important;
-    color: rgb(58, 58, 58) !important;
-}
-
-.booking_fnt_txt_1 {
-    font-size: 1vw !important;
-    font-weight: 600 !important;
-}
-
-
-.tour_details_name {
-    font-size: 1.8vw !important;
-    font-weight: 600 !important;
-    color: rgb(58, 58, 58) !important;
-    margin-bottom: 16px !important;
-}
-
-.rs_cls1 {
-    font-size: 1.5vw !important;
-    font-weight: 600 !important;
-    color: rgb(58, 58, 58) !important;
-}
-
-.rs_cls2 {
-    font-size: 1.5vw !important;
-    color: rgb(58, 58, 58) !important;
-}
-
-.rs_cls3 {
-    font-size: 1.2vw !important;
-    font-weight: 600 !important;
-    color: rgb(58, 58, 58) !important;
-    text-transform: capitalize !important;
-    text-align: center !important;
-    align-self: center !important;
-}
-
 .rs_cls4 {
     font-size: 1.5vw !important;
     font-weight: 600 !important;
-}
-
-.rs_cls5 {
-    font-size: 1.2vw !important;
-    border: none !important;
-    background-color: unset !important;
-    color: black !important;
-    padding: 0px !important;
-    cursor: pointer !important;
 }
 
 .outer_dv1 {
@@ -305,6 +226,66 @@
 
 
 @media (max-width: 767px) {
+
+    #tour_booking_adv_payment_methods {
+        font-size: medium;
+    }
+
+    #tour_booking_adv_requirement {
+        font-weight: 600 !important;
+        color: rgb(58, 58, 58) !important;
+        margin-bottom: 8px !important;
+        font-size: small;
+    }
+
+    .booking_bd {
+        text-transform: capitalize !important;
+        font-size: small;
+    }
+
+    #payment_details {
+        font-weight: 600 !important;
+        color: rgb(58, 58, 58) !important;
+        margin: 16px 0px !important;
+    }
+
+    .booking_fnt_txt_1 {
+        font-weight: 600 !important;
+    }
+
+    .booking_fnt_txt {
+        font-weight: 400 !important;
+        color: rgb(58, 58, 58) !important;
+    }
+
+    .tour_details_name {
+        color: rgb(58, 58, 58) !important;
+        font-weight: bold !important;
+        margin-bottom: 16px !important;
+    }
+
+    #booking_member_count {
+        /* font-weight: bold !important; */
+        font-size: large;
+    }
+
+    .rs_cls5 {
+        /* font-size: 1.2vw !important; */
+        border: none !important;
+        background-color: unset !important;
+        color: black !important;
+        padding: 0px !important;
+        cursor: pointer !important;
+    }
+
+    #book_now_modal_header_title .rs_cls1 .rs_cls2 .rs_cls3 {
+        font-weight: bold;
+    }
+
+    .mobile_social_media {
+        display: block;
+    }
+
     #smlr_fr_wnd {
         display: none;
     }
@@ -441,6 +422,83 @@
 }
 
 @media (min-width: 768px) {
+    #tour_booking_adv_requirement {
+        font-size: 1.2vw !important;
+        font-weight: 600 !important;
+        color: rgb(58, 58, 58) !important;
+        margin-bottom: 8px !important;
+    }
+
+    .booking_bd {
+        text-transform: capitalize !important;
+        width: 18vw !important;
+    }
+
+    #payment_details {
+        font-size: 1.5vw !important;
+        font-weight: 600 !important;
+        color: rgb(58, 58, 58) !important;
+        margin: 16px 0px !important;
+    }
+
+    .booking_fnt_txt {
+        font-size: 1.1vw !important;
+        font-weight: 400 !important;
+        color: rgb(58, 58, 58) !important;
+    }
+
+    .booking_fnt_txt_1 {
+        font-size: 1vw !important;
+        font-weight: 600 !important;
+    }
+
+
+    .tour_details_name {
+        font-size: 1.8vw !important;
+        font-weight: 600 !important;
+        color: rgb(58, 58, 58) !important;
+        margin-bottom: 16px !important;
+    }
+
+    .rs_cls5 {
+        font-size: 1.2vw !important;
+        border: none !important;
+        background-color: unset !important;
+        color: black !important;
+        padding: 0px !important;
+        cursor: pointer !important;
+    }
+
+    .rs_cls3 {
+        font-size: 1.2vw !important;
+        font-weight: 600 !important;
+        color: rgb(58, 58, 58) !important;
+        text-transform: capitalize !important;
+        text-align: center !important;
+        align-self: center !important;
+    }
+
+    .rs_cls2 {
+        font-size: 1.5vw !important;
+        color: rgb(58, 58, 58) !important;
+    }
+
+    .rs_cls1 {
+        font-size: 1.5vw !important;
+        font-weight: 600 !important;
+        color: rgb(58, 58, 58) !important;
+    }
+
+    #book_now_modal_header_title {
+        font-size: 2vw !important;
+        font-weight: 600 !important;
+        color: rgb(58, 58, 58) !important;
+        text-transform: uppercase !important;
+    }
+
+    .mobile_social_media {
+        display: none !important;
+    }
 
     #smlr_fr_mb {
         display: none;
@@ -591,6 +649,8 @@
 
     #tour_booking_adv_payment_methods {
         font-size: 15px !important;
+        margin: 15px 0px !important;
+        line-height: 20px !important;
     }
 
 }

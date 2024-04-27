@@ -146,12 +146,6 @@ if (!empty($tour_photos)) {
                                                             <span class="elementor-heading-title elementor-size-default">Durbeen</span>
                                                         </div>
                                                     </div>
-                                                    <!-- <div class="elementor-element elementor-element-cf1757d elementor-widget elementor-widget-text-editor" data-id="cf1757d" data-element_type="widget" data-widget_type="text-editor.default">
-                                                        <div class="elementor-widget-container">
-                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                                            eiusmod tempor incididunt ut labore et dolore magna aliqua
-                                                        </div>
-                                                    </div> -->
                                                 </div>
                                             </div>
                                         </div>
@@ -163,11 +157,6 @@ if (!empty($tour_photos)) {
                             <div class="row">
                                 <div class="col-12">
                                     <div class="fs-5 fw-bold text-left">
-                                        <!-- <p>The village of Bir (elevation: 1400m), located in the Kangra district of Himachal Pradesh India, is internationally famous as the base for some of the best paragliding in the world. The take-off point at Billing, 14km up a winding road from Bir and 1000m higher, hosts major competitive flying events most years in October or November (including a round of the Paragliding World Cup in 2015). Experienced paragliders fly as far as Dharamshala, Mandi, and Manali from here.<br>
-                                        </p>
-                                        <p>
-                                            Bir is also an important center of the Tibetan exile community: the lower half of the village is known as Tibetan Colony and there are several Buddhist monasteries and institutes in and around Bir, some of which attract numbers of foreigners for courses and retreats.<br>
-                                        </p> -->
                                         <?= $tour_about_details; ?>
                                     </div>
                                 </div>
@@ -493,7 +482,7 @@ if (!empty($tour_photos)) {
                             <div class="modal-dialog change_booking_mdl modal-lg">
                                 <div class="modal-content">
                                     <div class="modal-header d-flex justify-content-center">
-                                        <h1 class="modal-title fs-5" id="book_now_modal_header_title">PLEASE SELECT YOUR BATCH DATES</h1>
+                                        <h1 class="modal-title" id="book_now_modal_header_title">PLEASE SELECT YOUR BATCH DATES</h1>
                                         <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
                                     </div>
                                     <div class="modal-body">
@@ -510,14 +499,14 @@ if (!empty($tour_photos)) {
                                             </div>
 
                                             <div class="row" id="room_sharing">
-                                                <div class="d-flex justify-content-between p-5 text-center">
+                                                <div class="d-flex justify-content-between text-center room_sharing_dv">
                                                     <div class="col-lg-4 col-md-12 col-sm-12 mb-3"><label for="type" class="col-form-label rs_cls1">Type</label></div>
                                                     <div class="col-lg-4 col-md-12 col-sm-12 mb-3"><label for="per_person" class="col-form-label rs_cls1">Price (per person)</label></div>
                                                     <div class="col-lg-4 col-md-12 col-sm-12 mb-3"><label for="per_person_icon" class="col-form-label rs_cls2"><i class="fa-solid fa-user"></i></label></div>
                                                 </div>
-                                                <div class="col-lg-12 col-md-12 col-sm-12 mb-3 d-flex justify-content-between p-5 text-center">
+                                                <div class="col-lg-12 col-md-12 col-sm-12 mb-3 d-flex justify-content-between text-center room_sharing_dv">
                                                     <div class="col-lg-4 col-md-12 col-sm-12 mb-3">
-                                                        <label for="type" class="col-form-label rs_cls3">Shared Room/Dormitory</label>
+                                                        <label for="type" class="col-form-label rs_cls3 booking_room_type">Shared Room/Dormitory</label>
                                                     </div>
                                                     <div class="col-lg-4 col-md-12 col-sm-12 mb-3">
                                                         <label for="per_person" class="col-form-label rs_cls3">
@@ -542,27 +531,30 @@ if (!empty($tour_photos)) {
                                                 </div>
                                             </div>
                                             <div class="row" id="personal_details">
-                                                <div class="p-5">
+                                                <div id="personal_details_dv">
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 mb-3 d-flex justify-content-end">
+                                                        <span class="text-danger">* fields are mandatory</span>
+                                                    </div>
                                                     <input type="hidden" id="booking_details_ids" name="booking_details_ids" readonly>
                                                     <div class="col-lg-12 col-md-12 col-sm-12 mb-3 d-flex justify-content-center">
-                                                        <input type="text" class="form-control clr_input" onblur="check_booking_input(this.value, 'name')" id="name" name="name" placeholder="Please Enter Your Name">
+                                                        <input type="text" class="form-control clr_input" onkeyup="check_booking_input(this.value, 'name')" onblur="check_booking_input(this.value, 'name')" id="name" name="name" placeholder="Please Enter Your Name *">
                                                     </div>
 
                                                     <div class="col-lg-12 col-md-12 col-sm-12 mb-3 d-flex justify-content-center">
-                                                        <input type="text" class="form-control clr_input" onblur="check_booking_input(this.value, 'contact_no')" id="contact_no" maxlength="10" name="contact_no" placeholder="Please Enter Contact Number">
+                                                        <input type="text" class="form-control clr_input" onkeyup="check_booking_input(this.value, 'contact_no')" onblur="check_booking_input(this.value, 'contact_no')" id="contact_no" name="contact_no" placeholder="Please Enter Contact Number *">
                                                     </div>
 
                                                     <div class="col-lg-12 col-md-12 col-sm-12 mb-3 d-flex justify-content-center">
-                                                        <input type="email" class="form-control clr_input" onblur="check_booking_input(this.value, 'email')" id="email" name="email" placeholder="Please Enter Email ID">
+                                                        <input type="email" class="form-control clr_input" onkeyup="check_booking_input(this.value, 'email')" onblur="check_booking_input(this.value, 'email')" id="email" name="email" placeholder="Please Enter Email ID">
                                                     </div>
 
                                                     <div class="col-lg-12 col-md-12 col-sm-12 mb-3 d-flex justify-content-center">
-                                                        <textarea type="text" class="form-control clr_input" onblur="check_booking_input(this.value,'address')" rows="4" id="address" name="address" placeholder="Please Enter Address"></textarea>
+                                                        <textarea type="text" class="form-control clr_input" onkeyup="check_booking_input(this.value,'address')" onblur="check_booking_input(this.value,'address')" rows="4" id="address" name="address" placeholder="Please Enter Address"></textarea>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="row" id="review_booking">
-                                                <div class="px-5">
+                                                <div id="review_booking_dv">
                                                     <div>
                                                         <span id="tour_details_name" class="tour_details_name"></span>
                                                     </div>
@@ -598,7 +590,7 @@ if (!empty($tour_photos)) {
                                                             </thead>
                                                             <tbody class="table-secondary tbl_body">
                                                                 <tr class="booking_tr2">
-                                                                    <td class="border booking_bd">Shared Room/Dormitory</td>
+                                                                    <td class="border booking_bd booking_room_type">Shared Room/Dormitory</td>
                                                                     <td id="ttl_amount_of_booking_without_gst" class="border booking_bd"></td>
                                                                     <td id="ttl_amount_of_booking_per_head_charge_without_gst" class="border booking_bd"></td>
                                                                 </tr>
@@ -619,7 +611,7 @@ if (!empty($tour_photos)) {
                                                     </div>
                                                 </div>
 
-                                                <div class="mt-5 px-5" id="overall_payment_details">
+                                                <div class="mt-5" id="overall_payment_details">
                                                     <div id="overall_payment_details_1">
                                                         <div>
                                                             <span id="tour_booking_adv_payment_methods"></span>
@@ -646,7 +638,7 @@ if (!empty($tour_photos)) {
                                                                     <span id="tour_booking_ac_ifsc"></span>
                                                                 </div>
                                                                 <div>
-                                                                    <span class="text-danger">*</span><span id="tour_booking_ac_ifsc_1"><strong> Please Check Cancellation Policy </strong><a href="<?= base_url() ?>admin/assets/images/cancelation_policy_pdf/cancellation_rules_final.pdf" target="_blank" download><i class="fa-solid fa-file-pdf"></i></a></span>
+                                                                    <span class="text-danger">*</span><a href="<?= base_url() ?>admin/assets/images/cancelation_policy_pdf/cancellation_rules_final.pdf" target="_blank" download><span id="tour_booking_ac_ifsc_1"><strong> Please Check Cancellation Policy </strong><i class="fa-solid fa-file-pdf"></i></span></a>
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-6 col-md-6 col-sm-12 d-flex justify-content-end">
@@ -702,7 +694,7 @@ if (!empty($tour_photos)) {
                     </div>
                 </section>
 
-                <div class="w-100 mt-5">
+                <div id="get_in_touch_form_dv" class="w-100">
                     <form class="forms-sample" id="get_in_touch_form">
                         <div class="row" id="get_in_touch">
                             <!-- <div class="p-5"> -->
