@@ -1,4 +1,10 @@
-<a id="whatsapp-widget" href="https://wa.me/8910271365" target="_blank">
+<?php
+$countryCode = "91";
+$phoneNumber = "8910271365";
+$whatsappLink = "https://wa.me/+" . $countryCode . $phoneNumber;
+?>
+
+<a id="whatsapp-widget" href="<?= $whatsappLink; ?>" target="_blank">
     <i class="fab fa-whatsapp"></i>
 </a>
 <footer itemtype="https://schema.org/WPFooter" itemscope="itemscope" id="colophon" role="contentinfo">
@@ -282,7 +288,7 @@ if (!empty($get_tours_details)) {
 
     $(document).ready(function() {
         var url_para = '<?= (!empty($this->uri->segment('1'))) ? $this->uri->segment('1') : '' ?>';
-        console.log(url_para);
+        // console.log(url_para);
         var section = (url_para != "") ? $('#section_2') : $('#section_1');
         var currentIndex = 0;
         var isMobile = window.innerWidth <= 767;
@@ -325,8 +331,23 @@ if (!empty($get_tours_details)) {
             if (isMobile && section.height() < window.innerHeight) {
                 section.css('height', (url_para != "") ? '50vh' : '100vh');
                 $(".set_ht_1_html").html('Beyond The Mountains');
-                // $('.set_ht_1_html').css
                 $('.set_ht_1_html_sz').css('font-size', '25px');
+                $("#about_us_we_provite_section").hide();
+                $("#book_now_modal_header_title").addClass("fs-6");
+                $(".booking_room_type").html("Shared Room/<br>Dormitory");
+                $(".booking_room_type").css("line-height", "1");
+                $(".room_sharing_dv").addClass("p-2");
+                $("#personal_details_dv").addClass("p-2");
+                $("#review_booking_dv").addClass("px-2");
+                $("#overall_payment_details").addClass("px-3");
+            } else {
+                $("#about_us_we_provite_section").show();
+                $("#book_now_modal_header_title").addClass("fs-5");
+                $("#get_in_touch_form_dv").addClass("mt-5");
+                $(".room_sharing_dv").addClass("p-5");
+                $("#personal_details_dv").addClass("p-5");
+                $("#review_booking_dv").addClass("px-5");
+                $("#overall_payment_details").addClass("px-5");
             }
 
             section.animate({
