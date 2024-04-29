@@ -61,6 +61,8 @@ class Mycontroller extends CI_Controller
             'status!=' => '0',
         );
         $data['get_tour_category_images'] = $this->myfront_model->get_data("tour_category_id,trip_image", "tour_category_photos", $cond6);
+        
+        $data['get_travel_mates_images'] = $this->myfront_model->get_data("id,travel_mate_images", "travel_mates_images", $cond6);
         // print_r($data);
         // exit;
         $this->load->view('include/header', $data);

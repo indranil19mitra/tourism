@@ -56,10 +56,10 @@
                 <a class="navbar-brand brand-logo-mini" href="<?= base_url() ?>"><img src="<?= base_url() ?>assets/images/durbeen_final.png" class="lg_div_bg" alt="logo" /></a>
             </div>
             <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
-                <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                <!-- <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
                     <span class="icon-menu"></span>
-                </button>
-                <ul class="navbar-nav mr-lg-2">
+                </button> -->
+                <!-- <ul class="navbar-nav mr-lg-2">
                     <li class="nav-item nav-search d-none d-lg-block">
                         <div class="input-group">
                             <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
@@ -70,9 +70,9 @@
                             <input type="text" class="form-control" id="navbar-search-input" placeholder="Search now" aria-label="search" aria-describedby="search">
                         </div>
                     </li>
-                </ul>
+                </ul> -->
                 <ul class="navbar-nav navbar-nav-right">
-                    <li class="nav-item dropdown">
+                    <!-- <li class="nav-item dropdown">
                         <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-bs-toggle="dropdown">
                             <i class="icon-bell mx-0"></i>
                             <span class="count"></span>
@@ -119,31 +119,27 @@
                                 </div>
                             </a>
                         </div>
-                    </li>
+                    </li> -->
                     <li class="nav-item nav-profile dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="profileDropdown">
                             <img src="<?= base_url() ?>assets/images/faces/face28.jpg" alt="profile" />
                         </a>
                         <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-                            <a class="dropdown-item">
+                            <!-- <a class="dropdown-item">
                                 <i class="ti-settings text-primary"></i>
                                 Settings
-                            </a>
-                            <a class="dropdown-item">
+                            </a> -->
+                            <a href="<?=base_url()?>log-out" class="dropdown-item">
                                 <i class="ti-power-off text-primary"></i>
                                 Logout
                             </a>
                         </div>
                     </li>
-                    <li class="nav-item nav-settings d-none d-lg-flex">
-                        <a class="nav-link" href="#">
-                            <i class="icon-ellipsis"></i>
-                        </a>
-                    </li>
+                    <!-- <liz -->
                 </ul>
-                <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+                <!-- <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
                     <span class="icon-menu"></span>
-                </button>
+                </button> -->
             </div>
         </nav>
         <!-- partial -->
@@ -182,7 +178,7 @@
                     </li>
                 </ul>
                 <div class="tab-content" id="setting-content">
-                    <div class="tab-pane fade show active scroll-wrapper" id="todo-section" role="tabpanel" aria-labelledby="todo-section">
+                    <!-- <div class="tab-pane fade show active scroll-wrapper" id="todo-section" role="tabpanel" aria-labelledby="todo-section">
                         <div class="add-items d-flex px-3 mb-0">
                             <form class="form w-100">
                                 <div class="form-group d-flex">
@@ -257,9 +253,8 @@
                             <p class="mb-0 font-weight-thin text-gray">Meeting with Alisa</p>
                             <p class="text-gray mb-0 ">Call Sarah Graves</p>
                         </div>
-                    </div>
-                    <!-- To do section tab ends -->
-                    <div class="tab-pane fade" id="chats-section" role="tabpanel" aria-labelledby="chats-section">
+                    </div> -->
+                    <!-- <div class="tab-pane fade" id="chats-section" role="tabpanel" aria-labelledby="chats-section">
                         <div class="d-flex align-items-center justify-content-between border-bottom">
                             <p class="settings-heading border-top-0 mb-3 ps-3 pt-0 border-bottom-0 pb-0">Friends</p>
                             <small class="settings-heading border-top-0 mb-3 pt-0 border-bottom-0 pb-0 pr-3 font-weight-normal">See All</small>
@@ -317,7 +312,7 @@
                                 <small class="text-muted my-auto">47 min</small>
                             </li>
                         </ul>
-                    </div>
+                    </div> -->
                     <!-- chat tab ends -->
                 </div>
             </div>
@@ -350,6 +345,7 @@
                                 <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>tour-inclu-exclus">Tour Inclusions/<br>Exclusions</a></li>
                                 <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>tour-other-info">Tour Other Info</a></li>
                                 <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>tour-photos">Tour Photos</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="<?= base_url() ?>travel-mates">Travel Mates <br>Image</a></li>
                             </ul>
                         </div>
                     </li>
