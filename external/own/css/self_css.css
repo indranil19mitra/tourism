@@ -2,6 +2,10 @@
     background-color: rgb(213 218 222) !important;
 }
 
+.crsl_btn1 {
+    background-color: unset !important;
+}
+
 #upi_id {
     height: 250px;
     width: 200px;
@@ -519,10 +523,9 @@
     }
 
     .crsl_img1 {
-        height: 400px !important;
+        height: 600px !important;
         padding-right: 10%;
         padding-left: 10%;
-        height: 900px !important;
     }
 
     .crsl_img {

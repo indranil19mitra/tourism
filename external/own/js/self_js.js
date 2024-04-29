@@ -743,7 +743,7 @@ function check_next(obj) {
 		$("#tour_booking_adv_payment_methods").html(
 			'Transfer <i class="fa-solid fa-indian-rupee-sign"></i> ' +
 				tour_booking_adv_requirement +
-				" through the following payment methods and share the screenshot of this page and transaction on <a href='https://wa.me/918910271365' target='_blank' style='color: rgb(10, 158, 136);'>+91-8910271365</a> on whatsapp:"
+				" through the following payment methods and share the screenshot of this page and transaction on <a href='https://wa.me/+918910271365' target='_blank' style='color: rgb(10, 158, 136);'>+91-8910271365</a> on whatsapp:"
 		);
 
 		$("#tour_booking_upi_us_at").html(
