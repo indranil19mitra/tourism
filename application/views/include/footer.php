@@ -35,7 +35,7 @@ $whatsappLink = "https://wa.me/+" . $countryCode . $phoneNumber;
                                                         <li class="elementor-icon-list-item">
                                                             <span class="elementor-icon-list-icon">
                                                                 <i aria-hidden="true" class="fas fa-map-marker-alt"></i> </span>
-                                                            <span class="elementor-icon-list-text"> 42,Amarendra Sarani, Uttarpara ,Hooghly ,Pin-712258</span>
+                                                            <span class="elementor-icon-list-text"> 42 Amarendra Sarani, Uttarpara, Hooghly Pin-712258</span>
                                                         </li>
                                                         <li class="elementor-icon-list-item">
                                                             <span class="elementor-icon-list-icon">
