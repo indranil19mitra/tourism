@@ -139,7 +139,7 @@
                                             <div class="jeg-elementor-kit jkit-icon-box icon-position- elementor-animation- jeg_module_17_17_654c63d600f64">
                                                 <div class="jkit-icon-box-wrapper hover-from-left">
                                                     <div class="icon-box icon-box-header elementor-animation-">
-                                                        <div class="icon style-color"><img decoding="async" src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/adv-150x150.png" alt="Expertise"></div>
+                                                        <div class="icon style-color"><img decoding="async" src="<?= base_url() ?>external/why_durbeen/expertise.png" alt="Expertise"></div>
                                                     </div>
                                                     <div class="icon-box icon-box-body">
                                                         <h3 class="title">Expertise</h3>
@@ -150,12 +150,12 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="elementor-element elementor-element-f6bd498 elementor-widget__width-initial elementor-widget-mobile__width-inherit jkit-equal-height-disable elementor-widget elementor-widget-jkit_icon_box" data-id="f6bd498" data-element_type="widget" data-widget_type="jkit_icon_box.default">
+                                    <div class="elementor-element elementor-element-1926ee2 elementor-widget__width-initial elementor-widget-mobile__width-inherit jkit-equal-height-disable elementor-widget elementor-widget-jkit_icon_box" data-id="1926ee2" data-element_type="widget" data-widget_type="jkit_icon_box.default">
                                         <div class="elementor-widget-container">
-                                            <div class="jeg-elementor-kit jkit-icon-box icon-position- elementor-animation- jeg_module_17_18_654c63d60224a">
+                                            <div class="jeg-elementor-kit jkit-icon-box icon-position- elementor-animation- jeg_module_17_17_654c63d600f64">
                                                 <div class="jkit-icon-box-wrapper hover-from-left">
                                                     <div class="icon-box icon-box-header elementor-animation-">
-                                                        <div class="icon style-color"><img decoding="async" src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/compass-150x150.png" alt="Personalized Service"></div>
+                                                        <div class="icon style-color"><img decoding="async" src="<?= base_url() ?>external/why_durbeen/personalized_service.png" alt="Personalized Service"></div>
                                                     </div>
                                                     <div class="icon-box icon-box-body">
                                                         <h3 class="title">Personalized Service</h3>
@@ -171,7 +171,7 @@
                                             <div class="jeg-elementor-kit jkit-icon-box icon-position- elementor-animation- jeg_module_17_19_654c63d60342a">
                                                 <div class="jkit-icon-box-wrapper hover-from-left">
                                                     <div class="icon-box icon-box-header elementor-animation-">
-                                                        <div class="icon style-color"><img decoding="async" src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/bag-5NW2WBB-150x150.png" alt="Exclusive Access"></div>
+                                                        <div class="icon style-color"><img decoding="async" src="<?= base_url() ?>external/why_durbeen/exclusive_access.png" alt="Exclusive Access"></div>
                                                     </div>
                                                     <div class="icon-box icon-box-body">
                                                         <h3 class="title">Exclusive Access</h3>
@@ -182,17 +182,18 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="elementor-element elementor-element-4d29b18 elementor-widget__width-initial elementor-widget-mobile__width-inherit jkit-equal-height-disable elementor-widget elementor-widget-jkit_icon_box" data-id="4d29b18" data-element_type="widget" data-widget_type="jkit_icon_box.default">
+                                    <div class="elementor-element elementor-element-1926ee2 elementor-widget__width-initial elementor-widget-mobile__width-inherit jkit-equal-height-disable elementor-widget elementor-widget-jkit_icon_box" data-id="1926ee2" data-element_type="widget" data-widget_type="jkit_icon_box.default">
                                         <div class="elementor-widget-container">
-                                            <div class="jeg-elementor-kit jkit-icon-box icon-position- elementor-animation- jeg_module_17_20_654c63d6045cc">
+                                            <div class="jeg-elementor-kit jkit-icon-box icon-position- elementor-animation- jeg_module_17_17_654c63d600f64">
                                                 <div class="jkit-icon-box-wrapper hover-from-left">
                                                     <div class="icon-box icon-box-header elementor-animation-">
-                                                        <div class="icon style-color"><img decoding="async" src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/hikker-150x150.png" alt="Seamless Planning"></div>
+                                                        <div class="icon style-color"><img decoding="async" src="<?= base_url() ?>external/why_durbeen/seamless_plan.png" alt="Seamless Planning"></div>
                                                     </div>
                                                     <div class="icon-box icon-box-body">
                                                         <h3 class="title">Seamless Planning</h3>
                                                         <p class="icon-box-description">Let us handle all the logistics and coordination, from booking flights and accommodations to arranging transportation and tours, allowing you to relax and enjoy a hassle-free vacation.</p>
                                                     </div>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -202,7 +203,7 @@
                                             <div class="jeg-elementor-kit jkit-icon-box icon-position- elementor-animation- jeg_module_17_17_654c63d600f64">
                                                 <div class="jkit-icon-box-wrapper hover-from-left">
                                                     <div class="icon-box icon-box-header elementor-animation-">
-                                                        <div class="icon style-color"><img decoding="async" src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/adv-150x150.png" alt="Customer Satisfaction"></div>
+                                                        <div class="icon style-color"><img decoding="async" src="<?= base_url() ?>external/why_durbeen/customer_satisfaction.png" alt="Customer Satisfaction"></div>
                                                     </div>
                                                     <div class="icon-box icon-box-body">
                                                         <h3 class="title">Customer Satisfaction</h3>
@@ -218,7 +219,7 @@
                                             <div class="jeg-elementor-kit jkit-icon-box icon-position- elementor-animation- jeg_module_17_17_654c63d600f64">
                                                 <div class="jkit-icon-box-wrapper hover-from-left">
                                                     <div class="icon-box icon-box-header elementor-animation-">
-                                                        <div class="icon style-color"><img decoding="async" src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/adv-150x150.png" alt="Value for Money"></div>
+                                                        <div class="icon style-color"><img decoding="async" src="<?= base_url() ?>external/why_durbeen/value_for_money.png" alt="Value for Money"></div>
                                                     </div>
                                                     <div class="icon-box icon-box-body">
                                                         <h3 class="title">Value for Money</h3>
