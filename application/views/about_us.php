@@ -9,16 +9,11 @@
                 <div class="elementor-widget-wrap elementor-element-populated">
                     <div class="elementor-element elementor-element-0fd0886 elementor-widget elementor-widget-heading" data-id="0fd0886" data-element_type="widget" data-widget_type="heading.default">
                         <div class="elementor-widget-container">
-                            <h2 class="elementor-heading-title elementor-size-default">The best journeys in life
-                                are those that answer questions you never thought to ask </h2>
+                            <h2 class="elementor-heading-title elementor-size-default">OUR JOURNEY</h2>
                         </div>
                     </div>
                     <div class="elementor-element elementor-element-b126061 elementor-widget elementor-widget-text-editor" data-id="b126061" data-element_type="widget" data-widget_type="text-editor.default">
-                        <div class="elementor-widget-container">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                            irure dolor in reprehenderit </div>
+                        <div class="elementor-widget-container">Embarking on this voyage to create our travel company was more than a mere business endeavour; it was a journey of passion, vision, and boundless inspiration. Like intrepid explorers charting uncharted territories, we pooled our dreams, expertise, and unwavering determination to craft something extraordinary. Each step was infused with the thrill of discovery, as we navigated through challenges and celebrated triumphs. Our compass was set to create unforgettable experiences, to weave together moments of wonder and joy for travellers seeking adventure and connection. Guided by our shared love for exploration and cultural immersion, we sculpted a company that echoes the melodies of wanderlust, inviting others to join in the symphony of exploration. With every itinerary crafted, every destination chosen, and every traveller welcomed into our fold, we stand not just as a travel company but as architects of dreams, sculptors of memories, and guardians of wanderlust's flame. Welcome aboard; let's embark on this odyssey together.</div>
                     </div>
                     <div class="elementor-element elementor-element-34d01be elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="34d01be" data-element_type="widget" data-widget_type="icon-list.default">
                         <div class="elementor-widget-container">
@@ -111,11 +106,7 @@
                             <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-d7aeeff" data-id="d7aeeff" data-element_type="column">
                                 <div class="elementor-widget-wrap elementor-element-populated">
                                     <div class="elementor-element elementor-element-2d97de4 elementor-widget elementor-widget-text-editor" data-id="2d97de4" data-element_type="widget" data-widget_type="text-editor.default">
-                                        <div class="elementor-widget-container">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-                                            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                            aliquip ex ea commodo </div>
+                                        <div class="elementor-widget-container">Embrace exploration, dreamscapes, and discoveries. Venture on unforgettable odysseys, connect, cultivate friendships, coalesce into vibrant community.</div>
                                     </div>
                                 </div>
                             </div>
@@ -148,13 +139,11 @@
                                             <div class="jeg-elementor-kit jkit-icon-box icon-position- elementor-animation- jeg_module_17_17_654c63d600f64">
                                                 <div class="jkit-icon-box-wrapper hover-from-left">
                                                     <div class="icon-box icon-box-header elementor-animation-">
-                                                        <div class="icon style-color"><img decoding="async" src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/adv-150x150.png" alt="Exploration"></div>
+                                                        <div class="icon style-color"><img decoding="async" src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/adv-150x150.png" alt="Expertise"></div>
                                                     </div>
                                                     <div class="icon-box icon-box-body">
-                                                        <h3 class="title">Exploration</h3>
-                                                        <p class="icon-box-description">Lorem ipsum dolor sit
-                                                            amet, consecte adipiscing elit, sed do eiusmod
-                                                            tempor incididunt</p>
+                                                        <h3 class="title">Expertise</h3>
+                                                        <p class="icon-box-description">Our travel company boasts years of experience and expertise in crafting unforgettable journeys, ensuring that every aspect of your trip is meticulously planned and executed.</p>
                                                     </div>
 
                                                 </div>
@@ -166,13 +155,11 @@
                                             <div class="jeg-elementor-kit jkit-icon-box icon-position- elementor-animation- jeg_module_17_18_654c63d60224a">
                                                 <div class="jkit-icon-box-wrapper hover-from-left">
                                                     <div class="icon-box icon-box-header elementor-animation-">
-                                                        <div class="icon style-color"><img decoding="async" src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/compass-150x150.png" alt="Adventures"></div>
+                                                        <div class="icon style-color"><img decoding="async" src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/compass-150x150.png" alt="Personalized Service"></div>
                                                     </div>
                                                     <div class="icon-box icon-box-body">
-                                                        <h3 class="title">Adventures</h3>
-                                                        <p class="icon-box-description">Lorem ipsum dolor sit
-                                                            amet, consecte adipiscing elit, sed do eiusmod
-                                                            tempor incididunt</p>
+                                                        <h3 class="title">Personalized Service</h3>
+                                                        <p class="icon-box-description">We prioritize understanding your unique preferences and requirements to tailor-make your itinerary, offering personalized recommendations and attention to detail to enhance your travel experience.</p>
                                                     </div>
 
                                                 </div>
@@ -184,13 +171,11 @@
                                             <div class="jeg-elementor-kit jkit-icon-box icon-position- elementor-animation- jeg_module_17_19_654c63d60342a">
                                                 <div class="jkit-icon-box-wrapper hover-from-left">
                                                     <div class="icon-box icon-box-header elementor-animation-">
-                                                        <div class="icon style-color"><img decoding="async" src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/bag-5NW2WBB-150x150.png" alt="Provide Equipment"></div>
+                                                        <div class="icon style-color"><img decoding="async" src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/bag-5NW2WBB-150x150.png" alt="Exclusive Access"></div>
                                                     </div>
                                                     <div class="icon-box icon-box-body">
-                                                        <h3 class="title">Provide Equipment</h3>
-                                                        <p class="icon-box-description">Lorem ipsum dolor sit
-                                                            amet, consecte adipiscing elit, sed do eiusmod
-                                                            tempor incididunt</p>
+                                                        <h3 class="title">Exclusive Access</h3>
+                                                        <p class="icon-box-description">Benefit from our extensive network of partners and connections, granting you access to exclusive accommodations, activities, and experiences that are not available to the average traveller.</p>
                                                     </div>
 
                                                 </div>
@@ -202,15 +187,43 @@
                                             <div class="jeg-elementor-kit jkit-icon-box icon-position- elementor-animation- jeg_module_17_20_654c63d6045cc">
                                                 <div class="jkit-icon-box-wrapper hover-from-left">
                                                     <div class="icon-box icon-box-header elementor-animation-">
-                                                        <div class="icon style-color"><img decoding="async" src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/hikker-150x150.png" alt="Professional Guide"></div>
+                                                        <div class="icon style-color"><img decoding="async" src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/hikker-150x150.png" alt="Seamless Planning"></div>
                                                     </div>
                                                     <div class="icon-box icon-box-body">
-                                                        <h3 class="title">Professional Guide</h3>
-                                                        <p class="icon-box-description">Lorem ipsum dolor sit
-                                                            amet, consecte adipiscing elit, sed do eiusmod
-                                                            tempor incididunt</p>
+                                                        <h3 class="title">Seamless Planning</h3>
+                                                        <p class="icon-box-description">Let us handle all the logistics and coordination, from booking flights and accommodations to arranging transportation and tours, allowing you to relax and enjoy a hassle-free vacation.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="elementor-element elementor-element-1926ee2 elementor-widget__width-initial elementor-widget-mobile__width-inherit jkit-equal-height-disable elementor-widget elementor-widget-jkit_icon_box" data-id="1926ee2" data-element_type="widget" data-widget_type="jkit_icon_box.default">
+                                        <div class="elementor-widget-container">
+                                            <div class="jeg-elementor-kit jkit-icon-box icon-position- elementor-animation- jeg_module_17_17_654c63d600f64">
+                                                <div class="jkit-icon-box-wrapper hover-from-left">
+                                                    <div class="icon-box icon-box-header elementor-animation-">
+                                                        <div class="icon style-color"><img decoding="async" src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/adv-150x150.png" alt="Customer Satisfaction"></div>
+                                                    </div>
+                                                    <div class="icon-box icon-box-body">
+                                                        <h3 class="title">Customer Satisfaction</h3>
+                                                        <p class="icon-box-description">Our top priority is ensuring your satisfaction and exceeding your expectations at every step of your journey, with dedicated customer support available to address any queries or concerns promptly.</p>
                                                     </div>
 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="elementor-element elementor-element-1926ee2 elementor-widget__width-initial elementor-widget-mobile__width-inherit jkit-equal-height-disable elementor-widget elementor-widget-jkit_icon_box" data-id="1926ee2" data-element_type="widget" data-widget_type="jkit_icon_box.default">
+                                        <div class="elementor-widget-container">
+                                            <div class="jeg-elementor-kit jkit-icon-box icon-position- elementor-animation- jeg_module_17_17_654c63d600f64">
+                                                <div class="jkit-icon-box-wrapper hover-from-left">
+                                                    <div class="icon-box icon-box-header elementor-animation-">
+                                                        <div class="icon style-color"><img decoding="async" src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/adv-150x150.png" alt="Value for Money"></div>
+                                                    </div>
+                                                    <div class="icon-box icon-box-body">
+                                                        <h3 class="title">Value for Money</h3>
+                                                        <p class="icon-box-description">We offer competitive pricing without compromising on quality, providing excellent value for your investment and delivering an unparalleled travel experience that leaves you with lasting memories.</p>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -236,7 +249,7 @@
                                 <div class="elementor-widget-wrap elementor-element-populated">
                                     <div class="elementor-element elementor-element-446a8ec animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="446a8ec" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;}" data-widget_type="heading.default">
                                         <div class="elementor-widget-container">
-                                            <h2 class="elementor-heading-title elementor-size-default">Founder</h2>
+                                            <h2 class="elementor-heading-title elementor-size-default">Founders</h2>
                                         </div>
                                     </div>
                                     <div class="elementor-element elementor-element-79e4907 elementor-absolute animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="79e4907" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;,&quot;_animation&quot;:&quot;fadeInLeft&quot;}" data-widget_type="heading.default">
@@ -247,8 +260,7 @@
                                         </div>
                                     </div>
                                     <div class="elementor-element elementor-element-cf1757d elementor-widget elementor-widget-text-editor" data-id="cf1757d" data-element_type="widget" data-widget_type="text-editor.default">
-                                        <div class="elementor-widget-container">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                            incididunt ut labore et dolore magna aliqua </div>
+                                        <div class="elementor-widget-container">As founders, we architect dreams, crafting unforgettable journeys, fostering a global community of wanderers, and forging connections that bond people</div>
                                     </div>
                                 </div>
                             </div>
@@ -332,7 +344,7 @@
                                 <div class="elementor-widget-wrap elementor-element-populated">
                                     <div class="elementor-element elementor-element-446a8ec animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="446a8ec" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;}" data-widget_type="heading.default">
                                         <div class="elementor-widget-container">
-                                            <h2 class="elementor-heading-title elementor-size-default">Trip Buddy</h2>
+                                            <h2 class="elementor-heading-title elementor-size-default">Trip BUDDIES</h2>
                                         </div>
                                     </div>
                                     <div class="elementor-element elementor-element-79e4907 elementor-absolute animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="79e4907" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;,&quot;_animation&quot;:&quot;fadeInLeft&quot;}" data-widget_type="heading.default">
@@ -343,8 +355,7 @@
                                         </div>
                                     </div>
                                     <div class="elementor-element elementor-element-cf1757d elementor-widget elementor-widget-text-editor" data-id="cf1757d" data-element_type="widget" data-widget_type="text-editor.default">
-                                        <div class="elementor-widget-container">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                            incididunt ut labore et dolore magna aliqua </div>
+                                        <div class="elementor-widget-container">As trip buddies, we're the heartbeat of this travel group, weaving unforgettable adventures and fostering lifelong bonds among wanderers.</div>
                                     </div>
                                 </div>
                             </div>
@@ -520,7 +531,7 @@
                                 <div class="elementor-widget-wrap elementor-element-populated">
                                     <div class="elementor-element elementor-element-446a8ec animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="446a8ec" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;}" data-widget_type="heading.default">
                                         <div class="elementor-widget-container">
-                                            <h2 class="elementor-heading-title elementor-size-default">Operation Support</h2>
+                                            <h2 class="elementor-heading-title elementor-size-default">SUPPORT GENIES</h2>
                                         </div>
                                     </div>
                                     <div class="elementor-element elementor-element-79e4907 elementor-absolute animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="79e4907" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;,&quot;_animation&quot;:&quot;fadeInLeft&quot;}" data-widget_type="heading.default">
@@ -531,8 +542,7 @@
                                         </div>
                                     </div>
                                     <div class="elementor-element elementor-element-cf1757d elementor-widget elementor-widget-text-editor" data-id="cf1757d" data-element_type="widget" data-widget_type="text-editor.default">
-                                        <div class="elementor-widget-container">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                            incididunt ut labore et dolore magna aliqua </div>
+                                        <div class="elementor-widget-container">Our support team ensures seamless travels, offers prompt assistance, and ensures memorable experiences, addressing all inquiries promptly and effectively.</div>
                                     </div>
                                 </div>
                             </div>

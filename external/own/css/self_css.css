@@ -312,9 +312,9 @@
         /* Adjust based on your design requirements */
     }
 
-    .crsl_img1 {
+    /* .crsl_img1 {
         height: 100px;
-    }
+    } */
 
     .crsl_img {
         height: 100px;
@@ -523,7 +523,7 @@
     }
 
     .crsl_img1 {
-        height: 600px !important;
+        /* height: 500px !important; */
         padding-right: 10%;
         padding-left: 10%;
     }
