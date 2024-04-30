@@ -24,10 +24,7 @@
 											</div>
 										</div>
 										<div class="elementor-element elementor-element-cf1757d elementor-widget elementor-widget-text-editor" data-id="cf1757d" data-element_type="widget" data-widget_type="text-editor.default">
-											<div class="elementor-widget-container">
-												Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-												eiusmod tempor incididunt ut labore et dolore magna aliqua
-											</div>
+											<div class="elementor-widget-container">We're not just travellers; we're integral members of the D U R B E E N family, bound by a shared passion for exploration and discovery. Together, we weave stories, create bonds, and embark on journeys that transcend mere sightseeing, immersing ourselves in the fabric of each destination.</div>
 										</div>
 									</div>
 								</div>
@@ -123,9 +120,7 @@
 											</div>
 										</div>
 										<div class="elementor-element elementor-element-cf1757d elementor-widget elementor-widget-text-editor" data-id="cf1757d" data-element_type="widget" data-widget_type="text-editor.default">
-											<div class="elementor-widget-container">
-												Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-												eiusmod tempor incididunt ut labore et dolore magna aliqua </div>
+											<div class="elementor-widget-container">Discover hidden gems, untamed landscapes, and authentic cultures in unexplored offbeat destinations. Escape the crowds, embrace adventure, and create unforgettable memories off the beaten path.</div>
 										</div>
 									</div>
 								</div>
@@ -271,9 +266,7 @@
 											</div>
 										</div>
 										<div class="elementor-element elementor-element-cf1757d elementor-widget elementor-widget-text-editor" data-id="cf1757d" data-element_type="widget" data-widget_type="text-editor.default">
-											<div class="elementor-widget-container">
-												Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-												eiusmod tempor incididunt ut labore et dolore magna aliqua </div>
+											<div class="elementor-widget-container">Escape the hustle with weekend hikes. Explore nature's wonders, breathe in fresh air, and recharge. Whether solo or with friends, find your trail and adventure awaits.</div>
 										</div>
 									</div>
 								</div>
@@ -382,9 +375,7 @@
 											</div>
 										</div>
 										<div class="elementor-element elementor-element-cf1757d elementor-widget elementor-widget-text-editor" data-id="cf1757d" data-element_type="widget" data-widget_type="text-editor.default">
-											<div class="elementor-widget-container">
-												Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-												eiusmod tempor incididunt ut labore et dolore magna aliqua </div>
+											<div class="elementor-widget-container">Durbeen's sought-after offbeat trips are like hotcakes. Explore hidden gems, off the beaten path. Discover unique cultures, breathtaking landscapes, and unforgettable experiences with us.</div>
 										</div>
 									</div>
 								</div>
@@ -494,9 +485,7 @@
 											</div>
 										</div>
 										<div class="elementor-element elementor-element-cf1757d elementor-widget elementor-widget-text-editor" data-id="cf1757d" data-element_type="widget" data-widget_type="text-editor.default">
-											<div class="elementor-widget-container">
-												Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-												eiusmod tempor incididunt ut labore et dolore magna aliqua </div>
+											<div class="elementor-widget-container">Embark on adrenaline-fueled adventures and thrilling treks, where you'll conquer towering peaks, explore rugged terrain, and immerse yourself in the beauty of nature's challenges. Unforgettable experiences await those who dare to explore.</div>
 										</div>
 									</div>
 								</div>
@@ -578,14 +567,11 @@
 					</div>
 					<div class="elementor-element elementor-element-7097f91 elementor-widget elementor-widget-heading" data-id="7097f91" data-element_type="widget" data-widget_type="heading.default">
 						<div class="elementor-widget-container">
-							<h2 class="elementor-heading-title elementor-size-default">Explore Full Itineraries
-								& Trip Ideas For Hiking</h2>
+							<h2 class="elementor-heading-title elementor-size-default">Travel far enough, you meet yourself.</h2>
 						</div>
 					</div>
 					<div class="elementor-element elementor-element-d90b36c elementor-widget elementor-widget-text-editor" data-id="d90b36c" data-element_type="widget" data-widget_type="text-editor.default">
-						<div class="elementor-widget-container">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-							incididunt ut labore et dolore magna aliqua </div>
+						<div class="elementor-widget-container"></div>
 					</div>
 				</div>
 			</div>
