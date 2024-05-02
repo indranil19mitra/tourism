@@ -2,6 +2,17 @@
     background-color: rgb(213 218 222) !important;
 }
 
+#home_body {
+    background-color: #dcd2de !important;
+}
+
+.itinerary_details_dv {
+    background-color: #dcd2de !important;
+}
+.itinerary_details_dv_1 {
+    background-color: #fff !important;
+}
+
 .crsl_btn1 {
     background-color: unset !important;
 }
