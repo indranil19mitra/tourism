@@ -1364,6 +1364,44 @@ document.addEventListener("DOMContentLoaded", function () {
 		'<i class="fas fa-arrow-right"></i>';
 	document.querySelector(".swiper-button-prev7").innerHTML =
 		'<i class="fas fa-arrow-left"></i>';
+
+
+		var swiper10 = new Swiper(".swiper_container10", {
+			slidesPerView: 1,
+			spaceBetween: 10,
+			navigation: {
+				nextEl: ".swiper-button-next10",
+				prevEl: ".swiper-button-prev10",
+			},
+			autoplay: {
+				delay: 9500,
+				disableOnInteraction: true,
+				pauseOnMouseEnter: true,
+			},
+			breakpoints: {
+				"@0.00": {
+					slidesPerView: 1,
+					spaceBetween: 10,
+				},
+				"@0.75": {
+					slidesPerView: 1,
+					spaceBetween: 20,
+				},
+				"@1.00": {
+					slidesPerView: 1,
+					spaceBetween: 40,
+				},
+				"@1.50": {
+					slidesPerView: 1,
+					spaceBetween: 0,
+				},
+			},
+		});
+	
+		document.querySelector(".swiper-button-next10").innerHTML =
+			'<i class="fas fa-arrow-right"></i>';
+		document.querySelector(".swiper-button-prev10").innerHTML =
+			'<i class="fas fa-arrow-left"></i>';
 });
 
 function current_date() {

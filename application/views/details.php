@@ -217,7 +217,7 @@ if (!empty($tour_photos)) {
                                         <?php
                                         foreach ($final_itinerary_array as $key => $val) {
                                         ?>
-                                            <div class="accordion-item mt-2">
+                                            <div class="accordion-item mt-2 itinerary_details_dv">
                                                 <h2 class="accordion-header rounded">
                                                     <a class="accordion-button collapsed w-100 itinarary_bg_clr itinarary_bg_clr_hvr text-dark rounded-4" type="button" data-bs-toggle="collapse" data-bs-target="#flush-<?= $key; ?>" aria-expanded="false" aria-controls="flush-<?= $key; ?>">
                                                         <div class="d-flex align-items-center w-100">
@@ -226,8 +226,8 @@ if (!empty($tour_photos)) {
                                                         </div>
                                                     </a>
                                                 </h2>
-                                                <div id="flush-<?= $key; ?>" class="accordion-collapse collapse itinarary_bg_clr text-dark rounded-4 mt-3 itinarary_bg_clr_2" data-bs-parent="#accordionFlushExample">
-                                                    <div class="accordion-body">
+                                                <div id="flush-<?= $key; ?>" class="accordion-collapse collapse itinarary_bg_clr text-dark mt-3 itinarary_bg_clr_2" data-bs-parent="#accordionFlushExample">
+                                                    <div class="accordion-body itinerary_details_dv_1">
                                                         <span><?= $val['itinerary_sub'] ?></span>
                                                     </div>
                                                 </div>
@@ -928,7 +928,7 @@ if (!empty($tour_photos)) {
                         </div>
                     </section>
                     <div class="w-100 mt-5" id="dt_swpr1">
-                        <div class="swiper swiper_container7 mb-3">
+                        <div class="swiper swiper_container10 mb-3">
                             <div class="swiper-wrapper p-2 ps-0 ps-md-2">
                                 <?php
                                 if (!empty($get_tours_category_wise_data)) :
@@ -964,10 +964,10 @@ if (!empty($tour_photos)) {
                         <div class="d-flex flex-wrap flex-md-nowrap justify-content-end align-items-center mb-0">
                             <div class="d-flex flex-wrap flex-md-nowrap flex-column-reverse flex-md-row gap-2">
                                 <div class="carousel-slider d-flex justify-content-end gap-4">
-                                    <a class=" bg-transparent position-relative d-block swiper-button-prev7" role="button">
+                                    <a class=" bg-transparent position-relative d-block swiper-button-prev10" role="button">
                                         <div class="swiper-button-prev text-primary position-relative w-auto p-1"></div>
                                     </a>
-                                    <a class=" bg-transparent position-relative d-block w-auto swiper-button-next7" role="button">
+                                    <a class=" bg-transparent position-relative d-block w-auto swiper-button-next10" role="button">
                                         <div class="swiper-button-next text-primary position-relative w-auto p-1"></div>
                                     </a>
                                 </div>

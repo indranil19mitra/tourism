@@ -131,7 +131,7 @@ $whatsappLink = "https://wa.me/+" . $countryCode . $phoneNumber;
                                         <div class="elementor-widget-wrap elementor-element-populated">
                                             <div class="elementor-element elementor-element-a988d33 elementor-widget elementor-widget-text-editor" data-id="a988d33" data-element_type="widget" data-widget_type="text-editor.default">
                                                 <div class="elementor-widget-container">
-                                                    Copyright © 2023. All Right Reserved. </div>
+                                                    Copyright © 2024 thedurbeen.com All Rights Reserved. Developed by MitraTech Consultancy.</div>
                                             </div>
                                         </div>
                                     </div>
