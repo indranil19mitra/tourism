@@ -222,18 +222,16 @@ if (!empty($tour_photos)) {
                                                     <a class="accordion-button collapsed w-100 itinarary_bg_clr itinarary_bg_clr_hvr text-dark rounded-4" type="button" data-bs-toggle="collapse" data-bs-target="#flush-<?= $key; ?>" aria-expanded="false" aria-controls="flush-<?= $key; ?>">
                                                         <div class="d-flex align-items-center w-100">
                                                             <div class="fw-bold text-start">Day <?= $key; ?>: </div>
-                                                            <div class="text-center flex-grow-1"><span><?= $val['itinerary'] ?></span></div>
+                                                            <div class="text-center flex-grow-1 px-2 itinerary_dv_text"><span><?= $val['itinerary'] ?></span></div>
                                                         </div>
                                                     </a>
                                                 </h2>
                                                 <div id="flush-<?= $key; ?>" class="accordion-collapse collapse itinarary_bg_clr text-dark mt-3 itinarary_bg_clr_2" data-bs-parent="#accordionFlushExample">
-                                                    <div class="accordion-body itinerary_details_dv_1">
+                                                    <div class="accordion-body">
                                                         <span><?= $val['itinerary_sub'] ?></span>
                                                     </div>
                                                 </div>
                                             </div>
-
-
                                         <?php
                                         }
                                         ?>
