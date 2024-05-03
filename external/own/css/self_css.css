@@ -6,11 +6,19 @@
     background-color: #dcd2de !important;
 }
 
+.itinerary_dv_text {
+    white-space: normal !important;
+    letter-spacing: 0;
+    line-height: 1;
+}
+
+.itinarary_bg_clr_2 {
+    width: 90% !important;
+    background-color: #f9f7f7 !important;
+}
+
 .itinerary_details_dv {
     background-color: #dcd2de !important;
-}
-.itinerary_details_dv_1 {
-    background-color: #fff !important;
 }
 
 .crsl_btn1 {
@@ -202,10 +210,6 @@
     border: none !important;
 }
 
-.itinarary_bg_clr_2 {
-    width: 90% !important;
-}
-
 .itinarary_bg_clr_hvr:hover {
     background-color: rgb(58, 58, 58) !important;
     color: #e5e5e5 !important;
@@ -241,6 +245,9 @@
 
 
 @media (max-width: 767px) {
+    .itinerary_dv_text {
+        text-align: left !important;
+    }
 
     #tour_booking_adv_payment_methods {
         font-size: medium;
