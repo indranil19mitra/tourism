@@ -121,9 +121,6 @@ if (!empty($tour_photos)) {
                     </div>
                 </div>
 
-
-
-
                 <?php
                 if (!empty($tour_about_details)) :
                 ?>
@@ -156,7 +153,7 @@ if (!empty($tour_photos)) {
                         <div class="container mt-5">
                             <div class="row">
                                 <div class="col-12">
-                                    <div class="fs-5 fw-bold text-left">
+                                    <div class="fs-5 fw-bold text-left home_body">
                                         <?= $tour_about_details; ?>
                                     </div>
                                 </div>
@@ -355,7 +352,7 @@ if (!empty($tour_photos)) {
                             <div class="container mt-5">
                                 <div class="row">
                                     <div class="col-12">
-                                        <div class="fs-5 text-left">
+                                        <div class="fs-5 text-left home_body">
                                             <!-- <p>The village of Bir (elevation: 1400m), located in the Kangra district of Himachal Pradesh India, is internationally famous as the base for some of the best paragliding in the world. The take-off point at Billing, 14km up a winding road from Bir and 1000m higher, hosts major competitive flying events most years in October or November (including a round of the Paragliding World Cup in 2015). Experienced paragliders fly as far as Dharamshala, Mandi, and Manali from here.<br>
                                         </p>
                                         <p>
@@ -400,7 +397,7 @@ if (!empty($tour_photos)) {
                             <div class="container mt-5">
                                 <div class="row">
                                     <div class="col-12">
-                                        <div class="fs-5 text-left">
+                                        <div class="fs-5 text-left home_body">
                                             <!-- <p>The village of Bir (elevation: 1400m), located in the Kangra district of Himachal Pradesh India, is internationally famous as the base for some of the best paragliding in the world. The take-off point at Billing, 14km up a winding road from Bir and 1000m higher, hosts major competitive flying events most years in October or November (including a round of the Paragliding World Cup in 2015). Experienced paragliders fly as far as Dharamshala, Mandi, and Manali from here.<br>
                                         </p>
                                         <p>
@@ -455,7 +452,7 @@ if (!empty($tour_photos)) {
                         <div class="container mt-5">
                             <div class="row">
                                 <div class="col-12">
-                                    <div class="fs-5 text-left">
+                                    <div class="fs-5 text-left home_body">
                                         <!-- <p>The village of Bir (elevation: 1400m), located in the Kangra district of Himachal Pradesh India, is internationally famous as the base for some of the best paragliding in the world. The take-off point at Billing, 14km up a winding road from Bir and 1000m higher, hosts major competitive flying events most years in October or November (including a round of the Paragliding World Cup in 2015). Experienced paragliders fly as far as Dharamshala, Mandi, and Manali from here.<br>
                                         </p>
                                         <p>

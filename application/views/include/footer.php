@@ -294,11 +294,11 @@ if (!empty($get_tours_details)) {
 
         if (url_para == "") {
             var images = [
-                baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/home/home_header/IMG_8334_photo.jpg',
-                baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/home/home_header/20231101_050218.jpg',
-                baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/home/home_header/photo_2024_03-31_18.jpg',
-                baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/home/home_header/hhedited4.jpg',
-                baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/home/home_header/IMG_9331_photo_full.jpg',
+                baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/home_cover/home_1.jpg',
+                baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/home_cover/home_2.jpg',
+                baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/home_cover/home_3.jpg',
+                baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/home_cover/home_4.jpg',
+                baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/home_cover/home_5.jpg',
             ];
         }
         if (url_para != "") {

@@ -477,14 +477,17 @@ class Myadmin_controller extends CI_Controller
             'tour_details.is_delete!=' => '0'
         );
         $join1 = array('table' => 'tours', 'condition' => 'tours.id=tour_details.tours_id');
+        $join2 = ['table' => 'tour_category', 'condition' => 'tours.tour_category_id=tour_category.id'];
+        $join = [$join1, $join2];
 
-        $data['tour_destination_details'] = $this->myadmin_model->get_data("tours.name,tour_details.*", "tour_details", $cond, [$join1], "", "desc", "id");
+        $data['tour_destination_details'] = $this->myadmin_model->get_data("tours.name,tour_details.*,tour_category.name as category_name", "tour_details", $cond, $join, "", "desc", "tour_details.id");
 
         $cond1 = array(
             'tours.is_delete!=' => '0',
             'tours.status!=' => '0'
         );
-        $data['tours_data'] = $this->myadmin_model->get_data("id,name", "tours", $cond1, "", "", "", "");
+
+        $data['tours_data'] = $this->myadmin_model->get_data("tours.id,tours.name,tour_category.name as category_name", "tours", $cond1, [$join2], "", "asc", "tours.name");
 
         $this->load->view('include/header');
         $this->load->view('destination_details/index', $data);
@@ -569,11 +572,14 @@ class Myadmin_controller extends CI_Controller
             // 'tour_about.status!=' => '0'
         );
         $join1 = array('table' => 'tours', 'condition' => 'tours.id=tour_about.tours_id');
-        $data['tour_about_details'] = $this->myadmin_model->get_data("tour_about.id,tour_about.tours_id,tour_about.tour_about_details,tour_about.status,tours.name", "tour_about", $cond2, [$join1], "", "", "");
+        $join2 = ['table' => 'tour_category', 'condition' => 'tours.tour_category_id=tour_category.id'];
+        $join = [$join1, $join2];
+
+        $data['tour_about_details'] = $this->myadmin_model->get_data("tour_about.id,tour_about.tours_id,tour_about.tour_about_details,tour_about.status,tours.name,tour_category.name as category_name", "tour_about", $cond2, $join, "", "desc", "tour_about.id");
 
         $cond1 = array(
-            'is_delete!=' => '0',
-            'status!=' => '0',
+            'tours.is_delete!=' => '0',
+            'tours.status!=' => '0',
         );
         $ids_arry = array();
         foreach ($data['tour_about_details'] as $val) {
@@ -581,7 +587,9 @@ class Myadmin_controller extends CI_Controller
         }
         // print_r($ids_arry);
         // $data['tours_data'] = $this->myadmin_model->get_data("id,name", "tours", $cond1, "", "", "", "", "", "", "id", $ids_arry);
-        $data['tours_data'] = $this->myadmin_model->get_data("id,name", "tours", $cond1);
+        // $data['tours_data'] = $this->myadmin_model->get_data("id,name", "tours", $cond1);
+
+        $data['tours_data'] = $this->myadmin_model->get_data("tours.id,tours.name,tour_category.name as category_name", "tours", $cond1, [$join2], "", "asc", "tours.name");
 
         // exit;
         $this->load->view('include/header');
@@ -655,10 +663,12 @@ class Myadmin_controller extends CI_Controller
         }
 
         $cond1 = array(
-            'is_delete!=' => '0',
-            'status!=' => '0',
+            'tours.is_delete!=' => '0',
+            'tours.status!=' => '0',
         );
-        $data['tours_data'] = $this->myadmin_model->get_data("id,name", "tours", $cond1);
+        // $data['tours_data'] = $this->myadmin_model->get_data("id,name", "tours", $cond1);
+        $join3 = ['table' => 'tour_category', 'condition' => 'tours.tour_category_id=tour_category.id'];
+        $data['tours_data'] = $this->myadmin_model->get_data("tours.id,tours.name,tour_category.name as category_name", "tours", $cond1, [$join3], "", "asc", "tours.name");
 
 
         $cond2 = array(
@@ -666,8 +676,8 @@ class Myadmin_controller extends CI_Controller
         );
         $join1 = array('table' => 'tours', 'condition' => 'tours.id=tour_itinerary_main.tours_id');
         $join2 = array('table' => 'tour_itinerary_sub', 'condition' => 'tour_itinerary_sub.itinery_main_id=tour_itinerary_main.id');
-        $join = [$join1, $join2];
-        $data['tour_itinerary_details'] = $this->myadmin_model->get_data("tour_itinerary_main.id,tour_itinerary_main.itinerary,tour_itinerary_main.status,tour_itinerary_main.sequence,tours.name,tour_itinerary_sub.itinerary_sub", "tour_itinerary_main", $cond2, $join, "", "desc", "tour_itinerary_main.id");
+        $join = [$join1, $join2, $join3];
+        $data['tour_itinerary_details'] = $this->myadmin_model->get_data("tour_itinerary_main.id,tour_itinerary_main.itinerary,tour_itinerary_main.status,tour_itinerary_main.sequence,tours.name,tour_itinerary_sub.itinerary_sub,tour_category.name as category_name", "tour_itinerary_main", $cond2, $join, "", "desc", "tour_itinerary_main.id");
 
         // exit;
         $this->load->view('include/header');
@@ -791,13 +801,18 @@ class Myadmin_controller extends CI_Controller
             'tour_inclusions_exclusions.is_delete!=' => '0'
         );
         $join1 = array('table' => 'tours', 'condition' => 'tours.id=tour_inclusions_exclusions.tours_id');
-        $data['tour_inclusions_exclusions_details'] = $this->myadmin_model->get_data("tour_inclusions_exclusions.id,tour_inclusions_exclusions.tours_id,tour_inclusions_exclusions.inclusions,tour_inclusions_exclusions.exclusions,tour_inclusions_exclusions.status,tours.name", "tour_inclusions_exclusions", $cond2, [$join1], "", "", "");
+        $join2 = ['table' => 'tour_category', 'condition' => 'tours.tour_category_id=tour_category.id'];
+        $join = [$join1, $join2];
+
+        $data['tour_inclusions_exclusions_details'] = $this->myadmin_model->get_data("tour_inclusions_exclusions.id,tour_inclusions_exclusions.tours_id,tour_inclusions_exclusions.inclusions,tour_inclusions_exclusions.exclusions,tour_inclusions_exclusions.status,tours.name,tour_category.name as category_name", "tour_inclusions_exclusions", $cond2, $join, "", "", "");
 
         $cond1 = array(
-            'is_delete!=' => '0',
-            'status!=' => '0',
+            'tours.is_delete!=' => '0',
+            'tours.status!=' => '0',
         );
-        $data['tours_data'] = $this->myadmin_model->get_data("id,name", "tours", $cond1);
+        // $data['tours_data'] = $this->myadmin_model->get_data("id,name", "tours", $cond1);
+        $data['tours_data'] = $this->myadmin_model->get_data("tours.id,tours.name,tour_category.name as category_name", "tours", $cond1, [$join2], "", "asc", "tours.name");
+
 
         // exit;
         $this->load->view('include/header');
@@ -875,13 +890,17 @@ class Myadmin_controller extends CI_Controller
             'tour_other_info.is_delete!=' => '0'
         );
         $join1 = array('table' => 'tours', 'condition' => 'tours.id=tour_other_info.tours_id');
-        $data['tour_tour_other_info_details'] = $this->myadmin_model->get_data("tour_other_info.id,tour_other_info.tours_id,tour_other_info.other_info,tour_other_info.status,tours.name", "tour_other_info", $cond2, [$join1], "", "", "");
+        $join2 = ['table' => 'tour_category', 'condition' => 'tours.tour_category_id=tour_category.id'];
+        $join = [$join1, $join2];
+
+        $data['tour_tour_other_info_details'] = $this->myadmin_model->get_data("tour_other_info.id,tour_other_info.tours_id,tour_other_info.other_info,tour_other_info.status,tours.name,tour_category.name as category_name", "tour_other_info", $cond2, $join, "", "desc", "tour_other_info.id");
 
         $cond1 = array(
-            'is_delete!=' => '0',
-            'status!=' => '0',
+            'tours.is_delete!=' => '0',
+            'tours.status!=' => '0',
         );
-        $data['tours_data'] = $this->myadmin_model->get_data("id,name", "tours", $cond1);
+        // $data['tours_data'] = $this->myadmin_model->get_data("id,name", "tours", $cond1);
+        $data['tours_data'] = $this->myadmin_model->get_data("tours.id,tours.name,tour_category.name as category_name", "tours", $cond1, [$join2], "", "asc", "tours.name");
 
         // exit;
         $this->load->view('include/header');
@@ -955,16 +974,20 @@ class Myadmin_controller extends CI_Controller
 
 
         $cond1 = array(
-            'is_delete!=' => '0',
-            'status!=' => '0',
+            'tours.is_delete!=' => '0',
+            'tours.status!=' => '0',
         );
-        $data['tours_data'] = $this->myadmin_model->get_data("id,name", "tours", $cond1);
+        // $data['tours_data'] = $this->myadmin_model->get_data("id,name", "tours", $cond1);
+        $join2 = ['table' => 'tour_category', 'condition' => 'tours.tour_category_id=tour_category.id'];
+        $data['tours_data'] = $this->myadmin_model->get_data("tours.id,tours.name,tour_category.name as category_name", "tours", $cond1, [$join2], "", "asc", "tours.name");
 
         $cond2 = array(
             'tour_photos.is_delete!=' => '0'
         );
         $join1 = array('table' => 'tours', 'condition' => 'tours.id=tour_photos.tours_id');
-        $data['tour_photos'] = $this->myadmin_model->get_data('tour_photos.id,tour_photos.tours_id,tour_photos.tour_photo,tour_photos.status,tours.name', "tour_photos", $cond2, [$join1], "", "desc", "tour_photos.id", "tour_photos.id,tour_photos.tour_photo");
+        $join = [$join1, $join2];
+
+        $data['tour_photos'] = $this->myadmin_model->get_data('tour_photos.id,tour_photos.tours_id,tour_photos.tour_photo,tour_photos.status,tours.name,tour_category.name as category_name', "tour_photos", $cond2, $join, "", "desc", "tour_photos.id", "tour_photos.id,tour_photos.tour_photo");
 
         $this->load->view('include/header');
         $this->load->view('tour_photos/index', $data);
@@ -1129,9 +1152,10 @@ class Myadmin_controller extends CI_Controller
 
         $join1 = array('table' => 'tour_details', 'condition' => 'tour_details.id=tour_booking_details.tours_details_id');
         $join2 = array('table' => 'tours', 'condition' => 'tours.id=tour_details.tours_id');
-        $join = array($join1, $join2);
+        $join3 = array('table' => 'tour_category', 'condition' => 'tour_category.id=tours.tour_category_id');
+        $join = array($join1, $join2, $join3);
 
-        $data['tour_booking_details'] = $this->myadmin_model->get_data("tour_booking_details.id as tour_booking_details_id,tours.name,tour_booking_details.cust_name,tour_booking_details.cust_contact,tour_booking_details.cust_mail,tour_booking_details.cust_addr,tour_booking_details.nmbr_of_person,tour_booking_details.booking_date_time,tour_booking_details.booking_status,tour_booking_details.booking_amount_without_gst,tour_booking_details.booking_amount_with_gst,tour_booking_details.received_amount,tour_booking_details.booking_gst_amount,tour_details.start_date,tour_details.price,tour_details.end_date,tour_details.pikup_location,tour_details.drop_location,tour_details.duration,tour_details.price", 'tour_booking_details', $cond1, $join, "", "asc", "tour_details.start_date");
+        $data['tour_booking_details'] = $this->myadmin_model->get_data("tour_booking_details.id as tour_booking_details_id,tours.name,tour_booking_details.cust_name,tour_booking_details.cust_contact,tour_booking_details.cust_mail,tour_booking_details.cust_addr,tour_booking_details.nmbr_of_person,tour_booking_details.booking_date_time,tour_booking_details.booking_status,tour_booking_details.booking_amount_without_gst,tour_booking_details.booking_amount_with_gst,tour_booking_details.received_amount,tour_booking_details.booking_gst_amount,tour_details.start_date,tour_details.price,tour_details.end_date,tour_details.pikup_location,tour_details.drop_location,tour_details.duration,tour_details.price,tour_category.name as category_name", 'tour_booking_details', $cond1, $join, "", "asc", "tour_details.start_date");
 
         $this->load->view('include/header');
         $this->load->view('tour_booking_details/index', $data);

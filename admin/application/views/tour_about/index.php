@@ -19,7 +19,7 @@
                                         <?php
                                         if (!empty($tours_data)) {
                                             foreach ($tours_data as $val) {
-                                                echo '<option value=' . $val->id . '>' . $val->name . '</option>';
+                                                echo '<option value=' . $val->id . '>' . $val->name . ' (' . $val->category_name . ')</option>';
                                             }
                                         }
                                         ?>
@@ -79,7 +79,7 @@
                             ?>
                                     <tr>
                                         <td><?= ($key + 1) ?></td>
-                                        <td><?= $rslt->name; ?></td>
+                                        <td><?= $rslt->name . ' (' . $rslt->category_name . ')'; ?></td>
                                         <td class="text-wrap"><?= $rslt->tour_about_details; ?></td>
                                         <td><label class="<?= $status_desc_class; ?>"><?= $status_desc; ?></label></td>
                                         <td>

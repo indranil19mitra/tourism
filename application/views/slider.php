@@ -17,7 +17,7 @@
                             </div>
                         </div>
                         <div class="elementor-element elementor-element-7e000c1 animated-slow elementor-invisible elementor-widget elementor-widget-text-editor" data-id="7e000c1" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;}" data-widget_type="text-editor.default">
-                            <div class="elementor-widget-container mt-5">Linking people and experiences, we transcend the role of a mere travel company. Allow us to lead you through adventures that exhort friendships and irremovable memories. Explore the world, forging incredible connections along the way.</div>
+                            <div class="elementor-widget-container mt-5">Linking people and experiences, we transcend the role of a mere travel company. Allow us to lead you through adventures that exhort friendships and irremovable memories. Explore the world, forge incredible connections along the way.</div>
                         </div>
 
                         <!-- <section class="elementor-section elementor-inner-section elementor-element elementor-element-8182021 elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="8182021" data-element_type="section"> -->

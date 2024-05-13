@@ -2,14 +2,15 @@
     background-color: rgb(213 218 222) !important;
 }
 
-#home_body {
+.home_body {
     background-color: #dcd2de !important;
 }
 
 .itinerary_dv_text {
     white-space: normal !important;
     letter-spacing: 0;
-    line-height: 1;
+    line-height: 1.3;
+    text-transform: none;
 }
 
 .itinarary_bg_clr_2 {

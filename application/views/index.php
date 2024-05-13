@@ -111,7 +111,7 @@
 									<div class="elementor-widget-wrap elementor-element-populated">
 										<div class="elementor-element elementor-element-446a8ec animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="446a8ec" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;}" data-widget_type="heading.default">
 											<div class="elementor-widget-container">
-												<h2 class="elementor-heading-title elementor-size-default">Destination</h2>
+												<h2 class="elementor-heading-title elementor-size-default">Destinations</h2>
 											</div>
 										</div>
 										<div class="elementor-element elementor-element-79e4907 elementor-absolute animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="79e4907" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;,&quot;_animation&quot;:&quot;fadeInLeft&quot;}" data-widget_type="heading.default">
