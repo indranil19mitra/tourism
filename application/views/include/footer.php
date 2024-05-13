@@ -294,11 +294,11 @@ if (!empty($get_tours_details)) {
 
         if (url_para == "") {
             var images = [
-                baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/home_cover/home_1.jpg',
-                baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/home_cover/home_2.jpg',
-                baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/home_cover/home_3.jpg',
-                baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/home_cover/home_4.jpg',
-                baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/home_cover/home_5.jpg',
+                baseurl + 'external/self_upload/home_cover/home_1.jpg',
+                baseurl + 'external/self_upload/home_cover/home_2.jpg',
+                baseurl + 'external/self_upload/home_cover/home_3.jpg',
+                baseurl + 'external/self_upload/home_cover/home_4.jpg',
+                baseurl + 'external/self_upload/home_cover/home_5.jpg',
             ];
         }
         if (url_para != "") {
@@ -306,8 +306,8 @@ if (!empty($get_tours_details)) {
             if ('<?= $main_image ?>' == "") {
                 console.log('<?= $main_image ?>');
                 var images = [
-                    baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/about/about_header/20240225_140012.jpg',
-                    baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/about/about_header/DSC07559.jpg'
+                    baseurl + 'external/self_upload/about/about_header/20240225_140012.jpg',
+                    baseurl + 'external/self_upload/about/about_header/DSC07559.jpg'
                 ];
             } else {
                 console.log('<?= $main_image ?>');

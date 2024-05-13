@@ -638,7 +638,7 @@ if (!empty($tour_photos)) {
                                                             </div>
                                                             <div class="col-lg-6 col-md-6 col-sm-12 d-flex justify-content-end">
                                                                 <div>
-                                                                    <img src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/self/payment/1712088277571.jpg" alt="" id="upi_id">
+                                                                    <img src="<?= base_url() ?>external/self_upload/payment/1712088277571.jpg" alt="" id="upi_id">
                                                                 </div>
                                                             </div>
                                                         </div>

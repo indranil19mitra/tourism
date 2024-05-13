@@ -17,7 +17,7 @@
 
     <style>
         .cnct_us1 {
-            background-image: url('<?= base_url() ?>/external/wp-content/uploads/sites/139/2021/08/self/home_cover/home_1.jpg');
+            background-image: url('<?= base_url() ?>/external/self_upload/home_cover/home_1.jpg');
         }
     </style>
     <link rel='stylesheet' id='jkit-elements-main-css' href='<?php echo base_url() ?>external/wp-content/plugins/jeg-elementor-kit/assets/css/elements/main.css?ver=2.6.2' media='all'>
