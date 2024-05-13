@@ -121,9 +121,6 @@ if (!empty($tour_photos)) {
                     </div>
                 </div>
 
-
-
-
                 <?php
                 if (!empty($tour_about_details)) :
                 ?>
@@ -156,7 +153,7 @@ if (!empty($tour_photos)) {
                         <div class="container mt-5">
                             <div class="row">
                                 <div class="col-12">
-                                    <div class="fs-5 fw-bold text-left">
+                                    <div class="fs-5 fw-bold text-left home_body">
                                         <?= $tour_about_details; ?>
                                     </div>
                                 </div>
@@ -217,23 +214,21 @@ if (!empty($tour_photos)) {
                                         <?php
                                         foreach ($final_itinerary_array as $key => $val) {
                                         ?>
-                                            <div class="accordion-item mt-2">
+                                            <div class="accordion-item mt-2 itinerary_details_dv">
                                                 <h2 class="accordion-header rounded">
                                                     <a class="accordion-button collapsed w-100 itinarary_bg_clr itinarary_bg_clr_hvr text-dark rounded-4" type="button" data-bs-toggle="collapse" data-bs-target="#flush-<?= $key; ?>" aria-expanded="false" aria-controls="flush-<?= $key; ?>">
                                                         <div class="d-flex align-items-center w-100">
                                                             <div class="fw-bold text-start">Day <?= $key; ?>: </div>
-                                                            <div class="text-center flex-grow-1"><span><?= $val['itinerary'] ?></span></div>
+                                                            <div class="text-center flex-grow-1 px-2 itinerary_dv_text"><span><?= $val['itinerary'] ?></span></div>
                                                         </div>
                                                     </a>
                                                 </h2>
-                                                <div id="flush-<?= $key; ?>" class="accordion-collapse collapse itinarary_bg_clr text-dark rounded-4 mt-3 itinarary_bg_clr_2" data-bs-parent="#accordionFlushExample">
+                                                <div id="flush-<?= $key; ?>" class="accordion-collapse collapse itinarary_bg_clr text-dark mt-3 itinarary_bg_clr_2" data-bs-parent="#accordionFlushExample">
                                                     <div class="accordion-body">
                                                         <span><?= $val['itinerary_sub'] ?></span>
                                                     </div>
                                                 </div>
                                             </div>
-
-
                                         <?php
                                         }
                                         ?>
@@ -357,7 +352,7 @@ if (!empty($tour_photos)) {
                             <div class="container mt-5">
                                 <div class="row">
                                     <div class="col-12">
-                                        <div class="fs-5 text-left">
+                                        <div class="fs-5 text-left home_body">
                                             <!-- <p>The village of Bir (elevation: 1400m), located in the Kangra district of Himachal Pradesh India, is internationally famous as the base for some of the best paragliding in the world. The take-off point at Billing, 14km up a winding road from Bir and 1000m higher, hosts major competitive flying events most years in October or November (including a round of the Paragliding World Cup in 2015). Experienced paragliders fly as far as Dharamshala, Mandi, and Manali from here.<br>
                                         </p>
                                         <p>
@@ -402,7 +397,7 @@ if (!empty($tour_photos)) {
                             <div class="container mt-5">
                                 <div class="row">
                                     <div class="col-12">
-                                        <div class="fs-5 text-left">
+                                        <div class="fs-5 text-left home_body">
                                             <!-- <p>The village of Bir (elevation: 1400m), located in the Kangra district of Himachal Pradesh India, is internationally famous as the base for some of the best paragliding in the world. The take-off point at Billing, 14km up a winding road from Bir and 1000m higher, hosts major competitive flying events most years in October or November (including a round of the Paragliding World Cup in 2015). Experienced paragliders fly as far as Dharamshala, Mandi, and Manali from here.<br>
                                         </p>
                                         <p>
@@ -457,7 +452,7 @@ if (!empty($tour_photos)) {
                         <div class="container mt-5">
                             <div class="row">
                                 <div class="col-12">
-                                    <div class="fs-5 text-left">
+                                    <div class="fs-5 text-left home_body">
                                         <!-- <p>The village of Bir (elevation: 1400m), located in the Kangra district of Himachal Pradesh India, is internationally famous as the base for some of the best paragliding in the world. The take-off point at Billing, 14km up a winding road from Bir and 1000m higher, hosts major competitive flying events most years in October or November (including a round of the Paragliding World Cup in 2015). Experienced paragliders fly as far as Dharamshala, Mandi, and Manali from here.<br>
                                         </p>
                                         <p>
@@ -928,7 +923,7 @@ if (!empty($tour_photos)) {
                         </div>
                     </section>
                     <div class="w-100 mt-5" id="dt_swpr1">
-                        <div class="swiper swiper_container7 mb-3">
+                        <div class="swiper swiper_container10 mb-3">
                             <div class="swiper-wrapper p-2 ps-0 ps-md-2">
                                 <?php
                                 if (!empty($get_tours_category_wise_data)) :
@@ -964,10 +959,10 @@ if (!empty($tour_photos)) {
                         <div class="d-flex flex-wrap flex-md-nowrap justify-content-end align-items-center mb-0">
                             <div class="d-flex flex-wrap flex-md-nowrap flex-column-reverse flex-md-row gap-2">
                                 <div class="carousel-slider d-flex justify-content-end gap-4">
-                                    <a class=" bg-transparent position-relative d-block swiper-button-prev7" role="button">
+                                    <a class=" bg-transparent position-relative d-block swiper-button-prev10" role="button">
                                         <div class="swiper-button-prev text-primary position-relative w-auto p-1"></div>
                                     </a>
-                                    <a class=" bg-transparent position-relative d-block w-auto swiper-button-next7" role="button">
+                                    <a class=" bg-transparent position-relative d-block w-auto swiper-button-next10" role="button">
                                         <div class="swiper-button-next text-primary position-relative w-auto p-1"></div>
                                     </a>
                                 </div>

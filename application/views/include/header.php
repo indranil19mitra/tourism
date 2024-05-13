@@ -17,7 +17,7 @@
 
     <style>
         .cnct_us1 {
-            background-image: url('<?= base_url() ?>/external/wp-content/uploads/sites/139/2021/08/self/about/20231101_050218.jpg');
+            background-image: url('<?= base_url() ?>/external/wp-content/uploads/sites/139/2021/08/self/home_cover/home_1.jpg');
         }
     </style>
     <link rel='stylesheet' id='jkit-elements-main-css' href='<?php echo base_url() ?>external/wp-content/plugins/jeg-elementor-kit/assets/css/elements/main.css?ver=2.6.2' media='all'>
@@ -62,7 +62,7 @@
     <meta name="generator" content="Elementor 3.16.4; features: e_dom_optimization, e_optimized_assets_loading, additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-auto">
 </head>
 
-<body id="home_body" class="home page-template page-template-elementor_header_footer page page-id-17 ehf-header ehf-footer ehf-template-hello-elementor ehf-stylesheet-hello-elementor jkit-color-scheme elementor-default elementor-template-full-width elementor-kit-19 elementor-page elementor-page-17">
+<body class="home_body home page-template page-template-elementor_header_footer page page-id-17 ehf-header ehf-footer ehf-template-hello-elementor ehf-stylesheet-hello-elementor jkit-color-scheme elementor-default elementor-template-full-width elementor-kit-19 elementor-page elementor-page-17">
     <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
         <defs>
             <filter id="wp-duotone-dark-grayscale">

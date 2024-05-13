@@ -21,7 +21,7 @@
                                             <label class="fw-bold"><i class="fa-solid fa-location-dot call_cl dtl_icon pe-3"></i>LOCATION</label>
                                         </div>
                                         <div>
-                                            <span class="fw-normal">Jl. Raya Ubud No.88, Bali - 80571</span>
+                                            <span class="fw-normal">42,Amarendra Sarani, Uttarpara ,Hooghly ,Pin-712258</span>
                                         </div>
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 mb-3">
@@ -29,7 +29,7 @@
                                             <label class="fw-bold"><i class="fa-solid fa-clock call_cl pe-3"></i>BUSINESS HOURS</label>
                                         </div>
                                         <div>
-                                            <span class="fw-normal">Mon - Fri: 10 am - 8 pm,Sat - Sun: Closed</span>
+                                            <span class="fw-normal">Everyday: 9 am - 9 pm</span>
                                         </div>
                                     </div>
                                 </div>

@@ -61,6 +61,8 @@ class Mycontroller extends CI_Controller
             'status!=' => '0',
         );
         $data['get_tour_category_images'] = $this->myfront_model->get_data("tour_category_id,trip_image", "tour_category_photos", $cond6);
+
+        $data['get_travel_mates_images'] = $this->myfront_model->get_data("id,travel_mate_images", "travel_mates_images", $cond6);
         // print_r($data);
         // exit;
         $this->load->view('include/header', $data);
@@ -422,37 +424,83 @@ class Mycontroller extends CI_Controller
         echo json_encode($rslt);
     }
 
+    // public function get_searchData()
+    // {
+    //     $serching_data = $this->input->post('serchingData');
+    //     $cond = array(
+    //         'tour_details.is_delete!=' => '0',
+    //         'tour_details.status!=' => '0',
+    //         'tour_details.start_date >=' => date('Y-m-d'),
+    //         'tours.is_delete!=' => '0',
+    //         'tours.status!=' => '0',
+    //     );
+    //     $serch_field_array = array(
+    //         "0" => "tours.name"
+    //     );
+    //     $join = array('table' => 'tour_details', 'condition' => 'tour_details.tours_id=tours.id', 'left');
+    //     $destinations = $this->myfront_model->get_data("tours.name,tour_details.id as tour_details_id,tour_details.start_date", "tours", $cond, [$join], "", "asc", "tour_details.start_date", "tour_details.tours_id", "", "", "", $serching_data, $serch_field_array);
+    //     // print_r($destinations);
+    //     $serch_rslt = "";
+    //     if (!empty($destinations)) {
+    //         foreach ($destinations as $key => $val) {
+    //             // $names = implode("-", explode(" ", $val->name));
+    //             $serch_rslt .= '<a value="' . $val->tour_details_id . '" class="list-group-item list-group-item-action border-1 lst_itm">' . $val->name . '</a>';
+    //         }
+    //         $rslt = array('status' => '101', 'data' => $serch_rslt);
+    //     } else {
+    //         $serch_rslt .= '<p class="list-group-item border-1 lst_itm">Tour Is Available Currently. Thank You..!</p>';
+    //         $rslt = array('status' => '103', 'data' => $serch_rslt);
+    //     }
+    //     // exit;
+
+    //     echo json_encode($rslt);
+    // }
+
     public function get_searchData()
     {
-        $serching_data = $this->input->post('serchingData');
-        $cond = array(
-            'tour_details.is_delete!=' => '0',
-            'tour_details.status!=' => '0',
-            'tour_details.start_date >=' => date('Y-m-d'),
-            'tours.is_delete!=' => '0',
-            'tours.status!=' => '0',
-        );
-        $serch_field_array = array(
-            "0" => "tours.name"
-        );
-        $join = array('table' => 'tour_details', 'condition' => 'tour_details.tours_id=tours.id', 'left');
-        $destinations = $this->myfront_model->get_data("tours.name,tour_details.id as tour_details_id,tour_details.start_date", "tours", $cond, [$join], "", "asc", "tour_details.start_date", "tour_details.tours_id", "", "", "", $serching_data, $serch_field_array);
-        // print_r($destinations);
-        $serch_rslt = "";
-        if (!empty($destinations)) {
-            foreach ($destinations as $key => $val) {
-                // $names = implode("-", explode(" ", $val->name));
-                $serch_rslt .= '<a value="' . $val->tour_details_id . '" class="list-group-item list-group-item-action border-1 lst_itm">' . $val->name . '</a>';
-            }
-            $rslt = array('status' => '101', 'data' => $serch_rslt);
-        } else {
-            $serch_rslt .= '<p class="list-group-item border-1 lst_itm">Tour Is Available Currently. Thank You..!</p>';
-            $rslt = array('status' => '103', 'data' => $serch_rslt);
-        }
-        // exit;
+        // Load form validation library
+        $this->load->library('form_validation');
 
-        echo json_encode($rslt);
+        // Set validation rules
+        $this->form_validation->set_rules('serchingData', 'Searching Data', 'required|trim');
+
+        // Check if form validation passes
+        if ($this->form_validation->run() == FALSE) {
+            // If validation fails, return error response
+            $serch_rslt = '<p class="list-group-item border-1 lst_itm">Please Try With Another Destination. Thank You..!</p>';
+            $rslt = array('status' => '400', 'message' => validation_errors());
+            echo json_encode($rslt);
+            // Stop execution further
+        } else {
+            // If validation passes, proceed with data retrieval
+            $serching_data = html_escape($this->input->post('serchingData'));
+            $cond = array(
+                'tour_details.is_delete!=' => '0',
+                'tour_details.status!=' => '0',
+                'tour_details.start_date >=' => date('Y-m-d'),
+                'tours.is_delete!=' => '0',
+                'tours.status!=' => '0',
+            );
+            $serch_field_array = array(
+                "0" => "tours.name"
+            );
+            $join = array('table' => 'tour_details', 'condition' => 'tour_details.tours_id=tours.id', 'left');
+            $destinations = $this->myfront_model->get_data("tours.name,tour_details.id as tour_details_id,tour_details.start_date", "tours", $cond, [$join], "", "asc", "tour_details.start_date", "tour_details.tours_id", "", "", "", $serching_data, $serch_field_array);
+            $serch_rslt = "";
+            if (!empty($destinations)) {
+                foreach ($destinations as $key => $val) {
+                    $serch_rslt .= '<a value="' . $val->tour_details_id . '" class="list-group-item list-group-item-action border-1 lst_itm">' . html_escape($val->name) . '</a>';
+                }
+                $rslt = array('status' => '101', 'data' => $serch_rslt);
+            } else {
+                $serch_rslt .= '<p class="list-group-item border-1 lst_itm">Tour Is Available Currently. Thank You..!</p>';
+                $rslt = array('status' => '103', 'data' => $serch_rslt);
+            }
+
+            echo json_encode($rslt);
+        }
     }
+
 
     public function search_form_data()
     {

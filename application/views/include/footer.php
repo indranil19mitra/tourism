@@ -27,9 +27,7 @@ $whatsappLink = "https://wa.me/+" . $countryCode . $phoneNumber;
                                                 </div>
                                             </div>
                                             <div class="elementor-element elementor-element-0cfbf6c elementor-widget elementor-widget-text-editor" data-id="0cfbf6c" data-element_type="widget" data-widget_type="text-editor.default">
-                                                <div class="elementor-widget-container">
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                                    do eiusmod </div>
+                                                <div class="elementor-widget-container">Have questions? Get in touch. Our team is ready to help you.</div>
                                             </div>
                                             <div class="elementor-element elementor-element-48ed34c elementor-align-left elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="48ed34c" data-element_type="widget" data-widget_type="icon-list.default">
                                                 <div class="elementor-widget-container">
@@ -37,13 +35,12 @@ $whatsappLink = "https://wa.me/+" . $countryCode . $phoneNumber;
                                                         <li class="elementor-icon-list-item">
                                                             <span class="elementor-icon-list-icon">
                                                                 <i aria-hidden="true" class="fas fa-map-marker-alt"></i> </span>
-                                                            <span class="elementor-icon-list-text"> Jl. Raya
-                                                                Ubud No.88, Bali - 80571</span>
+                                                            <span class="elementor-icon-list-text"> 42 Amarendra Sarani, Uttarpara, Hooghly Pin-712258</span>
                                                         </li>
                                                         <li class="elementor-icon-list-item">
                                                             <span class="elementor-icon-list-icon">
                                                                 <i aria-hidden="true" class="fas fa-envelope"></i> </span>
-                                                            <span class="elementor-icon-list-text">support@domain.com</span>
+                                                            <span class="elementor-icon-list-text">contactus@gmail.com</span>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -64,12 +61,12 @@ $whatsappLink = "https://wa.me/+" . $countryCode . $phoneNumber;
                                                         <li class="elementor-icon-list-item">
                                                             <span class="elementor-icon-list-icon">
                                                                 <i aria-hidden="true" class="fas fa-angle-right"></i> </span>
-                                                            <a href="<?= base_url() ?>about-us"><span class="elementor-icon-list-text">About</span></a>
+                                                            <a href="<?= base_url() ?>about-us"><span class="elementor-icon-list-text">About Us</span></a>
                                                         </li>
                                                         <li class="elementor-icon-list-item">
                                                             <span class="elementor-icon-list-icon">
                                                                 <i aria-hidden="true" class="fas fa-angle-right"></i> </span>
-                                                            <a href="<?= base_url() ?>contact-us"><span class="elementor-icon-list-text">Contact</span></a>
+                                                            <a href="<?= base_url() ?>contact-us"><span class="elementor-icon-list-text">Contact Us</span></a>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -297,11 +294,11 @@ if (!empty($get_tours_details)) {
 
         if (url_para == "") {
             var images = [
-                baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/home/home_header/IMG_8334_photo.jpg',
-                baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/home/home_header/20231101_050218.jpg',
-                baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/home/home_header/photo_2024_03-31_18.jpg',
-                baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/home/home_header/hhedited4.jpg',
-                baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/home/home_header/IMG_9331_photo_full.jpg',
+                baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/home_cover/home_1.jpg',
+                baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/home_cover/home_2.jpg',
+                baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/home_cover/home_3.jpg',
+                baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/home_cover/home_4.jpg',
+                baseurl + 'external/wp-content/uploads/sites/139/2021/08/self/home_cover/home_5.jpg',
             ];
         }
         if (url_para != "") {

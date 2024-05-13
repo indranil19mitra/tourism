@@ -37,27 +37,29 @@ $(document).ready(function () {
 	});
 
 	$(document).on("click", "#srch_box", function () {
-		var formdata = new FormData($("#search_form")[0]);
-		var url = baseurl + "Mycontroller/search_form_data";
+		if ($("#serching_data").val().length > 2) {
+			var formdata = new FormData($("#search_form")[0]);
+			var url = baseurl + "Mycontroller/search_form_data";
 
-		$.ajax({
-			url: url,
-			type: "post",
-			data: formdata,
-			dataType: "json",
-			contentType: false,
-			processData: false,
-			success: function (res) {
-				// console.log(res);
-				// return false;
-				if (res.status == 101) {
-					getDetails(res.data.dtl_nm, res.data.ids);
+			$.ajax({
+				url: url,
+				type: "post",
+				data: formdata,
+				dataType: "json",
+				contentType: false,
+				processData: false,
+				success: function (res) {
+					// console.log(res);
 					// return false;
-				} else {
-					$("#show-list").html(res.data);
-				}
-			},
-		});
+					if (res.status == 101) {
+						getDetails(res.data.dtl_nm, res.data.ids);
+						// return false;
+					} else {
+						$("#show-list").html(res.data);
+					}
+				},
+			});
+		}
 	});
 
 	$(document).on("click", "#srch_box", function () {
@@ -743,7 +745,7 @@ function check_next(obj) {
 		$("#tour_booking_adv_payment_methods").html(
 			'Transfer <i class="fa-solid fa-indian-rupee-sign"></i> ' +
 				tour_booking_adv_requirement +
-				" through the following payment methods and share the screenshot of this page and transaction on <a href='https://wa.me/918910271365' target='_blank' style='color: rgb(10, 158, 136);'>+91-8910271365</a> on whatsapp:"
+				" through the following payment methods and share the screenshot of this page and transaction on <a href='https://wa.me/+918910271365' target='_blank' style='color: rgb(10, 158, 136);'>+91-8910271365</a> on whatsapp:"
 		);
 
 		$("#tour_booking_upi_us_at").html(
@@ -1363,6 +1365,43 @@ document.addEventListener("DOMContentLoaded", function () {
 	document.querySelector(".swiper-button-next7").innerHTML =
 		'<i class="fas fa-arrow-right"></i>';
 	document.querySelector(".swiper-button-prev7").innerHTML =
+		'<i class="fas fa-arrow-left"></i>';
+
+	var swiper10 = new Swiper(".swiper_container10", {
+		slidesPerView: 1,
+		spaceBetween: 10,
+		navigation: {
+			nextEl: ".swiper-button-next10",
+			prevEl: ".swiper-button-prev10",
+		},
+		autoplay: {
+			delay: 9500,
+			disableOnInteraction: true,
+			pauseOnMouseEnter: true,
+		},
+		breakpoints: {
+			"@0.00": {
+				slidesPerView: 1,
+				spaceBetween: 10,
+			},
+			"@0.75": {
+				slidesPerView: 1,
+				spaceBetween: 20,
+			},
+			"@1.00": {
+				slidesPerView: 1,
+				spaceBetween: 40,
+			},
+			"@1.50": {
+				slidesPerView: 1,
+				spaceBetween: 0,
+			},
+		},
+	});
+
+	document.querySelector(".swiper-button-next10").innerHTML =
+		'<i class="fas fa-arrow-right"></i>';
+	document.querySelector(".swiper-button-prev10").innerHTML =
 		'<i class="fas fa-arrow-left"></i>';
 });
 
