@@ -38,6 +38,10 @@
     display: none !important;
 }
 
+#tarvel_mate_image {
+    display: none !important;
+}
+
 #uploadButton {
     background-color: #4caf50;
     color: white;

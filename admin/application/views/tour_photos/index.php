@@ -20,7 +20,7 @@
                                         <?php
                                         if (!empty($tours_data)) {
                                             foreach ($tours_data as $val) {
-                                                echo '<option value=' . $val->id . '>' . $val->name . '</option>';
+                                                echo '<option value=' . $val->id . '>' . $val->name . ' (' . $val->category_name . ')</option>';
                                             }
                                         }
                                         ?>
@@ -59,7 +59,7 @@
                 <div class="card-body">
                     <h4 class="card-title">Tour List</h4>
                     <div class="table-responsive">
-                    <table id="tour_photos_tbl" class="table table-sm table-sm0 table-striped table-hover w-100 dataTable" data-page-length='10'>
+                        <table id="tour_photos_tbl" class="table table-sm table-sm0 table-striped table-hover w-100 dataTable" data-page-length='10'>
 
                             <thead>
                                 <tr>
@@ -81,7 +81,7 @@
                                 ?>
                                         <tr>
                                             <td><?= ($key + 1) ?></td>
-                                            <td><?= $rslt->name; ?></td>
+                                            <td><?= $rslt->name . ' (' . $rslt->category_name . ')'; ?></td>
                                             <td><img src="<?= base_url() . $rslt->tour_photo; ?>" alt=""></td>
                                             <td><label class="<?= $status_desc_class; ?>"><?= $status_desc; ?></label></td>
                                             <td>
@@ -108,14 +108,13 @@
     window.onload = onPageLoad;
 
     function onPageLoad() {
-    document.querySelector('.dt-buttons').classList.add("float-start", "mb-2");
-    document.querySelector('.buttons-csv').classList.add("btn", "btn-sm", "btn-primary");
-    document.querySelector('.buttons-excel').classList.add("btn", "btn-sm", "btn-primary");
-    document.querySelector('.buttons-pdf').classList.add("btn", "btn-sm", "btn-primary");
-    document.querySelector('.dataTables_paginate').classList.add("btn", "btn-sm", "btn-primary");
-    // document.querySelector('.dataTables_paginate').classList.add("btn-outline-primary");
-    document.querySelector('.dataTables_paginate').classList.add("float-end"); // Float pagination buttons to the right
-    // $("#example_filter").children("label").hide();
-}
-
+        document.querySelector('.dt-buttons').classList.add("float-start", "mb-2");
+        document.querySelector('.buttons-csv').classList.add("btn", "btn-sm", "btn-primary");
+        document.querySelector('.buttons-excel').classList.add("btn", "btn-sm", "btn-primary");
+        document.querySelector('.buttons-pdf').classList.add("btn", "btn-sm", "btn-primary");
+        document.querySelector('.dataTables_paginate').classList.add("btn", "btn-sm", "btn-primary");
+        // document.querySelector('.dataTables_paginate').classList.add("btn-outline-primary");
+        document.querySelector('.dataTables_paginate').classList.add("float-end"); // Float pagination buttons to the right
+        // $("#example_filter").children("label").hide();
+    }
 </script>

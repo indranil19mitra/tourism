@@ -66,7 +66,7 @@
                                 ?>
                                         <tr>
                                             <td><?= ($key + 1) ?></td>
-                                            <td><?= $rslt->name; ?></td>
+                                            <td><?= $rslt->name . ' (' . $rslt->category_name . ')'; ?></td>
                                             <td><?= $rslt->cust_name; ?></td>
                                             <td><?= $rslt->cust_contact; ?></td>
                                             <td><?= $rslt->cust_mail; ?></td>
