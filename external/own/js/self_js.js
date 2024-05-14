@@ -914,17 +914,17 @@ function checkAllInputsFilled() {
 		$("#tour_booking_details_next_3").addClass("pe-none");
 
 		// Find the first empty input field and focus on it
-		if (nameValue === "") {
-			document.getElementById("name").focus();
-		}
-		if (contactNoValue === "") {
-			document.getElementById("contact_no").focus();
-		}
+		// if (nameValue === "") {
+		// 	document.getElementById("name").focus();
+		// }
+		// if (contactNoValue === "") {
+		// 	document.getElementById("contact_no").focus();
+		// }
 	}
 }
 
 function check_getInTouch_input(inputValue = "", inputType = "") {
-	console.log(inputValue, " ", inputType);
+	// console.log(inputValue, " ", inputType);
 	var inputElement = document.getElementById(inputType);
 
 	if (inputType === "name_1") {
@@ -942,38 +942,21 @@ function check_getInTouch_input(inputValue = "", inputType = "") {
 
 	// Update the input value with the cleaned value
 	inputElement.value = cleanedValue;
-
-	if (inputType === "email_1" && !isValidEmail(cleanedValue)) {
-		$("#get_in_touch_form_sbmt").addClass("pe-none");
-		inputElement.focus();
-		return false;
-	} else {
-		// $("#get_in_touch_form_sbmt").removeClass("pe-none");
-		checkAll_get_in_touch_InputsFilled();
-	}
-
-	// Additional validation if needed
-	// ...
-
-	return true; // The input is valid
+	checkAll_get_in_touch_InputsFilled();
 }
 
 function checkAll_get_in_touch_InputsFilled() {
-	var nameValue = document.getElementById("name_1").value.trim();
-	var contactNoValue = document.getElementById("contact_no_1").value.trim();
-	var emailValue = document.getElementById("email_1").value.trim();
-	var preferred_destination_Value = document
-		.getElementById("preferred_destination_1")
-		.value.trim();
+	var nameValue = $("#name_1").val();
+	var contactNoValue = $("#contact_no_1").val();
+	var emailValue = $("#email_1").val();
 
-	if (
-		nameValue !== "" &&
-		contactNoValue !== "" &&
-		emailValue !== "" &&
-		preferred_destination_Value !== ""
-	) {
-		if (!isValidEmail(emailValue)) {
-			$("#get_in_touch_form_sbmt").addClass("pe-none");
+	if (nameValue != "" && contactNoValue != "") {
+		if (emailValue != "") {
+			if (!isValidEmail(emailValue)) {
+				$("#get_in_touch_form_sbmt").addClass("pe-none");
+			} else {
+				$("#get_in_touch_form_sbmt").removeClass("pe-none");
+			}
 		} else {
 			$("#get_in_touch_form_sbmt").removeClass("pe-none");
 		}
@@ -1456,12 +1439,12 @@ function check_cnct_us_input(val, type) {
 
 function check_is_field(name, email) {
 	if (name == "" || email == "") {
-		if (email == "") {
-			$("#email").focus();
-		}
-		if (name == "") {
-			$("#name").focus();
-		}
+		// if (email == "") {
+		// 	$("#email").focus();
+		// }
+		// if (name == "") {
+		// 	$("#name").focus();
+		// }
 		return 0;
 	} else {
 		return 1;

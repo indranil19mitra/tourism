@@ -445,6 +445,10 @@
 }
 
 @media (min-width: 768px) {
+    #nav_dv {
+        max-width: none;
+    }
+
     #tour_booking_adv_requirement {
         font-size: 1.2vw !important;
         font-weight: 600 !important;
