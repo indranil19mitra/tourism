@@ -638,7 +638,7 @@ if (!empty($tour_photos)) {
                                                             </div>
                                                             <div class="col-lg-6 col-md-6 col-sm-12 d-flex justify-content-end">
                                                                 <div>
-                                                                    <img src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/self/payment/1712088277571.jpg" alt="" id="upi_id">
+                                                                    <img src="<?= base_url() ?>external/self_upload/payment/1712088277571.jpg" alt="" id="upi_id">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -694,10 +694,10 @@ if (!empty($tour_photos)) {
                         <div class="row" id="get_in_touch">
                             <!-- <div class="p-5"> -->
                             <div class="col-lg-12 col-md-12 col-sm-12 mb-3 d-flex justify-content-end">
-                                <span class="text-danger">All fields are mandatory</span>
+                                <span class="text-danger">* fields are mandatory</span>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 mb-3 d-flex justify-content-center">
-                                <input type="text" class="form-control clr_input" onkeyup="check_getInTouch_input(this.value, 'name_1')" id="name_1" name="name_1" placeholder="Please Enter Your Name">
+                                <input type="text" class="form-control clr_input" onkeyup="check_getInTouch_input(this.value, 'name_1')" id="name_1" name="name_1" placeholder="Please Enter Your Name *">
                             </div>
                             <!-- country -->
                             <div class="input-group col-lg-12 col-md-12 col-sm-12 mb-3 d-flex justify-content-center">
@@ -711,7 +711,7 @@ if (!empty($tour_photos)) {
                                     }
                                     ?>
                                 </select>
-                                <input type="text" class="form-control clr_input" onkeyup="check_getInTouch_input(this.value, 'contact_no_1')" id="contact_no_1" maxlength="10" name="contact_no_1" placeholder="Contact Number">
+                                <input type="text" class="form-control clr_input" onkeyup="check_getInTouch_input(this.value, 'contact_no_1')" id="contact_no_1" maxlength="10" name="contact_no_1" placeholder="Contact Number *">
                             </div>
 
                             <div class="col-lg-12 col-md-12 col-sm-12 mb-3 d-flex justify-content-center">

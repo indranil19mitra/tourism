@@ -71,7 +71,7 @@
                 <div class="elementor-widget-wrap elementor-element-populated">
                     <div class="elementor-element elementor-element-c4afbb2 elementor-widget elementor-widget-image" data-id="c4afbb2" data-element_type="widget" data-widget_type="image.default">
                         <div class="elementor-widget-container">
-                            <img decoding="async" src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/self/about/aboutus_1st.jpg" title="" alt="" loading="lazy">
+                            <img decoding="async" src="<?= base_url() ?>external/self_upload/about/aboutus_1st.jpg" title="" alt="" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -273,7 +273,7 @@
                                     <div class="elementor-element elementor-element-b15479b elementor-widget elementor-widget-jkit_team" data-id="b15479b" data-element_type="widget" data-widget_type="jkit_team.default">
                                         <div class="elementor-widget-container">
                                             <div class="jeg-elementor-kit jkit-team style-title-horizontal  jeg_module_374_6_654c63f047c23">
-                                                <div class="profile-card"><img decoding="async" src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/self/about/members/founders/MEDHA_SAHA.jpg" alt="Medha Saha">
+                                                <div class="profile-card"><img decoding="async" src="<?= base_url() ?>external/self_upload/about/members/founders/MEDHA_SAHA.jpg" alt="Medha Saha">
                                                     <div class="image-hover-bg"></div>
                                                     <div class="profile-body">
                                                         <div class="title-wrapper">
@@ -302,7 +302,7 @@
                                     <div class="elementor-element elementor-element-3b0a450 elementor-widget elementor-widget-jkit_team" data-id="3b0a450" data-element_type="widget" data-widget_type="jkit_team.default">
                                         <div class="elementor-widget-container">
                                             <div class="jeg-elementor-kit jkit-team style-title-horizontal  jeg_module_374_7_654c63f0492d3">
-                                                <div class="profile-card"><img decoding="async" src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/self/about/members/founders/340915069.jpg" alt="Sumi Singha Roy">
+                                                <div class="profile-card"><img decoding="async" src="<?= base_url() ?>external/self_upload/about/members/founders/340915069.jpg" alt="Sumi Singha Roy">
                                                     <div class="image-hover-bg"></div>
                                                     <div class="profile-body">
                                                         <div class="title-wrapper">
@@ -368,7 +368,7 @@
                                     <div class="elementor-element elementor-element-b15479b elementor-widget elementor-widget-jkit_team" data-id="b15479b" data-element_type="widget" data-widget_type="jkit_team.default">
                                         <div class="elementor-widget-container">
                                             <div class="jeg-elementor-kit jkit-team style-title-horizontal  jeg_module_374_6_654c63f047c23">
-                                                <div class="profile-card"><img decoding="async" src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/self/about/members/trip_buddies/IMG_5006_Recovere.jpg" alt="Neelotpal Das">
+                                                <div class="profile-card"><img decoding="async" src="<?= base_url() ?>external/self_upload/about/members/trip_buddies/IMG_5006_Recovere.jpg" alt="Neelotpal Das">
                                                     <div class="image-hover-bg"></div>
                                                     <div class="profile-body">
                                                         <div class="title-wrapper">
@@ -398,7 +398,7 @@
                                     <div class="elementor-element elementor-element-3b0a450 elementor-widget elementor-widget-jkit_team" data-id="3b0a450" data-element_type="widget" data-widget_type="jkit_team.default">
                                         <div class="elementor-widget-container">
                                             <div class="jeg-elementor-kit jkit-team style-title-horizontal  jeg_module_374_7_654c63f0492d3">
-                                                <div class="profile-card"><img decoding="async" src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/self/about/members/trip_buddies/IMG_5006_Recovered.jpg" alt="Sabyasachi Maji">
+                                                <div class="profile-card"><img decoding="async" src="<?= base_url() ?>external/self_upload/about/members/trip_buddies/IMG_5006_Recovered.jpg" alt="Sabyasachi Maji">
                                                     <div class="image-hover-bg"></div>
                                                     <div class="profile-body">
                                                         <div class="title-wrapper">
@@ -428,7 +428,7 @@
                                     <div class="elementor-element elementor-element-7f0a401 elementor-widget elementor-widget-jkit_team" data-id="7f0a401" data-element_type="widget" data-widget_type="jkit_team.default">
                                         <div class="elementor-widget-container">
                                             <div class="jeg-elementor-kit jkit-team style-title-horizontal  jeg_module_374_8_654c63f04aa2d">
-                                                <div class="profile-card"><img decoding="async" src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/self/about/members/trip_buddies/maity.jpg" alt="Soumyadeep Maity">
+                                                <div class="profile-card"><img decoding="async" src="<?= base_url() ?>external/self_upload/about/members/trip_buddies/maity.jpg" alt="Soumyadeep Maity">
                                                     <div class="image-hover-bg"></div>
                                                     <div class="profile-body">
                                                         <div class="title-wrapper">
@@ -458,7 +458,7 @@
                                     <div class="elementor-element elementor-element-7f0a401 elementor-widget elementor-widget-jkit_team" data-id="7f0a401" data-element_type="widget" data-widget_type="jkit_team.default">
                                         <div class="elementor-widget-container">
                                             <div class="jeg-elementor-kit jkit-team style-title-horizontal  jeg_module_374_8_654c63f04aa2d">
-                                                <div class="profile-card"><img decoding="async" src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/self/about/members/trip_buddies/sourav.jpg" alt="Sourav Das">
+                                                <div class="profile-card"><img decoding="async" src="<?= base_url() ?>external/self_upload/about/members/trip_buddies/sourav.jpg" alt="Sourav Das">
                                                     <div class="image-hover-bg"></div>
                                                     <div class="profile-body">
                                                         <div class="title-wrapper">
@@ -488,7 +488,7 @@
                                     <div class="elementor-element elementor-element-7f0a401 elementor-widget elementor-widget-jkit_team" data-id="7f0a401" data-element_type="widget" data-widget_type="jkit_team.default">
                                         <div class="elementor-widget-container">
                                             <div class="jeg-elementor-kit jkit-team style-title-horizontal  jeg_module_374_8_654c63f04aa2d">
-                                                <div class="profile-card"><img decoding="async" src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/self/about/members/trip_buddies/Arka.jpg" alt="Arka Roy">
+                                                <div class="profile-card"><img decoding="async" src="<?= base_url() ?>external/self_upload/about/members/trip_buddies/Arka.jpg" alt="Arka Roy">
                                                     <div class="image-hover-bg"></div>
                                                     <div class="profile-body">
                                                         <div class="title-wrapper">
@@ -555,7 +555,7 @@
                                     <div class="elementor-element elementor-element-b15479b elementor-widget elementor-widget-jkit_team" data-id="b15479b" data-element_type="widget" data-widget_type="jkit_team.default">
                                         <div class="elementor-widget-container">
                                             <div class="jeg-elementor-kit jkit-team style-title-horizontal  jeg_module_374_6_654c63f047c23">
-                                                <div class="profile-card"><img decoding="async" src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/self/about/members/support_geneis/poulomi_das.jpg" alt="Poulomi Das">
+                                                <div class="profile-card"><img decoding="async" src="<?= base_url() ?>external/self_upload/about/members/support_geneis/poulomi_das.jpg" alt="Poulomi Das">
                                                     <div class="image-hover-bg"></div>
                                                     <div class="profile-body">
                                                         <div class="title-wrapper">
@@ -585,7 +585,7 @@
                                     <div class="elementor-element elementor-element-3b0a450 elementor-widget elementor-widget-jkit_team" data-id="3b0a450" data-element_type="widget" data-widget_type="jkit_team.default">
                                         <div class="elementor-widget-container">
                                             <div class="jeg-elementor-kit jkit-team style-title-horizontal  jeg_module_374_7_654c63f0492d3">
-                                                <div class="profile-card"><img decoding="async" src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/self/about/members/support_geneis/anwesha_sensharma.jpg" alt="Anwesha Sensharma">
+                                                <div class="profile-card"><img decoding="async" src="<?= base_url() ?>external/self_upload/about/members/support_geneis/anwesha_sensharma.jpg" alt="Anwesha Sensharma">
                                                     <div class="image-hover-bg"></div>
                                                     <div class="profile-body">
                                                         <div class="title-wrapper">
@@ -615,7 +615,7 @@
                                     <div class="elementor-element elementor-element-7f0a401 elementor-widget elementor-widget-jkit_team" data-id="7f0a401" data-element_type="widget" data-widget_type="jkit_team.default">
                                         <div class="elementor-widget-container">
                                             <div class="jeg-elementor-kit jkit-team style-title-horizontal  jeg_module_374_8_654c63f04aa2d">
-                                                <div class="profile-card"><img decoding="async" src="<?= base_url() ?>external/wp-content/uploads/sites/139/2021/08/self/about/members/support_geneis/tisha_de.jpg" alt="Tisha Dey">
+                                                <div class="profile-card"><img decoding="async" src="<?= base_url() ?>external/self_upload/about/members/support_geneis/tisha_de.jpg" alt="Tisha Dey">
                                                     <div class="image-hover-bg"></div>
                                                     <div class="profile-body">
                                                         <div class="title-wrapper">
