@@ -5,7 +5,7 @@ $terms_conditions_details_data = (!empty($terms_conditions_details)) ? $terms_co
     <?php $this->load->view('slider'); ?>
     <div class="container pt-5 pb-5">
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 all_txt_frmt_1">
                 <?= $terms_conditions_details_data; ?>
             </div>
         </div>

@@ -153,7 +153,7 @@ if (!empty($tour_photos)) {
                         <div class="container mt-5">
                             <div class="row">
                                 <div class="col-12">
-                                    <div class="fs-5 fw-bold text-left home_body">
+                                    <div class="text-left home_body all_txt_frmt">
                                         <?= $tour_about_details; ?>
                                     </div>
                                 </div>
@@ -224,7 +224,7 @@ if (!empty($tour_photos)) {
                                                     </a>
                                                 </h2>
                                                 <div id="flush-<?= $key; ?>" class="accordion-collapse collapse itinarary_bg_clr text-dark mt-3 itinarary_bg_clr_2" data-bs-parent="#accordionFlushExample">
-                                                    <div class="accordion-body">
+                                                    <div class="accordion-body all_txt_frmt_1 px-5">
                                                         <span><?= $val['itinerary_sub'] ?></span>
                                                     </div>
                                                 </div>
@@ -352,7 +352,7 @@ if (!empty($tour_photos)) {
                             <div class="container mt-5">
                                 <div class="row">
                                     <div class="col-12">
-                                        <div class="fs-5 text-left home_body">
+                                        <div class="fs-5 text-left home_body all_txt_frmt_1">
                                             <!-- <p>The village of Bir (elevation: 1400m), located in the Kangra district of Himachal Pradesh India, is internationally famous as the base for some of the best paragliding in the world. The take-off point at Billing, 14km up a winding road from Bir and 1000m higher, hosts major competitive flying events most years in October or November (including a round of the Paragliding World Cup in 2015). Experienced paragliders fly as far as Dharamshala, Mandi, and Manali from here.<br>
                                         </p>
                                         <p>
@@ -397,7 +397,7 @@ if (!empty($tour_photos)) {
                             <div class="container mt-5">
                                 <div class="row">
                                     <div class="col-12">
-                                        <div class="fs-5 text-left home_body">
+                                        <div class="fs-5 text-left home_body all_txt_frmt_1">
                                             <!-- <p>The village of Bir (elevation: 1400m), located in the Kangra district of Himachal Pradesh India, is internationally famous as the base for some of the best paragliding in the world. The take-off point at Billing, 14km up a winding road from Bir and 1000m higher, hosts major competitive flying events most years in October or November (including a round of the Paragliding World Cup in 2015). Experienced paragliders fly as far as Dharamshala, Mandi, and Manali from here.<br>
                                         </p>
                                         <p>
@@ -452,7 +452,7 @@ if (!empty($tour_photos)) {
                         <div class="container mt-5">
                             <div class="row">
                                 <div class="col-12">
-                                    <div class="fs-5 text-left home_body">
+                                    <div class="fs-5 text-left home_body all_txt_frmt_1">
                                         <!-- <p>The village of Bir (elevation: 1400m), located in the Kangra district of Himachal Pradesh India, is internationally famous as the base for some of the best paragliding in the world. The take-off point at Billing, 14km up a winding road from Bir and 1000m higher, hosts major competitive flying events most years in October or November (including a round of the Paragliding World Cup in 2015). Experienced paragliders fly as far as Dharamshala, Mandi, and Manali from here.<br>
                                         </p>
                                         <p>
