@@ -398,7 +398,7 @@
                                     <div class="elementor-element elementor-element-3b0a450 elementor-widget elementor-widget-jkit_team" data-id="3b0a450" data-element_type="widget" data-widget_type="jkit_team.default">
                                         <div class="elementor-widget-container">
                                             <div class="jeg-elementor-kit jkit-team style-title-horizontal  jeg_module_374_7_654c63f0492d3">
-                                                <div class="profile-card"><img decoding="async" src="<?= base_url() ?>external/self_upload/about/members/trip_buddies/IMG_5006_Recovered.jpg" alt="Sabyasachi Maji">
+                                                <div class="profile-card"><img decoding="async" src="<?= base_url() ?>external/self_upload/about/members/trip_buddies/sabyasachi.jpg" alt="Sabyasachi Maji">
                                                     <div class="image-hover-bg"></div>
                                                     <div class="profile-body">
                                                         <div class="title-wrapper">
@@ -513,6 +513,37 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-cbeed9f" data-id="cbeed9f" data-element_type="column">
+                                <div class="elementor-widget-wrap elementor-element-populated">
+                                    <div class="elementor-element elementor-element-7f0a401 elementor-widget elementor-widget-jkit_team" data-id="7f0a401" data-element_type="widget" data-widget_type="jkit_team.default">
+                                        <div class="elementor-widget-container">
+                                            <div class="jeg-elementor-kit jkit-team style-title-horizontal  jeg_module_374_8_654c63f04aa2d">
+                                                <div class="profile-card"><img decoding="async" src="<?= base_url() ?>external/self_upload/about/members/trip_buddies/sudipto_chatterjee.jpg" alt="Sudipto Chatterjee">
+                                                    <div class="image-hover-bg"></div>
+                                                    <div class="profile-body">
+                                                        <div class="title-wrapper">
+                                                            <p class="profile-designation text-white"></p>
+
+                                                        </div>
+                                                        <div class="name-wrapper">
+                                                            <h3 class="profile-title text-white">Sudipto Chatterjee</h3>
+                                                            <!-- <ul class="social-list">
+                                                                <li class="social-icon elementor-repeater-item-c625a9a">
+                                                                    <a href="#"><i aria-hidden="true" class="fab fa-facebook-f"></i></a>
+                                                                </li>
+                                                                <li class="social-icon elementor-repeater-item-3a36d8c">
+                                                                    <a href="#"><i aria-hidden="true" class="fab fa-instagram"></i></a>
+                                                                </li>
+                                                            </ul> -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </section>
                 </div>
@@ -585,7 +616,7 @@
                                     <div class="elementor-element elementor-element-3b0a450 elementor-widget elementor-widget-jkit_team" data-id="3b0a450" data-element_type="widget" data-widget_type="jkit_team.default">
                                         <div class="elementor-widget-container">
                                             <div class="jeg-elementor-kit jkit-team style-title-horizontal  jeg_module_374_7_654c63f0492d3">
-                                                <div class="profile-card"><img decoding="async" src="<?= base_url() ?>external/self_upload/about/members/support_geneis/anwesha_sensharma.jpg" alt="Anwesha Sensharma">
+                                                <div class="profile-card"><img decoding="async" src="<?= base_url() ?>external/self_upload/about/members/support_geneis/anwesha_sensharma_edit.jpg" alt="Anwesha Sensharma">
                                                     <div class="image-hover-bg"></div>
                                                     <div class="profile-body">
                                                         <div class="title-wrapper">
@@ -624,6 +655,35 @@
                                                         </div>
                                                         <div class="name-wrapper">
                                                             <h3 class="profile-title text-white">Tisha Dey</h3>
+                                                            <!-- <ul class="social-list">
+                                                                <li class="social-icon elementor-repeater-item-c625a9a">
+                                                                    <a href="#"><i aria-hidden="true" class="fab fa-facebook-f"></i></a>
+                                                                </li>
+                                                                <li class="social-icon elementor-repeater-item-3a36d8c">
+                                                                    <a href="#"><i aria-hidden="true" class="fab fa-instagram"></i></a>
+                                                                </li>
+                                                            </ul> -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-cbeed9f" data-id="cbeed9f" data-element_type="column">
+                                <div class="elementor-widget-wrap elementor-element-populated">
+                                    <div class="elementor-element elementor-element-7f0a401 elementor-widget elementor-widget-jkit_team" data-id="7f0a401" data-element_type="widget" data-widget_type="jkit_team.default">
+                                        <div class="elementor-widget-container">
+                                            <div class="jeg-elementor-kit jkit-team style-title-horizontal  jeg_module_374_8_654c63f04aa2d">
+                                                <div class="profile-card"><img decoding="async" src="<?= base_url() ?>external/self_upload/about/members/support_geneis/souryasree_bhattacharya.jpg" alt="Souryasree Bhattacharya">
+                                                    <div class="image-hover-bg"></div>
+                                                    <div class="profile-body">
+                                                        <div class="title-wrapper">
+                                                            <p class="profile-designation text-white"></p>
+                                                        </div>
+                                                        <div class="name-wrapper">
+                                                            <h3 class="profile-title text-white">Souryasree Bhattacharya</h3>
                                                             <!-- <ul class="social-list">
                                                                 <li class="social-icon elementor-repeater-item-c625a9a">
                                                                     <a href="#"><i aria-hidden="true" class="fab fa-facebook-f"></i></a>
