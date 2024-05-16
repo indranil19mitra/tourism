@@ -616,7 +616,7 @@
                                     <div class="elementor-element elementor-element-3b0a450 elementor-widget elementor-widget-jkit_team" data-id="3b0a450" data-element_type="widget" data-widget_type="jkit_team.default">
                                         <div class="elementor-widget-container">
                                             <div class="jeg-elementor-kit jkit-team style-title-horizontal  jeg_module_374_7_654c63f0492d3">
-                                                <div class="profile-card"><img decoding="async" src="<?= base_url() ?>external/self_upload/about/members/support_geneis/anwesha_sensharma_edit.jpg" alt="Anwesha Sensharma">
+                                                <div class="profile-card"><img decoding="async" src="<?= base_url() ?>external/self_upload/about/members/support_geneis/anwesha_sensharma.jpg" alt="Anwesha Sensharma">
                                                     <div class="image-hover-bg"></div>
                                                     <div class="profile-body">
                                                         <div class="title-wrapper">

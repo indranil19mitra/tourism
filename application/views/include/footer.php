@@ -316,7 +316,7 @@ if (!empty($get_tours_details)) {
                 ];
                 $("#tour_srt_desc_1").html('<?= $main_image_header_desc; ?>');
             }
-            $("#section_2").css('height', (url_para != "") ? '50vh' : '100vh');
+            $("#section_2").css('height', (url_para != "") ? ((isMobile) ? '60vh' : '50vh') : '100vh');
         }
         // Set the initial height immediately on page load for mobile
         // if (isMobile) {          
