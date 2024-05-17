@@ -21,29 +21,23 @@
                                 <li class="elementor-icon-list-item">
                                     <span class="elementor-icon-list-icon">
                                         <i aria-hidden="true" class="fas fa-check"></i> </span>
-                                    <span class="elementor-icon-list-text">Vivamus starlord finibus, dictum
-                                        massa eget suscipit metus nami</span>
+                                    <span class="elementor-icon-list-text">Experience diverse cultures, traditions and lifestyles. Enrich your mind.</span>
                                 </li>
                                 <li class="elementor-icon-list-item">
                                     <span class="elementor-icon-list-icon">
                                         <i aria-hidden="true" class="fas fa-check"></i> </span>
-                                    <span class="elementor-icon-list-text">Cras ipsum libero, suscipit vitamin
-                                        tellus vitae, feugiat ultricies purus</span>
+                                    <span class="elementor-icon-list-text">Interacting with people from different backgrounds can enhance communication skill and improve understanding of non-verbal cues.</span>
                                 </li>
                                 <li class="elementor-icon-list-item">
                                     <span class="elementor-icon-list-icon">
                                         <i aria-hidden="true" class="fas fa-check"></i> </span>
-                                    <span class="elementor-icon-list-text">Morbi maximus mauris eget groot
-                                        dignissim, in laoreet justo facilisis</span>
+                                    <span class="elementor-icon-list-text">Physical activities related to travel such as hiking, exploration of new lands contribute to better physical and mental health.</span>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <div class="elementor-element elementor-element-bc93bd9 elementor-widget elementor-widget-text-editor" data-id="bc93bd9" data-element_type="widget" data-widget_type="text-editor.default">
-                        <div class="elementor-widget-container">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                            exercitation ullamco laboris nisi Duis aute irure </div>
+                        <div class="elementor-widget-container">Embracing travel enriches individual lives with uncountable ways. Create positive contribution to the global community of humans.</div>
                     </div>
                     <div class="elementor-element elementor-element-7fd3af1 elementor-widget__width-auto elementor-absolute elementor-view-default elementor-widget elementor-widget-icon" data-id="7fd3af1" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;}" data-widget_type="icon.default">
                         <div class="elementor-widget-container">
@@ -90,8 +84,7 @@
                                 <div class="elementor-widget-wrap elementor-element-populated">
                                     <div class="elementor-element elementor-element-de23132 animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="de23132" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInLeft&quot;}" data-widget_type="heading.default">
                                         <div class="elementor-widget-container">
-                                            <h2 class="elementor-heading-title elementor-size-default">We
-                                                Provide The Best Hiking And Trekking To You Journey</h2>
+                                            <h2 class="elementor-heading-title elementor-size-default">Experience, Diversity AND Support</h2>
                                         </div>
                                     </div>
                                     <div class="elementor-element elementor-element-673fbed elementor-absolute animated-slow elementor-widget__width-auto elementor-invisible elementor-widget elementor-widget-heading" data-id="673fbed" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;,&quot;_animation&quot;:&quot;fadeInLeft&quot;}" data-widget_type="heading.default">
@@ -616,7 +609,7 @@
                                     <div class="elementor-element elementor-element-3b0a450 elementor-widget elementor-widget-jkit_team" data-id="3b0a450" data-element_type="widget" data-widget_type="jkit_team.default">
                                         <div class="elementor-widget-container">
                                             <div class="jeg-elementor-kit jkit-team style-title-horizontal  jeg_module_374_7_654c63f0492d3">
-                                                <div class="profile-card"><img decoding="async" src="<?= base_url() ?>external/self_upload/about/members/support_geneis/anwesha_sensharma_edit.jpg" alt="Anwesha Sensharma">
+                                                <div class="profile-card"><img decoding="async" src="<?= base_url() ?>external/self_upload/about/members/support_geneis/anwesha_sensharma.jpg" alt="Anwesha Sensharma">
                                                     <div class="image-hover-bg"></div>
                                                     <div class="profile-body">
                                                         <div class="title-wrapper">

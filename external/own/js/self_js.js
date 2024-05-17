@@ -749,11 +749,13 @@ function check_next(obj) {
 		);
 
 		$("#tour_booking_upi_us_at").html(
-			"<strong>UPI</strong> us at <strong>(Google Pay/BHIM/PHONEPE): durbeen@HSBC</strong>"
+			"<strong>UPI ID</strong><strong>: durbeens2021@ibl</strong>"
 		);
-		$("#tour_booking_ac_number").html("A/C No: 123456789000");
-		$("#tour_booking_ac_name").html("A/C Name: Durbeen Private Limited");
-		$("#tour_booking_ac_ifsc").html("IFSC Code: HSBC0000000");
+		$("#tour_booking_ac_number").html("A/C No: 50200092705102");
+		$("#tour_booking_ac_name").html("A/C Name: DURBEEN");
+		$("#tour_booking_ac_ifsc").html("IFSC Code: HDFC0002058");
+		$("#tour_booking_ac_brnch_nm").html("Branch: RAJARHAT GOPALPUR");
+		$("#tour_booking_ac_Swift_code").html("Swift Code: HDFCINBB");
 
 		$("#booking_member_count_1").val(bookingMemberCount);
 
@@ -905,10 +907,10 @@ function isValidEmail(email) {
 function checkAllInputsFilled() {
 	var nameValue = document.getElementById("name").value.trim();
 	var contactNoValue = document.getElementById("contact_no").value.trim();
-	// var emailValue = document.getElementById("email").value.trim();
+	var emailValue = document.getElementById("email").value.trim();
 	// var addressValue = document.getElementById("address").value.trim();
 
-	if (nameValue !== "" && contactNoValue !== "") {
+	if (nameValue !== "" && contactNoValue !== "" && emailValue !== "") {
 		$("#tour_booking_details_next_3").removeClass("pe-none");
 	} else {
 		$("#tour_booking_details_next_3").addClass("pe-none");
@@ -950,7 +952,12 @@ function checkAll_get_in_touch_InputsFilled() {
 	var contactNoValue = $("#contact_no_1").val();
 	var emailValue = $("#email_1").val();
 
-	if (nameValue != "" && contactNoValue != "") {
+	if (
+		nameValue != "" &&
+		contactNoValue != "" &&
+		emailValue != "" &&
+		$("#country_code_1").val() != null
+	) {
 		if (emailValue != "") {
 			if (!isValidEmail(emailValue)) {
 				$("#get_in_touch_form_sbmt").addClass("pe-none");
@@ -1415,7 +1422,11 @@ function check_cnct_us_input(val, type) {
 		$("#" + type).val(val.replace(/[^A-Za-z ]/g, ""));
 	}
 
-	is_checked = check_is_field($("#name").val(), $("#email").val());
+	is_checked = check_is_field(
+		$("#name").val(),
+		$("#email").val(),
+		$("#query").val()
+	);
 
 	if (type == "email") {
 		$("#" + type).val(val.replace(/[^A-Za-z0-9@.]/g, ""));
@@ -1437,8 +1448,8 @@ function check_cnct_us_input(val, type) {
 	}
 }
 
-function check_is_field(name, email) {
-	if (name == "" || email == "") {
+function check_is_field(name, email, query) {
+	if (name == "" || email == "" || query == "") {
 		// if (email == "") {
 		// 	$("#email").focus();
 		// }

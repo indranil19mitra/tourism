@@ -219,7 +219,7 @@
                                                                         if ($key < 10) {
                                                                 ?>
                                                                             <li id="menu-item-476" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-476">
-                                                                                <a onclick="getDetails('<?= $names; ?>','<?= $val->tour_details_id; ?>')"><?= $val->name ?></a>
+                                                                                <a class="nav_li" onclick="getDetails('<?= $names; ?>','<?= $val->tour_details_id; ?>')"><?= $val->name ?></a>
                                                                             </li>
                                                                         <?php } else {
                                                                         ?>
@@ -246,7 +246,7 @@
                                                                         if ($key < 10) {
                                                                 ?>
                                                                             <li id="menu-item-535" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-535">
-                                                                                <a onclick="getDetails('<?= $names; ?>','<?= $val->tour_details_id; ?>')"><?= $val->name; ?></a>
+                                                                                <a class="nav_li" onclick="getDetails('<?= $names; ?>','<?= $val->tour_details_id; ?>')"><?= $val->name; ?></a>
                                                                             </li>
                                                                         <?php } else {
                                                                         ?>
@@ -277,7 +277,7 @@
                                                                         if ($key < 10) {
                                                                 ?>
                                                                             <li id="menu-item-534" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-534">
-                                                                                <a onclick="getDetails('<?= $names; ?>','<?= $val->tour_details_id; ?>')"><?= $val->name; ?></a>
+                                                                                <a class="nav_li" onclick="getDetails('<?= $names; ?>','<?= $val->tour_details_id; ?>')"><?= $val->name; ?></a>
                                                                             </li>
                                                                         <?php } else {
                                                                         ?>
