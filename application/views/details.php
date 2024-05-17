@@ -540,7 +540,7 @@ if (!empty($tour_photos)) {
                                                     </div>
 
                                                     <div class="col-lg-12 col-md-12 col-sm-12 mb-3 d-flex justify-content-center">
-                                                        <input type="email" class="form-control clr_input" onkeyup="check_booking_input(this.value, 'email')" onblur="check_booking_input(this.value, 'email')" id="email" name="email" placeholder="Please Enter Email ID">
+                                                        <input type="email" class="form-control clr_input" onkeyup="check_booking_input(this.value, 'email')" onblur="check_booking_input(this.value, 'email')" id="email" name="email" placeholder="Please Enter Email ID *">
                                                     </div>
 
                                                     <div class="col-lg-12 col-md-12 col-sm-12 mb-3 d-flex justify-content-center">
@@ -618,7 +618,7 @@ if (!empty($tour_photos)) {
                                                                 </div>
                                                                 <div>
                                                                     <span id="tour_booking_upi_name"><strong>UPI Name: </strong></span>
-                                                                    <span id="tour_booking_upi_name_details">Durbeen / Durbeen Private Limited</span>
+                                                                    <span id="tour_booking_upi_name_details">Durbeen</span>
                                                                 </div>
                                                                 <div>
                                                                     <span id="bank_transfer"><strong>Bank Transfer:</strong></span>
@@ -631,6 +631,12 @@ if (!empty($tour_photos)) {
                                                                 </div>
                                                                 <div class="pb-1">
                                                                     <span id="tour_booking_ac_ifsc"></span>
+                                                                </div>
+                                                                <div class="pb-1">
+                                                                    <span id="tour_booking_ac_brnch_nm"></span>
+                                                                </div>
+                                                                <div class="pb-1">
+                                                                    <span id="tour_booking_ac_Swift_code"></span>
                                                                 </div>
                                                                 <div>
                                                                     <span class="text-danger">*</span><a href="<?= base_url() ?>admin/assets/images/cancelation_policy_pdf/cancellation_rules_final.pdf" target="_blank" download><span id="tour_booking_ac_ifsc_1"><strong> Please Check Cancellation Policy </strong><i class="fa-solid fa-file-pdf"></i></span></a>
@@ -702,7 +708,7 @@ if (!empty($tour_photos)) {
                             <!-- country -->
                             <div class="input-group col-lg-12 col-md-12 col-sm-12 mb-3 d-flex justify-content-center">
                                 <select class="form-select select2 me-2 select2" onkeyup="" id="country_code_1" name="country_code_1" aria-label="country Code">
-                                    <option value="" selected disabled>Country</option>
+                                    <option value="" selected disabled>Country *</option>
                                     <?php
                                     if (!empty($country_codes)) {
                                         foreach ($country_codes as $cc_val) {
@@ -715,7 +721,7 @@ if (!empty($tour_photos)) {
                             </div>
 
                             <div class="col-lg-12 col-md-12 col-sm-12 mb-3 d-flex justify-content-center">
-                                <input type="email" class="form-control clr_input" onkeyup="check_getInTouch_input(this.value, 'email_1')" id="email_1" name="email_1" placeholder="Please Enter Email ID">
+                                <input type="email" class="form-control clr_input" onkeyup="check_getInTouch_input(this.value, 'email_1')" id="email_1" name="email_1" placeholder="Please Enter Email ID *">
                             </div>
 
                             <div class="col-lg-12 col-md-12 col-sm-12 mb-3 d-flex justify-content-center">

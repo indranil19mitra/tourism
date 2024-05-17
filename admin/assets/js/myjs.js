@@ -1529,6 +1529,13 @@ function check_num(obj) {
 			.replace(/[^0-9]/g, "")
 	);
 }
+function check_num_code(obj) {
+	$(obj).val(
+		$(obj)
+			.val()
+			.replace(/[^0-9+\s]/g, "")
+	);
+}
 function check_char(obj) {
 	$(obj).val(
 		$(obj)
@@ -1540,7 +1547,7 @@ function check_char_with_space(obj) {
 	$(obj).val(
 		$(obj)
 			.val()
-			.replace(/[^A-Za-z\s]/g, "")
+			.replace(/[^A-Za-z0-9+()\s]/g, "")
 	);
 }
 

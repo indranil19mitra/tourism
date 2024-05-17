@@ -316,7 +316,11 @@ if (!empty($get_tours_details)) {
                 ];
                 $("#tour_srt_desc_1").html('<?= $main_image_header_desc; ?>');
             }
-            $("#section_2").css('height', (url_para != "") ? ((isMobile) ? '60vh' : '50vh') : '100vh');
+
+            if (!isMobile) {
+                $("#tour_srt_desc_1").addClass('mt-5');
+            }
+            $("#section_2").css('height', (url_para != "") ? '50vh' : '100vh');
         }
         // Set the initial height immediately on page load for mobile
         // if (isMobile) {          
@@ -327,7 +331,7 @@ if (!empty($get_tours_details)) {
             // Ensure the height is at least 100vh for mobile
             if (isMobile && section.height() < window.innerHeight) {
                 section.css('height', (url_para != "") ? '50vh' : '100vh');
-                $(".set_ht_1_html").html('Beyond The Mountains');
+                $(".set_ht_1_html").html('BEYOND TRAVEL,<br> WE CRAFT MEMORIES');
                 $('.set_ht_1_html_sz').css('font-size', '25px');
                 $("#about_us_we_provite_section").hide();
                 $("#book_now_modal_header_title").addClass("fs-6");
