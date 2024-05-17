@@ -17,7 +17,7 @@
                                 <input type="text" class="form-control" onkeyup="isExist(this.value,'country_code'),check_char_with_space(this)" id="name" name="name" placeholder="Name" required>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control clr" onkeyup="check_num(this)" name="code" id="code" placeholder="Code" required>
+                                <input type="text" class="form-control clr" onkeyup="check_num_code(this)" name="code" id="code" placeholder="Code" required>
                             </div>
 
                             <select class="form-group form-select slct_cls" id="status" name="status" aria-label="select example">
