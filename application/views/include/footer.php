@@ -40,7 +40,7 @@ $whatsappLink = "https://wa.me/+" . $countryCode . $phoneNumber;
                                                         <li class="elementor-icon-list-item">
                                                             <span class="elementor-icon-list-icon">
                                                                 <i aria-hidden="true" class="fas fa-envelope"></i> </span>
-                                                            <span class="elementor-icon-list-text">contactus@gmail.com</span>
+                                                            <span class="elementor-icon-list-text">contactus@thedurbeen.com</span>
                                                         </li>
                                                     </ul>
                                                 </div>

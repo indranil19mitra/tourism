@@ -84,10 +84,12 @@
 					<div class="d-flex flex-wrap flex-md-nowrap flex-column-reverse flex-md-row gap-2">
 						<div class="carousel-slider d-flex justify-content-end gap-4">
 							<a class=" bg-transparent position-relative d-block" href="#" role="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-								<i class="fa-solid fa-arrow-left-long"></i>
+								<!-- <i class="fa-solid fa-arrow-left-long"></i> -->
+								<i class="fa-solid fa-angles-left"></i>
 							</a>
 							<a class=" bg-transparent position-relative d-block w-auto" href="#" role="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-								<i class="fa-solid fa-arrow-right-long"></i>
+								<!-- <i class="fa-solid fa-arrow-right-long"></i> -->
+								<i class="fa-solid fa-angles-right"></i>
 							</a>
 						</div>
 					</div>
