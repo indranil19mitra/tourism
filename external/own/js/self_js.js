@@ -218,9 +218,9 @@ function tourGetOnDates(date = "") {
 					on: {
 						init: function () {
 							document.querySelector(".swiper-button-next6").innerHTML =
-								'<i class="fa-solid fa-arrow-right-long"></i>';
+								'<i class="fa-solid fa-angles-right"></i>';
 							document.querySelector(".swiper-button-prev6").innerHTML =
-								'<i class="fa-solid fa-arrow-left-long"></i>';
+								'<i class="fa-solid fa-angles-left"></i>';
 						},
 					},
 				});
@@ -1103,9 +1103,9 @@ document.addEventListener("DOMContentLoaded", function () {
 			init: function () {
 				// Set custom Font Awesome icon for navigation buttons
 				document.querySelector(".swiper-button-next1").innerHTML =
-					'<i class="fa-solid fa-arrow-right-long"></i>';
+					'<i class="fa-solid fa-angles-right"></i>';
 				document.querySelector(".swiper-button-prev1").innerHTML =
-					'<i class="fa-solid fa-arrow-left-long"></i>';
+					'<i class="fa-solid fa-angles-left"></i>';
 			},
 		},
 	});
@@ -1144,9 +1144,9 @@ document.addEventListener("DOMContentLoaded", function () {
 			init: function () {
 				// Set custom Font Awesome icon for navigation buttons
 				document.querySelector(".swiper-button-next2").innerHTML =
-					'<i class="fa-solid fa-arrow-right-long"></i>';
+					'<i class="fa-solid fa-angles-right"></i>';
 				document.querySelector(".swiper-button-prev2").innerHTML =
-					'<i class="fa-solid fa-arrow-left-long"></i>';
+					'<i class="fa-solid fa-angles-left"></i>';
 			},
 		},
 	});
@@ -1184,9 +1184,9 @@ document.addEventListener("DOMContentLoaded", function () {
 		on: {
 			init: function () {
 				document.querySelector(".swiper-button-next3").innerHTML =
-					'<i class="fa-solid fa-arrow-right-long"></i>';
+					'<i class="fa-solid fa-angles-right"></i>';
 				document.querySelector(".swiper-button-prev3").innerHTML =
-					'<i class="fa-solid fa-arrow-left-long"></i>';
+					'<i class="fa-solid fa-angles-left"></i>';
 			},
 		},
 	});
@@ -1224,9 +1224,9 @@ document.addEventListener("DOMContentLoaded", function () {
 		on: {
 			init: function () {
 				document.querySelector(".swiper-button-next4").innerHTML =
-					'<i class="fa-solid fa-arrow-right-long"></i>';
+					'<i class="fa-solid fa-angles-right"></i>';
 				document.querySelector(".swiper-button-prev4").innerHTML =
-					'<i class="fa-solid fa-arrow-left-long"></i>';
+					'<i class="fa-solid fa-angles-left"></i>';
 			},
 		},
 	});
@@ -1264,9 +1264,9 @@ document.addEventListener("DOMContentLoaded", function () {
 	// });
 
 	// document.querySelector(".swiper-button-next5").innerHTML =
-	// 	'<i class="fas fa-arrow-right"></i>';
+	// 	'<i class="fa-solid fa-angles-right"></i>';
 	// document.querySelector(".swiper-button-prev5").innerHTML =
-	// 	'<i class="fas fa-arrow-left"></i>';
+	// 	'<i class="fa-solid fa-angles-left"></i>';
 
 	var swiper5 = new Swiper(".swiper_container5", {
 		slidesPerView: 1,
@@ -1302,9 +1302,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	// Customize navigation icons
 	document.querySelector(".swiper-button-next5").innerHTML =
-		'<i class="fas fa-arrow-right"></i>';
+		'<i class="fa-solid fa-angles-right"></i>';
 	document.querySelector(".swiper-button-prev5").innerHTML =
-		'<i class="fas fa-arrow-left"></i>';
+		'<i class="fa-solid fa-angles-left"></i>';
 
 	// Initialize Magnific Popup
 	$(".image-popup").magnificPopup({
@@ -1352,10 +1352,14 @@ document.addEventListener("DOMContentLoaded", function () {
 		},
 	});
 
+	// document.querySelector(".swiper-button-next7").innerHTML =
+	// 	'<i class="fas fa-arrow-right"></i>';
+	// document.querySelector(".swiper-button-prev7").innerHTML =
+	// 	'<i class="fas fa-arrow-left"></i>';
 	document.querySelector(".swiper-button-next7").innerHTML =
-		'<i class="fas fa-arrow-right"></i>';
+		'<i class="fa-solid fa-angles-right"></i>';
 	document.querySelector(".swiper-button-prev7").innerHTML =
-		'<i class="fas fa-arrow-left"></i>';
+		'<i class="fa-solid fa-angles-left"></i>';
 
 	var swiper10 = new Swiper(".swiper_container10", {
 		slidesPerView: 1,
@@ -1390,9 +1394,9 @@ document.addEventListener("DOMContentLoaded", function () {
 	});
 
 	document.querySelector(".swiper-button-next10").innerHTML =
-		'<i class="fas fa-arrow-right"></i>';
+		'<i class="fa-solid fa-angles-right"></i>';
 	document.querySelector(".swiper-button-prev10").innerHTML =
-		'<i class="fas fa-arrow-left"></i>';
+		'<i class="fa-solid fa-angles-left"></i>';
 });
 
 function current_date() {
