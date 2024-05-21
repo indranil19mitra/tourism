@@ -404,7 +404,7 @@ class Mycontroller extends CI_Controller
         if (!empty($get_tours_date_wise)) {
             // print_r($get_tours_date_wise);
             foreach ($get_tours_date_wise as $key => $val) {
-                $get_tours_date_wise_data[$key]['dtl_nm'] = implode("-", explode(" ", $val->name));
+                $get_tours_date_wise_data[$key]['dtl_nm'] = implode("--", explode(" ", $val->name));
                 $get_tours_date_wise_data[$key]['name'] = $val->name;
                 $get_tours_date_wise_data[$key]['main_image'] = $val->main_image;
                 $get_tours_date_wise_data[$key]['seat_availability'] = $val->seat_availability;

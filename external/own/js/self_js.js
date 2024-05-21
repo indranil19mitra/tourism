@@ -230,6 +230,7 @@ function tourGetOnDates(date = "") {
 }
 
 function getDetails(dtl_nm = "", ids = "") {
+	dtl_nm = dtl_nm.replace("&", "_");
 	window.location.href =
 		baseurl + "get-Details?dtl_nm=" + dtl_nm + "&ids=" + ids;
 	// tour_srt_desc_1

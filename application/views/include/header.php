@@ -215,7 +215,7 @@
                                                                 <?php
                                                                 if (!empty($weekend_trip)) {
                                                                     foreach ($weekend_trip as $key => $val) {
-                                                                        $names = implode("-", explode(" ", $val->name));
+                                                                        $names = implode("--", explode(" ", $val->name));
                                                                         if ($key < 10) {
                                                                 ?>
                                                                             <li id="menu-item-476" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-476">
@@ -242,7 +242,7 @@
                                                                 <?php
                                                                 if (!empty($popular_trip)) {
                                                                     foreach ($popular_trip as $key => $val) {
-                                                                        $names = implode("-", explode(" ", $val->name));
+                                                                        $names = implode("--", explode(" ", $val->name));
                                                                         if ($key < 10) {
                                                                 ?>
                                                                             <li id="menu-item-535" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-535">
@@ -273,7 +273,7 @@
                                                                     // exit;
 
                                                                     foreach ($adv_thrill_trip as $key => $val) {
-                                                                        $names = implode("-", explode(" ", $val->name));
+                                                                        $names = implode("--", explode(" ", $val->name));
                                                                         if ($key < 10) {
                                                                 ?>
                                                                             <li id="menu-item-534" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-534">
