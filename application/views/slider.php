@@ -49,11 +49,11 @@
         <?php
     }
     if (!empty($this->uri->segment('1'))) {
-        $page_url = ($this->uri->segment('1') == "about-us" || $this->uri->segment('1') == "contact-us") ? (explode('-', $this->uri->segment('1'))) : ((!empty($this->input->get('dtl_nm'))) ? (explode('-', $this->input->get('dtl_nm'))) : '');
+        $page_url = ($this->uri->segment('1') == "about-us" || $this->uri->segment('1') == "contact-us" || $this->uri->segment('1') == "terms-and-conditions") ? (explode('-', $this->uri->segment('1'))) : ((!empty($this->input->get('dtl_nm'))) ? (explode('--', $this->input->get('dtl_nm'))) : '');
         $current_page = "";
         if (!empty($page_url)) {
             foreach ($page_url as $val) {
-                $current_page .= " " . $val;
+                $current_page .= " " . (($val == '_') ? (str_replace('_', '&', $val)) : $val);
             }
         }
         // echo "current_page=> " . $current_page;
