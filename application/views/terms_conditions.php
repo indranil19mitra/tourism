@@ -26,7 +26,7 @@ $terms_conditions_details_data = (!empty($terms_conditions_details)) ? $terms_co
                                                     </div>
                                                 </div>
                                                 <div class="elementor-element elementor-element-cf1757d elementor-widget elementor-widget-text-editor" data-id="cf1757d" data-element_type="widget" data-widget_type="text-editor.default">
-                                                    <div class="elementor-widget-container">We're not just travellers; we're integral members of the D U R B E E N family, bound by a shared passion for exploration and discovery.</div>
+                                                    <div class="elementor-widget-container">By using our services, you agree to comply with the terms and conditions outlined below. Please read them carefully to understand your rights and responsibilities.</div>
                                                 </div>
                                             </div>
                                         </div>
