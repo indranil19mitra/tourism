@@ -20,7 +20,7 @@
                                         <?php
                                         if (!empty($tours_data)) {
                                             foreach ($tours_data as $val) {
-                                                echo '<option value=' . $val->id . '>' . $val->name . ' (' . $val->category_name . ')</option>';
+                                                echo '<option value=' . $val->id . '>' . $val->name . ' (' . $val->category_name . ' - ' . date('jS F Y', strtotime($val->tour_start_date)) . ')</option>';
                                             }
                                         }
                                         ?>
@@ -81,7 +81,7 @@
                                 ?>
                                         <tr>
                                             <td><?= ($key + 1) ?></td>
-                                            <td><?= $rslt->name . ' (' . $rslt->category_name . ')'; ?></td>
+                                            <td><?= $rslt->name . ' (' . $rslt->category_name . ' - ' . date('jS F Y', strtotime($rslt->tour_start_date)) .  ')'; ?></td>
                                             <td><img src="<?= base_url() . $rslt->tour_photo; ?>" alt=""></td>
                                             <td><label class="<?= $status_desc_class; ?>"><?= $status_desc; ?></label></td>
                                             <td>
