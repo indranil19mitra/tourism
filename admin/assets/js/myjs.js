@@ -54,7 +54,7 @@ $(document).ready(function () {
 			contentType: false,
 			processData: false,
 			success: function (res) {
-				console.log(res);
+				// console.log(res);
 				if (res.status != 103) {
 					window.location.href = baseurl + "place";
 					successToster(res.msg);
@@ -356,7 +356,7 @@ function stateFunctionalities(ids = "", types = "", tables = "") {
 			data: { eid: ids, tables: tables },
 			dataType: "json",
 			success: function (res) {
-				console.log(res);
+				// console.log(res);
 				if (res.status == 101) {
 					if (types != "delete") {
 						$("#eid").val(res.data.id);
@@ -445,7 +445,7 @@ function tourFunctionalities(ids = "", types = "", tables = "") {
 			data: { eid: ids, tables: tables },
 			dataType: "json",
 			success: function (res) {
-				console.log(res);
+				// console.log(res);
 				if (res.status == 101) {
 					if (types != "delete") {
 						$("#eid").val(res.data.id);
@@ -492,7 +492,7 @@ function tour_category_photo_Functionalities(
 			data: { eid: ids, tables: tables },
 			dataType: "json",
 			success: function (res) {
-				console.log(res);
+				// console.log(res);
 				if (res.status == 101) {
 					if (types != "delete") {
 						$("#eid").val(res.data.id);
@@ -528,7 +528,7 @@ function tour_photosFunctionalities(ids = "", types = "", tables = "") {
 			data: { eid: ids, tables: tables },
 			dataType: "json",
 			success: function (res) {
-				console.log(res);
+				// console.log(res);
 				if (res.status == 101) {
 					if (types != "delete") {
 						$("#eid").val(res.data.id);
@@ -569,7 +569,7 @@ function travel_matesFunctionalities(ids = "", types = "", tables = "") {
 			data: { eid: ids, tables: tables },
 			dataType: "json",
 			success: function (res) {
-				console.log(res);
+				// console.log(res);
 				if (res.status == 101) {
 					if (types != "delete") {
 						$("#eid").val(res.data.id);
@@ -608,7 +608,7 @@ function tourDestFunctionalities(ids = "", types = "", tables = "") {
 			data: { eid: ids, tables: tables },
 			dataType: "json",
 			success: function (res) {
-				console.log(res);
+				// console.log(res);
 				if (res.status == 101) {
 					if (types != "delete") {
 						$("#eid").val(res.data.id);
@@ -662,7 +662,7 @@ function tour_aboutFunctionalities(ids = "", types = "", tables = "") {
 			data: { eid: ids, tables: tables },
 			dataType: "json",
 			success: function (res) {
-				console.log(res);
+				// console.log(res);
 				if (res.status == 101) {
 					if (types != "delete") {
 						$("#eid").val(res.data.id);
@@ -697,7 +697,7 @@ function tour_itineraryFunctionalities(ids = "", types = "", tables = "") {
 			data: { eid: ids, tables: tables },
 			dataType: "json",
 			success: function (res) {
-				console.log(res);
+				// console.log(res);
 				if (res.status == 101) {
 					if (types != "delete") {
 						$("#eid").val(res.data.id);
@@ -742,7 +742,7 @@ function tour_inclusions_exclusionsFunctionalities(
 			data: { eid: ids, tables: tables },
 			dataType: "json",
 			success: function (res) {
-				console.log(res);
+				// console.log(res);
 				if (res.status == 101) {
 					if (types != "delete") {
 						$("#eid").val(res.data.id);
@@ -780,7 +780,7 @@ function tour_other_infoFunctionalities(ids = "", types = "", tables = "") {
 			data: { eid: ids, tables: tables },
 			dataType: "json",
 			success: function (res) {
-				console.log(res);
+				// console.log(res);
 				if (res.status == 101) {
 					if (types != "delete") {
 						$("#eid").val(res.data.id);
@@ -846,7 +846,7 @@ function terms_conditionsFunctionalities(ids = "", types = "", tables = "") {
 			data: { eid: ids, tables: tables },
 			dataType: "json",
 			success: function (res) {
-				console.log(res);
+				// console.log(res);
 				if (res.status == 101) {
 					if (types != "delete") {
 						$("#eid").val(res.data.id);
@@ -861,6 +861,69 @@ function terms_conditionsFunctionalities(ids = "", types = "", tables = "") {
 						window.location.href = baseurl + "terms_conditions";
 						successToster(res.msg);
 					}
+				} else {
+					errorToster(res.msg);
+				}
+			},
+		});
+	}
+}
+
+function tourBookingDetailsFunctionalities(ids = "", types = "", tables = "") {
+	if (types == "edit" || types == "delete") {
+		// alert(types);
+		$.ajax({
+			type: "post",
+			url: baseurl + "delete_data",
+			data: { eid: ids, tables: tables },
+			dataType: "json",
+			success: function (res) {
+				// console.log(res);
+				if (res.status == 101) {
+					window.location.reload();
+					successToster(res.msg);
+				} else {
+					errorToster(res.msg);
+				}
+			},
+		});
+	}
+}
+
+function tourContactUsFunctionalities(ids = "", types = "", tables = "") {
+	if (types == "edit" || types == "delete") {
+		// alert(types);
+		$.ajax({
+			type: "post",
+			url: baseurl + "delete_data",
+			data: { eid: ids, tables: tables },
+			dataType: "json",
+			success: function (res) {
+				// console.log(res);
+				if (res.status == 101) {
+					window.location.reload();
+					successToster(res.msg);
+				} else {
+					errorToster(res.msg);
+				}
+			},
+		});
+	}
+}
+
+function tourGetInTouchFunctionalities(ids = "", types = "", tables = "") {
+	if (types == "edit" || types == "delete") {
+		// alert(types);
+		$.ajax({
+			type: "post",
+			url: baseurl + "delete_data",
+			data: { eid: ids, tables: tables },
+			dataType: "json",
+			success: function (res) {
+				// console.log(res);
+				if (res.status == 101) {
+					window.location.reload();
+					successToster(res.msg);
 				} else {
 					errorToster(res.msg);
 				}
@@ -908,7 +971,7 @@ function isExist(val = "", table = "") {
 		data: { val: val, checked_table: table, eid: eid },
 		dataType: "json",
 		success: function (res) {
-			console.log(res);
+			// console.log(res);
 			if (val != "") {
 				if (res.status != 101) {
 					errorToster("State Already Exist!");

@@ -14,8 +14,8 @@
                                     <th class="text-wrap">Email</th>
                                     <th class="text-wrap">Preferred Destination</th>
                                     <th class="text-wrap">Query Date</th>
-                                    <!-- <th class="text-wrap">Status</th>
-                                    <th class="text-wrap">Action</th> -->
+                                    <!-- <th class="text-wrap">Status</th>-->
+                                    <th class="text-wrap">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -56,6 +56,11 @@
                                             <td><?= $rslt->git_cust_email; ?></td>
                                             <td><?= $rslt->git_cust_destination; ?></td>
                                             <td><?= $query_date; ?></td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <div><i class="btn fa-solid fa-trash p-0 text-danger" onclick="tourGetInTouchFunctionalities(<?= $rslt->get_in_touch_details_id ?>,'delete','get_in_touch')"></i></div>
+                                                </div>
+                                            </td>
                                         </tr>
 
                                 <?php

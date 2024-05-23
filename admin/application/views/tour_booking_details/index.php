@@ -26,8 +26,8 @@
                                     <th class="text-wrap">Tour Date</th>
                                     <th class="text-wrap">P/D Location</th>
                                     <th class="text-wrap">Duration</th>
-                                    <!-- <th class="text-wrap">Status</th>
-                                    <th class="text-wrap">Action</th> -->
+                                    <!-- <th class="text-wrap">Status</th>-->
+                                    <th class="text-wrap">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -82,12 +82,13 @@
                                             <td><?= $tour_date; ?></td>
                                             <td><?= $pickup_drop_lcn; ?></td>
                                             <td><?= $rslt->duration; ?></td>
-                                            <!-- <td><label class="<?= $status_desc_class; ?>"><?= $status_desc; ?></label></td>
+                                            <!-- <td><label class="<?= $status_desc_class; ?>"><?= $status_desc; ?></label></td> -->
                                             <td>
                                                 <div class="d-flex">
-                                                    <div class="pe-2"><i class="btn fa-solid fa-pen-to-square p-0 text-danger" data-bs-toggle="modal" data-bs-target="#destination_details_modal" onclick="tourDestFunctionalities(<?= $rslt->tour_booking_details_id ?>,'edit')"></i></div>
+                                                    <!-- <div class="pe-2"><i class="btn fa-solid fa-pen-to-square p-0 text-danger" data-bs-toggle="modal" data-bs-target="#destination_details_modal" onclick="tourDestFunctionalities(<?= $rslt->tour_booking_details_id ?>,'edit')"></i></div> -->
+                                                    <div><i class="btn fa-solid fa-trash p-0 text-danger" onclick="tourBookingDetailsFunctionalities(<?= $rslt->tour_booking_details_id ?>,'delete','tour_booking_details')"></i></div>
                                                 </div>
-                                            </td> -->
+                                            </td>
                                         </tr>
 
                                 <?php
