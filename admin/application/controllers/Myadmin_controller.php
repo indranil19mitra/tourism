@@ -1152,7 +1152,9 @@ class Myadmin_controller extends CI_Controller
             'tour_details.is_delete!=' => '0',
             'tours.status!=' => '0',
             'tour_details.is_delete!=' => '0',
-            'tour_details.status!=' => '0'
+            'tour_details.status!=' => '0',
+            'tour_booking_details.is_delete!=' => '0',
+            'tour_booking_details.status!=' => '0',
         );
 
         $join1 = array('table' => 'tour_details', 'condition' => 'tour_details.id=tour_booking_details.tours_details_id');
@@ -1173,10 +1175,13 @@ class Myadmin_controller extends CI_Controller
         if (empty($this->session->userdata('user_id'))) {
             redirect(base_url('login'));
         }
-
+        $cond1 = array(
+            'get_in_touch.is_delete!=' => '0',
+            'get_in_touch.status!=' => '0',
+        );
         $data = array();
         $join = ['table' => 'country_code', 'condition' => 'country_code.id=get_in_touch.country_id', 'type' => 'left'];
-        $data['get_in_touch_details'] = $this->myadmin_model->get_data("get_in_touch.id as get_in_touch_details_id,get_in_touch.git_cust_name,get_in_touch.git_cust_contact,get_in_touch.git_cust_email,get_in_touch.git_cust_destination,get_in_touch.query_time,get_in_touch.query_status,get_in_touch.status,get_in_touch.updated_by,get_in_touch.updated_at,country_code.code", 'get_in_touch', "", [$join], "", "desc", "get_in_touch_details_id");
+        $data['get_in_touch_details'] = $this->myadmin_model->get_data("get_in_touch.id as get_in_touch_details_id,get_in_touch.git_cust_name,get_in_touch.git_cust_contact,get_in_touch.git_cust_email,get_in_touch.git_cust_destination,get_in_touch.query_time,get_in_touch.query_status,get_in_touch.status,get_in_touch.updated_by,get_in_touch.updated_at,country_code.code", 'get_in_touch', $cond1, [$join], "", "desc", "get_in_touch_details_id");
 
         $this->load->view('include/header');
         $this->load->view('tour_get_in_touch_details/index', $data);
@@ -1259,8 +1264,13 @@ class Myadmin_controller extends CI_Controller
             redirect(base_url('login'));
         }
 
+        $cond1 = array(
+            'contact_us.is_delete!=' => '0',
+            'contact_us.status!=' => '0',
+        );
+
         $data = array();
-        $data['contact_us_details'] = $this->myadmin_model->get_data("contact_us.id as contact_us_details_id,contact_us.cnct_us_name,contact_us.cnct_us_email,contact_us.cnct_us_query,contact_us.query_time,contact_us.query_status,contact_us.status,contact_us.updated_by,contact_us.updated_at", 'contact_us', "", "", "desc", "contact_us_details_id");
+        $data['contact_us_details'] = $this->myadmin_model->get_data("contact_us.id as contact_us_details_id,contact_us.cnct_us_name,contact_us.cnct_us_email,contact_us.cnct_us_query,contact_us.query_time,contact_us.query_status,contact_us.status,contact_us.updated_by,contact_us.updated_at", 'contact_us', $cond1, "", "desc", "contact_us_details_id");
 
         $this->load->view('include/header');
         $this->load->view('tour_contact_us_details/index', $data);
