@@ -153,7 +153,7 @@ if (!empty($tour_photos)) {
                         <div class="container mt-5">
                             <div class="row">
                                 <div class="col-12">
-                                    <div class="fs-5 fw-bold text-left home_body">
+                                    <div class="text-left home_body all_txt_frmt">
                                         <?= $tour_about_details; ?>
                                     </div>
                                 </div>
@@ -224,7 +224,7 @@ if (!empty($tour_photos)) {
                                                     </a>
                                                 </h2>
                                                 <div id="flush-<?= $key; ?>" class="accordion-collapse collapse itinarary_bg_clr text-dark mt-3 itinarary_bg_clr_2" data-bs-parent="#accordionFlushExample">
-                                                    <div class="accordion-body">
+                                                    <div class="accordion-body all_txt_frmt_1 px-5">
                                                         <span><?= $val['itinerary_sub'] ?></span>
                                                     </div>
                                                 </div>
@@ -352,7 +352,7 @@ if (!empty($tour_photos)) {
                             <div class="container mt-5">
                                 <div class="row">
                                     <div class="col-12">
-                                        <div class="fs-5 text-left home_body">
+                                        <div class="fs-5 text-left home_body all_txt_frmt_1">
                                             <!-- <p>The village of Bir (elevation: 1400m), located in the Kangra district of Himachal Pradesh India, is internationally famous as the base for some of the best paragliding in the world. The take-off point at Billing, 14km up a winding road from Bir and 1000m higher, hosts major competitive flying events most years in October or November (including a round of the Paragliding World Cup in 2015). Experienced paragliders fly as far as Dharamshala, Mandi, and Manali from here.<br>
                                         </p>
                                         <p>
@@ -397,7 +397,7 @@ if (!empty($tour_photos)) {
                             <div class="container mt-5">
                                 <div class="row">
                                     <div class="col-12">
-                                        <div class="fs-5 text-left home_body">
+                                        <div class="fs-5 text-left home_body all_txt_frmt_1">
                                             <!-- <p>The village of Bir (elevation: 1400m), located in the Kangra district of Himachal Pradesh India, is internationally famous as the base for some of the best paragliding in the world. The take-off point at Billing, 14km up a winding road from Bir and 1000m higher, hosts major competitive flying events most years in October or November (including a round of the Paragliding World Cup in 2015). Experienced paragliders fly as far as Dharamshala, Mandi, and Manali from here.<br>
                                         </p>
                                         <p>
@@ -452,7 +452,7 @@ if (!empty($tour_photos)) {
                         <div class="container mt-5">
                             <div class="row">
                                 <div class="col-12">
-                                    <div class="fs-5 text-left home_body">
+                                    <div class="fs-5 text-left home_body all_txt_frmt_1">
                                         <!-- <p>The village of Bir (elevation: 1400m), located in the Kangra district of Himachal Pradesh India, is internationally famous as the base for some of the best paragliding in the world. The take-off point at Billing, 14km up a winding road from Bir and 1000m higher, hosts major competitive flying events most years in October or November (including a round of the Paragliding World Cup in 2015). Experienced paragliders fly as far as Dharamshala, Mandi, and Manali from here.<br>
                                         </p>
                                         <p>
@@ -540,7 +540,7 @@ if (!empty($tour_photos)) {
                                                     </div>
 
                                                     <div class="col-lg-12 col-md-12 col-sm-12 mb-3 d-flex justify-content-center">
-                                                        <input type="email" class="form-control clr_input" onkeyup="check_booking_input(this.value, 'email')" onblur="check_booking_input(this.value, 'email')" id="email" name="email" placeholder="Please Enter Email ID">
+                                                        <input type="email" class="form-control clr_input" onkeyup="check_booking_input(this.value, 'email')" onblur="check_booking_input(this.value, 'email')" id="email" name="email" placeholder="Please Enter Email ID *">
                                                     </div>
 
                                                     <div class="col-lg-12 col-md-12 col-sm-12 mb-3 d-flex justify-content-center">
@@ -618,7 +618,7 @@ if (!empty($tour_photos)) {
                                                                 </div>
                                                                 <div>
                                                                     <span id="tour_booking_upi_name"><strong>UPI Name: </strong></span>
-                                                                    <span id="tour_booking_upi_name_details">Durbeen / Durbeen Private Limited</span>
+                                                                    <span id="tour_booking_upi_name_details">Durbeen</span>
                                                                 </div>
                                                                 <div>
                                                                     <span id="bank_transfer"><strong>Bank Transfer:</strong></span>
@@ -631,6 +631,12 @@ if (!empty($tour_photos)) {
                                                                 </div>
                                                                 <div class="pb-1">
                                                                     <span id="tour_booking_ac_ifsc"></span>
+                                                                </div>
+                                                                <div class="pb-1">
+                                                                    <span id="tour_booking_ac_brnch_nm"></span>
+                                                                </div>
+                                                                <div class="pb-1">
+                                                                    <span id="tour_booking_ac_Swift_code"></span>
                                                                 </div>
                                                                 <div>
                                                                     <span class="text-danger">*</span><a href="<?= base_url() ?>admin/assets/images/cancelation_policy_pdf/cancellation_rules_final.pdf" target="_blank" download><span id="tour_booking_ac_ifsc_1"><strong> Please Check Cancellation Policy </strong><i class="fa-solid fa-file-pdf"></i></span></a>
@@ -694,15 +700,15 @@ if (!empty($tour_photos)) {
                         <div class="row" id="get_in_touch">
                             <!-- <div class="p-5"> -->
                             <div class="col-lg-12 col-md-12 col-sm-12 mb-3 d-flex justify-content-end">
-                                <span class="text-danger">All fields are mandatory</span>
+                                <span class="text-danger">* fields are mandatory</span>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 mb-3 d-flex justify-content-center">
-                                <input type="text" class="form-control clr_input" onkeyup="check_getInTouch_input(this.value, 'name_1')" id="name_1" name="name_1" placeholder="Please Enter Your Name">
+                                <input type="text" class="form-control clr_input" onkeyup="check_getInTouch_input(this.value, 'name_1')" id="name_1" name="name_1" placeholder="Please Enter Your Name *">
                             </div>
                             <!-- country -->
                             <div class="input-group col-lg-12 col-md-12 col-sm-12 mb-3 d-flex justify-content-center">
                                 <select class="form-select select2 me-2 select2" onkeyup="" id="country_code_1" name="country_code_1" aria-label="country Code">
-                                    <option value="" selected disabled>Country</option>
+                                    <option value="" selected disabled>Country *</option>
                                     <?php
                                     if (!empty($country_codes)) {
                                         foreach ($country_codes as $cc_val) {
@@ -711,11 +717,11 @@ if (!empty($tour_photos)) {
                                     }
                                     ?>
                                 </select>
-                                <input type="text" class="form-control clr_input" onkeyup="check_getInTouch_input(this.value, 'contact_no_1')" id="contact_no_1" maxlength="10" name="contact_no_1" placeholder="Contact Number">
+                                <input type="text" class="form-control clr_input" onkeyup="check_getInTouch_input(this.value, 'contact_no_1')" id="contact_no_1" maxlength="10" name="contact_no_1" placeholder="Contact Number *">
                             </div>
 
                             <div class="col-lg-12 col-md-12 col-sm-12 mb-3 d-flex justify-content-center">
-                                <input type="email" class="form-control clr_input" onkeyup="check_getInTouch_input(this.value, 'email_1')" id="email_1" name="email_1" placeholder="Please Enter Email ID">
+                                <input type="email" class="form-control clr_input" onkeyup="check_getInTouch_input(this.value, 'email_1')" id="email_1" name="email_1" placeholder="Please Enter Email ID *">
                             </div>
 
                             <div class="col-lg-12 col-md-12 col-sm-12 mb-3 d-flex justify-content-center">

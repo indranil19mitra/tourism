@@ -53,7 +53,7 @@
                                             <input type="email" class="form-control clr_input" onkeyup="check_cnct_us_input(this.value, 'email')" id="email" name="email" placeholder="Please Enter Email ID *">
                                         </div>
                                         <div class="col-lg-12 col-md-12 col-sm-12 mb-3 d-flex justify-content-center">
-                                            <textarea type="text" class="form-control clr_input" onkeyup="check_cnct_us_input(this.value, 'query')" rows="3" id="query" name="query" placeholder=""></textarea>
+                                            <textarea type="text" class="form-control clr_input" onkeyup="check_cnct_us_input(this.value, 'query')" rows="3" id="query" name="query" placeholder="Share your excitement with us *"></textarea>
                                         </div>
                                         <div class="col-lg-12 col-md-12 col-sm-12 mb-3">
                                             <div class="d-grid gap-2">

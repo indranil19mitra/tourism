@@ -294,8 +294,8 @@ class Mycontroller extends CI_Controller
             'tours_details_id' => $this->input->post('booking_details_ids'),
             'cust_name' => trim($this->input->post('name')),
             'cust_contact' => trim($this->input->post('contact_no')),
-            'cust_mail' => $this->input->post('email'),
-            'cust_addr' => $this->input->post('address'),
+            'cust_mail' => trim($this->input->post('email')),
+            'cust_addr' => trim($this->input->post('address')),
             'nmbr_of_person' => $this->input->post('booking_member_count_1'),
             'booking_date_time' => date('Y-m-d H:i:s'),
             'booking_amount_without_gst' => $this->input->post('ttl_amount_of_booking_without_gst_1'),
@@ -329,11 +329,11 @@ class Mycontroller extends CI_Controller
         // $edit_id = (!empty($this->input->post('eid'))) ? $this->input->post('eid') : '';
 
         $tour_get_in_touch = array(
-            'git_cust_name' => $this->input->post('name_1'),
-            'country_id' => $this->input->post('country_code_1'),
-            'git_cust_contact' => $this->input->post('contact_no_1'),
-            'git_cust_email' => $this->input->post('email_1'),
-            'git_cust_destination' => $this->input->post('preferred_destination_1'),
+            'git_cust_name' => trim($this->input->post('name_1')),
+            'country_id' => trim($this->input->post('country_code_1')),
+            'git_cust_contact' => trim($this->input->post('contact_no_1')),
+            'git_cust_email' => trim($this->input->post('email_1')),
+            'git_cust_destination' => trim($this->input->post('preferred_destination_1')),
             'query_time' => date('Y-m-d H:i:s'),
             'query_status' => '1',
             'status' => '1'
@@ -404,7 +404,7 @@ class Mycontroller extends CI_Controller
         if (!empty($get_tours_date_wise)) {
             // print_r($get_tours_date_wise);
             foreach ($get_tours_date_wise as $key => $val) {
-                $get_tours_date_wise_data[$key]['dtl_nm'] = implode("-", explode(" ", $val->name));
+                $get_tours_date_wise_data[$key]['dtl_nm'] = implode("--", explode(" ", $val->name));
                 $get_tours_date_wise_data[$key]['name'] = $val->name;
                 $get_tours_date_wise_data[$key]['main_image'] = $val->main_image;
                 $get_tours_date_wise_data[$key]['seat_availability'] = $val->seat_availability;
@@ -557,9 +557,9 @@ class Mycontroller extends CI_Controller
         // print_r($_POST);
         // exit;
         $tour_contact_us = array(
-            'cnct_us_name' => $this->input->post('name'),
-            'cnct_us_email' => $this->input->post('email'),
-            'cnct_us_query' => $this->input->post('query'),
+            'cnct_us_name' => trim($this->input->post('name')),
+            'cnct_us_email' => trim($this->input->post('email')),
+            'cnct_us_query' => trim($this->input->post('query')),
             'query_time' => date('Y-m-d H:i:s'),
             'query_status' => '1',
             'status' => '1'

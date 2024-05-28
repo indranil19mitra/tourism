@@ -17,7 +17,7 @@
                             </div>
                         </div>
                         <div class="elementor-element elementor-element-7e000c1 animated-slow elementor-invisible elementor-widget elementor-widget-text-editor" data-id="7e000c1" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;}" data-widget_type="text-editor.default">
-                            <div class="elementor-widget-container mt-5">Linking people and experiences, we transcend the role of a mere travel company. Allow us to lead you through adventures that exhort friendships and irremovable memories. Explore the world, forge incredible connections along the way.</div>
+                            <div class="elementor-widget-container mt-5 tour_header_fnt">Linking people and experiences, we transcend the role of a mere travel company. Allow us to lead you through adventures that exhort friendships and irremovable memories. Explore the world, forge incredible connections along the way.</div>
                         </div>
 
                         <!-- <section class="elementor-section elementor-inner-section elementor-element elementor-element-8182021 elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="8182021" data-element_type="section"> -->
@@ -49,11 +49,11 @@
         <?php
     }
     if (!empty($this->uri->segment('1'))) {
-        $page_url = ($this->uri->segment('1') == "about-us" || $this->uri->segment('1') == "contact-us") ? (explode('-', $this->uri->segment('1'))) : ((!empty($this->input->get('dtl_nm'))) ? (explode('-', $this->input->get('dtl_nm'))) : '');
+        $page_url = ($this->uri->segment('1') == "about-us" || $this->uri->segment('1') == "contact-us" || $this->uri->segment('1') == "terms-and-conditions") ? (explode('-', $this->uri->segment('1'))) : ((!empty($this->input->get('dtl_nm'))) ? (explode('--', $this->input->get('dtl_nm'))) : '');
         $current_page = "";
         if (!empty($page_url)) {
             foreach ($page_url as $val) {
-                $current_page .= " " . $val;
+                $current_page .= " " . (($val == '_') ? (str_replace('_', '&', $val)) : $val);
             }
         }
         // echo "current_page=> " . $current_page;
@@ -75,7 +75,7 @@
                                 </div>
                             </div>
                             <div class="elementor-element elementor-element-7e000c1 animated-slow elementor-invisible elementor-widget elementor-widget-text-editor" data-id="7e000c1" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;}" data-widget_type="text-editor.default">
-                                <div class="elementor-widget-container mt-5" id="tour_srt_desc_1" style="font-size:20px">We travel not to escape life, but for life not to escape us.</div>
+                                <div class="elementor-widget-container tour_header_fnt" id="tour_srt_desc_1">We travel not to escape life, but for life not to escape us.</div>
                             </div>
                         </div>
                     </div>

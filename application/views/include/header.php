@@ -17,7 +17,7 @@
 
     <style>
         .cnct_us1 {
-            background-image: url('<?= base_url() ?>/external/self_upload/home_cover/home_1.jpg');
+            background-image: url('<?= base_url() ?>/external/self_upload/home_cover/home_2.jpg');
         }
     </style>
     <link rel='stylesheet' id='jkit-elements-main-css' href='<?php echo base_url() ?>external/wp-content/plugins/jeg-elementor-kit/assets/css/elements/main.css?ver=2.6.2' media='all'>
@@ -182,7 +182,7 @@
             <p class="main-title bhf-hidden" itemprop="headline"><a href="<?php base_url() ?>" title="Durbeen" rel="home">Durbeen</a></p>
             <div data-elementor-type="wp-post" data-elementor-id="357" class="elementor elementor-357">
                 <section class="elementor-section elementor-top-section elementor-element elementor-element-7f240d7 elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="7f240d7" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-                    <div class="elementor-container elementor-column-gap-no">
+                    <div class="elementor-container elementor-column-gap-no" id="nav_dv">
                         <div class="elementor-column elementor-col-20 elementor-top-column elementor-element elementor-element-660c39b" data-id="660c39b" data-element_type="column">
                             <div class="elementor-widget-wrap elementor-element-populated p-0">
                                 <div class="elementor-element elementor-element-c01d95b elementor-widget elementor-widget-image" data-id="c01d95b" data-element_type="widget" data-widget_type="image.default" class="logo_size">
@@ -215,11 +215,11 @@
                                                                 <?php
                                                                 if (!empty($weekend_trip)) {
                                                                     foreach ($weekend_trip as $key => $val) {
-                                                                        $names = implode("-", explode(" ", $val->name));
+                                                                        $names = implode("--", explode(" ", $val->name));
                                                                         if ($key < 10) {
                                                                 ?>
                                                                             <li id="menu-item-476" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-476">
-                                                                                <a onclick="getDetails('<?= $names; ?>','<?= $val->tour_details_id; ?>')"><?= $val->name ?></a>
+                                                                                <a class="nav_li" onclick="getDetails('<?= $names; ?>','<?= $val->tour_details_id; ?>')"><?= $val->name ?></a>
                                                                             </li>
                                                                         <?php } else {
                                                                         ?>
@@ -242,11 +242,11 @@
                                                                 <?php
                                                                 if (!empty($popular_trip)) {
                                                                     foreach ($popular_trip as $key => $val) {
-                                                                        $names = implode("-", explode(" ", $val->name));
+                                                                        $names = implode("--", explode(" ", $val->name));
                                                                         if ($key < 10) {
                                                                 ?>
                                                                             <li id="menu-item-535" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-535">
-                                                                                <a onclick="getDetails('<?= $names; ?>','<?= $val->tour_details_id; ?>')"><?= $val->name; ?></a>
+                                                                                <a class="nav_li" onclick="getDetails('<?= $names; ?>','<?= $val->tour_details_id; ?>')"><?= $val->name; ?></a>
                                                                             </li>
                                                                         <?php } else {
                                                                         ?>
@@ -273,11 +273,11 @@
                                                                     // exit;
 
                                                                     foreach ($adv_thrill_trip as $key => $val) {
-                                                                        $names = implode("-", explode(" ", $val->name));
+                                                                        $names = implode("--", explode(" ", $val->name));
                                                                         if ($key < 10) {
                                                                 ?>
                                                                             <li id="menu-item-534" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-534">
-                                                                                <a onclick="getDetails('<?= $names; ?>','<?= $val->tour_details_id; ?>')"><?= $val->name; ?></a>
+                                                                                <a class="nav_li" onclick="getDetails('<?= $names; ?>','<?= $val->tour_details_id; ?>')"><?= $val->name; ?></a>
                                                                             </li>
                                                                         <?php } else {
                                                                         ?>

@@ -218,9 +218,9 @@ function tourGetOnDates(date = "") {
 					on: {
 						init: function () {
 							document.querySelector(".swiper-button-next6").innerHTML =
-								'<i class="fa-solid fa-arrow-right-long"></i>';
+								'<i class="fa-solid fa-angles-right"></i>';
 							document.querySelector(".swiper-button-prev6").innerHTML =
-								'<i class="fa-solid fa-arrow-left-long"></i>';
+								'<i class="fa-solid fa-angles-left"></i>';
 						},
 					},
 				});
@@ -230,6 +230,7 @@ function tourGetOnDates(date = "") {
 }
 
 function getDetails(dtl_nm = "", ids = "") {
+	dtl_nm = dtl_nm.replace("&", "_");
 	window.location.href =
 		baseurl + "get-Details?dtl_nm=" + dtl_nm + "&ids=" + ids;
 	// tour_srt_desc_1
@@ -749,11 +750,13 @@ function check_next(obj) {
 		);
 
 		$("#tour_booking_upi_us_at").html(
-			"<strong>UPI</strong> us at <strong>(Google Pay/BHIM/PHONEPE): durbeen@HSBC</strong>"
+			"<strong>UPI ID</strong><strong>: durbeens2021@ibl</strong>"
 		);
-		$("#tour_booking_ac_number").html("A/C No: 123456789000");
-		$("#tour_booking_ac_name").html("A/C Name: Durbeen Private Limited");
-		$("#tour_booking_ac_ifsc").html("IFSC Code: HSBC0000000");
+		$("#tour_booking_ac_number").html("A/C No: 50200092705102");
+		$("#tour_booking_ac_name").html("A/C Name: DURBEEN");
+		$("#tour_booking_ac_ifsc").html("IFSC Code: HDFC0002058");
+		$("#tour_booking_ac_brnch_nm").html("Branch: RAJARHAT GOPALPUR");
+		$("#tour_booking_ac_Swift_code").html("Swift Code: HDFCINBB");
 
 		$("#booking_member_count_1").val(bookingMemberCount);
 
@@ -905,26 +908,26 @@ function isValidEmail(email) {
 function checkAllInputsFilled() {
 	var nameValue = document.getElementById("name").value.trim();
 	var contactNoValue = document.getElementById("contact_no").value.trim();
-	// var emailValue = document.getElementById("email").value.trim();
+	var emailValue = document.getElementById("email").value.trim();
 	// var addressValue = document.getElementById("address").value.trim();
 
-	if (nameValue !== "" && contactNoValue !== "") {
+	if (nameValue !== "" && contactNoValue !== "" && emailValue !== "") {
 		$("#tour_booking_details_next_3").removeClass("pe-none");
 	} else {
 		$("#tour_booking_details_next_3").addClass("pe-none");
 
 		// Find the first empty input field and focus on it
-		if (nameValue === "") {
-			document.getElementById("name").focus();
-		}
-		if (contactNoValue === "") {
-			document.getElementById("contact_no").focus();
-		}
+		// if (nameValue === "") {
+		// 	document.getElementById("name").focus();
+		// }
+		// if (contactNoValue === "") {
+		// 	document.getElementById("contact_no").focus();
+		// }
 	}
 }
 
 function check_getInTouch_input(inputValue = "", inputType = "") {
-	console.log(inputValue, " ", inputType);
+	// console.log(inputValue, " ", inputType);
 	var inputElement = document.getElementById(inputType);
 
 	if (inputType === "name_1") {
@@ -942,38 +945,26 @@ function check_getInTouch_input(inputValue = "", inputType = "") {
 
 	// Update the input value with the cleaned value
 	inputElement.value = cleanedValue;
-
-	if (inputType === "email_1" && !isValidEmail(cleanedValue)) {
-		$("#get_in_touch_form_sbmt").addClass("pe-none");
-		inputElement.focus();
-		return false;
-	} else {
-		// $("#get_in_touch_form_sbmt").removeClass("pe-none");
-		checkAll_get_in_touch_InputsFilled();
-	}
-
-	// Additional validation if needed
-	// ...
-
-	return true; // The input is valid
+	checkAll_get_in_touch_InputsFilled();
 }
 
 function checkAll_get_in_touch_InputsFilled() {
-	var nameValue = document.getElementById("name_1").value.trim();
-	var contactNoValue = document.getElementById("contact_no_1").value.trim();
-	var emailValue = document.getElementById("email_1").value.trim();
-	var preferred_destination_Value = document
-		.getElementById("preferred_destination_1")
-		.value.trim();
+	var nameValue = $("#name_1").val();
+	var contactNoValue = $("#contact_no_1").val();
+	var emailValue = $("#email_1").val();
 
 	if (
-		nameValue !== "" &&
-		contactNoValue !== "" &&
-		emailValue !== "" &&
-		preferred_destination_Value !== ""
+		nameValue != "" &&
+		contactNoValue != "" &&
+		emailValue != "" &&
+		$("#country_code_1").val() != null
 	) {
-		if (!isValidEmail(emailValue)) {
-			$("#get_in_touch_form_sbmt").addClass("pe-none");
+		if (emailValue != "") {
+			if (!isValidEmail(emailValue)) {
+				$("#get_in_touch_form_sbmt").addClass("pe-none");
+			} else {
+				$("#get_in_touch_form_sbmt").removeClass("pe-none");
+			}
 		} else {
 			$("#get_in_touch_form_sbmt").removeClass("pe-none");
 		}
@@ -1113,9 +1104,9 @@ document.addEventListener("DOMContentLoaded", function () {
 			init: function () {
 				// Set custom Font Awesome icon for navigation buttons
 				document.querySelector(".swiper-button-next1").innerHTML =
-					'<i class="fa-solid fa-arrow-right-long"></i>';
+					'<i class="fa-solid fa-angles-right"></i>';
 				document.querySelector(".swiper-button-prev1").innerHTML =
-					'<i class="fa-solid fa-arrow-left-long"></i>';
+					'<i class="fa-solid fa-angles-left"></i>';
 			},
 		},
 	});
@@ -1154,9 +1145,9 @@ document.addEventListener("DOMContentLoaded", function () {
 			init: function () {
 				// Set custom Font Awesome icon for navigation buttons
 				document.querySelector(".swiper-button-next2").innerHTML =
-					'<i class="fa-solid fa-arrow-right-long"></i>';
+					'<i class="fa-solid fa-angles-right"></i>';
 				document.querySelector(".swiper-button-prev2").innerHTML =
-					'<i class="fa-solid fa-arrow-left-long"></i>';
+					'<i class="fa-solid fa-angles-left"></i>';
 			},
 		},
 	});
@@ -1194,9 +1185,9 @@ document.addEventListener("DOMContentLoaded", function () {
 		on: {
 			init: function () {
 				document.querySelector(".swiper-button-next3").innerHTML =
-					'<i class="fa-solid fa-arrow-right-long"></i>';
+					'<i class="fa-solid fa-angles-right"></i>';
 				document.querySelector(".swiper-button-prev3").innerHTML =
-					'<i class="fa-solid fa-arrow-left-long"></i>';
+					'<i class="fa-solid fa-angles-left"></i>';
 			},
 		},
 	});
@@ -1234,9 +1225,9 @@ document.addEventListener("DOMContentLoaded", function () {
 		on: {
 			init: function () {
 				document.querySelector(".swiper-button-next4").innerHTML =
-					'<i class="fa-solid fa-arrow-right-long"></i>';
+					'<i class="fa-solid fa-angles-right"></i>';
 				document.querySelector(".swiper-button-prev4").innerHTML =
-					'<i class="fa-solid fa-arrow-left-long"></i>';
+					'<i class="fa-solid fa-angles-left"></i>';
 			},
 		},
 	});
@@ -1274,9 +1265,9 @@ document.addEventListener("DOMContentLoaded", function () {
 	// });
 
 	// document.querySelector(".swiper-button-next5").innerHTML =
-	// 	'<i class="fas fa-arrow-right"></i>';
+	// 	'<i class="fa-solid fa-angles-right"></i>';
 	// document.querySelector(".swiper-button-prev5").innerHTML =
-	// 	'<i class="fas fa-arrow-left"></i>';
+	// 	'<i class="fa-solid fa-angles-left"></i>';
 
 	var swiper5 = new Swiper(".swiper_container5", {
 		slidesPerView: 1,
@@ -1312,9 +1303,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	// Customize navigation icons
 	document.querySelector(".swiper-button-next5").innerHTML =
-		'<i class="fas fa-arrow-right"></i>';
+		'<i class="fa-solid fa-angles-right"></i>';
 	document.querySelector(".swiper-button-prev5").innerHTML =
-		'<i class="fas fa-arrow-left"></i>';
+		'<i class="fa-solid fa-angles-left"></i>';
 
 	// Initialize Magnific Popup
 	$(".image-popup").magnificPopup({
@@ -1362,10 +1353,14 @@ document.addEventListener("DOMContentLoaded", function () {
 		},
 	});
 
+	// document.querySelector(".swiper-button-next7").innerHTML =
+	// 	'<i class="fas fa-arrow-right"></i>';
+	// document.querySelector(".swiper-button-prev7").innerHTML =
+	// 	'<i class="fas fa-arrow-left"></i>';
 	document.querySelector(".swiper-button-next7").innerHTML =
-		'<i class="fas fa-arrow-right"></i>';
+		'<i class="fa-solid fa-angles-right"></i>';
 	document.querySelector(".swiper-button-prev7").innerHTML =
-		'<i class="fas fa-arrow-left"></i>';
+		'<i class="fa-solid fa-angles-left"></i>';
 
 	var swiper10 = new Swiper(".swiper_container10", {
 		slidesPerView: 1,
@@ -1400,9 +1395,9 @@ document.addEventListener("DOMContentLoaded", function () {
 	});
 
 	document.querySelector(".swiper-button-next10").innerHTML =
-		'<i class="fas fa-arrow-right"></i>';
+		'<i class="fa-solid fa-angles-right"></i>';
 	document.querySelector(".swiper-button-prev10").innerHTML =
-		'<i class="fas fa-arrow-left"></i>';
+		'<i class="fa-solid fa-angles-left"></i>';
 });
 
 function current_date() {
@@ -1432,7 +1427,11 @@ function check_cnct_us_input(val, type) {
 		$("#" + type).val(val.replace(/[^A-Za-z ]/g, ""));
 	}
 
-	is_checked = check_is_field($("#name").val(), $("#email").val());
+	is_checked = check_is_field(
+		$("#name").val(),
+		$("#email").val(),
+		$("#query").val()
+	);
 
 	if (type == "email") {
 		$("#" + type).val(val.replace(/[^A-Za-z0-9@.]/g, ""));
@@ -1454,14 +1453,14 @@ function check_cnct_us_input(val, type) {
 	}
 }
 
-function check_is_field(name, email) {
-	if (name == "" || email == "") {
-		if (email == "") {
-			$("#email").focus();
-		}
-		if (name == "") {
-			$("#name").focus();
-		}
+function check_is_field(name, email, query) {
+	if (name == "" || email == "" || query == "") {
+		// if (email == "") {
+		// 	$("#email").focus();
+		// }
+		// if (name == "") {
+		// 	$("#name").focus();
+		// }
 		return 0;
 	} else {
 		return 1;

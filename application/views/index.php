@@ -84,10 +84,12 @@
 					<div class="d-flex flex-wrap flex-md-nowrap flex-column-reverse flex-md-row gap-2">
 						<div class="carousel-slider d-flex justify-content-end gap-4">
 							<a class=" bg-transparent position-relative d-block" href="#" role="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-								<i class="fa-solid fa-arrow-left-long"></i>
+								<!-- <i class="fa-solid fa-arrow-left-long"></i> -->
+								<i class="fa-solid fa-angles-left"></i>
 							</a>
 							<a class=" bg-transparent position-relative d-block w-auto" href="#" role="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-								<i class="fa-solid fa-arrow-right-long"></i>
+								<!-- <i class="fa-solid fa-arrow-right-long"></i> -->
+								<i class="fa-solid fa-angles-right"></i>
 							</a>
 						</div>
 					</div>
@@ -177,7 +179,7 @@
 							<?php
 							if (!empty($get_tours_date_wise)) :
 								foreach ($get_tours_date_wise as $val) {
-									$names = implode("-", explode(" ", $val->name));
+									$names = implode("--", explode(" ", $val->name));
 							?>
 									<div class="swiper-slide p-1">
 										<div class="card px-3 pt-3">
@@ -287,7 +289,7 @@
 								// echo "<pre>";
 								// print_r($get_tours_weekend_trip);
 								foreach ($get_tours_weekend_trip as $val) {
-									$names = implode("-", explode(" ", $val->name));
+									$names = implode("--", explode(" ", $val->name));
 							?>
 									<div class="swiper-slide p-1">
 										<div class="card px-3 pt-3">
@@ -375,7 +377,7 @@
 											</div>
 										</div>
 										<div class="elementor-element elementor-element-cf1757d elementor-widget elementor-widget-text-editor" data-id="cf1757d" data-element_type="widget" data-widget_type="text-editor.default">
-											<div class="elementor-widget-container">Durbeen's sought-after offbeat trips are like hotcakes. Explore hidden gems, off the beaten path. Discover unique cultures, breathtaking landscapes, and unforgettable experiences with us.</div>
+											<div class="elementor-widget-container">Embark on international trips with Durbeen for an exhilarating journey filled with exploration and adventure. Immerse in diverse cultures, cuisines, breath-taking landscapes and unforgettable experiences.</div>
 										</div>
 									</div>
 								</div>
@@ -397,7 +399,7 @@
 								// echo "<pre>";
 								// print_r($get_tours_popular_trip);
 								foreach ($get_tours_popular_trip as $val) {
-									$names = implode("-", explode(" ", $val->name));
+									$names = implode("--", explode(" ", $val->name));
 							?>
 									<div class="swiper-slide p-1">
 										<div class="card px-3 pt-3">
@@ -505,7 +507,7 @@
 							<?php
 							if (!empty($get_tours_adv_trip)) :
 								foreach ($get_tours_adv_trip as $val) {
-									$names = implode("-", explode(" ", $val->name));
+									$names = implode("--", explode(" ", $val->name));
 							?>
 									<div class="swiper-slide p-1">
 										<div class="card px-3 pt-3">

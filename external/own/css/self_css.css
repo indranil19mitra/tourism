@@ -246,6 +246,28 @@
 
 
 @media (max-width: 767px) {
+
+    .all_txt_frmt {
+        /* line-height: 1 !important;
+        font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif !important;
+        font-size: 12px !important; */
+        color: var(--e-global-color-text) !important;
+        font-family: var(--e-global-typography-text-font-family), Sans-serif !important;
+        font-size: var(--e-global-typography-text-font-size) !important;
+        font-weight: var(--e-global-typography-text-font-weight) !important;
+
+    }
+
+    .all_txt_frmt_1 {
+        /* line-height: 1 !important;
+        font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif !important; */
+        color: var(--e-global-color-text) !important;
+        font-family: var(--e-global-typography-text-font-family), Sans-serif !important;
+        font-size: var(--e-global-typography-text-font-size) !important;
+        font-weight: var(--e-global-typography-text-font-weight) !important;
+
+    }
+
     .itinerary_dv_text {
         text-align: left !important;
     }
@@ -445,6 +467,43 @@
 }
 
 @media (min-width: 768px) {
+
+    .tour_header_fnt {
+        font-size: 20px !important;
+        font-weight: bold !important;
+        font-style: normal !important;
+    }
+
+    .nav_li {
+        line-height: 1.2;
+    }
+
+    .all_txt_frmt {
+        /* line-height: 1.2 !important;
+        font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif !important;
+        font-size: 12px !important; */
+        color: var(--e-global-color-text) !important;
+        font-family: var(--e-global-typography-text-font-family), Sans-serif !important;
+        font-size: var(--e-global-typography-text-font-size) !important;
+        font-weight: var(--e-global-typography-text-font-weight) !important;
+
+    }
+
+    .all_txt_frmt_1 {
+        /* line-height: 1.2 !important;
+        font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif !important; */
+
+        color: var(--e-global-color-text) !important;
+        font-family: var(--e-global-typography-text-font-family), Sans-serif !important;
+        font-size: var(--e-global-typography-text-font-size) !important;
+        font-weight: var(--e-global-typography-text-font-weight) !important;
+
+    }
+
+    #nav_dv {
+        max-width: none;
+    }
+
     #tour_booking_adv_requirement {
         font-size: 1.2vw !important;
         font-weight: 600 !important;
@@ -567,8 +626,8 @@
     }
 
     .logo_size {
-        height: 100px !important;
-        width: 100px !important;
+        height: 110px !important;
+        width: 110px !important;
     }
 
     .dtl_icon {
