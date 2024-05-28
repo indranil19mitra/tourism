@@ -166,6 +166,11 @@ if (!empty($get_tours_details)) {
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
     var baseurl = '<?= base_url() ?>';
+    
+    document.addEventListener('contextmenu', function(event) {
+    event.preventDefault();
+});
+
 </script>
 <script id='elementor-frontend-js-before'>
     var elementorFrontendConfig = {
